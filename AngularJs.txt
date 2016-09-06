@@ -3,3 +3,5 @@ Angular helps:
  2. create responsiv websites
  3. plays well with jQuery
  4. easy to test
+
+Directives: Marker on HTML tag that tells Angular to run or reference smoe Javascript code.
