@@ -1,7 +1,30 @@
 Angular helps:
  1. organize your JavaScript
- 2. create responsiv websites
+ 2. create responsive websites
  3. plays well with jQuery
  4. easy to test
 
-Directives: Marker on HTML tag that tells Angular to run or reference smoe Javascript code.
+Directives: Marker on HTML tag that tells Angular to run or reference some JavaScript code.
+
+
+Modules:
+	1. Where we write pieces of our Angular application.
+	2. Makes our code more maintainable, testable and readable.
+	3. Where we define dependencies for our app.
+		- modules can use the same module
+
+Expressions: 
+	- Allow you to insert dynamic values into your HTML
+
+Controllers: where we define our app's behavior by defining functions and values.
+	- wrapping your JS in a closure is good habit!
+	- Controller is attached to (inside) our app.
+
+Built in Directives:
+	1. 
+	2. ng-hide/ ng-show: display a section base on an Expression.
+	3. ng-repeat: repeat a section for each item in an Array
+	4. ng-app: attach the apps module to the page
+	5. ng-controller: attach a controller function to the page.
+
+
