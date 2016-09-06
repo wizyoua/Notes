@@ -28,3 +28,8 @@ Built in Directives:
 	5. ng-controller: attach a controller function to the page.
 
 
+What we have learned so far:
+	1. Directives - HTML annotations that trigger JavaScript behaviors 
+	2. Modules - Where our application components live
+	3. Controllers - Where we add application behavior
+	4. Expressions - How values get displayed within the page
