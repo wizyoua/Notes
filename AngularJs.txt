@@ -1,0 +1,5 @@
+Angular helps:
+ 1. organize your JavaScript
+ 2. create responsiv websites
+ 3. plays well with jQuery
+ 4. easy to test
