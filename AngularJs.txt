@@ -49,3 +49,22 @@ Setting the Initial Value
 
 	ng-submit - allows to call a function when user clicks submit -> define it in controller
 	ng-model - binds the form element value to the property
+Form Validations
+	1. HTMl novalidate
+	2. {{reviewForm.$valid}} reviewForm is the name of the form.
+	3. ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" - will only work to submit once form is valid, will then run the addReview
+
+
+Directives - can help declutter html
+	1. Can take out repetitive.
+	2. Transfer a snippet of html over to a new file->use ng-include=“’product-title.html’” inside tag of course to bring that code snippet back in. have to use single quotes as well because if not, angular is expecting a variable instead of the actual file. 
+
+	3. Why Directives? - allow you to write html that expresses the behavior of your application
+
+	Template -Expanding Directives are the simplest:
+		- Define a custom tag or attribute that is expanded or replaced
+		- can include Controller logic
+	Directives can also be used for:
+		-Expressing complex UI
+		-Calling events and registering event handlers
+		- Reusing common components.
