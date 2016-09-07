@@ -45,3 +45,7 @@ Tabs inside out
 
 Setting the Initial Value
 	ng-init allows us to evaluate an expression in the current scope.
+
+
+	ng-submit - allows to call a function when user clicks submit -> define it in controller
+	ng-model - binds the form element value to the property
