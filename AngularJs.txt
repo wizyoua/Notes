@@ -68,3 +68,29 @@ Directives - can help declutter html
 		-Expressing complex UI
 		-Calling events and registering event handlers
 		- Reusing common components.
+		- Element Directive: <product-title></product-title>
+		- Attribute Directive: <h3 product-title></h3> - have to define in app.directive - > restrict: ‘A’
+	Use Element Directives for UI Widgets and Attribute Directives for mixing behaviors like tooltip?!?!
+
+Dependencies
+	How should i organize my application module?
+		- app.js top-level module attached via ng-app
+		- products.js all the functionality for products and only prodoucts
+Services
+
+	- Gives your controller additional functionality like:
+		- Fetching JSON data from a web service with $http
+		- Logging messages to the Javascript console with $log
+		- Filtering an array with $filter
+	$http service: using $http as a function with an options object
+
+
+
+
+
+
+
+
+
+
+
