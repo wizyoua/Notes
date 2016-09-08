@@ -1,0 +1,19 @@
+What is JS?
+	- Dynamic computer programming language. 
+	- designed for creating network centric apps
+Client Side JS
+	- Less Server Interaction
+	- Immediate feedback
+	- Increased interactivity 
+	- Rich interfaces
+JS lacks
+	- Cannot read or write files
+	- JS cannot be used for network applications 
+	- JS doesn't have multi threading or multiprocessor capabilities
+Syntax
+	- have to use <script></script> tags in webpage
+	- can place the script tags anywhere.
+	- JS ignores Whitespace and line breaks
+	- Semicolons are optional (but it is good practice to use them)
+	- is Case Sensitive
+	- Comments: //single line /*multi-line*/ <!--html comments also-->
