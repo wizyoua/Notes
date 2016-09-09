@@ -1,4 +1,4 @@
-Angular helps:
+﻿Angular helps:
  1. organize your JavaScript
  2. create responsive websites
  3. plays well with jQuery
@@ -84,7 +84,9 @@ Services
 		- Filtering an array with $filter
 	$http service: using $http as a function with an options object
 
-
+	3 Types of services:
+		- Factory: create and object, add properties to it, return that same object
+		- Service: is instantiated with a new keyword. yo would add properties to 'this' and the service will return 'this'.
 
 
 
