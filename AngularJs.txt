@@ -89,10 +89,18 @@ Services
 		- Service: is instantiated with a new keyword. yo would add properties to 'this' and the service will return 'this'.
 
 
+Routes
+	- keep things encapsulated and bite size
+	- take pieces of unique code and separate them into their own files
+	Defining a Route: allow us to map url's to use templates so that every time the current route changes, the included view changes with it. 
+
+	4 steps to using routes:
+		1. using ng-view
+		2. loading the ngROute library - they put routing in a separate module. You need to explicitly import ngRoute in your application.
+		3. importing ngRoute module - We need to include ngRoute in our main app module so our whole app will have access to this service.
+		4. Defining routes
+			! don't create var app = angular.module because it is bad practice.
+		Use the Otherwise method to define a route be used when no other route definition is matched.
 
 
-
-
-
-
-
+		Otherwise() only takes object not like the .when() routes
