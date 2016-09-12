@@ -104,3 +104,17 @@ Routes
 
 
 		Otherwise() only takes object not like the .when() routes
+
+$http  methods
+	$http.put() - used for updating existing data
+	$http.get() - used for retrieving data
+
+	// Will post to the server
+		.when('/notes/new', {
+			templateUrl: 'templates/pages/notes/edit.html'
+		})
+
+
+	- We can gain access to the note's id in the following URL: http://example.com/#/notes/42 by injecting the  $routeParams service into the NotesShowController.
+
+	
