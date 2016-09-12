@@ -17,3 +17,48 @@ Syntax
 	- Semicolons are optional (but it is good practice to use them)
 	- is Case Sensitive
 	- Comments: //single line /*multi-line*/ <!--html comments also-->
+JS in browser
+	<noscript> will show that user's JS is not available and cannot access the page.</noscript>
+
+JS placement in html files
+	- If you want to run JS on an event then include in head section (note this is for hard embed)
+	- Run the script as the page loads then include the JS in the body section
+	- include js files in the html page -> best option
+Javascript Variables
+	- Numbers, Strings, Booleans
+	- variable = named container
+	- ex: var name = "Gianni"; 
+	- You can also name two variables at the same time. ex: var money,name;
+	- When you declare variable like this -> var money; all you are doing is initializing it, so you can use it at a later point in time. 
+	- Never! redeclare the same variable twice.
+	- Global Vars = can be defined anywhere in your JS code
+	- Local vars = visible within a function where is is defined. 
+	- Local variables take precedence over a global variable with the same name
+	- Never use JS reserved keywords as vars
+	- Vars should not start with a numeral(0-9). if they do they always put an underscore. ex: var _1number = 1;
+	- Vars are case sensitive;
+JS operator
+	- + : addition
+	- - : subtraction
+	- * : multiplication
+	- / : division
+	- % : modulus
+	- ++ : increment
+	- -- : decrement
+	- Comparison Operators
+	- == : checks if the value of two operands are equal or not
+	- != checks if the value of two operand are equal or not. Value not equal then the condition becomes true
+	- > : checks to see if the value is greater than 
+	- < : checks to see if the value is less than
+	- >= : greater than or equal to
+	- <= : less than or equal to
+	- Logical Operators
+	- && : (AND)
+	- || : (OR)
+	- ! : (NOT)
+	- Miscellaneous Operators
+	- conditional operator: first evaluates an expression for a true or false value then executes one of the two given statements depending upon the result of evaluation
+	- ex: If condition is true? then value X: Otherwise value Y
+	- Typeof: operator that is placed before its single operand which can be of any type. 
+	- will evaluate is the variable is string, number, boolean, ect.
+	
