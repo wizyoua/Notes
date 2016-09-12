@@ -61,4 +61,26 @@ JS operator
 	- ex: If condition is true? then value X: Otherwise value Y
 	- Typeof: operator that is placed before its single operand which can be of any type. 
 	- will evaluate is the variable is string, number, boolean, ect.
+JS If else statement
+	- is a conditional statement which is used to perform different actions based on different conditions. 
+	- supports the following : if statement, if..else statement, if..else if.. statement
+JS switch Case 
+	- switch statements which handles multi way branch. The objective of a switch statement is to give an expression to and evaluate several different statement to execute based on the value of expressions.
+	- break statements will make sure the rest of the code does not get executed or else then every switch statement will be ran.
+JS While Loops
+	- purpose of while loop is to execute a piece of code as long as the expression is true
+	- once the expression becomes false, the loop terminates
+	- do while loop: condition check happens at the end of the loop: means that loop will be executed at least once even if the condition is false
+	- keeps doing the do loop until while conditions are met. So say if i did loop from 0 to 5 then then once number reaches 5 the loop will stop.
+JS for Loops
+	- Loop initialization: where we initialize our counter to a starting value. 
+	- test statement: which will test the condition if it is true or not. if the condition is true, then the code inside the loop will be executed.
+	- the iteration statement, which will increase or decrease the counter
+	- All this happens in the FOR loop
+	- ex: for (initialization; test statement; iteration statement){...}
+	- Careful: if your condition never ends, you will have infinite loop which will break your browser
+JS for..in loop
+	- used to loop through an objects property
+	- ex: for (variablename in object){...}
 	
+
