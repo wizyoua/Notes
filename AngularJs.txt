@@ -117,4 +117,12 @@ $http  methods
 
 	- We can gain access to the note's id in the following URL: http://example.com/#/notes/42 by injecting the  $routeParams service into the NotesShowController.
 
-	
+Logic in out Routes
+	$http Service Distilled
+	 	- $http.get : retrieve data
+	 	- $http.post : create new data
+	 	- $http.put : update existing data
+	 	- $http.delete : destroy data
+
+	- Not only can routes have templates bu they can also have their own associated controllers
+
