@@ -125,4 +125,6 @@ Logic in out Routes
 	 	- $http.delete : destroy data
 
 	- Not only can routes have templates bu they can also have their own associated controllers
+	- Inline Route Controller: 
+		- you can create a controller inside your route, inline (will get a bit lengthy)
 

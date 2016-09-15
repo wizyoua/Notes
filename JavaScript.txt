@@ -126,20 +126,22 @@ JS Objects
 	- Object Methods: are the functions that led the object do something or let something be done to it. Small difference between method and functions, function is a standalone unit of statements but a method is attached to an object and can be reference by THIS keyword.
 	- User-defined objects: basically descendants of an object called Object. New operator creates an instance of an object.
 	- With keyword: used as a kind of shorthand for referencing an object's properties or methods
-	- 
+JS Different Objects
+	- Number object: a numerical date, either integers or floating-point number. (don't worry about number objects because browser automatically converts them)
+	- Boolean object: two values, either "true" or "false"
+	- String object: series of characters
+	- Arrays object: allows you to store multiple values in a single variable. 
+	- Date object: datatype built into the JS language
+	- Math object: provides properties and methods for mathematical constants and functions.
 
 
 
 
+Understanding This
+	- 4 ways that "this" takes a value
+		1. in normal function calls
+		2. within methods on object
+		3. within an object that has been constructed
+		4. function invoked with .call,.bind
 
-
-
-
-
-
-
-
-
-
-
-
+	

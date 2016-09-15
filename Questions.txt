@@ -1,0 +1,11 @@
+Questions
+
+1. Need help understanding Routes?
+2. Javascript Do While loop?
+3. What if a user have Javascript disabled?
+4. What is Unit testable?
+5. How can Angular be more secure? server side authentication wise
+6. Need help understanding how you can initialize ng-app in one file then connect controller to it.
+7. Why do we need ng-init?
+8. do we us Ng-include?
+9. views and $routeProvider

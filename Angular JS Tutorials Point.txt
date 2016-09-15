@@ -1,0 +1,68 @@
+Angular JS Tutorials Point
+
+What is AngularJS
+	- Structural framework for dynamic web apps. It lets you use html as you r template language and lets you extend html's syntax to express your applications components.
+
+Core Features of Angular 
+	- Data-Binding: It is the automatic synchronization of data between model and view components.
+	- Scope: These are objects that refer to the model. They act as a glue between controller and view.
+	- Controller: These are JS functions that are bound to a particular scope.
+	- Services: Angular JS comes with built in services like $http to make xmlhttprequests
+	- Filters: They select a subset of items from an array and returns a new array 
+	- Directives: markers on DOM elements. These can be used to create custom html tags that serve a new custom widget.
+	- Templates: are rendered view with information from the controller and model. 
+	- Routing: concept of switch views.
+	- Deep Linking: allows to encode the state of application in the URL so that it can be bookmarked.
+	- Dependency injection: Angular JS has built-in dependency injection subsystem that helps the developer by making the application easier to develop.
+Advantages in Angular
+ 	- provides capability to create Single Page Applications in a very clean and maintainable way.
+ 	- provides data binding capability to html thus giving user a rich experience
+ 	- is unit testable 
+ 	- dependency injection  and make use of separation of concerns
+ 	- provides reusable components
+ 	- developers write less code and get more functionality 
+ 	- views are pure html pages, and controllers written in JS do the processing
+
+ Angular Components
+ 	- ng-app: this directive defines and links AngularJS apps to html
+ 	- ng-model: This directive binds the values of AngularJS apps data to html input controls
+ 	- ng-bind: binds the AngularJS data to html tags
+ MVC Architecture
+ 	- MVC, is a software design pattern for developing web applications.
+ 	- Model: It is the lowest level of the pattern responsible for maintaining data.
+ 	- View: It is responsible for displaying all or a portion of the data to the user.
+ 	- Controller: SOftware code that controls the interactions between the Model and View
+
+ Angular Directives
+ 	- ng-app: this starts the AngularJS app. It defines the root element. It automatically initializes or bootstraps the application when web page containing AngularJS is loaded. It can also load various angularJS modules in AngularJS application.
+ 	- ng-init: initializes an AngularJS application data. It is used to to put values to the variables to be used in the application. 
+ 	- ng-model: defines the model/varibale to be used in AngularJS App.
+ 	- ng-repeat: repeats html elements for each item in a collection
+ Angular Expressions
+ 	- are used to bind application data to html. Expressions are written inside double braces like {{expression}}. They behave the same way as ng-bind directives. 
+
+ Angular Controllers
+ 	- Angular app mainly relies on controllers to control the flow of data in the application. A controller is defined using ng-controller directive.
+ 	- Controller is a Javascript Object containing attributes and properties or functions.
+ 	- Each controllers accepts $scope as a parameter which refers to the application/module that controller is to control
+ Angular Filters
+ 	- Filters are used to modify the data and can be clubbed in expression or directives using the pipe character.
+ Angular Tables
+ 	- Table data is repeatable by nature, so you can use ng-repeat to draw a table easily
+ Angular Modules
+ 	- Modules are used to sepreate logic like services, controllers, applications in order to keep the code clear.
+ 	- Application module - used to initialize an application with controllers
+ 	- Controller Module - used to define controllers
+ Angular Forms
+ 	- we can use ng-click to handle AngularJS click on button and use $ditry and $invalid flags to do the validations in seemless way. 
+ 	- use Novalidate with a form declaration to disable any browser specific validation.
+ Angular Includes
+ 	- can be used to embed html files into another html file
+ Angular Ajax
+ 	- provides $http control which works as a service to read data from the server. Servr makes a DB call to get the desired records.
+ 	- AngularJS needs data in JSON format. Once the data is ready, $http can be used to get the data from server in the following manner
+Angular Views
+	- to support multiple views on a single page you have to use ng-view and ng-template directive and $routeProvider services
+	- ng-view: simply creates a place holder where a corresponding view (html or ng-template view) can be placed 
+	- ng-template: directive is used to create an html view using script tag. it contains "id" attribute which is used by $routeProvider to map a view with a controller
+	- $routeProvider: keys ervice which set the config of urls, map them with the corresponding html page or ng-template
