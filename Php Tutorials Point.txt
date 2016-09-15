@@ -82,11 +82,44 @@ Functions
 	- create a function: function foo(){...} calling it: foo()
 	- return: stops the execution of the function and sends the value back to the calling code
 OOP 
-	- Class: is a programmer defined data type, which includes local functions as well as local data. You can think of a class as a template for making many instances of the same kind of object
-	- Object: an instance of the data structure defined by a class. You define a class once and then make many objects that belong to it. Objects are also known as instance
-	- Member Variable: are the variables defined inside a class. this data will be invisible to the outside of the class and can be accessed via member functions
-	- Member function: these are the function defined inside a class and are used to access object data
-	- Inheritance: when a class is defined by inheriting existing function of a parent class then it is called inheritance. 
-	- Parent class: class that inherits from another class. This is also called a base class or super class
-	- Child Class: class that inherits from another class. this is also called a subclass or derived class
-	- Polymorphism: OO concept where same function can be used for different purposes. ex. function name will remain same but it may take different number of arguments and can do different task
+	- Definitions
+		- Class: is a programmer defined data type, which includes local functions as well as local data. You can think of a class as a template for making many instances of the same kind of object
+		- Object: an instance of the data structure defined by a class. You define a class once and then make many objects that belong to it. Objects are also known as instance
+		- Member Variable: are the variables defined inside a class. this data will be invisible to the outside of the class and can be accessed via member functions
+		- Member function: these are the function defined inside a class and are used to access object data
+		- Inheritance: when a class is defined by inheriting existing function of a parent class then it is called inheritance. 
+		- Parent class: class that inherits from another class. This is also called a base class or super class
+		- Child Class: class that inherits from another class. this is also called a subclass or derived class
+		- Polymorphism: OO concept where same function can be used for different purposes. ex. function name will remain same but it may take different number of arguments and can do different task
+		- Overloading: type of polymorphism in which some or all of operators have different implementations depending on the types of their arguments. functions can also be overloaded with  different implementation
+		- Data Abstraction: representation of data in which the implementation details are hidden
+		- Encapsulation: refers to a concept where we encapsulate all the data and member functions together to form an object
+		- constructor: refers to a special type of function which will be called automatically whenever there is an object formation from a class.
+		- Destructor: special type of function which will be called automatically whenever an object is deleted or goes out of scope.
+	- Defining PHP Classes
+		- special form class, followed by the name of the class you want to define. 
+	- Creating Objects
+		- ex. $physics = new Books;
+	- Calling member functions
+		- after creating objects, you will be able to call member functions related to that object.
+	- Constructor functions
+		- are special types of functions which are called automatically whenever an object is created.
+		- php provides a special function called _construct() to define a constructor, you can pass as many arguments you like into that function
+		ex: function _contstruct($par1, $par2) {
+			$this->title = $par1;
+			$this->title = $par2;
+		}
+	- Inheritance
+		- class definitions can optionally inherit from a parent class definition by using the extends clause.
+		- ex: class Child extends Parent{...}
+		- child class will have all member variable declarations and functions from the parent
+	- Public Members
+		- unless specified, properties and methods of a class are public
+			- can accessed outside the class in which it is declared
+			- within the class in which it is declared
+			- within another class that implements the class in which it is declared
+
+	- Private members
+		- limit accessibility to the class in which it is declared
+	- Protected members
+		- is accessible in the class in which it is declared, as well as in classes that extends that class. they are not available outside of those two kinds of classes
