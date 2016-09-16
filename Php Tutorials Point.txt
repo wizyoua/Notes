@@ -1,0 +1,125 @@
+PHP
+
+Variable Types
+	- all variables start with a $ sign
+	- php has eight data types which we use to construct variables
+		- Integers: whole numbers wihtout a decimal point
+		- Doubles: floating point number like 3.14
+		- Booleans: have only two possible values either true or false
+		- Null: special type of value: NULL
+		- Strings: sequence of characters ex. "PHP supports strings"
+		- Arrays: name and indexed collections of other values
+		- Objects: instances of programmer-defined classes, which can package up both other kinds of values and functions that are specific to the class
+Constant
+	- a constant is a name or identifier for a simple value
+Operator
+	- types of operators
+		- Arithmetic Operators
+		- Comparison Operator
+		- Logical Operator
+		- Assignment Operator
+		- Conditional operator
+	- Arithmetic Operator
+		- +: adds two operands
+		- -: subtracts second operand from the first
+		- *: multiply both operands
+		- /: divide numerator by de-nominator
+		- %: Modulus operator and remainder after integer division
+		- ++: Increment operator, increases integer value by one
+		- --: increment decreases value by one
+	- Comparison Operators
+		- ==: checks if the value of two operands are equal or not, if yes then becomes true
+		- !=: checks if values are not equal which equals true
+		- >: greater than
+		- <: less than
+		- >=: greater than or equal to
+		- <=: less than or equal to
+	- Logical Operators
+		- and: if both operands are turn then condition becomes true
+		- or: if any two operands are non zero then condition becomes true
+		- both operands are non-zero then condition becomes true
+		- || = or
+		- !: false
+	- Assignment Operators
+		- =: assigns values from right side operands to left side operand 
+		- +=: it adds right operand to the left operand and assign the result to left operand (c+=A : C=C+A)
+		- -=: it subtracts right operand from the left operand and assign the result to left operand (C -= A : C=C-A)
+		- *=: multiplies right operand with the left operand (C *= A : C = C * A)
+		- /=: divided left operand with right operand(C /= A : C = C / A )
+		- %=: (C %= A: C = C % A)
+	- Conditional Operator
+		- ? : ex. If condition is true ? then Value X : Otherwise value Y
+Decision Making
+	- if else: if you want to execute a set of code when a condition is true and another if the condition is not true
+	- elseif: used with the if...else statement to execute a set of code if one of th several condition is true
+	- switch: used if you want to select one of many blocks of code to be executed, use the switch statement
+Loop Types
+	- they are used to execut the same block of code a specified number of times
+	- for loop: used when you know how many times you  want to execute a statement or a block of statements
+	- while loop: will execute a block of code if and as long as a test expression is true
+	- foreach loop: used to loop through arrays. for each pass the value of the current array element is assigned to $value and the array pointer is moved by one.
+	- break statement: is used to terminate the execution of a loop prematurely
+	- continue: is used to halt the current iteration of a loop but it does not terminate the loop
+Arrays
+	- an array is a data structure that stores one or more similar types of values in a single value
+	- Different kinds of arrays:
+		- Numeric array: array with a numeric  index, values are stored and accessed in linear fashion
+		- Associative array: array with strings as index. This stores element values in association with key values rather than in a strict linear index order
+		- Multidimensional: array containing one or more arrays and values are accessed using multiple indices
+Strings
+	- single quoted strings are almost treated literally
+	- double quoted replaces variables with their values
+	- to concatenate: use the dot operator
+	- strlen(): finds length of string
+Get & Post methods
+	- Get Method: sends the encoded user information appended to the page request
+	- Post method: transfers information via HTTP headers
+	- $_Request: can be used to get the result from form data send with both the GET and POST methods
+File Inclusion
+	- include(): takes all the text in a specified file and copies it into the file that uses the include include
+	- require() takes all the text in a specified file and copies it into the file that uses the include function.
+Functions
+	- create a function: function foo(){...} calling it: foo()
+	- return: stops the execution of the function and sends the value back to the calling code
+OOP 
+	- Definitions
+		- Class: is a programmer defined data type, which includes local functions as well as local data. You can think of a class as a template for making many instances of the same kind of object
+		- Object: an instance of the data structure defined by a class. You define a class once and then make many objects that belong to it. Objects are also known as instance
+		- Member Variable: are the variables defined inside a class. this data will be invisible to the outside of the class and can be accessed via member functions
+		- Member function: these are the function defined inside a class and are used to access object data
+		- Inheritance: when a class is defined by inheriting existing function of a parent class then it is called inheritance. 
+		- Parent class: class that inherits from another class. This is also called a base class or super class
+		- Child Class: class that inherits from another class. this is also called a subclass or derived class
+		- Polymorphism: OO concept where same function can be used for different purposes. ex. function name will remain same but it may take different number of arguments and can do different task
+		- Overloading: type of polymorphism in which some or all of operators have different implementations depending on the types of their arguments. functions can also be overloaded with  different implementation
+		- Data Abstraction: representation of data in which the implementation details are hidden
+		- Encapsulation: refers to a concept where we encapsulate all the data and member functions together to form an object
+		- constructor: refers to a special type of function which will be called automatically whenever there is an object formation from a class.
+		- Destructor: special type of function which will be called automatically whenever an object is deleted or goes out of scope.
+	- Defining PHP Classes
+		- special form class, followed by the name of the class you want to define. 
+	- Creating Objects
+		- ex. $physics = new Books;
+	- Calling member functions
+		- after creating objects, you will be able to call member functions related to that object.
+	- Constructor functions
+		- are special types of functions which are called automatically whenever an object is created.
+		- php provides a special function called _construct() to define a constructor, you can pass as many arguments you like into that function
+		ex: function _contstruct($par1, $par2) {
+			$this->title = $par1;
+			$this->title = $par2;
+		}
+	- Inheritance
+		- class definitions can optionally inherit from a parent class definition by using the extends clause.
+		- ex: class Child extends Parent{...}
+		- child class will have all member variable declarations and functions from the parent
+	- Public Members
+		- unless specified, properties and methods of a class are public
+			- can accessed outside the class in which it is declared
+			- within the class in which it is declared
+			- within another class that implements the class in which it is declared
+
+	- Private members
+		- limit accessibility to the class in which it is declared
+	- Protected members
+		- is accessible in the class in which it is declared, as well as in classes that extends that class. they are not available outside of those two kinds of classes
