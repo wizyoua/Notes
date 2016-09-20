@@ -1,0 +1,8 @@
+PHP Treehouse
+
+-OOP is organized
+
+Which of the following best describes an "object" in object oriented PHP?
+A particular instance of a class which contains it's own unique data.
+
+1 class per file, named after its class. 
