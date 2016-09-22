@@ -71,7 +71,8 @@ Directives - can help declutter html
 		- Element Directive: <product-title></product-title>
 		- Attribute Directive: <h3 product-title></h3> - have to define in app.directive - > restrict: ‘A’
 	Use Element Directives for UI Widgets and Attribute Directives for mixing behaviors like tooltip?!?!
-
+	Directive Link
+		- used to create interactive directives that respond to user actions
 Dependencies
 	How should i organize my application module?
 		- app.js top-level module attached via ng-app
@@ -87,6 +88,8 @@ Services
 	3 Types of services:
 		- Factory: create and object, add properties to it, return that same object
 		- Service: is instantiated with a new keyword. yo would add properties to 'this' and the service will return 'this'.
+
+	- Why are services useful? Instead of filling the controller with code to fetch weather data from a server, it's better to move this independent logic into a service so that it can be reused by other parts of the app.
 
 
 Routes
