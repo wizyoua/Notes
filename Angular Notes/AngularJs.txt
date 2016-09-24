@@ -131,3 +131,9 @@ Logic in out Routes
 	- Inline Route Controller: 
 		- you can create a controller inside your route, inline (will get a bit lengthy)
 
+
+
+When to use directives, controllers, services
+- services: whenevrs we want to share data across domains. 
+- controllers: should be used to wire up services, dependencies and other objects and assigns them to the view via scope.
+- directives: 
