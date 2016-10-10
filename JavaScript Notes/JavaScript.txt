@@ -144,4 +144,80 @@ Understanding This
 		3. within an object that has been constructed
 		4. function invoked with .call,.bind
 
-	
+
+Testing Objects for Properties
+	- Sometimes it is useful to check if the property of a given object exists or not. We can use the .hasOwnProperty(propname) method of objects to determine if that object has the given property name. .hasOwnProperty() returns true or false if the property is found or not.
+
+Manipulating Complex Objects
+	-  A JavaScript object is one way to handle flexible data. They allow for arbitrary combinations of strings, numbers, booleans, arrays, functions, and objects.
+	var ourMusic = [
+	  {
+	    "artist": "Daft Punk",
+	    "title": "Homework",
+	    "release_year": 1997,
+	    "formats": [ 
+	      "CD", 
+	      "Cassette", 
+	      "LP" ],
+	    "gold": true
+	  }
+	];
+
+JavaScript Object Notation
+	- JSON is a related data interchange format used to store data.
+
+
+Nesting For Loops
+	- If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays.
+	var arr = [
+		[1,2],[3,4],[5,6]
+	];
+
+	for (var i = 0; i < arr.length; i++){
+		for (var j =0; j < arr[i].length; j++){
+			console.olg(arr[i][j]);
+		}
+	}
+
+
+Regular Expressions
+	- are used to find certain words or patterns inside of strings.
+
+	Breaking down the expressions
+		- / is the start of the regular expression
+		- the is the pattern we want to match
+		- / is the end of the regular expression
+		- g means global, this causes the pattern to return all matches in the strings, not just the first one.
+		- i means that we want to ignore the case (uppercase or lowercase) when searching for the pattern.
+
+Iterare Over Arrays with Map
+	- the map method is a convenient way to iterate through arrays. 
+	- The map method will iterate through every element of the array, creating a new array with values that have been modified by the callback function, and return it. 
+
+Condense arrays with reduce
+	- The array method reduce is used to iterate through an array and condense it into one value.
+	- to use reduce you pass in a callback whose arguments are and accumulator 
+
+Filter Arrays with Filter
+	- The filter method is used to iterate through an array and filter out elements where a given condition is not true.
+	- Filter is passed a callback function which takes the current value
+	- Any array element for which the callback returns true will be kept and elements that return false will be filtered out.
+
+Sort Arrays with Sort
+	- You can use the method sort to easily sort the values in an array alphabetically or numerically
+	- sort can be passed a compare functions as a callback. The compare function should return a negative number if a should be before b, a positive number if a should be after b, or 0 if they are equal.
+
+Reverse Arrays with Reverse
+	- You can use the reverse method to revers the elements of an array.
+	- Reverse is another array method that alters the array in place, but it also returns the reversed array.
+
+Concatenate Arrays with Concat
+	- concat can be used to merge the contents of two arrays into one.
+	- concat takes an array as an argument and returns a new array with the elements of this array concatenated onto the end.
+
+Split strings with Split
+	- you can use Split method to split a string into an array.
+	- split uses the argument you pass in as a delimiter to determine which points the string should be split at.
+
+Join Strings with Join
+	- we can use join method to join each element of an array into a string separated by whichever argument you provide.

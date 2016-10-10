@@ -1,0 +1,22 @@
+PHP OOP
+
+Inheritance:
+	- when a class is defined by inheriting existing function of a parent class then it is called inheritance. Here child class will inherit all or few member functions and variables of a parent class.
+
+Public access:
+	- can access from outside the class in which it is declared
+Private access:
+	- access within the class in which it is declared
+	- can be accessed when extends is used by another class
+Protected:
+	- access within another class that implements the class in which it is declared
+	- accessible in the class in which it is declared, as well as in classes that extend that class.
+
+Class:
+	- Programmer defined data type, includes local functions as well as local data. Think of a class as a template for making many instances of the same kind of object
+Object:
+	- individual instance of the data structure defined by a class. You define a class once  and then make many objects that belong to it. Objects are also known as instance.
+
+Why use OOP:
+	- Better organization, each class can be kept in its own separate file.
+	- easier maintenance

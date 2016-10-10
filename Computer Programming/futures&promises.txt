@@ -1,0 +1,6 @@
+Future, promise,delay and deferred refer to constructs used for synchronizing program execution in some programming languages.
+
+- describe an object that acts as a proxy for a result that is initially unknown, usually because the computation of its value is incomplete.
+
+
+promises originated in functional programming and related paradigms to decouple a value(a future) from how it was computed(a promise), allowing the computation to be done more flexibly, notably by parallelizing it. 
