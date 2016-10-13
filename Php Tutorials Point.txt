@@ -12,6 +12,8 @@ Variable Types
 		- Objects: instances of programmer-defined classes, which can package up both other kinds of values and functions that are specific to the class
 Constant
 	- a constant is a name or identifier for a simple value
+	- has to be in all caps and when called has to be using self::
+	- ex: const FIRSTNAME ="Gianni"; {echo self::FIRSTNAME;} 
 Operator
 	- types of operators
 		- Arithmetic Operators
