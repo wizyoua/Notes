@@ -1,0 +1,14 @@
+- Ionic Framework - Building hybrid apps with angularjs and Ionic
+	1. Follow directions on Ionic website to set up Ionic globally on mac and then create a simple project
+	2. Learn to serve Ionic project onto browser.
+	3. Begin to understand folder structure
+		- hooks folder: has to do with cordova which we installed. Basically to get native API support for mobile support
+		- plugins folder: Ionic Plugins with cordova plugin. Depends on template to template.
+		- www folder: public html directory
+
+	4. Start off with blank template in order to fully understand Ionic
+		- Ionic CSS component docs haves the best info
+
+Jensen's Insider - Natural Directions Organic Beans only 89 cents!
+
+Jensen's Insider - Natural Directions Organic Beans only 89 cents!

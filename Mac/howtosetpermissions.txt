@@ -1,0 +1,13 @@
+Mac OS X uses permissions to restrict access to applications, files, and folders. Utilizing this security control can help protect your data from unauthorized access.
+
+
+Permissions control three types of access: reading, writing, and executing. You can mix and match any of the types to grant seven levels of access
+
+
+How to Modify Permissions with chmod
+
+1. Open the Terminal application.
+
+2. Type ls –l, and then press Return. The symbolic permissions of the files and folders in your home directory are displayed, as shown below.
+
+3. Type chmod 755 foldername, and then press Return. This changes the permissions of the folder to rwxr-xr-x.
