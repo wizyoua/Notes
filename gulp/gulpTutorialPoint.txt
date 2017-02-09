@@ -1,0 +1,15 @@
+- Overview
+	-What is gulp : task runner that uses node.js as a platform. Helps build systems automate tasks like css and js minification.
+	- uses SASS and LESS as CSS preprocessor
+	- Big speed advantage over all other task runners. 
+	- uses pure javascript code
+- Basics
+	- Build system is referred to as a collection of tasks
+	- tasks that can be handled using build system
+		- Compilation of preprocess CSS and JS
+		- Minification of files to reduce its size
+		- Concatenation of files into one
+	Preprocessors:
+		- CSS - SASS,LESS, Stylus
+		- JS - Coffeescript, Livescript, Typescript
+		- HTML - Markdown, HAML, Slim, JADE
