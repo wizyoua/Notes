@@ -13,3 +13,13 @@
 		- CSS - SASS,LESS, Stylus
 		- JS - Coffeescript, Livescript, Typescript
 		- HTML - Markdown, HAML, Slim, JADE
+- Setting up your project
+	- Src: location of pre-processed HTML source files and folders
+		- Images : contains images which are uncompressed
+		- Scripts: Contains multiple pre-processed script files
+		- Styles: Contains multiple pre-processed CSS files
+	- Build: This folder will be created automatically which contains the production files
+		- Images: Contains compressed images
+		- Scripts: single script file that will contain minified code
+		- Styles: single CSS files that contains minified code
+	- gulpfile.js
