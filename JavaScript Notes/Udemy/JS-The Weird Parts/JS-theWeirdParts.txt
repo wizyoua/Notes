@@ -1,0 +1,45 @@
+1. Intro to course
+2. Conceptual Aside
+	- Syntax Parser : a program that reads your code and determines what it does
+	- Lexical Environment : where something sits physically in the code you write 
+	- Execution Context: a wrapper to help manage the code that is running 
+
+	- Name/Value Pair: a Name which maps to a unique value
+	- Object: A collection of name value pairs
+
+
+	- The global environment and the global object
+		- Execution Context (Global)
+			- Global Object : not inside a function 
+			- outer environment : nothing at the global environment 
+	
+	- The execution context: Creation and Hoisting
+		- Execution Context is created 
+			(Creation Phase) : we have global object, 'this', Out envi., Setup memory space for variables and functions (Hoisting) before my code begins to gets executed, the JS engine has already set aside memory for all the variables and functions i created. (all variables are undefined in the creation phase)
+			(Execution Phase): we have all the stuff as the creation phase except it now runs your code code line by line. 
+
+
+	Conceptual Aside
+		- Java script and Undefined
+			- Uncaught Reference : var something was never defined so computer didn't make memory for it.
+
+	Conceptual Aside 
+		- Single Threaded: 
+		- Synchronous Execution 
+			- Synchronous: one at a time
+
+
+	Function Invocation and Execution Stack 
+		- Invocation: running a function 
+
+
+	Functions, Context and Variable Environments
+		Variable Environment: where the variables live
+
+
+	Scope, ES6 and Let
+		- Scope: where a variable is available in your code
+		- let: allows javascript engine to use block scoping
+
+	Asynchronous Callbacks 
+		- 
