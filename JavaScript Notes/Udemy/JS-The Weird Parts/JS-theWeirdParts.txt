@@ -43,3 +43,20 @@
 
 	Asynchronous Callbacks 
 		- 
+
+Chapter 3
+	Types and Javascript
+		- Dynamic Typing: You Don't tell the engine what type of data a variable holds, it figures it out while your code is running. (java or c+ uses static typing)
+
+	Primitive Types 6 types
+		- Primitive type: a type of data that represents a single value
+			- Undefined: represents a lack of existence
+			- Null: represents lack of existence 
+			- Boolean: true or false
+			- Number: floating point number(there's always some decimals)
+			- String: a sequence of characters
+			- Symbol: used in es6 (next version of JS)
+
+	Operators
+		- Operators: special function that is syntactically differently
+			- infix notation means the function operator sits between 2 parameters (3 + 4) the + is basically a function that the JS engine has.
