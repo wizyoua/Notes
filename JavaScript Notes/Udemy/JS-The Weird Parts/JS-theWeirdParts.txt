@@ -1,5 +1,6 @@
 1. Intro to course
-2. Conceptual Aside
+Chapter 2 
+	Conceptual Aside
 	- Syntax Parser : a program that reads your code and determines what it does
 	- Lexical Environment : where something sits physically in the code you write 
 	- Execution Context: a wrapper to help manage the code that is running 
@@ -60,3 +61,47 @@ Chapter 3
 	Operators
 		- Operators: special function that is syntactically differently
 			- infix notation means the function operator sits between 2 parameters (3 + 4) the + is basically a function that the JS engine has.
+
+	Operator Precedence and Associativity 
+		- Precedence: which operator function gets called first, higher precedence wins
+		- Associativity: what order operator function get called in: left to right or right to left - when operator functions have same precedence
+		
+	Coersion
+		- Coersion: Converting a value from one type to another. Javascript tries its best to find out what something should be since it is dynamically typed
+		(==) can cause unexpected issue because of coercion 
+		use (===) strict equality 
+	Exchange and Booleans
+
+	Default Values
+		- 
+	Framework Aside
+		- when loading js files it just stacks the javascript on top of eachother. You have to be careful what you name your vars because they might interfere unless the JS pulled is already minified.
+
+Chapter 4 
+	Objects and the Dot
+		- object can have:
+			* Primitive "Property"
+			* Object "property"
+			* Function "Method"
+			- object have addresses to where these properties live in our computer
+
+	Objects and Object Literals
+		- var person = {}; is the same as new Object();
+
+	Faking Namespaces
+		- Namespace : container for variables and functions
+
+	Json and Object Literals
+		- json is inspired by javascript object literal notation
+
+	Functions are Objects
+		- First Class Function: everything you can do with other types, you can do with functions
+			- function "a special type of object" can attach
+				- Primitive
+				- Object
+				- Function
+				- Name
+				- Code "invocable"
+
+
+
