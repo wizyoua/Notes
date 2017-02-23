@@ -102,6 +102,47 @@ Chapter 4
 				- Function
 				- Name
 				- Code "invocable"
+	Function Statements and Function Expressions
+		- Expression: unit of code that results in a value
+
+	Concept Aside - by value vs by reference
+		- a references a primitive value in a location of the computer memory
+			if b = a, b will point to a new space in memory and will copy the primitive value of a to that new location (called by value)
+
+		- a references a object
+			if b = a then b will point to the same address  (by reference)
+
+		Mutate: to change something
+		Immutable: can't be changed
+
+	Objects, functions and 'this'
+		- everytime a function is run it gives us a variable called this
+
+	Conceptual Aside Arrays - Collection of anything
+		- arrays can hold anything becuase of dynamic typing
+
+	Arguments and 'Spread'
+		- aguments holds all those values to pass to whatever function your are calling
+			- : the parameters you pass to a function (JS gives keyword of the same name which contains them all: )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
