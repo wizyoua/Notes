@@ -125,24 +125,29 @@ Chapter 4
 		- aguments holds all those values to pass to whatever function your are calling
 			- : the parameters you pass to a function (JS gives keyword of the same name which contains them all: )
 
+	Functional Overloading
 
 
+	Syntax Parsers
+	anticipiting what you will do
 
+	4.42 Dangerous Aside
+	Automatic semicolon insertion. Semicolons in core JS is optional
+		- if JS sees you are finishing a line and you go below to the next line it will inject automatically a semicolon. ALways put your own semicolon
 
+	4.43 Framework aside
+	Whitespace - Invisible charactyers that create literal space in your written code
 
+	4.44 Immediately invoked function expressions (iife)
+		- great tool for JS deevloper, will be used in many frameworks
 
+	4.45 IIFE and Safe Code
+		- Global Execution code -> hits object and then sees paranthesis that invokes-> new GEC for Execution context 
+		- 
 
+	4.46 Closures !!important
+		- closures are featur of JS program language, they jsut happenen. JS engine will make sure that a function you are running will always check if the varaible you have are there. when you run a function it runs the way it is supposed to.
 
-
-
-
-
-
-
-
-
-
-
-
+	4.47 Closures part2 
 
 

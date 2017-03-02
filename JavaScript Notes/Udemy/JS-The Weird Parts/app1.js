@@ -230,22 +230,120 @@ greet('john','doe','english');
 
 
 
+//4.40 don't worry about functional overloading, this pattern is easier to use library.
+function greet(firstname, lastname, language){
+	language = language || 'en';
+
+	if(language === 'en') {
+		console.log('hello'+ firstname+ ' ' + lastname);
+	}
+
+	if(language === 'es'){
+		console.log('hola' + firstname + ' '+ lastname);
+	}
+}
+
+function greetEnglish(firstname, lastname) {
+	greet(firstname,lastname,'en');
+}
+function greetEnglish(firstname, lastname) {
+	greet(firstname,lastname,'es');
+}
+
+greetEnglish('Jogn', 'Doe');
+greetSpanish('Jogn', 'Doe');
+
+
+//4.42
+function getperson() {
+	return {
+		firstname: 'Tony'
+	}
+}
+
+//undefined because look at the return line, we put the data in a new line so JS added a semicolon.
+console.log(getperson());
+
+
+
+//4.43
+
+var 
+	//comment
+	firtsname,
+	//comment
+	lastname,
+	//comment
+	language;
+
+//will work because is code is the same syntax parser will ignore whitespace
+
+var person = {
+	firstname: 'John',
+	lastname: 'Doe'
+}
 
 
 
 
+//4.44
+
+//function statement
+function greet(name){
+	console.log('Hello' + name);
+}
+
+greet('john');
+
+//using a function expression
+var greetFunc = function(name) {
+	console.log('hello' + name);
+};
+
+greetFunc('john');
+
+//using IIFE
+var greeting = function(name) {
+	console.log('hello' + name);
+}();//invokes the function immediately after created
+
+// when you want function expression rather than statement
+var firstname = 'john';
+
+(function(name) {
+	var greeting = 'hello';
+	console.log(greeting + name);
+}(firstname)); // immediately invoked function expression
+
+//Closures
+
+function greet(what) {
+	return function(name) {
+		console.log(what + ' ' + name);
+	}
+}
+
+var sayHi = greet('HI');
+sayHi('Tony');
 
 
 
+//4.47 closures part 2
+function buildFunctions(){
+	var arr=[];
+	for (i = 0; i < 3; i++) {
+		arr.push(
+			function(){
+				console.log(i);
+			}
+		)
+	}
+	return arr;
+}
 
-
-
-
-
-
-
-
-
-
-
+var fs = buildFunctions;
+fs[0]();
+fs[1]();
+fs[3]();
+//will output 3, 3 times
 
