@@ -347,3 +347,90 @@ fs[1]();
 fs[3]();
 //will output 3, 3 times
 
+
+//4.48 understanding prototype
+
+var person = {
+	firstname : 'default',
+	lastname: 'default',
+	getFullName: function () {
+		return this.firstname + ' ' + this.lastname;
+	}
+}
+
+var john = {
+	firstname : 'john',
+	lastname: 'Doe'
+}
+//don't do this ever!!!!!!!!!
+john.__proto__ = person; 
+console.log(john.getFullName());
+console.log(john.firstname);
+//this will go down protoype chain and find
+
+var jane = {
+	firstname : 'jane'
+}
+
+jane.__proto__ = person;
+console.log(jane.getFullName());
+
+//4.49 everything is objects
+
+var a = []
+a.__proto__.__proto__ = object
+
+// 4.56 using extends
+
+var jane = {
+	addy: '1111 main',
+	getFormalFullName: function(){
+		return this.lastname + ', ' + this.firstname;
+	}
+}
+
+var jim = {
+	getFirstName: function(){
+		return firstname;
+	}
+}
+_.extend(john,jane,jim); //this combines these objects this places the properties into the john property 
+
+//4.57 Constructing objects - Right way to create objects adding properties and methods
+
+function Person(firstname, lastname){
+	this.firstname = firstname;
+	this.lastname = lastname;
+}
+
+var john = new Person('John', 'Doe');
+console.log(john);
+
+
+//4.58 function constructors and .prototype - this is what you should use
+
+
+function Person(firstname, lastname){
+	this.firstname = firstname;
+	this.lastname = lastname;
+}
+Person.protoype.getFullname = function () {
+	return this.firstname + ' ' + this.lastname;	
+}
+var john = new Person('John', 'Doe');
+console.log(john);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

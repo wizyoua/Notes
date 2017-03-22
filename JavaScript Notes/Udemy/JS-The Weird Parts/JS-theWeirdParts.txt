@@ -136,18 +136,57 @@ Chapter 4
 		- if JS sees you are finishing a line and you go below to the next line it will inject automatically a semicolon. ALways put your own semicolon
 
 	4.43 Framework aside
-	Whitespace - Invisible charactyers that create literal space in your written code
+	Whitespace - Invisible characters that create literal space in your written code
 
 	4.44 Immediately invoked function expressions (iife)
-		- great tool for JS deevloper, will be used in many frameworks
+		- great tool for JS developer, will be used in many frameworks
 
 	4.45 IIFE and Safe Code
-		- Global Execution code -> hits object and then sees paranthesis that invokes-> new GEC for Execution context 
+		- Global Execution code -> hits object and then sees parenthesis that invokes-> new GEC for Execution context 
 		- 
 
 	4.46 Closures !!important
 		- closures are featur of JS program language, they jsut happenen. JS engine will make sure that a function you are running will always check if the varaible you have are there. when you run a function it runs the way it is supposed to.
 
 	4.47 Closures part2 
+
+	4.48 Understanding Protoype
+		- Objects can have properties and methods
+		 - obj.prop1 
+		 - all objects have a prototype property (property is simply a reference to an object)
+		 - objects can share all the same prototype if they want because it's just a reference
+
+	4.49 Everything is an Object (or a primitive)
+
+
+	4.56 Reflection and Extend
+		- Reflection: an object can look at itself listing and changing its properties and methods
+
+	4.57 Building Objects
+		- Function Constructors 'new' and the history of JS
+		- function constructors are just functions
+		- Function constructor: a normal function that is used to construct objects - the 'this' variable points a new empty object, and that object is returned from the function automatically
+
+	4.58 Function constructors and prototypes
+		- function - a special type of object , is invocable, and every function has a prototype property (as soon as you use new operator) every time you use new you are basically 
+		- In good code, methods are usually in the prototype while properties are mentioned early on
+		- its better to put methods on prototype since it'll only be one.
+
+	4.59 Dangerous Aside 'new' and functions
+		- Best Convention: any function that intends to be function constructor use a capital letter for the name in the function
+	
+	4.60 Conceptual Aside Built in function constructors
+		- 
+
+
+
+
+
+
+
+
+
+
+
 
 
