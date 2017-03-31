@@ -146,23 +146,39 @@ Chapter 4
 		- 
 
 	4.46 Closures !!important
-		- closures are featur of JS program language, they jsut happenen. JS engine will make sure that a function you are running will always check if the varaible you have are there. when you run a function it runs the way it is supposed to.
+		- closures are feature of JS program language, they just happen. JS engine will make sure that a function you are running will always check if the variable you have are there. when you run a function it runs the way it is supposed to.
 
-	4.47 Closures part2 
+	4.47 Closures part2
 
-	4.48 Understanding Protoype
+	4.48 Function Factories
+		- a function that returns or makes other things for me
+
+	4.49 Closures and Callbacks
+		- Callback function: function you give to another function to be run when the other function is finished 
+	4.50 Call, Apply, Bind
+		- all three of these have to do with the 'this' variable
+			- .bind creates a copy
+			- .call lets me decide what the 'this' keyword should point to
+			- .apply exact same thing as call but cannot pass arguments, it only takes array of parameters
+
+	4.51 Functional Programming
+		- 
+
+Chapter 5
+	5.54 Understanding Prototype
 		- Objects can have properties and methods
 		 - obj.prop1 
 		 - all objects have a prototype property (property is simply a reference to an object)
 		 - objects can share all the same prototype if they want because it's just a reference
 
-	4.49 Everything is an Object (or a primitive)
+	5.55 Everything is an Object (or a primitive)
 
 
-	4.56 Reflection and Extend
+	5.56 Reflection and Extend
 		- Reflection: an object can look at itself listing and changing its properties and methods
 
-	4.57 Building Objects
+Chapter 6 
+	6.67 Building Objects
 		- Function Constructors 'new' and the history of JS
 		- function constructors are just functions
 		- Function constructor: a normal function that is used to construct objects - the 'this' variable points a new empty object, and that object is returned from the function automatically

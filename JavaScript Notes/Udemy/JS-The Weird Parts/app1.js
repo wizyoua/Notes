@@ -344,11 +344,92 @@ function buildFunctions(){
 var fs = buildFunctions;
 fs[0]();
 fs[1]();
-fs[3]();
+fs[2]();
 //will output 3, 3 times
 
+//4.48 function factory - Extremely useful
+function makeGreeting(lanugage){
 
-//4.48 understanding prototype
+	return function(firstname, lastname) {
+		if(language === 'en'){
+			console.log("hi");
+		}
+		if (language === 'es'){
+			console.log("hi");
+		}
+	}
+}
+
+var greetEnglish = makeGreeting('en');
+
+greetEnglish('john', 'doe');
+
+
+//4.49 Closures and Callbacks
+function sayHi(){
+	 var greeting = 'Hi!';
+
+	 setTimeout(function(){
+	 	console.log(greeting);
+	 }, 3000); 
+}
+
+sayHi();
+
+//Callbackfunction
+function tellme(callback){
+	var a = 1000;
+	callback();
+}
+
+tellme(function(){
+	console.log('all done');
+});
+
+
+//4.50 call, apply, bind
+
+var person = {
+	firstname: 'john',
+	lastname: 'doe',
+	getName : function (){
+		var fullname = this.firstname + ' ' + this.lastname;
+		return fullname;
+	}
+}
+
+var logName = function(lang1, lang2){
+	console.log('logged' : this.getName());
+}
+var logName = logName.bind(person);
+logName();
+
+
+
+
+//4.51 Functional Programming
+	function mapForEach(arr, fn){
+		var newArr = [];
+
+		for (var i=0; i < arr.length; i++){
+			newarr.push(
+				fn(arr[i])
+			)
+		};
+		return newarr;
+	}
+
+
+
+	var arr1 = [1,2,3];
+	console.log(arr1);
+
+	var arr2 = mapForEach(arr1, function(item){
+		return item * 2;
+	});
+	console.log(arr2);
+	
+//5. understanding prototype
 
 var person = {
 	firstname : 'default',
@@ -414,6 +495,7 @@ function Person(firstname, lastname){
 	this.firstname = firstname;
 	this.lastname = lastname;
 }
+//where the protoype point chains
 Person.protoype.getFullname = function () {
 	return this.firstname + ' ' + this.lastname;	
 }
@@ -422,7 +504,13 @@ console.log(john);
 
 
 
+//6.60 Built in Function Constructors 
+//this is the power of prototypal inheritence
+String.protoype.isLengthGreaterThan = function(limit){
+	return this.length > limit;
+}
 
+console.log("John".isLengthGreaterThan(3));
 
 
 
