@@ -9,13 +9,18 @@ function b(){
 	console.log("called b!");
 }
 
+/////////////////
+//Chapter 3
+/////////////////
 
 //chapter 3 Lecture 25
 
 console.log(1 < 2 < 3); //true
 
 
-
+/////////////////
+//Chapter 4
+/////////////////
 //chapter 4 objects
 
 //4,30 - not preffered way to create object
@@ -428,7 +433,10 @@ logName();
 		return item * 2;
 	});
 	console.log(arr2);
-	
+
+/////////////////
+//Chapter 5
+/////////////////
 //5. understanding prototype
 
 var person = {
@@ -512,13 +520,74 @@ String.protoype.isLengthGreaterThan = function(limit){
 
 console.log("John".isLengthGreaterThan(3));
 
+Number.protoype.isPositive = function () {
+	return this > 0;
+}
+
+var a = new Number(3);
+a.isPositive()
+
+/////////////////
+//Chapter 6
+/////////////////
+
+//6.61 Why we shouldn't use primitive numbers with function constructors
+//by using built in function cunstructors with primitives, use literals or primitive values
+
+//6.63 Object.create and Pure Prototypal 
+//What if browser does not Object.create built in : polyfill
+if(!Object.create){
+	Object.create = function(o){
+		if(arguments.length > 1) {
+			throw new Error('Object.Create Implementation')
+		}
+		function F(){
+			F.protoype = o;
+			return new F();
+		}
+	}
+}
+
+var person = {
+	firstname : 'default',
+	lastmame : 'default',
+	greet : function(){
+		return 'hi' + this.firstname;
+	}
+}
+//lets build an object
+var john = Object.create(person);
+john.firstname = 'John';
+john.lastname = 'Doe';
+console.log(john);
 
 
+/////////////////
+//Chapter 7
+/////////////////
 
+//7.65 Initialization 
+var people = [
+	{
+		firstname: 'john',
+		lastname: 'Doe',
+		addresses: [
+			'111 main street'
+		]
+	}, 
+	{
+		firstname: 'john',
+		lastname: 'Doe',
+		addresses: [
+			'111 main street'
+		],
+		greet: function(){
+			return 'Hello';
+		}
+	}
+]
 
-
-
-
+//7.66 typepf, instanceof, and figruring out what something is
 
 
 

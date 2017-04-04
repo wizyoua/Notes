@@ -178,24 +178,44 @@ Chapter 5
 		- Reflection: an object can look at itself listing and changing its properties and methods
 
 Chapter 6 
-	6.67 Building Objects
+	6.57 Building Objects
 		- Function Constructors 'new' and the history of JS
 		- function constructors are just functions
 		- Function constructor: a normal function that is used to construct objects - the 'this' variable points a new empty object, and that object is returned from the function automatically
 
-	4.58 Function constructors and prototypes
+	6.58 Function constructors and prototypes
 		- function - a special type of object , is invocable, and every function has a prototype property (as soon as you use new operator) every time you use new you are basically 
 		- In good code, methods are usually in the prototype while properties are mentioned early on
 		- its better to put methods on prototype since it'll only be one.
 
-	4.59 Dangerous Aside 'new' and functions
+	6.59 Dangerous Aside 'new' and functions
 		- Best Convention: any function that intends to be function constructor use a capital letter for the name in the function
 	
-	4.60 Conceptual Aside Built in function constructors
-		- 
+	6.60 Conceptual Aside Built in function constructors
+		- We are looking at built in function constructors in order 
 
+	6.61 Why you shouldn't use built in constructors with primitives
+		- We 
 
+	6.62 Dangerous Aside - Arrays and for ..in
+		-	in the case of arrays don't use for in, use the standard for loop with limit
 
+	6.63 Object.Create and Pure Prototypical Inheritance 
+		- in javascript we should embrace the prototypal inheritance 
+		- you simply create objects and create newer objects from those objects
+		- What happens when you are working on project with legacy browser or project
+			- Polyfill: Code that adds a feature which the engine may lack
+
+	6.64 ES6 and Classes
+		- a class in javascript is just syntactic sugar - its not changing anything, 
+
+Chapter 7
+	7.65 Odds and Ends	
+		- Initializing json to begin project
+
+	7.66 typeof, instanceof, and figuring out what something is
+		- typeof tells us what type of thing it is
+		- instanceof it tells us if any objects in prototype chain is found it comes back true
 
 
 
