@@ -217,8 +217,9 @@ Chapter 7
 		- typeof tells us what type of thing it is
 		- instanceof it tells us if any objects in prototype chain is found it comes back true
 
-
-
+	7.67 Strict Mode 
+		- Be more regimented and can help prevent errors under certain circumstances
+		- "use strict"; - on top of file or function
 
 
 

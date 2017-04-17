@@ -589,5 +589,19 @@ var people = [
 
 //7.66 typepf, instanceof, and figruring out what something is
 
+//7.67 Strict
+function logNewPerson() {
+	//Javascript engine was strict about everything, it is an extra feature. Not every egine agree on same strict rules. Can be useful on top of files
+	//and function. 
+	"use strict";
 
+	var person2;
+	persom = {};
+	console.log(persom2);
+}
+
+var person;
+persom = {};
+console.log(persom);
+logNewPerson();
 
