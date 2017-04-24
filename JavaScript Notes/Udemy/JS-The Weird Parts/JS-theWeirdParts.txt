@@ -221,6 +221,14 @@ Chapter 7
 		- Be more regimented and can help prevent errors under certain circumstances
 		- "use strict"; - on top of file or function
 
+	7.69 Learning from other's good code
+		- Open source education
+
+Chapter 9
+	9.73 Greetr
+
+	Structuring Safe Code
+
 
 
 

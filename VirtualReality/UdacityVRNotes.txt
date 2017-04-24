@@ -1,0 +1,21 @@
+Chapter 1
+	Principles of VR
+		- Virtual Reality is all about creating a synthetic virtual world. It takes software and hardware to achieve the ideal vr scenario 
+	Optics
+		- 
+	Why do VR headsets have lenses
+		- Allows you to focus on a display close to your eye
+	Displays
+		- HD Oled Displays are sometimes embedded 
+		- These displays need high resolution 
+		- We need about 16000 X 16000 pixels to be completely sharp to the eye
+		- Low persistence, display is only showing you a moving slice of the VR world. LP reduces and mostly eliminates motion blur.
+		- behind every VR headset will have HD display with LP
+	Tracking
+		- all major VR systems really on an IMU, enables high speed rotational tracking. IMU can't tell where an object is located, modern VR systems employ a variety of techniques like cameras or lasers. There is no universal accepted technique 
+	Challenges
+		- Biggest challenges is simulator sickness. VR developers have the power to fix it. What causes a mismatch is the difference between your body's sense of motion and that data your brain receives.
+
+	History of VR
+		- Begins with 3d display tech. 
+
