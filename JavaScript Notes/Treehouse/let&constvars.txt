@@ -1,0 +1,11 @@
+const - used for values you never want reassigning
+
+
+const pi = 3.14;
+if somebody tried to change the pi var it will give error
+
+let - used for values you want to reassign
+
+var - usage should be avoided
+
+

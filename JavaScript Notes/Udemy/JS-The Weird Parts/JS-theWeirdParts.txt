@@ -1,4 +1,4 @@
-1. Intro to course
+41. Intro to course
 Chapter 2 
 	Conceptual Aside
 	- Syntax Parser : a program that reads your code and determines what it does
@@ -227,7 +227,10 @@ Chapter 7
 Chapter 9
 	9.73 Greetr
 
-	Structuring Safe Code
+		- Structuring Safe Code
+
+	9.76 Properties and Chainable methods
+		- 
 
 
 
