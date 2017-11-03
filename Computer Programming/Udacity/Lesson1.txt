@@ -14,4 +14,42 @@ Lesson 1
 	- why can't we use english or spanish to program: because Ambiguity 
 	
 	Grammar
-	- 
+	- Sentence -> Subject Verb Object
+	- Subject -> noun
+	- Object -> noun
+	- Verb -> Eat
+	- Verb -> Like
+	- Noun -> I
+	- Noun -> Python
+	- Noun ->Cookies
+
+
+	Backus-Naur Form
+	- purpose is to be able to describe a language simple and precise
+		<non-terminal>->replacement
+			Sentence
+			subject->Noun->I
+			verb->verb->Like
+			object->object->Noun->Python
+
+			Derivation : starting from non-terminal, follow rules to arrive to only terminals
+
+	Python Expressions for Arithmetic Expressions
+		- Expression is something that has value
+			- Expression -> Expression Operator Expression
+			- Expression -> Number 
+			- operator -> +
+			- operator -> *
+			- Number -> 0,1,...
+			- Expression -> (expression)
+
+			Final : 1 + 1
+
+	Variables 
+		- Assignment Statement: Name = Expression (has to start with a letter)
+		- #comments 		
+		- Variables can vary 
+			- we can change value after assignment 
+			
+
+
