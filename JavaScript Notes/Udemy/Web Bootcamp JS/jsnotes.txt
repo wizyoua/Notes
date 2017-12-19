@@ -1,4 +1,4 @@
- Javascript Functions
+Javascript Functions
 
  - Understand why we use functions
  	- Lets us wrap bits of code up into reusable packages. They are one of the building blocks of JS
@@ -66,4 +66,36 @@ JavaScript Scope
 	- When we create a function we create its own scope
 	- When we define something outside the function we could still access it inside the function - but the opposite is not true
 
-	
+
+Higher Order Functions
+	- Take a function as an argument or return a function
+
+	function sing() {
+		console.log("twinkle");
+	}
+
+	sing()
+
+	//will call it every second - will give a number so you can stop the interval
+	setInterval(sing, 1000);
+
+Javascript Arrays
+	- Arrays let us group data together in lists. Array index always starts at 0
+
+	var friends = ["g","s","b"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
