@@ -35,7 +35,7 @@ Javascript Functions
 	}
 
 
-	Functions Problem Set
+	*** Functions Problem Set
 
 	function isEven (num) {
 		return num % 2 === 0; 
@@ -79,13 +79,110 @@ Higher Order Functions
 	//will call it every second - will give a number so you can stop the interval
 	setInterval(sing, 1000);
 
-Javascript Arrays
+JavaScript Arrays
 	- Arrays let us group data together in lists. Array index always starts at 0
 
 	var friends = ["g","s","b"]
 
 
+	- Array Methods - Most popular ones
 
+		1. push/pop - use push to add to the end of an array. Use Pop to remove the last item of an array
+		
+		2. Shift/unshift - Unshift to add to the front of an array. Shift to remove the first item in an array. Opposites of push and pop
+
+		3. indexOf() - to find the index of an item in an array
+
+		4. slice() - to copy part of an array
+
+	- Array Iteration
+		1. For Loop to loop over an array using a for loop, we need to make use of the array's length property.
+
+		var colors= ["red", "blue", "green"];
+
+		for(var i = 0; i < colors.length; i++) {
+		console.log(colors[i]);
+		}
+
+		2. forEach - provides an easy built in way of iterating over an array (Most Common)
+
+		var colors= ["red", "blue", "green"];
+
+		colors.forEach(function(color){
+			console.log(color);
+		})
+
+
+		*** Arrays Problem Set
+
+
+		1. 
+			function printReverse(arr) {
+				for(var i = arr.length -1; i >=0; i--) {
+				console.log(arr[i]);
+				}
+			}
+
+			printReverse([3,6,2,5]);
+
+		2. 
+
+			isUniform([1,1,1,1,1]);
+
+			function isUniform(arr){
+				var firstItem = arr[0];
+				for(i = 1; i < arr.length; i++){
+					if(arr[i] !== firstItem){
+					return false;
+					}
+				}
+				return true;
+			}
+
+		3. 
+			function sumArray(arr){
+				var total = 0;
+				arr.forEach(function(e){
+					total += e;
+				});
+				return total;
+
+			}
+
+		4. 
+			function max(arr){
+				var max = arr[0];
+				for(var i = 1 ; i<arr.length; i++) {
+					if(arr[i]> max) {
+						max = arr[i];
+					}
+				}
+			}
+
+
+	Building our own forEach (advanced but good learning)
+
+	function myForEach(arr, func){
+		//loop through array
+		for(var i=0; i< arr.length; i++) {
+			//call func for each item
+			func(arr[i]);
+		}
+	}
+	var colors = ["red","green","yellow"]
+	
+	//Anonymous function
+	myForEach(colors,function(color){
+		console.log(color);
+	});
+
+	//to make this like a forEach we have to add a method
+	
+	Array.prototype.myForEach = function(func){
+		for(var i = 0; i < this.length; i++){
+			func(this[i]);
+		}
+	}
 
 
 
