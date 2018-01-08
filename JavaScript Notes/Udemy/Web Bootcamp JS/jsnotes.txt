@@ -177,7 +177,7 @@ JavaScript Arrays
 	});
 
 	//to make this like a forEach we have to add a method
-	
+
 	Array.prototype.myForEach = function(func){
 		for(var i = 0; i < this.length; i++){
 			func(this[i]);
@@ -185,12 +185,88 @@ JavaScript Arrays
 	}
 
 
+JavaScript Objects
+
+	- Nested Objects
+		This is an array of posts with objects within the array
+		var posts = [
+			{
+				title: "Cats are whatevs",
+				author: "Gianni",
+				comments: ["Awesome" , "Terrible"]
+			},
+			{
+				title: "cats are cool",
+				author: "Cat Lover",
+				comments: ["whack" , "Terrible"]
+			}
+		]
+
+
+		Problem 1
+
+		Figure out which is valid
+		
+		var someObject = {};
+
+		// choose true or false from below
+
+		someObject._name = "name"; //True
+		someObject.age = 6; //True
+		
+		var prop = "color";
+		someObject[prop] = "red" //True
+
+		someObject.123 = true; //False
+
+
+		Problem 2
+
+		Retrieve Malfoy from object
+
+		var someObject = {
+			friends: [
+				{name: "malfoy"},
+				{name: "name"},
+				{name: "name"}
+			],
+			color: "blue",
+			isEvil: true
+		};
+
+
+		someObject.friends[0].name
 
 
 
+	- Movie Database Exercise
 
+		var movArray = [
+			{
+				title: "movie1",
+				hasWatched: true, 
+				rating: 5
+			},
+			{
+				title: "movie2",
+				hasWatched: false, 
+				rating: 4.5
+			}
+		]
 
+		//loop through
 
+		movArray.forEach(function(movie){
+			var result = "You have ";
+			if(movie.hasWatched) {
+				result += "watched ";
+			}else {
+				result += "not seen ";
+			}
+			result += "\"" + movie.title + "\" - ";
+			result += movie.rating + " stars";
+			console.log(result);
+		});
 
 
 
