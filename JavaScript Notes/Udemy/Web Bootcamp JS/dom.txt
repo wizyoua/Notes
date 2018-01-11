@@ -1,0 +1,13 @@
+The Dom
+	
+	- Defining the DOM
+		* Document Object Model is the interface between your JS and HTML+CSS
+		* The browswer turns every HTML tag into a JS object that we can manipulate
+		* Everything is stored inside the document object
+
+
+Select and Manipulate
+	
+	- SELECT an element and then MANIPULATE
+	
+
