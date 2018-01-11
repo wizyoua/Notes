@@ -1,0 +1,125 @@
+Week 1
+
+Non relational database- no tables  KEY           VALUE
+Json : javascript object notation   {“name”: “document”}
+{“a”: 4,”b”:5,”c”,7}   {a:6, b:7, fruit: [“apple”, “pear”, “banana”]}
+
+
+schemaless: 
+{a:3,b:7}a
+{a:7,b:5,c:6}
+
+
+Mongodb relative to relational
+	
+does not support joints not scalable
+does not support transactions because difficult to support transactions in a system that is horizontally scalable 
+
+Asynchronous vs synchronous 
+
+Handling post request
+* app.use(express.bodyParser())—middleware for express – parse the body
+
+
+mongodb schema???
+
+ INTRO TO NPM
+
+Json revisited 
+[] arrays- list of thinga
+dictionaries- associate maps
+{keyword:value,}
+{name:”fodo”, city:”value”, tenats[{dictionary},{dictionary}]}
+
+
+
+{“address”: {“street_address” : “23 Elm Drive”, “city”:”Palo Alto”,“state”:”California”, “zipcode”:”94305”}}
+
+Modeling our blog in Mongo
+
+Posts collection
+	{title:”free online class”,body:”…”, author:”gianni”,date:”…”, comments:[{name:”joe bidon”, email:”joe@gmail.gov”,comment:”…”},
+{………}],
+tags:[“cycling”,”education”,”startups”]}
+
+Authors collection
+{_id:”evildean”, password:”……”}
+
+Intro to schema design
+To embed or not to embed
+16mb data allowed per document/object: {}
+
+Hello world using express
+Var express = require(‘express’),
+App = express();
+
+App.get(‘/’, function (req, res) {
+	Res.send(“Hello, World!”);
+});
+App.get(‘*’, function (req, res) {
+	Res.send(“Page not found, 404 error”);
+});
+
+app.listen(8080);
+
+HELLO WORLD USING EXPRESS AND SWIG
+Var express = require(‘express’),
+App = express(),
+Cons = require(‘consolidate’);
+
+App.engine(‘html’, cons.swig);
+App.set(‘view engine’, ‘html’);
+App.set(‘views’, __dirname + “/views”);
+
+App.get(‘/’, function (req, res) {
+	Res.render(‘hello’, {‘name’: ‘swig’});
+});
+App.get(‘*’, function (req, res) {
+	Res.send(“Page not found, 404 error”);
+});
+
+app.listen(8080);
+
+make directory for html pages. views
+
+
+
+
+HELLO WORLD USING EXPRESS SWIG AND MONGODB
+
+Var express = require(‘express’),
+App = express(),
+Cons = require(‘consolidate’),
+MongoClient = require(‘mongodb’).MongoClient,
+Server = require(‘mongodb’).Server;
+
+
+
+App.engine(‘html’, cons.swig);
+App.set(‘view engine’, ‘html’);
+App.set(‘views’, __dirname + “/views”);
+
+Var mongoclient = new MongoClient(new Server(‘localhost’, 27017,
+{‘native_parser’: true}));
+
+Var db = mongoclient.db(‘course’);
+
+App.get(‘/’, function (req, res) {	
+Db.collection(‘hello_mongo_express’).findOne({}, function(err, doc){
+	Res.render(‘hello’, doc);
+});
+});
+App.get(‘*’, function (req, res) {
+	Res.send(“Page not found, 404 error”);
+});
+
+mongoclient.open(function(err, mongoclient){
+ 	if (err) throw err;
+	app.listen(8080);
+	console.log(“express server 8080”);	
+});
+
+
+EXPRESS : HANDLING GET REQUESTS
+url parameters: 
+get variables: /:name puts the get request into name and if loading page :8080 will result in cannot get / because you have to specify the url to :8080/gio.
