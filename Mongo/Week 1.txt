@@ -1,6 +1,6 @@
 Week 1
 
-added
+modified
 Non relational database- no tables  KEY           VALUE
 Json : javascript object notation   {“name”: “document”}
 {“a”: 4,”b”:5,”c”,7}   {a:6, b:7, fruit: [“apple”, “pear”, “banana”]}
