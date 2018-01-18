@@ -1,8 +1,5 @@
 Week 1
 
-modified
-and added something
-
 
 Non relational database- no tables  KEY           VALUE
 Json : javascript object notation   {“name”: “document”}
