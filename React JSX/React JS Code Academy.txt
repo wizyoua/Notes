@@ -26,3 +26,15 @@ Part 1
 		- Nested JSX expressions can be saved as variables, passed to functions. just like non nested expressions can. 
 
 	- JSX outer Elements
+		- JSX expression must have only one outermost element. 
+
+	- ReactDOM.render()
+		- ReactDome is the name of the JavaScript library. it contains several react specific methods, all of which deal with the DOM some way or another. 
+		- ReactDOM.render() is the most common way to render JSX. It takes a JSX expression, creates a corresponding tree of Dom nodes, and adds that tree to the DOM. That is the way to make a JSX expression appear on screen. 
+		_ ReactDOM.render makes its first argument appear on screen, but where on the screen should the first argument appear? the first argument is appended to whatever element is selected by the second argument.
+
+	- Passing a variable to ReactDOM.render()
+		- ReactDOm.render first argument should evaluate to a JSX expression it doesn't have to literally be the JSX expression
+		- The first argument could also be a variable so long it evaluates to a JSX expression
+
+	
