@@ -1,1 +1,28 @@
 React JS Code Academy
+
+Part 1
+
+	- What is JSX?
+
+		- JSX is a syntax extension for Javascript. It was written to be used React. JSX code looks a lot like HTML/
+		- Syntax extension? JSX is not valid JavaScipt, browser can't read it 
+		- if a file contains jSX code then that will have to be compiled. Before it reach a web browser, a JSX compiler will translate any JSX into regular JavaScript. 
+
+	- JSX Elements
+		- <h1>Hello world</h1> - is exactly HTML except found in a javascript file. 
+
+	- JSX and their surroundings
+
+		- JSX element can be saved in a variable, passed to a function stored in an object or array.
+
+	- Attributes in JSX
+		-JSX elements can have attributes like html can
+		- JSX att is written using html like syntax: my-attribute-name="my-att-value"
+
+
+	- Nested JSX
+		- You can nest JSX elements inside of other JSX elements just like in HTML.
+		- if a JSX expression takes up more than one line, then you must wrap the multi line JSX expression in parenthesis
+		- Nested JSX expressions can be saved as variables, passed to functions. just like non nested expressions can. 
+
+	- JSX outer Elements
