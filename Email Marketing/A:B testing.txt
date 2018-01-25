@@ -12,14 +12,19 @@ Getting Started with A/B testing
 
 	- Rules of A/B testing
 		- Hypothesis - what are we trying to prove
-		- One variable - test 1 var whike everything else stays constant.
+		- One variable - test 1 var while everything else stays constant.
 		- Clear Metric - Which group wins
 		- Volume and Statistical Significance 
 		- Groups selected randomly - mailchimp has cool random feature
 		- Always test but use Common sense
 		- Documentation - make a blog post about it and feed your channel too
 
+	- Do not send email until
+		- sent a test email 
+		- checked them in different browsers and devices
+		- checked all links are working
+		- checked spelling and grammar
 
-Running A/B test on mailchimp 
-
-	- 
+	- Compare open rate, rate click rate and bounce rate with the industry 
+	- Be aware of customers reading it on their mobile devices
+	
