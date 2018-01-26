@@ -44,4 +44,21 @@ Part 1
 
 	- class vs className
 		- in JSX, instead of class we use className. because class is reserved in JS so can't use in JSX
-		
+
+	- Self-Closing Tags
+		- in JSX you have to remember to close the html so if you use html elements that don't have closing tags like <br> you have to use backslash <br />
+
+	- JavaScript in your jsx in your JS
+		- any code between tags in JSX will be interpreted as HTML. {} curly braces will be used to input JS in between 
+		- <h1>{2+3}</h1> will actually be 5 since the brackets allow JSX to read it as normal JS
+
+	- Variables in JSX
+		- when you inject JS into JSX, its part of the same environment, we can access vars while inside of a JSX expression, even if they were declared outside. 
+
+	- Variable attributes in JSX
+		- it's common to use variables to set attributes
+
+	- Event Listeners in JSX
+		- JSX elements can have event listeners, just like HTML can. Programming in react will mean that we are constantly working with event listeners. Create an event listener by giving a JSX element a special attribute
+		- event listeners attribute value should be a function
+		- JSX event listeners camel case
