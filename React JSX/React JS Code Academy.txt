@@ -42,4 +42,6 @@ Part 1
 		- That means if you render the exact same thing twice in a row, the second render will do nothing. 
 		- ONly updated the necessary ODM elements is a large part of what makes React so successful. React accomplishes this due to virtual DOM
 
-
+	- class vs className
+		- in JSX, instead of class we use className. because class is reserved in JS so can't use in JSX
+		
