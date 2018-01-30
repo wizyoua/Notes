@@ -62,3 +62,46 @@ Part 1
 		- JSX elements can have event listeners, just like HTML can. Programming in react will mean that we are constantly working with event listeners. Create an event listener by giving a JSX element a special attribute
 		- event listeners attribute value should be a function
 		- JSX event listeners camel case
+
+	- JSX Conditionals: if statements that don't work
+		- you can not inject an if statement into a JSX expression. 
+		- The reason is because how JSX is compiled
+
+	- JSX statements that do work
+		- we can write if statements and not inject it into jsx
+		- if (user.age >= Age) {
+			message = (
+				<h1>
+					Hey check out this beverage
+				</h1>
+			);
+		}else {
+			message = (
+				<h1>
+					Hey check out this soda
+				</h1>
+			);
+		}
+
+	- JSX Conditionals: The Ternary Operator 
+		- Ternary is a compact way to write conditions in JS
+		- You write:      x ? y : z     - where x,y and z are all JS expressions. When code is executed, x is evaluated as either truthy or falsy
+
+		example:  {age >= drinkingAge ? 'Buy Drink' : 'Do teen stuff'}
+
+		in the above if age i greater than or equal to drinkingage then headline will equal the first expression if not then the second one. 
+
+
+	- JSX Conditionals: &&
+		- && is not React specific, but it shows up in React surprisingly often 
+		- && works best in conditionals that will sometimes do an action, but other times do nothing at all. 
+
+		
+
+
+
+
+
+
+
+
