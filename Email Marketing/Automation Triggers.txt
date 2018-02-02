@@ -1,0 +1,46 @@
+Automation Triggers
+
+	- Mailchimp  automation allows to send email when triggered by a subscriber's activity 
+	
+	- A trigger is the action that starts an automation
+
+
+Available automation triggers 
+
+ 	- Sent Campaign - triggers an email that sends to subscribers who received a specific campaign 
+
+ 	- Opened Campaign - Triggers an email that sends after a subscriber opens a specific campaign 
+
+ 	- Not open Campaign - Triggers an email that sends to subscribers who do not open a specific campaign 
+
+ 	- Clicked campaign - Triggers an email that sends after a subscriber clicks any link in a specific campaign
+
+ 	- Not clicked campaign - Triggers an email that sends when a subscriber does not click any link in a specific campaign
+
+ 	- Specific link in campaign clicked - Triggers an email that sends when a subscriber clicks on a specific link in a specific campaign 
+
+ List Management - These triggers help you target subscribers who signed up for your Mailchimp list, or whose list data has changed recently 
+
+ 	 Manual Add - Triggers an email that sends after you manually add a subscriber to your automation.
+
+ 	 Signup - Triggers an email that send when a subscriber signs up for or is imported to your list
+
+ 	 Changed list field to value - Triggers an email that sends when a subscriber's list field changes to a specific value.
+
+ 	 Joins list group - Triggers an email that sends after a subscriber joins a group
+
+ 	 Leaves list group - Triggers an email that sends after a subscriber leaves a group.
+
+
+ Workflow Activity - These triggers help you target subscribers who are already in the queue of your automation series 
+
+ 	- Previous email sent - Triggers an email that sends after a subscriber receives the previous automated email in your series
+
+
+ 	- Previous email opened - Triggers an email that sends after a subscriber opens the previous 
+
+ 	- Previous email not opened - Triggers an email that sends when a subscriber does not open the previous automated email in your series
+
+
+
+ 	
