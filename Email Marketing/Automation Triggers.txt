@@ -41,6 +41,13 @@ Available automation triggers
 
  	- Previous email not opened - Triggers an email that sends when a subscriber does not open the previous automated email in your series
 
+ 	- Previous email clicked - Triggered an email that sends after a subscriber clicks any link in the previous automated email in your series. 
 
+ 	- Previous email not clicked - triggers an email that sends when a subscriber does not click any link in the previous automated email in your series 
 
+ 	- specific link in the previous email clicked - Triggers an email that sends after a subscriber clicks on a specific link in the previous automated email in your series.
  	
+
+
+
+
