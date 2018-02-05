@@ -46,8 +46,20 @@ Available automation triggers
  	- Previous email not clicked - triggers an email that sends when a subscriber does not click any link in the previous automated email in your series 
 
  	- specific link in the previous email clicked - Triggers an email that sends after a subscriber clicks on a specific link in the previous automated email in your series.
- 	
 
+E-Commerce - These triggers help you target customers form your connected e commerce platform. 
+
+	- Purchase any product - Triggers an email that sends after a customer purchases any product from your store.
+
+	- Purchase specific product - Triggers an email that sends after a customer purchases a specific product from your store 
+
+	- Purchase product from category - Triggers an email that sends after a customer purchases a product from a specific product form your 
+
+	- Not purchased any product - Triggers an email that targets customers who already bought something from your online store, but haven't made a second purchase yet. 
+
+	- Abandoned Cart - Triggers an email that sends when a logged in customer abandons a cart or checkout in your store. This trigger can only be used as a part of an abandoned cart automation.
+
+	- Email Re-targeting - Triggers an email that sends after a subscriber click to your store from a Mailchimp email campaign to view a product. This trigger can only be used as part of a product re targeting email. 
 
 
 
