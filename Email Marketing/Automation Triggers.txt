@@ -1,4 +1,4 @@
-Automation Triggers
+Automation Triggers - Mailchimp
 
 	- Mailchimp  automation allows to send email when triggered by a subscriber's activity 
 	

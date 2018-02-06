@@ -1,0 +1,51 @@
+How Marketing Automation Works - Mailchimp
+
+	- automations are triggered when specific people meet the pre-defined criteria you set. 
+	
+	- Mailchimp offers a number of automation types with built-in triggers for common activities 
+
+	- Once you've chosen automation, added content and set your sending criteria, MC will manage your subscriber queue and email sends. 
+
+	- A person will continue receiving email in the sequence unless removed from automation.
+
+
+Connect with new contacts
+
+	- Introduce yourself. Welcome your new subscriber with a single email to help them get to know your company. 
+
+	- Happy Birthday - Create an automation, set it to send anually and MC takes care of the rest.
+
+	- Send educational and on boarding series
+
+
+Sell More Stuff
+
+	- Recover abandoned carts - Reach out to customers who navigate away from their online shopping cart without completing a purchase
+
+	- Follow up on purchases - Ask for product feedback. send a quick survey, or provide customers with helpful information after they buy a specific product or make a purchase from a specific product category. 
+
+	- Get more out of order notifications - after a customer makes a purchase from your store, automatically send them an invoice, shipping confirmation, and other transactional notification messages. 
+
+	Boost Customer Loyalty
+
+		- Thank First Time customers - Reach out to brand new customers who've just made their first purchase from your store to thank them for their business or offer a discount to encourage them to shop.
+
+		- Reward your best customers - Show appreciation fro your most loyal customer or biggest spenders by sending them special offers
+
+		- Respond to subscriber updates - Automatically send an email to subscribers who join or leave a group in your list. 
+
+	Bring People Back 
+
+		- Win back lapsed customers - Create and email or series of emails to encourage lapsed customers return to your store. Showcase latest products to customers who haven't made a purchase in a while. 
+
+		- Improve email engagement - Automatically reach back out to subscribers who don't open or click a link within one of your campaigns. Using post-sending actions we can update the merge fields, move those contacts to a different interest group, or remove from list completely. 
+
+
+	Before You Start
+
+		- Have you connected your store: Once connected you'll be able to put our powerful marketing automation tools to work.
+
+		- WHen should your emails send: If you are not sure how to pace content, experiment sending at different times or in different intervals. 
+
+
+
