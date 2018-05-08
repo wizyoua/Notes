@@ -55,18 +55,165 @@ Functions and Conditional Statements
 	greet('Bob');
 
 
+	$num = 10;
+
+	if($num == 10){
+		echo 'Correct';
+	}
+
+	$num2 = 50;
+	if($num2 == 50 || $num2 == 40){
+		echo 'correct';
+	}
 
 
 
+Section 3
+
+OOP Overview	
+	
+	what is oop - is a programming language model organized around "object" rather than "actions" and "data" rather than "logic"
+
+	oop advantages 
+	- code reuse
+	- ecapsulation
+	- design benefits
+	- software maintenance
+	
+	Basic syntax 
+
+	Class User {
+		public $someProperty;
+		public function someFunction(){
+			//do something
+		}
+	}
+
+	Visibility
+	public - accessible outside of class
+	protected - accessible in class and only extended classes
+	private - accesible only in owner class
+
+	Inheritance
+
+	Classes can be extended to a child class
+	Child classes have access to all of it's parents properties and methods UNLESS the visibility is set to private
+
+	Class ChildClass extends ParentClass {
+
+	}
+
+	Instantiate & use a class
+	
+	To create an instance:
+	$user = new User;
+
+	- Print a property
+	<?php echo $user->firstName; ?>
+
+	- call a method/function
+	<?php $user->register(); ?>
+
+	Abstract Classes
+
+	abstract class someClass {
+		abstract public function someFunction(){
+
+		}
+	}
+	- can NOT be instantiated and used directly 
+	- if a property or method is "abstract" then the class also MUST be "abstract"
 
 
 
+Classes & Methods
+
+	class User {
+
+		public $id;
+		public $username;
+		public $email;
+		public $password;
+
+		//constructors is called when the class is instantiated
+		public function __construct($username, $password){
+			echo 'Constructor called';
+			$this->username = $username;
+			$this->password = $password;
+		}
+
+		public function register(){
+			echo 'User Registered';
+		}
+
+		public function login(){
+			$this->auth_user();
+		}
+
+		public function auth_user($username, $password){
+			echo $this->username . ' is authenticated';
+		}
+
+		//Anything you need to run at end of script
+		public function __destruct(){
+			echo 'Destructor Called';
+		}
+	
+	}
+
+	$user = new User;
+	
+	$user->register();
+	$user->login('brad', '1234');
 
 
+Getters and Setters and Inheritance
 
+	class Post{
+		private $name;
 
+		public function __set($name, $value){
+			echo 'Setting ' . $name. ' to' . $value;
+			$this->name = $value; 
+		}
 
+		public function __get($name){
+			echo 'Getting ' . $name . $this->name;
+		}
 
+		public function __isset($name){
+			echo 'Is' . $name. ' set? <br />';
+			return isset($this->name);
+		}
+	}
 
+	$post = new Post;
+	$post->name = 'Testing';
+	echo $post->name;
+	var_dump(isset($post->name));
 
+Class Inheritance
+
+	class First{
+		public $id = 23;
+		protected $name = 'bob';
+
+		public function saySomething(){
+			echo 'Something...';
+		}
+	}
+
+	class Second extends First{
+		public function getName(){
+			echo $this->name;
+		}
+	}
+
+	$second = new Second;
+
+	echo $second->getName();
+
+Section 4
+
+Static Properties & Methods
 
