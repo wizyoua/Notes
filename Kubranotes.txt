@@ -1,0 +1,38 @@
+CSS
+
+	- what is a grid system: 
+		-structure that allows you to stack content both vertically and horizontally
+		- they increase productivity by providing simple layout scaffolding to html design. 
+		- adapt to many browser and device compatibility
+		- responsive layouts run on this. 
+		- use row and columns
+		- reset box-model box-sizing: border-box;
+		- clear-fix will float the columns
+		- position to column and float left will allow is to position itself horizontally 
+		- gutters basically just space for view and layout design
+		- max columns per row is 12
+		- formula  scw= (100 - m*((mc - 1 )))/ mc
+			scw = single columns width, m = margin, mc = max columns
+		- optimize for mobile devices means for column to take up the full width of its container for devices with a view port smaller than a set amount. gutters aren't necessary 
+
+
+SASS
+
+	- Sass: lets you use features that don't exist in css like variables, nesting, mixins, inheritance and other stuff.
+	- variables: store info that you want to resume through your style sheet. use $ symbol
+	- Nesting:  will allow some visual hierarchy css won't. 
+	- Partials: you can create partial sass files that contain snippets of css  that you can include in other sass files. modularize css and help things maintain
+	- CSS has import option that allows you to split css in smaller portions but it creates another http request. sass builds on top of the current css import but instead sass will combine it with the files your importing so you can serve a single css file
+	Mixins: allows you to make groups of css declarations that you want to reuse throughout the site. You can even pass in values to make it more flexible. 
+	- Extend/ Inheritance: allows you to share a set of css properties from one selector to another. it helps keep sass DRY
+	- Operators: can use math operators to  do math in css
+
+JavasScript 
+	- Prototypical Inheritance: JS only has 1 construct: objects. each object has a private property which holds a link to another object called its prototype. 
+	- lexical scoping: even though JS looks like it should have block scope because of curly braces {}, a new scope is created when you create a new function.
+	- scope of variables is defined by their position in source code. 
+	- closures: accessing a variable outside of immediate scope (no return necessary) will create something called closure.
+	 - a closure is a special kind of object that combines two things: a function, and the environment in which that function was created. The environment consist of any local variables that were in-scope at the time the closure was created. 
+	 - lexical scoping: 
+	 - promise: is a proxy for a value not known at its creation time. promise has a method named then, which accepts a function that will be invoked when the promise has been fulfilled. it is a much simpler way instead of using callbacks to allow an instance of an object that represents that deferred work. 
+	 - function definition hosting only occurs for function declarations no function expressions. 
