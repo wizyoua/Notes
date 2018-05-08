@@ -1,0 +1,9 @@
+Section 2 
+
+Variables, arrays, loops
+
+var: $myVar1 = 'Hello';
+
+array: $numbers = array(1,2,3,4,5);
+access all in array: print_r($numbers);
+access a single item: echo $numbers[1];
