@@ -2,8 +2,71 @@ Section 2
 
 Variables, arrays, loops
 
-var: $myVar1 = 'Hello';
+	var: $myVar1 = 'Hello';
 
-array: $numbers = array(1,2,3,4,5);
-access all in array: print_r($numbers);
-access a single item: echo $numbers[1];
+	array: $numbers = array(1,2,3,4,5);
+		   $numbers = [1,2,3,4,5];
+	access all in array: print_r($numbers);
+	access a single item: echo $numbers[1];
+
+	//assosiative array
+	$ages = array (
+		"John" => 35,
+		"Mary" => 35,
+		"Bob" => 35,
+	)
+
+	echo $ages['Mary'];
+	echo count($ages);
+	takes one out of array from end: array_pop($ages);
+	takes one out of array from beggining: array_shift($ages);
+	print_r($ages);
+
+	//for loop
+	for($i = 0; $i < 5; $i++){
+		echo $i;
+	}
+
+	//while loop - set var outside loop
+
+	$i = 0;
+	while($i <= 10) {
+		echo 'Number '. $i. '<br />';
+		$i++;
+	}
+
+	//foreach loop
+
+	$numbers = array(1,2,3,4,5);
+	foreach($numbers as $number){
+		echo 'This is number ' . $number. '<br />';
+	}
+
+Functions and Conditional Statements
+
+	function greet(){
+		echo 'Hello World';
+	}
+	greet();
+
+	function greet($name) {
+		echo 'Hello '. $name;
+	}
+	greet('Bob');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
