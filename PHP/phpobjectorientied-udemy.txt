@@ -217,3 +217,112 @@ Section 4
 
 Static Properties & Methods
 
+	class User{
+		public static $minPassLength = 5;
+
+		public static function validatePassword($password){
+			if(strlen($password) >= self::$minPassLength){
+				return true;
+			}else {
+				return false;
+			}
+		}
+	}
+
+	$password = 'password';
+
+
+	if(User::validatePassword($password)) {
+		echo 'Password is valid';
+	}else {
+		echo 'Password is not valid';
+	}
+
+	echo User::$minPassLength;
+
+	//static means it will always be the same. 
+	//:: scope resolution operator
+	//you dont have to instantiate static methods
+
+Abstract Classes and Methods
+
+	abstract class Animal {
+		public $name;
+		public $color;
+
+		public function describe(){
+			return $this->name. ' is '. $this->color;
+		}
+
+		abstract public function makeSound();
+	}
+
+	class Duck extends Animal {
+		public function describe(){
+			return parent::describe();
+		}
+
+		public function makeSound(){
+			retrun 'Quack';
+		}
+	}
+	class Dog extends Animal {
+		public function describe(){
+			return parent::describe();
+		}
+
+		public function makeSound(){
+			retrun 'Bark';
+		}
+	}
+
+	//cant instantiate abstract class
+
+	$animal = new Duck();
+	$animal->name = "ben";
+	$animal->color = 'yellow';
+	echo $animal->describe();
+
+
+
+Autoloading Classes & Final Keyword
+
+	-Created 3 files to follow video tutorial under /udemyoop, if forgot this section got back to this chapter. 
+
+
+Object Iteration
+	
+	class People {
+		public $person1 = 'Bob';
+		public $person2 = 'mike';
+		public $person 3 = 'jeff';
+
+		protected $person4 = 'john';
+		private $person5 = 'jen';
+
+
+		function iterateObject(){
+			foreach($this as $key =>$value){
+				print "$key => $value \n";
+			}
+		}
+	}
+
+
+	$people = new People;
+	$people->iterateObject();
+
+	//iterate outside of class - will not access protected and private
+	foreach($people as $key => $value){
+		print "$key => $value \n";
+	}
+
+Section 5
+
+
+
+
+
+
+
+
