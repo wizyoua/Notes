@@ -10,9 +10,12 @@
 </head>
 <body>
 <?php 
-	$object = new newClass;
-	unset($object);
-	echo $object->getProperty();
+	
+
+	$user = new Users("john","doe","brown","blue" );
+	echo $users->fullName();
+
+	
 
 ?>
 </body>
