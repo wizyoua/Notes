@@ -1,3 +1,6 @@
 Section 3
 
 	Lesson 27
+		- Code goes to JS Engine (Parser -> Abstract Syntax tree. Conversion to machine code - > code runs)
+
+	Lesson 28 
