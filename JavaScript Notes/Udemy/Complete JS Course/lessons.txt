@@ -4,3 +4,6 @@ Section 3
 		- Code goes to JS Engine (Parser -> Abstract Syntax tree. Conversion to machine code - > code runs)
 
 	Lesson 28 
+		- All js code needs to run in execution context. The global execution contect (code that is not inside of any function is gloabal, Assosiated with global object, in the browser this is the window object).
+
+		- 
