@@ -6,4 +6,12 @@ Section 3
 	Lesson 28 
 		- All js code needs to run in execution context. The global execution contect (code that is not inside of any function is gloabal, Assosiated with global object, in the browser this is the window object).
 
-		- 
+		- Each time we call a function it gets its own execution context. 
+	Lesson 29
+	- Execution Context in Detail
+		1. Creation Phase
+			- Creating of the variable object
+			- creation of the scope chain
+			- determine value of this
+		2. Exection Phase
+			- The code of the function that generated the current execution context is ran line by line. 
