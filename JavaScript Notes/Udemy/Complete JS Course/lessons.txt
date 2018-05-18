@@ -24,10 +24,51 @@ Section 3
 				console.log(2016 - year);
 			}
 
+			//function expression, hoisting only works for function 
+			declarations not expressions.
+			
 			var retirement = function(year){
 				console.log(65 - (2016 - year));
 			}
 
-			
-			
+			//vars - become undefined.
+			console.log(age);
+			var age = 23;
+			console.log(age);
+
+
+			function foo() {
+				var age = 65;
+				console.log(age);
+			}
+
+			foo();
+			console.log(age);
+
+	Lesson 30
+		- Scoping in JS
+			- Each new function creates a scope
+			- lexical scoping: a function that is inside another function gets access to parent function. 
+
+	Lesson 31
+		- Execution Stack is order in which functions are called
+		- Scope Chain is order in which functions are written lexically
+
+	Lesson 32-33
+		// code example - understanding This
+
+		calcukateAge(1985)
+		function calculateAge(year){
+			console.log(2016 - year);
+			console.log(this);
+		}
+
+
+
+
+
+
+
+
+
 
