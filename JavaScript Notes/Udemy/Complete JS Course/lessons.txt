@@ -63,7 +63,10 @@ Section 3
 			console.log(this);
 		}
 
-
+Section 4
+	Lesson 36 
+		- DOM: document object model.
+		
 
 
 
