@@ -6,4 +6,11 @@ React Basics
 		- Component Based - We can design build and test a component once then implement into application.
 
 		- We could write simple code that translates data model into an efficient app
-		
+
+	2. State and Virtual DOM
+
+		- Interactive with the DOM is where performance matters
+
+		- React renders real DOM elements from virtual DOM so speed of application is significantly increased.
+
+		- 
