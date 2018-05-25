@@ -1,0 +1,6 @@
+React Basics
+	1. Why React?
+	
+		- Declarative - Our program describes the result we are trying to achieve.
+
+		- Component Based - We can design build and test a component once then implement into application.
