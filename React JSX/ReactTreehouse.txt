@@ -13,4 +13,15 @@ React Basics
 
 		- React renders real DOM elements from virtual DOM so speed of application is significantly increased.
 
-		- 
+	3. Understanding JSX
+
+		- Name of element, the list of attributes, finally then children
+
+		//Takes 3 elements
+		React.createElement('a', {
+			href: "https://teamtreehouse.com"
+		}, "Treehouse");
+		J
+
+		- JSX is an alternate syntax for calling functions in JS
+		- HTML and JS will be combined. 
