@@ -25,3 +25,5 @@ React Basics
 
 		- JSX is an alternate syntax for calling functions in JS
 		- HTML and JS will be combined. 
+	4. PropTypes and DefaultProps
+		- 
