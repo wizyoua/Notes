@@ -68,8 +68,10 @@ Section 4
 		- DOM: document object model.
 		
 
-
-
+Section 5 
+	Lesson 51
+		- Everything is an object(almost)
+		- OOP: makes heavy use of object properties and methods to form complex applications
 
 
 
