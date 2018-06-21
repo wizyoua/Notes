@@ -1,0 +1,9 @@
+Week 1
+	
+	Types: 
+		int - represent integers
+		float - represent real numbers (3.27)
+		bool - represents  boolean value true/false
+		NoneType - special and has one value, None
+		can us Type() to see the type of object
+		
