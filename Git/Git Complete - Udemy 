@@ -8,3 +8,7 @@ Section 1 Introduction
 		- most operations are local
 		- very fast
 		- active community
+
+		Key git terminology
+		- Repository contains all the files to application
+		- three stages of git : 
