@@ -12,3 +12,32 @@ Section 1 Introduction
 		Key git terminology
 		- Repository contains all the files to application
 		- three stages of git : 
+
+
+
+		Recursive Add - git add . 
+
+	Backing out of changes
+		- git checkout -- <file> 
+
+
+	Renaming and Moving files
+		- git mv <filename>.txt <newfilename>.txt
+		git will change name on computer and reflect change but not committed yet
+
+		- mv <filename>.txt <newfilename>.txt
+		git will delete old file and copy into new file. Will be present on both stages add and commit
+
+	Git history
+
+	- git log in reverse chronological order
+
+	Git alias
+		git config --global alias.hist "log --all --graph --decorate --oneline"
+		- git log --all --graph --decorate --oneline
+
+	Branching and Merging
+
+		- git branch <name> - local branch
+		- use git checkout to switch branches
+		- 
