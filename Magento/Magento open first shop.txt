@@ -1,0 +1,27 @@
+Section 1
+
+	What is Magento? 
+		- Leading ecommerce solution
+		- powerful poen-source online business solution
+		- owned by ebay
+		- no coding required
+
+	Magento features
+		- payment integrations
+		- shipping integration
+		- layered navigation : enabled easy and faster search of items
+		- shopping cart rules
+		- Customer dashboard
+		- tiered pricing
+		- consumer groups
+		- mobile site
+
+	Magento is flexible
+		- multi views,stores and sites
+		- open source
+		- secure
+		- module based
+		- multiple themes
+
+	Magento in Short
+		- 
