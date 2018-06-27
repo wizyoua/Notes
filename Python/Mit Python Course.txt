@@ -6,4 +6,40 @@ Week 1
 		bool - represents  boolean value true/false
 		NoneType - special and has one value, None
 		can us Type() to see the type of object
+	
+	Operators and Branching
+		 - i and j are any variable of numbers
+		 - i > j
+		 - i >= j
+		 - i < j
+		 - i <= j
+		 - i == j - equal
+		 - i != j - not equal
+
+		 - and b are any var names
+		 - not a - true if a is false, false if a is true
+
+
+		 Branching programs
+		 - the simplest branching statement is a conditional
+		  - A test 
+		  - a block of code to execute test
+		  - an optional block of code to execute if the test is false
+		  - in python we don't have to have the false block
+
+
+		 Compound Boolean
+		 	- if x < y and x < z:
+		 		print ('x is least')
+		 	elif y < z :
+		 		print ('true')
+		 	else: 
+		 		print ('true')
+
+	Bindings
+		- 
+	Strings
+		- letters, special chars, spaces, digits
+		- enclosed in quotation marks
+		- concat strings
 		
