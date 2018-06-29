@@ -164,6 +164,68 @@ Basic Module Components
 
 
 	5. Controller Layer
+		- In etc create dir /frontend -> routes.xml
+			- xml code config
+			- create router (should fill in php storm)
+			- 
+		- in etc create dir /adminhtml->routes.xml
+			- paste content from previous file and change router id to admin
+
+		- Create controllers make dir /controller/index
+			- create index.php
+			- paste code class Index 
+			- create hello world 
+		-create controller for backend area /controller/adminhtml/index/index.php
+			- code almost the same to front-end code except namespace and extends from 
+			- create hello admins
+
+		- run in cl: bin magento cache:flush
+		- disable secure key during development or else cant see result. Admin panel availabe without secure key
+
+
+	6. View Layer
+
+		- mkdir /block/hello.php
+		- namespace and class extends template
+		- create class -> create construct function-> 
+
+		- create template mkdir view/frontend//templates/hello.phtml
+			-specify reference to block
+
+
+
+Advanced Module Components
+	
+	8. Console commands
+		- create console/command/Additem.php
+		- import symfony components 
+			 - create class with 2 constants
+			 - create public function construct 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
