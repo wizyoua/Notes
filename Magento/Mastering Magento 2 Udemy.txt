@@ -200,7 +200,9 @@ Advanced Module Components
 		- create console/command/Additem.php
 		- import symfony components 
 			 - create class with 2 constants
-			 - create public function construct 
+			 - create public function construct
+			 - in additem.php create protected function configure() then create execute function()
+			 - 
 
 
 
