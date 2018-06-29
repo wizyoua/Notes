@@ -1,0 +1,82 @@
+Basic Module Components
+	
+	1. New Module Declarations
+		- new module -> app/code. Create directory for namespace and module. Single Module directory
+		- first file is registration.php
+		- <?php 
+			\Magento\Framework\Component\ComponentRegistrar::register(
+				\Magento\Framework\Component\ComponentRegistrar::MODULE,
+				'Mastering_SampleModule',
+				__DIR__
+			);
+
+		- Create etc then module.xml
+			- Insert necessary xml code
+			- switch to command line
+				- bin/magento dev:urn-catalog:generate .idea/misc.xml
+			- <sequence>Dependency on other modules for example magento catalog
+
+		- enable module
+			- bin/magento module:enable Mastering_SampleModule
+
+			- check app/etc/config.php -> new module should be there
+
+			-run db upgrade in cl
+				- bin/magento setup:upgrade
+				- in php storm check db with: select * from setup_module where module = 'Mastering_SampleModule';
+				- result should return with schema and data version.
+
+	2. Database Install Scripts
+
+		- inside samplemodule create new directory as /Setup
+		- create new file installSchema.php
+
+		- Get sample data code
+			- create new table
+				
+				$table = $setup->getConnection()->newTable(
+					$setup->getTable('mastering_sample_item')
+				)->addColumn(
+					'id',
+					Table::TYPE_INTEGER,
+					null,
+					['identity' => true, 'nullable' => false, 'primary' => true],
+					'ItemID'
+				)->addColumn(
+					Table::TYPE_TEXT,
+					255,
+					['nullable'=> false],
+					'Item Name'
+				)->addIndex(
+					$setup->getIdxName('mastering_sample_item',['name']),
+					['name']
+				)->setComment(
+					'Sample Items'
+				); 
+				$setup->getConnection()->createTable($table);
+
+		- create installdata script
+			- installData.php
+				- put in sample data code
+
+				$setup->getConnection()->insert(
+					$setup->getTable('mastering_sample_item'),
+					[
+						'name' => 'Item 1'
+					]
+				);
+
+				$setup->getConnection()->insert(
+					$setup->getTable('mastering_sample_item'),
+					[
+						'name' => 'Item 2'
+					]
+				);
+
+		- Now we have to run
+			- php db console: delete select * from setup_module where module = "Mastering_SampleModule";
+
+			- cl: bin/magento setup:upgrade
+
+	3. Database Upgrade Scripts
+		- 

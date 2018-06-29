@@ -23,5 +23,4 @@ Section 1
 		- module based
 		- multiple themes
 
-	Magento in Short
-		- 
+	
