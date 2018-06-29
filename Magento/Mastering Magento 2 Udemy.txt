@@ -79,4 +79,95 @@ Basic Module Components
 			- cl: bin/magento setup:upgrade
 
 	3. Database Upgrade Scripts
-		- 
+		-  create UpgradeSchema.php
+
+		- insert sample data
+			- 
+
+			if(version_compare($conrect->getVersion(), '1.0.1', '<')){
+				$setup-getCOnnection()->addColumn(
+					$setup-getTable('mastering_sample_item'),
+					'description',
+					[
+						'type' => Table::TYPE_TEXT,
+						'nullable => true,
+						'comment' => "Item Desc"
+
+					]
+				);
+			}
+
+		- Create UpgradeData.php
+		- insert sample data
+			if(version_compare($conrect->getVersion(), '1.0.1', '<')){
+			 	$setup-getConnection()->update(
+					$setup->getTable('mastering_sample_item'),
+					[
+						'description' => 'Default Desc'
+					],
+					$setup->getConnection->quoteInto('id = ?', 1)
+				);
+			}
+
+		- Run and upgrade script in cl
+			- bin/magento setup:upgrade
+
+	4. Model Layer
+		- create dir in Module /Model then create new dir ResourceModel -> item.php
+			
+			<?php 
+			 	namespace Mastering\SampleModule\Model\ResourceModel
+
+			 	use Magento\Framework\Model|resourceModel\Db\AbstractDb;
+
+			 	class Item extends AbstractDb {
+			 		protected function _construct() {
+			 			$this->init('mastering_sample_item', 'id');
+			 		}
+			 	}
+
+
+		- Create item.php in Model dir
+			<?php 
+				namespace Mastering\SampleModule\Model;
+
+				use Magento\Framework\Model\AbstractModel;
+
+				class Item extends AbstractModel {
+
+					protected function _construct()
+					{
+						$this->_init(\Mastering\SampleModule\Model\ResourceModel\Item::class);
+					}
+
+				}
+
+
+		- Create dir /item under ResourceModel -> collection.php
+			<?php 
+
+			namespace Mastering\SampleModule\Model\ResourceModel]Item;
+
+			use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
+			use Mastering\SampleModule\Model\Item;
+			use Mastering\SampleModule\Model\ResourceModel\Item as ItemResource;
+
+			class Collection extends AbstractCollection
+			{
+				protected $_idFieldName = 'id';
+
+				protected function _construct()
+				{
+					$this->_init(Item::class, ItemResource::class)
+				}
+			}
+
+
+	5. Controller Layer
+
+
+
+
+
+
+			
