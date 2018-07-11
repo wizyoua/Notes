@@ -25,4 +25,14 @@ Section 1
 				- do no apply theme on storefront.
 				- remove theme folder under pixelpro/ 
 				- search for theme and remove the insert of theme in the table.
-				- p
+Section 2 
+	
+	1. URL modification with LESS
+		- in css of theme create /source/_extend.less
+			- add less to modify css of whatever im working on.
+			- flush static cache
+
+	2. url compiled static
+		- work in our own folder locally because when you edit magento and flush cache and the work. on top of that you would have to flush cache everytime.
+		
+
