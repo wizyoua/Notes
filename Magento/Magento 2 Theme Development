@@ -34,5 +34,145 @@ Section 2
 
 	2. url compiled static
 		- work in our own folder locally because when you edit magento and flush cache and the work. on top of that you would have to flush cache everytime.
-		
+
+
+Section 3 - LESS CSS
+	1. URL vars in Less
+		- @background1: #ff5500;
+		- you could put vars like this 
+			- p {
+					background-color:@background1;
+				}
+
+		- See how you only have to change in 1 place instead of infinity places
+
+	2. URL Mixins : we would normally copy and paste into sbutton but all we have to do is paste id in sbutton
+		- #button {
+			background-color:red;
+			border-radius:7px;
+		}
+
+		#sbutton {
+			width:150px;
+			height:80px;
+			#button;
+		}
+
+		#lbutton {
+			width:240px;
+			height:120px;
+			#button;
+		}
+
+	3. Less use of parameters
+
+		- #button(@width:150px){
+			background-color:red;
+			border-radius:7px;
+			width: @width;
+		}
+
+		#sbutton {
+			
+			height:80px;
+			#button;
+		}
+
+		#mbutton {
+			
+			height:90px;
+			#button(180px);
+		}
+
+		#lbutton {
+			width:240px;
+			height:120px;
+			#button;
+		}
+
+	4. Less use of Nesting and Scope
+		@color: blue;
+
+		ul {
+			@color:white;
+			color:red;
+			li{
+				color:@color; // will be white since it gets from parent scope
+			}
+		}
+
+
+	5. Less use of Operators
+		@color: blue;
+		@size:14px;
+
+		ul {
+			@color:white;
+			color:red;
+			li{
+				font-size:@size - 2px; //will be 12px
+				color:@color; // will be white since it gets from parent scope
+			}
+		}
+
+	6. Less functions and advices
+
+	@var: #fff;
+	div {
+		background-color:@var;
+		&:hover {
+			background-color: fadeout(@var,50%);
+		}
+	}
+
+
+
+Section 4
+	1. override of a url view
+		- /vendor/magento/module-catalog/view/front-end   : copy the content
+		- create new folder in your theme. /magento_catalog/paste content
+		- make changes to view files 
+
+	2. PHTML Hints URL
+		- go to control panel store config. advanced/developer go to debug. enable template path hints for storefront.
+		- this will show the hierarchy of the entire template.magento shows path of overridden file 
+
+	3. Layouts in Magento
+		- page-type layouts handles
+		- page layout handles
+		- arbitrary handles
+
+		- basic layouts
+			- all magento storefront pages are defined in two page configuartion layouts files located in the theme folder
+			- never edit original file only extend files
+
+	4. Changing a layout
+		- find module you want to edit. go to theme and create new folder with namespace then new folder /layout
+		- any changes will override original module
+		- always flush cache to see reflected changes
+		- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
