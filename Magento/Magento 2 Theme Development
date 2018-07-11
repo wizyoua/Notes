@@ -1,0 +1,28 @@
+Section 1
+	
+	Refer to magento create a new storefront theme for docs.
+	
+	1.1 Theme Files
+		-	app/design/front-end
+		-	create new folder "Pixelpro/Themepro"
+			- create media folder: holds image of theme snapshot
+			- create registration.php: registers theme into system. Just check the path
+			- theme.xml: allows us to declare the theme. Change all the text to correct 
+				- use luma xml, since it complies with standards of magento
+			- go into magento/etc/view.xml and copy the code into new folder etc/view.xml
+			- if your template is independant having the file is manditory, if its not it will inherit
+			- create new folder web/ then make css/ images/ js/ fonts/
+				- images/put static images here, only uses svg images.
+				- "if creating module it is namespace_module/web/css. everything is segmented"
+
+			- open conrol panel and install the new theme.
+			- get rid of cache, flsuh magento cache.
+			- everything might be missing so go to content blocks/ and edit. grab id then go to readme.txt then change the id and copy the line.
+			- go into homepage edit and just paste the line of code in there. the whole block will show again
+
+
+			what if must unistall theme?
+				- do no apply theme on storefront.
+				- remove theme folder under pixelpro/ 
+				- search for theme and remove the insert of theme in the table.
+				- p
