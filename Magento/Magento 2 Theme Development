@@ -152,7 +152,15 @@ Section 4
 		- always flush cache to see reflected changes
 		- 
 
+	5. Extend Resources
+		- in theme create new folder Magento_Theme/layout/default_head_blocks.xml
+		- in here you could put all the code to maybe add you own style.css or maybe js
+			- to add js you could use <script src="Magento_Catalog::js/examplejs">
+			- what if you want to load cdn, just copy href url then: <css src="" src_type="url">
 
+	6. Relocate items with move
+		- 
+	
 
 
 
