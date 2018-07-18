@@ -160,7 +160,26 @@ Section 4
 
 	6. Relocate items with move
 		- 
-	
+
+Section 5 
+
+	1. Debug Layout
+		- copy default.xml in luma theme
+		- rename pub/errors/local.xml.sample to 
+	2. Change view
+		- in theme/magento_theme/templates/myview.phtml
+
+
+
+
+Section 6
+
+
+
+
+
+Section 7
+
 
 
 

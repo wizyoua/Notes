@@ -43,3 +43,41 @@ Week 1
 		- enclosed in quotation marks
 		- concat strings
 		
+
+	Input/Output
+		- used to output stuff to console
+		- keyword is print
+
+		- input("")
+			- prints whatever is within the quotes
+			- user types in something and hits enter
+			- returns entered sequence
+			- can bind that value to a var so it could reference it
+			- input returns a string so must cast if working with numbers
+
+	Control Flow
+		- using control in loops
+			- simple branching programs just make choices, but path through code is still linear
+			- sometimes you want to reuse parts of the code in an undetermined number of times
+			While <condition>
+				<expression>
+				<expression>
+			- if condition is true do all steps inside code block
+
+			for <variable> in range(<some numb>:)
+				<expression>
+
+			- each time through the loop, <variable> takes a value
+			- first time, <variable> starts at the smallest value
+			- next time, <variable> gets the prev value +1
+
+			range (start, stop, step)
+
+			- break statement
+				- exits whatever loop we are in
+				- skips remaining expressions
+	Iteration
+		- concept of iteration lets us extend simple branching algorithms to be able to write programing of arbitrary concept
+			- start with test
+			- if true execute loop body
+			- repeat until false
