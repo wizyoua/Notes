@@ -81,3 +81,53 @@ Week 1
 			- start with test
 			- if true execute loop body
 			- repeat until false
+
+	Loop Characteristics
+		- Need a loop variable
+			- initialized outside loop
+			- changes within loop
+			- test for termination depending on ccondition
+		- Common errors
+			- what if we dont initialize the variable
+			- what if we dont change the var var inside the loop
+				- ex getting infinite loop
+	Guess and Check
+		- you are able to guess a value for solution
+		- you are able to check if the solution is correct
+		- keep guessing until find solution or guessed all values
+		- THIS process is exhaustive enumeration
+	Cleaner guess and check
+		- cube root
+			- using for loop with range 
+			- supposed you put root without a root
+			- this is to understand how to approach problems and figure out the most efficient ways with it. 
+
+
+
+
+	Problem Set 1 Week 1
+		- Problem 1
+
+			//string
+			s = 'azcbobobegghakl'
+			//convert string to list
+			list(s)
+			//make array of valid letters that check against the string
+			arrayValid = ['a','e','i','o','u']
+			//init count to keep track
+			count = 0
+
+			//for loop go through every item in array
+			for x in list(s):
+				//another for loop go through item in vowel array
+			    for v in arrayValid:
+			    	//does the letter of the string match any valid letter
+			       	if x == v:
+			       		//yes so add the count
+			           	count += 1
+
+			print ("Number of vowels:" + str(count))
+
+		- Problem 2
+			
+    
