@@ -129,5 +129,32 @@ Week 1
 			print ("Number of vowels:" + str(count))
 
 		- Problem 2
-			
-    
+
+			//string
+			s = 'wefewfewfbobobwefewfewfboobobwefewf'
+			//set count to keep track
+			count = 0
+
+			//run for loop of range(which accepts number so find length of string)
+			for x in range(len(s)):
+				//splice string (so x is the actually just a number continuing with the length of the string and not the actual index of a letter) so based on that we are going back into the string every time and then splicing the [index start, index end] of the string
+			   	if s[x:x+3] == 'bob':
+			   		//if the string of bob appears add 1 to counter
+			       count +=1
+			print('Number of times bob occurs is ' + str(count))
+    	
+    	- problem 3
+    	//string
+		s = 'wefewfewfbobobwefewfewfboobobwefewf'
+    	
+    	current = ''
+		longest = ''
+
+		for i in range(len(s)):
+		    if (s[i] >= s[i-1]):
+		        current += s[i]
+		    else:
+		        current = s[i]
+		    if len(current) > len(longest):
+		        longest = current
+		print("Longest substring in alpha order is: " + longest)
