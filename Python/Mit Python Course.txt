@@ -158,3 +158,43 @@ Week 1
 		    if len(current) > len(longest):
 		        longest = current
 		print("Longest substring in alpha order is: " + longest)
+
+
+
+Week 2
+	
+
+	Approximate Solutions - works for 0 - 1
+		- good enough solution
+		- Start with a guess and increment by some small value
+		- decreasing increment size -> slower program
+
+	Bisection Search - works for ordering
+		- Instead of starting at 1 for a search we could start in between the number range
+		- On each step we don't use have the things so it's easy to zero in on the result. 
+		- this is a logarithmic time algorithm
+		- Reduces computation time
+		- should work on any problem with "ordering" property
+
+
+	Dealing with Floats
+		- Floats approximate  real numbers
+		- Decimal number: 302 = 3*10^2 + 0^*10^1+2^*10^0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
