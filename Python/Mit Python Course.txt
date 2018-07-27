@@ -181,7 +181,54 @@ Week 2
 		- Floats approximate  real numbers
 		- Decimal number: 302 = 3*10^2 + 0^*10^1+2^*10^0
 
+	Newton-Raphson
+		- General approximation algorithm to find roots of a polynomial in one variable
+		- want to find r such that p(r) = 0
+		- example: to find the sqaure root of 24, find the root of p(x) = x^2 -24
+		- NEwton Showed tgat if g is an appromiation to the root, then 
+		- simple case cx^2 + k
 
+		- Iterative algorithms
+			- guess and check method build on resuing same code. Use a looping structure construct to generate guesses, then check and continue
+			- Generate guesses
+				- exhaustive enumeration
+				- bisection search
+				- newton raphson 
+
+	Decomposition, Abstraction, Functions
+		- Good programming
+			- More code not a good thing
+
+			- Abstraction - do not need to know how it works to use it.
+
+		- Apply these ideas to programming: 
+			- Decomposition:
+				- Break problem into different contained pieces
+			- Abstraction
+				- Suppress details of method to compute something from use of that computation.
+
+
+		- Create Structure with decomposition
+			- in programming divide code into modules
+			- are self contained
+			- used to break up code
+			- intended to be reusable
+			- keep code organized
+			- keep code coherent
+
+
+		- suppress details with abstraction
+			- think of piece of code as a black box
+			- cannot see details
+			- do not want to see details
+			- hide tedious coding details
+			- achieve abstraction with function specification or docstrings
+
+	Introducing Functions
+		- write resuable piece/chunks of code called functions
+		- functions are not run until invoked
+		- function has name, parametes, has a docstring, body
+		
 
 
 
