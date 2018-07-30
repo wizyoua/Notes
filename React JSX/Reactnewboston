@@ -5,3 +5,14 @@ React JS Tutorials for Beginners
 	Component
 		- Core building block of react
 		- Are just part of your website
+
+	Rendering Multiple Components
+		- remeber in render to use a div to wrap around all the other elements, React could only return 1 div so 
+		make sure to create a new component
+
+	Props
+		- allow you to customize your component
+		- you could add custom attributes in your custom component
+
+	Event Handling
+		- 
