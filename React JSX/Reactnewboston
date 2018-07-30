@@ -1,1 +1,7 @@
 React JS Tutorials for Beginners
+
+	- Babel used to compole jsx to js
+
+	Component
+		- Core building block of react
+		- Are just part of your website

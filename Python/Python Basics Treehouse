@@ -1,3 +1,5 @@
+//Some basic python info already understood so sections may be blank. For example variables has nothing because I already understand that. 
+
 Python Track
 
 	Python Basics
@@ -5,4 +7,12 @@ Python Track
 		- Syntax and Errors
 		- variables
 		- input and coding style
-	
+		- Numerics
+		- Strings and operators
+			- new line: "I can't... \n\even"
+			- triple quote """ Shell said, I can't
+
+				even"""
+
+		- Python Functions
+		

@@ -26,4 +26,6 @@ React Basics
 		- JSX is an alternate syntax for calling functions in JS
 		- HTML and JS will be combined. 
 	4. PropTypes and DefaultProps
-		- 
+		- .propTypes each key in here a property that our component could take
+		- to pass a value you need to change within the render() to title={8} so that it doesn't take a string or break since passing a number with out {} will not compile properly
+		
