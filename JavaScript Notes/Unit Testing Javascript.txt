@@ -1,0 +1,38 @@
+Unit Testing in Javascript - Youtube Course
+
+	- function add(x,y){
+		return x+y;
+	}
+
+	add(2,3);
+
+	- We've set expectations for how this function is being used, time to add unit testing.
+
+	ok so based on the simpl function what are you expectations:
+		- Expect 2 + 3 = 5 
+		- Expect error iF non-numbers are used
+		- expect 0.1 + 0.2 = 0.3
+
+		I would expect all of the expections to be true, but the third one won't work. See how the aswer would be 0.300000 because of floating point
+
+
+	Lets refactor this function with the above expectations (Red, Green, Refactor ) methos
+
+		function add(x,y){
+			var result;
+			if((typeof x && typeof y) !== 'number'){
+				throw new Error('Params must be a number');
+			} 
+
+			result = x + y;
+			if parseInt(result) !== result){
+				result = parseFloat(result.toFixed(1));
+			}
+
+			return result;
+		}
+
+
+	Intro to Jasmine
+
+	Jasmine provides library to help implement JS 
