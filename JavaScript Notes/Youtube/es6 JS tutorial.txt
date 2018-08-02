@@ -1,0 +1,55 @@
+es6 JS tutorial for Beginners - Youtube - Academind
+
+	- Compiler for es6 until all browsers support es6 (babel)
+	- Module loader (webpack) for pure module loader
+
+	Syntax Changes and Extensions
+		- let and const 
+		- they allow us the way we work with variables
+		- let allows us to use block scoping within the scope where it is defined
+			if (true) {
+			  let name = "max"
+			}
+		- that variable name wont be available outside of the if scope
+		- const is defined once and should keep its value. Common practice is all caps const name
+		- we have to declare variable before initializing it, this refers to hoisting. a function will still get hoisted to the top
+
+	Fat Arrow Function - shorter way to write function and has another feature
+
+		- Parentheses is arguments and inside body is executing code.
+		var fn = () => {
+		  console.log("hello");
+		}
+		  
+		fn();
+		
+		- if you have one argument you could leave out parentheses, 2 or 0 arguments need parenthesis. same for block of function, if its one line you could remove curly braces since only one line
+
+		- this is treated is handled differently. with fat arrow function it will keep context in which the object is defined.
+
+	Functions
+	 	- could give arguments a default value
+
+
+	 Object Literal Expressions
+	 	- what is object literal
+	 		let = {
+	 			name : "max",
+	 			age:27
+	 		};
+
+	 	- es6 ol
+
+	 	you can define methods and function now
+
+	 	let name = 'anna';
+	 	let age = 25;
+	 	let obj = {
+			name,
+			age,
+			greet(){
+			
+			}	 	
+	 	};
+
+	 	console.log(obj);
