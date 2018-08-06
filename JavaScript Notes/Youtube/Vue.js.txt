@@ -1,0 +1,16 @@
+VueJS - Youtube - The Net Ninja
+
+	What is Vue
+		- Front end framework
+		- create js web apps
+		- runs in browser
+		- no multipe server requests for pages
+
+		- very lean
+		- very high run time perfomance
+
+
+	Vue instance
+
+	Data and methods
+		- 
