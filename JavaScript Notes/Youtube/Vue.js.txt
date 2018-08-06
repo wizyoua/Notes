@@ -13,4 +13,22 @@ VueJS - Youtube - The Net Ninja
 	Vue instance
 
 	Data and methods
+		- could put methods within the vue instance after the data key prop. Can access data keys with this.name for exmaple
+
+	data brinding
+		- use v-bind:href="google.com" for example
+		- vue js will data bind 
+		- we could bind to input 
+
+	Events
+		- basically just like jquery events like clickevent onclick. Theres a whole list on vuejs docs. 
+		- bind like this: <button v-on:event> </button>
+
+	Event-modifiers
+		- <button v-on:event.once> </button>
+
+	Keyboard Events
+		- 
+
+	2 way Data Binding
 		- 
