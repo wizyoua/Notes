@@ -28,4 +28,6 @@ React Basics
 	4. PropTypes and DefaultProps
 		- .propTypes each key in here a property that our component could take
 		- to pass a value you need to change within the render() to title={8} so that it doesn't take a string or break since passing a number with out {} will not compile properly
-		
+
+	5. Component Class
+		- Finally could implement state into our components
