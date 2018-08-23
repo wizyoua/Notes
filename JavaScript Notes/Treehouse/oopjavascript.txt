@@ -1,0 +1,22 @@
+Object oriented programming - Treehouse 
+
+	- What is an Object:
+		- package of properties and functions that we want to use in our code.
+		- OOP is just a programming concept as a way of using objects in our code.
+
+	- Object literals and components of Objects
+	  const user {
+	  	name: "gianni",
+	  	color: "blue",
+	  	isTurn: true,
+	  	play: function(){}
+	  }
+
+	- Dot notation and Bracket Notation
+	  	user.name
+
+	  access specific element in array with bracket notation
+		fruits[0]
+
+	 - Changing and adding properties
+	 	- could change and manipulate properties with dot & bracket notation.
