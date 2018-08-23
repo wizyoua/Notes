@@ -32,3 +32,6 @@ VueJS - Youtube - The Net Ninja
 
 	2 way Data Binding
 		- 
+	Computer Properties
+		- Vuejs does not know which method needs to run based on what has been updated. Computed property solves that issue
+		- ex. update A and Age + A when you click button to add 1 it only adds to A since in syntax we run {{addtoA}} instead of the method {{addtoA()}}
