@@ -20,3 +20,176 @@ Object oriented programming - Treehouse
 
 	 - Changing and adding properties
 	 	- could change and manipulate properties with dot & bracket notation.
+
+	 - When object literals aren't enough
+	 	- Javascript class syntax
+
+	 	- class has base properties and methods
+
+	 - Writing our First Class
+
+	 	class Pet{
+	 	//constructor method, outline properties our class will have. When we try to use properties of class outside, we really are talking to the constructor method
+
+		 	constructor(animal,age,breed){
+		 		this.animal = animal;
+		 		this.age = age;
+		 		this.breed = breed;
+		 	}
+
+	 	}
+
+		 - Instantiating a Pet Object
+		 	const ernie = new Pet('dog',1,'pug');
+		 	const vera = new Pet('dog',8,'border collie');
+
+	 - adding methods to our class
+
+	   class Pet{
+		 	constructor(animal,age,breed){
+		 		this.animal = animal;
+		 		this.age = age;
+		 		this.breed = breed;
+		 		this.sound = sound;
+		 	}
+
+		 	speak(){
+		 		console.log(this.sound);
+		 	}
+
+	 	}
+
+	 	const ernie = new Pet('dog',1,'pug', 'yip yip');
+		 	const vera = new Pet('dog',8,'border collie', 'bark bark');
+
+	- Getters
+		- increase flexibility. you could include logic whehn retrieveing or setting value of property
+		
+
+		class Pet{
+		 	constructor(animal,age,breed){
+		 		this.animal = animal;
+		 		this.age = age;
+		 		this.breed = breed;
+		 		this.sound = sound;
+		 	}
+
+		 	get activity(){
+		 		const today = new Date();
+		 		const hour = today.getHours();
+
+		 		if(hour > 8 && hour <= 20){
+		 			return 'playing';
+		 		}else {
+		 			return 'sleeping';
+		 		}
+		 	}
+
+		 	speak(){
+		 		console.log(this.sound);
+		 	}
+
+	 	}
+
+
+
+
+	 - Setters
+	 	- receives value and can perform logic then it could save it or save it to new property
+
+
+	 	class Pet{
+		 	constructor(animal,age,breed){
+		 		this.animal = animal;
+		 		this.age = age;
+		 		this.breed = breed;
+		 		this.sound = sound;
+		 	}
+
+		 	get activity(){
+		 		const today = new Date();
+		 		const hour = today.getHours();
+
+		 		if(hour > 8 && hour <= 20){
+		 			return 'playing';
+		 		}else {
+		 			return 'sleeping';
+		 		}
+		 	}
+
+		 	//create getter for setter value
+		 	get owner(){
+		 		return this._owner;
+		 	}
+		 	//setters only always get 1 parameter
+		 	set owner(owner){
+		 		this._owner = owner;
+
+		 	}
+
+		 	speak(){
+		 		console.log(this.sound);
+		 	}
+
+	 	}
+
+	 - Object Interaction
+	 	- an objects property could be another object, OOP is designed for objects to interact with each other.
+
+
+	 	class Pet{
+		 	constructor(animal,age,breed){
+		 		this.animal = animal;
+		 		this.age = age;
+		 		this.breed = breed;
+		 		this.sound = sound;
+		 	}
+
+		 	get activity(){
+		 		const today = new Date();
+		 		const hour = today.getHours();
+
+		 		if(hour > 8 && hour <= 20){
+		 			return 'playing';
+		 		}else {
+		 			return 'sleeping';
+		 		}
+		 	}
+
+		 	//create getter for setter value
+		 	get owner(){
+		 		return this._owner;
+		 	}
+		 	//setters only always get 1 parameter
+		 	set owner(owner){
+		 		this._owner = owner;
+
+		 	}
+
+		 	speak(){
+		 		console.log(this.sound);
+		 	}
+
+	 	}
+
+
+
+
+	 	class Owner {
+
+	 		constructor(name,address){
+	 			this.name = name;
+	 			this.address = address;
+	 		}
+
+	 		set phone(phone){
+	 			const phoneNormal = phone.replace(/[^0-9]/g, '');
+	 			this._phone = phoneNormal;
+	 		}
+
+	 		get phone(){
+	 			return this._phone;
+	 		}
+	 	}
+
+

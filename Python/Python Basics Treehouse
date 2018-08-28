@@ -16,3 +16,35 @@ Python Track
 
 		- Python Functions
 		
+
+		- Returning Functions
+
+			def split_check(total, number_of_people):
+				cost_per_person = total/ number_of_people
+				return cost_per_person
+
+
+		amount_due = split_checks(84.97, 4)
+		print
+
+
+	Expection Exceptions
+
+		try:
+			problematic code here
+
+		except:
+			if there is error valuye
+		
+		else: 
+
+
+	While Loops
+
+		password = input("please enter password: ")
+		attempt_count = 1
+		while password != 'open':
+			if attempt_count > 3: 
+				sys.exit("too many invalid attempts")
+			password = input("invalid password try again: ")
+			attempt_count !+ 1
