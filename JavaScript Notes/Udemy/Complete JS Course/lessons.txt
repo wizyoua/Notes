@@ -72,8 +72,24 @@ Section 5
 	Lesson 51
 		- Everything is an object(almost)
 		- OOP: makes heavy use of object properties and methods to form complex applications
+		- Objects interacting with one another through methods and properties.
+		- JS is a prototype based language. the prototype method of a property 
+		- each object we create is a prototype of a bigger object
 
+		- IMportant summary
+			- every js pbject has a prototype prop which makes inheritance possible.
+			- 
 
+	example: 
 
+	var Person = function (name, dob, job) {
+		this.name = name;
+		this.dob = dob;
+		this.job = job;
+	}
 
+	Person.prototype.calcage = function (){
+			console.log(2016 - this.dob);
+		}
 
+	var john = new Person

@@ -15,7 +15,7 @@ VueJS - Youtube - The Net Ninja
 	Data and methods
 		- could put methods within the vue instance after the data key prop. Can access data keys with this.name for exmaple
 
-	data brinding
+	data binding
 		- use v-bind:href="google.com" for example
 		- vue js will data bind 
 		- we could bind to input 
@@ -28,10 +28,11 @@ VueJS - Youtube - The Net Ninja
 		- <button v-on:event.once> </button>
 
 	Keyboard Events
-		- 
+		- could add on keyboard modifiers say you want to fire something when enter is clicked. see vuejs keyboard events list for more options.
 
 	2 way Data Binding
-		- 
+		- just like angular, value gets inputted into div with 2 way databinding
+
 	Computer Properties
-		- Vuejs does not know which method needs to run based on what has been updated. Computed property solves that issue
+		- Vuejs does not know which method needs to run based on what has been updated. Computed property solves that issue, they watch vars that need to be computed and only run when needed.
 		- ex. update A and Age + A when you click button to add 1 it only adds to A since in syntax we run {{addtoA}} instead of the method {{addtoA()}}
