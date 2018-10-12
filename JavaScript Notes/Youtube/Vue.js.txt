@@ -36,3 +36,38 @@ VueJS - Youtube - The Net Ninja
 	Computer Properties
 		- Vuejs does not know which method needs to run based on what has been updated. Computed property solves that issue, they watch vars that need to be computed and only run when needed.
 		- ex. update A and Age + A when you click button to add 1 it only adds to A since in syntax we run {{addtoA}} instead of the method {{addtoA()}}
+	
+	Dynamic CSS Classes
+		- mostly coding section, no notes
+
+	Conditionals
+
+	- skipped not taking on 5-6 sections because most of it was coding to learn.
+
+	Intro to Components
+		- a reusable piece of code we can reuse in different vue instances.
+		- in component, data has to be a function it's not the same as a simple vue instance
+
+	Vue Lifecycle hook
+	- When Vue() instance
+		- beforeCreate: could put stuff in and run code before vue runs
+	- Observe Data
+	- Initialize Events
+		- created: when component has been created.
+
+	- has 'el' option, it's that part in new Vuew({ el: '#app'})
+	- Compile template
+		- beforeMount: anything we need to do before mount we could use this
+	- Mount
+		- Mount: could reach in a manipulate the dom here
+	- Mounted
+		- beforeUPdate: could fire could before it updates
+		- updated: access updated code 
+		-beforeDestory: pop in could here before it's destroyed
+	- Teardown
+		- destroyed: could run stuff here once it's destroyed
+
+	- Slots
+		- you could pass templates in betweend custom component in parent to  child using <slot></slot>
+		- example where slots is beneficial. A website with a bunch of form, allow front end developer to create forms on existing templates,
+		  

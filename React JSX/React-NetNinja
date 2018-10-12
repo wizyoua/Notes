@@ -1,0 +1,75 @@
+1. Introduction
+    - What is React
+        - JS library created by FB
+        - Used to create JS driven dynamic web apps
+    - What is Redux
+        - layer on React
+        - helps with statemanagement of our apps
+            - data in apps
+            - UI state of apps
+
+2. How React works
+    -  Virtual Dom in background, say we make a change to search box. React creates new dom and compares to old dom.
+    - Components look like html but are actually JSX
+    - They can contain state
+    - They also contain JS for functionality
+
+5. Component state
+    - Js Object
+    - Describes the current state of the Component
+        - data, ui-state
+    - State of Component can be updated over time
+        - a modal could close
+        - the data we output could change
+
+8. Changing State and ('this')
+    - this keyword is determined by how and where the function is called not where it sits.
+    - new version of react, class component we have to bind concept of this keyword to our functions
+    - easiest way is to use arrow methods for our custom functions
+    state = {
+        name = 'gio',
+        age 20
+    }
+
+    handleclick = (e) => {
+        console.log(this.state);
+    }
+
+    so if you want to use this keyword inside our custom functions, just convert them to using arrow method like above
+    - Don't change state directly use:
+        this.setState({
+            name: 'yela'
+        });
+
+10. Create React App 
+    - CLI to create react apps
+    - dev server
+    - use es6 features 
+    - keep code modular
+    - use build tools to optimize code
+
+11. Single Page apps
+    - react apps are typically spa
+    - only ever one html page served to browser
+    - 
+12. Nesting component App.js is root component then I could bring say Header component
+
+15. Stateless Component
+    - Container component
+        - contain state
+        - containe lifecycle hooks
+        - not concered with UI
+        - use classes to create
+    - UI Component
+        - dont contain state
+        - recieve data from props
+        - only concered with UI
+        - use functions to create
+
+IMPORTANT!! - In Class Based components the props from parent component are passed automatically,
+but in a functional components we have to pass props as parameter to the function.
+
+16 Conditional output
+    - 
+22 Lifecycle methods
+    -   
