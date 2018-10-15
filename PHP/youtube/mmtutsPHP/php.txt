@@ -1,2 +1,231 @@
 I'm running through mmtuts php tutorial here for  quick refresher. Some sections may be missing because I 
 already knew about them.
+
+
+3. Output in browser
+    echo "hey there"; - FASTER
+    print "Gianni"; 
+
+4. Variables
+    $name = "Gianni";
+    echo $name;
+    echo "Hey there" . $name;
+
+5. Comments
+    //
+    /*comment here*/
+
+6. Functions 
+    Pre-determined Functions
+    echo str_word_count("hey");
+
+7. Data Types
+    "hey" - string
+    20 - integer
+    20.55 - Float
+    true/false - Boolean
+    array("hey", "hi", "Hello"); - array
+
+8. Arithmetic Operators
+    5+5
+    5-5
+    5%5 - divide
+    5**5 - to power
+
+9. Assignment Operators
+    $x = 100;
+    $x = $x + 20;
+    $x += 20;
+
+10. Comparison Operators
+    $x = 5;
+    $y = 10;
+    if($x === $y){
+
+        echo "True";
+    }else {
+        echo "False";
+    }
+
+11. Increment and Decrement Operators
+    $x = 10;
+    $x++;
+
+12. Logical Operators
+    $x = 5;
+    $y = 10;
+    if($x == $y || 1 == 1){
+
+    }
+    || Or
+    && And
+    xor = either one is true or
+
+13. Conditional Statements
+    $x = 2;
+    if($x == 1){
+        echo "ugly";
+    }elseif($x == 2){
+        echo "handsome";
+    }else {
+        echo "very ugly";
+    }
+
+14. Switch Statements
+    $x = 1;
+    switch($x){
+        case 1: 
+            echo "The answer is 1";
+        case "number":
+            echo "The answer is number";
+        default:
+            echo "I don't know man";
+        break;
+    }
+
+15. Calculator project. - Simple so I didn't create the project
+16. Schedular project - Simple used switch statement to send different messages during different days using Date()
+
+17. While Loop
+    $x = 1;
+    while($x < 5){
+        echo "Hi";
+        $x++;
+    }
+
+18. Do While Loop - While Loop won't write anything in the string unless it's true. Do While will atleast do it once. 
+    $x = 1;
+    do{
+        echo "hi"
+    }
+    while($x <= 5);
+
+19. For Loop 
+    for($x = 0; $x <= 10; $x++){
+        echo "Hi";
+    }
+
+20. Foreach Loop
+    $array = array("gianni","gianni2","gianni3");
+
+    foreach($array as $loopdata){
+        echo "Hi" . $loopdata;
+    }
+21. Using Arrays in PHP to store Data
+    $array = array("gianni","gianni2","gianni3");
+    echo $array[0];
+
+22. Create Your own Function
+    
+    function newCalc($x){
+        $newnr = $x * 0.75;
+        echo "here is 75% of what you wrote:". $newnr;
+    }
+    $x = 100;
+    newCalc($x);
+
+     $a = 10;
+    newCalc($a);
+    
+23. How to include files in php. - Already know this
+
+24. Local and Global Scope
+    //global scope
+    $x = 5;
+    function something(){
+        //localscope
+        $y = 10;
+    }
+    echo $x; = 5
+    echo $y; = error
+
+25. Superglobal - $GLOABALS
+
+    $x = 5;
+    function something(){
+        $y = 10;
+        echo $GLOABALS['x'];
+    }
+    something();
+
+26. Superglobal - $POST and $GET
+    $GET passes info through url
+    $POST passes info hidden
+
+27. Superglobal - $_COOKIE and $_SESSION
+    setcookie("name", "Daniel", time() + 86400);
+
+    $_SESSION['name'] = "Daniel";
+
+28. How to start a SESSION
+    - You would want to use a session and make website remember that we logged in
+    is using a session within doc
+
+    $_SESSION['username'] = 'gianni';
+    echo $_SESSION['username'];
+
+    - to start a session on website everywhere: 
+    session_start();
+
+29. MySQL DB for PHP
+30. Tables for DB for PHP
+    create table posts(
+        id int(11) not null PRIMARY KEY AUTO_INCREMENT,
+        subject varchar(128) not null,
+        content text not null, 
+        date datetime not null
+    );
+
+31. Insert into DB
+    insert into posts (subject, content, data) VALUES ('This si the subject','This is content','2018-15-10 16:38:00');
+
+32. Select Data from MySQL DB
+    SELECT * FROM posts WHERE id ='1';
+
+33. Update DB
+    update posts set subject = 'this is a test', content='this is content' WHERE id='1'
+
+34. Delete data from DB
+    DELETE FROM posts WHERE id='1'
+
+35. Set Data Order
+    SELECT * FROM posts ORDER BY id ASC
+
+36. Connect to DB in PHP - Already know how in PDO as well
+
+37. Show data from DB using PHP - Already know how to in PDO
+
+38. Insert data from web into DB- Already know how to in PDO
+
+39. SQLI video protection - Skip this deprecated
+
+40. prepared functions - was using sql lite instead of PDO
+
+41. Error Handlers in PHP
+
+    if(isset($_POST['submit'])){
+        include_once 'dbh.inc.php';
+        $first = $_POST['first'];
+        $last = $_POST['last'];
+        $email = $_POST['email'];
+
+        if(empty($first) || empty($last) || empty($email)){
+            header("Location: /index.php?signup=empty");
+        }else {
+            if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+                header("Location: /index.php?signup=invemail");
+            }else {
+                echo "sign up the user!";
+            }
+        }
+
+    }else {
+        header("Location: /index.php?signup=error");
+    }
+42. Error Messages inside site - pretty long vid, more efficient ways in showing errors.
+
+43. Hashing and De-hashing data in PHP;
+    $input = "test";
+    $hashed =  password_hash("test", PASSWORD_DEFAULT);
+
+    echo password_verify($input, $hashed);
