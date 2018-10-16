@@ -1,0 +1,101 @@
+1. using MVC Pattern - Model, View, Controller
+
+2. Simple explenation of MVC 
+    Model - connections to DB
+    View - takes care of showing code to user
+    Controller - Handles User input
+    
+3. Create Classes in OOP PHP
+    class newClass{
+        //props and methods go in here
+        public $info = "gianni";
+    }
+    //how to access info in class
+    $user = new newClass;
+    $user->$info;
+
+4. Scopes in OOP PHP
+    public - could access from anywhere in file
+    protected - any other classes that extend to this class could access info
+    private - only available within that class.
+
+     class newClass{
+        //props and methods go in here
+        public $info = "gianni";
+        protected $info2 = "gianni2";
+        private $info3 = "gianni3"; "cant access anywhere else only this class"
+    }
+
+    class otherClass extends newClass {
+        public function name(){
+            return $this->info2;
+        }
+    } 
+    $user = new otherClass;
+    $user->$info; "Gianni"
+    $user->info2; "error need to make protected var accessable in child class"
+
+5. Props and methods in OOP in PHP
+    class newClass {
+        public $data = "data";
+        public $error = "this is class called newclass";
+        
+        //runs code as soon as class has been loaded
+        public function __construct(){
+            echo "this happens when class is created";
+        }
+
+        public function setProp ($newdata){
+            $this->data = $newdata;
+        }
+
+        8.
+        public function __toString(){
+            return $this->error;
+        }
+        public function getNewProp(){
+            return $this->data;
+        }
+
+        public function __destruct(){
+            echo "This happens when class stops running";
+        }
+    }
+
+    $object = new newClass;
+
+6. Construct and Deconstruct methods. I put these in code above since it's simple
+
+7. Delete object - I put the code below which reflects on the class above in lesson 5
+    $object = new newClass;
+    unset($object); - destruct object
+8. toString - code applied in lesson 5 code above
+
+9. static props and methods. Why use static? can't refer to any other functions because they aren't static. Could only access other static props and methods
+    and also allows for cleaner development in OOP.
+    class newclass2{
+        public static $static = 0;
+        public static function statmeth(){
+            use this way because the static property is static
+            return self::$static;
+        }
+    }
+    echo newclass2::$static;
+
+10. initialize object props in oop 
+    class users {
+        public $first = "gianni";
+        public $last = "lastname";
+
+        //$first var in parenth is not the same as first above
+        public function __construct($first){
+            $this->first = $first;
+        }
+
+        public function __destruct(){
+            
+        }
+    }
+    $first = "john";
+    $users = new users($first);
+
