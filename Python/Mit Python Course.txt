@@ -96,12 +96,29 @@ Week 1
 		- you are able to check if the solution is correct
 		- keep guessing until find solution or guessed all values
 		- THIS process is exhaustive enumeration
+			x = int(input('Enter an integer: '))
+
+			ans = 0
+
+			while ans**3 < x:
+			    ans = ans + 1  <------- THE TEST IS RIGHT HERE
+			    
+			if ans**3 != x: 
+			    print(str(x) + ' is not a perfect cube')
+			else:
+			    print('Cube root of ' + str(x) + ' is ' + str(ans))
+
+
+		    
 	Cleaner guess and check
 		- cube root
 			- using for loop with range 
 			- supposed you put root without a root
 			- this is to understand how to approach problems and figure out the most efficient ways with it. 
 
+
+
+	
 
 
 
