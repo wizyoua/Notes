@@ -1,3 +1,5 @@
+Note This Course is Learn Computer Science using Python. 
+
 Week 1
 	
 	Types: 
@@ -37,7 +39,8 @@ Week 1
 		 		print ('true')
 
 	Bindings
-		- 
+		- names we have associated with Value
+		-simple var. A = 5
 	Strings
 		- letters, special chars, spaces, digits
 		- enclosed in quotation marks
@@ -109,12 +112,17 @@ Week 1
 			    print('Cube root of ' + str(x) + ' is ' + str(ans))
 
 
-		    
+
 	Cleaner guess and check
 		- cube root
 			- using for loop with range 
 			- supposed you put root without a root
 			- this is to understand how to approach problems and figure out the most efficient ways with it. 
+
+			cube = 8
+			for guess in range(cube + 1):
+				if guess**3 == cube:
+					print ("Cube root of ", cube, "is", guess)
 
 
 
@@ -198,11 +206,14 @@ Week 2
 		- Floats approximate  real numbers
 		- Decimal number: 302 = 3*10^2 + 0^*10^1+2^*10^0
 
+
+		- Go back to learn how to use python to convert an integer or floats to binary. 
+
 	Newton-Raphson
 		- General approximation algorithm to find roots of a polynomial in one variable
 		- want to find r such that p(r) = 0
 		- example: to find the sqaure root of 24, find the root of p(x) = x^2 -24
-		- NEwton Showed tgat if g is an appromiation to the root, then 
+		- NEwton Showed that if g is an appromiation to the root, then 
 		- simple case cx^2 + k
 
 		- Iterative algorithms
@@ -244,7 +255,17 @@ Week 2
 	Introducing Functions
 		- write resuable piece/chunks of code called functions
 		- functions are not run until invoked
-		- function has name, parametes, has a docstring, body
+		- function has name, parametes, has a docstring (optional but recommended), body
+
+		- docstring is really just a summary of what the function does
+		
+		def is_even(i):
+			print("hi")
+			return i%2 == 0;
+
+		is_even(3);
+
+		
 		
 
 

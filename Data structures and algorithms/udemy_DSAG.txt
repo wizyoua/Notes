@@ -1,0 +1,16 @@
+Section 1
+
+	
+	3. Getting better at coding questions
+		- Fizzbuzz problem - Print out all number from 1 to 100. For multiples of 3 print out "Fizz" and multiples of 5 print out "Buzz". For both 3 and 5 "Fizzbuzz"
+
+		- reason so many people fail this question because this is not the easiest question. 
+
+
+		- Fibonacci series - a series of numbers in which each number is the sum of the two preceding numbers. The simplest is the series 1,1,2,3,5,8,etc.
+			- Solve with the recursive solution is the most likely 
+
+
+Section 2
+
+	5 

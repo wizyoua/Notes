@@ -1,0 +1,147 @@
+UNIT 1
+
+Lesson 1 
+	Intro:
+	- Our biggest goal is to learn about computer science. How to solve a problem by breaking down to smaller pieces. 
+
+	Advice from Sergey Brin:
+	- Most important thing is to corpses that you can use to search itself
+
+	What is Programming: 
+	- A program is what gives the power to the computer to do basically anything.
+	- Programs are precise steps - the
+	- We are learning Python - it gives a high level language to write programs - Python is an interpretor 
+	
+	Language Ambiguity 
+	- why can't we use english or spanish to program: because Ambiguity 
+	
+	Grammar
+	- Sentence -> Subject Verb Object
+	- Subject -> noun
+	- Object -> noun
+	- Verb -> Eat
+	- Verb -> Like
+	- Noun -> I
+	- Noun -> Python
+	- Noun ->Cookies
+
+
+	Backus-Naur Form
+	- purpose is to be able to describe a language simple and precise
+		<non-terminal>->replacement
+			Sentence
+			subject->Noun->I
+			verb->verb->Like
+			object->object->Noun->Python
+
+			Derivation : starting from non-terminal, follow rules to arrive to only terminals
+
+	Python Expressions for Arithmetic Expressions
+		- Expression is something that has value
+			- Expression -> Expression Operator Expression
+			- Expression -> Number 
+			- operator -> +
+			- operator -> *
+			- Number -> 0,1,...
+			- Expression -> (expression)
+
+			Final : 1 + 1
+
+	Variables 
+		- Assignment Statement: Name = Expression (has to start with a letter)
+		- #comments 		
+		- Variables can vary 
+			- we can change value after assignment 
+			
+
+	Strings
+		- goes over simple string and concat, plus using string and multiplying numbers or what position a string in array will be. Really simple already know.
+
+		sub sequence 
+			string [start: stop] like print word[4:6] and word = "string" = "ng"
+
+		trick question subsequence
+		s[:] - entire string selected
+		s+s[0: -1+1] - entire string selected 
+		s[0:] - entire string selected 
+		s[:3] + s[3:]
+
+	Finding Strings
+		there is built in method in python
+		<string>.find(<string>)
+
+Lesson 4
+	Why Python
+		- python is easy to learn and widely used
+
+	Indentation in python
+		- whitespace matters
+		- saves space
+		- careful copying code becuase it needs to stay
+		- 
+
+
+
+
+UNIT 2
+
+Lesson 5
+	Introductions
+		- Learn about Procedure and Control
+
+	Motivating Procedures
+		- 
+
+	Using Procedures
+		- <procedure> (<input>,<input>,...)
+
+	If Statements
+		if this:
+
+			else: 
+
+
+	While Loops - already know just writing to learn about python
+
+		i = 0
+		while i < 10:
+			print i 
+			i = i+1
+
+
+Lesson 10 
+	How to Solve Problems
+		- the problem we will focus on (which is just a problem to help understand how to solve problems) is given your birthday and the current day, calculate how old you are.
+
+
+		1. First thing you should do when asked a problem is make sure you understand it!
+
+		computational problem: takes inpout and produces output.
+
+
+
+		Pythonistas Guide: 
+			1. Don't panic
+
+			2. What are your inputs in question above.
+				- Inputs: two dates (what is the set of valid inputs)
+				- How are inputs represented 
+
+			3. What are the outputs
+			
+
+			4. Solve the Problem!
+				- work through problem by hand
+				- solve problem first then make faster 
+
+
+
+UNIT 3
+	Lesson 11:
+
+		List: [item1, item2, item3]
+
+		nested list: [item1, item2, [item3]]
+
+
+

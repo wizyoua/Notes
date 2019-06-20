@@ -1,0 +1,47 @@
+Leetcode Learning - Goes by name of Data Structure then overview then content. that is my study method for this site.
+
+Binary Tree 
+
+	Overview: 
+
+		- A tree is a frequently used data structure to stimulate a tree structure
+		- Each node of the tree has a root value and a list of references to other nodes which are called child nodes. 
+		- A BINARY TREE is one of the most typical tree strucurres. it is a data structure in which each node has at most 2 children which are refferend to left and right child.
+
+
+
+	Traverse a Tree
+
+	- Pre order Traversal is to visit the root first. then traverse left subtree then right subtree. 
+
+		 A
+	    / \
+	    B  C
+	   /\  /\
+       A B C D
+
+       So from start point A it will go to B then A then B then back up then to C and so on.
+
+
+    - In-Order Traversal 
+    
+    Time complexity : O(n); n is the number of nodes in a tree
+
+
+    QUESTIONS:
+
+    1. https://github.com/loatheb/leetcode-javascript/blob/master/144-binary-tree-preorder-traversal/binary-tree-preorder-traversal.js
+
+		    var preorderTraversal = function(root) {
+			    const result = [];
+			      const stack = [];
+			      let node = root;
+
+			      while (node) {
+			        node.val && result.push(node.val);  
+			        node.right && stack.push(node.right);      
+			        node = node.left || stack.pop(); 
+			      }
+
+			      return result;
+			};

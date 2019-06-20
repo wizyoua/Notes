@@ -1,0 +1,180 @@
+Free Code Camp - Basic Algorithm Scripting - Problem set
+
+1. Reverse a string
+
+	es5 solution with built in js functions
+
+	function reverseString(str) {
+	  str = str.split('');
+	  str = str.reverse();
+	  str = str.join('');
+	  return str;
+	  console.log(str);
+	}
+
+	reverseString("hello");
+
+
+
+	es6 solution with built in functions - ES6 introduces one more way for splitting our string into an array, and that is a spread operator […]. Even though this solution is similar to the previous one, I believe it’s worth mentioning, for it looks and works pretty great.
+
+	function reverse(str){
+	  return [...str].reverse().join('');
+	}
+
+
+	For Loop method:
+
+	function reverse(str) {
+		var newstring = "";
+
+		for (var i = str.length - 1; i >= 0; i--) {
+			newstring += str[i];
+		}
+
+		return newstring;
+	}
+
+	Recursive Method
+
+	function reverse(str){
+		if(str === ""){
+			return "";
+		}else {
+			return reverse(str.substr(1)) + str.charAt(0);
+		}
+	}
+
+
+2. Factorialize a Number - When you factorialize a number, you are multiplying that number by each consecutive number minus one.
+
+	Recursive method
+
+	function factorialize(num) {
+		if (num < 0) 
+        	return -1;
+        else if(num == 0)
+        	return 1;
+        else {
+        	return (num * factorialize(num-1));
+        }
+	}
+
+	With While Loop
+
+	function factorialize(num){
+
+		var result = num;
+
+		if(num ===0 || num ===1)
+			return 1;
+
+		while(num > 1) {
+			num--;
+			result = result * num;
+		}
+
+		return result;
+	}
+
+	With for loop
+
+
+	function factorialize(num) {
+	  if (num === 0 || num === 1)
+	    return 1;
+	  for (var i = num - 1; i >= 1; i--) {
+	    num *= i;
+	  }
+	  return num;
+	}
+
+	
+3. Find the Longest Word in a String - In this algorithm, we want to look at each individual word and count how many letters are in each. Then, compare the counts to determine which word has the most characters and return the length of the longest word.
+
+	For Loop
+
+	function findLongestWord(str) {
+		var strSplit = str.split(' ');
+
+		var longestword = 0;
+
+		for(var i = 0; i < strSplit.length; i++){
+			if(strSplit[i].length > longestWord) {
+				longestWord = strSplit[i].length;
+			}
+		}
+
+	}
+
+	Sort() method - The sort() method sorts the elements of an array in place and returns the array.
+
+	function findLongestWord(str) {
+	  var longestWord = str.split(' ').sort(function(a, b) { 
+	  	return b.length - a.length; 
+	  });
+	  return longestWord[0].length;
+	}
+
+	Reduce() method - The reduce() method applies a function against an accumulator and each value of the array (from left-to-right) to reduce it to a single value.
+
+	function findLongestWord(str) {
+	  var longestWord = str.split(' ').reduce(function(longest, currentWord) {
+	    return currentWord.length > longest.length ? currentWord : longest;
+	  }, "");
+	  return longestWord.length;
+	}
+
+
+4. Return largest number in a array - Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.
+
+	function largestOfFour(arr) {
+		- The map() method creates a new array with the results of calling a provided function on every element in the calling array.
+		- The Math.max() function returns the largest of zero or more numbers.
+		return arr.map(subArr => Math.max(…subArr));
+
+	}
+
+
+5. confirm the ending of a String in JavaScript
+
+
+	The substr() method returns the characters in a string beginning at the specified location through the specified number of characters.
+
+
+6. Repeat String Num Times
+
+	For loop method
+	function repeatStringNumTimes(str, num) {
+	  // repeat after me
+	 var final = "";
+
+	 if(num < 0)return "";
+
+	 for(var i= 0; i<num; i++){
+	   final += str;
+	 }
+	  return final;
+	}
+
+
+
+	Recursion Method
+
+	function repeatStringNumTimes(str, num){
+
+		if(num < 0) return "";
+
+		if(num === 1) return str; //BASE CASE
+
+		return str + repeatStringNumTimes(str, num -1);
+	}
+
+
+
+
+
+
+
+
+

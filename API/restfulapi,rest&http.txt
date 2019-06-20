@@ -1,0 +1,36 @@
+What is Rest?
+
+- representational state transfer
+- Architecture style for designing network applications
+- Relies on stateless, client-server protocol, almost always http
+- Treats server objects as resources that can be created or destroyed
+- Can be used by virtually any programming language
+
+
+HTTP Methods
+- Get: Retrieve data from specified resource
+- Post: Submit data to be processed to a specified resource
+- Put: Update a specified resource
+
+- head: Same as get but does not return body
+- options: return supported http methods
+- patch: update partial resource
+
+
+Endpoints
+- the uri/url where api service can be accessed by client application
+
+Get http://mysite.com/api/users
+Get http://mysite.com/api/users/1 OR http://mysite.com/api/users/details/1
+
+POST http://mysite.com/api/users
+PUT http://mysite.com/api/users/1 OR http://mysite.com/api/users/update/1
+
+DELETE http://mysite.com/api/users/1 OR http://mysite.com/api/users/delete/1
+
+Authentication - some apis require to use their service
+
+curl -H "authorization: token OAUTH-TOKEN" https://api.github.com
+
+curl: transfer data using multiple protocalls including http
+
