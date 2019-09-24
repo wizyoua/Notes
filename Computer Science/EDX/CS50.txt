@@ -1,0 +1,42 @@
+CS50 
+
+Week 0
+	- Computer stores binaries to powers of 2
+	- bit is a binary digit 
+	- computer can represent any number of values all it needs is bits
+	- How does a computer represent a letter, computers only have electricity in them. 
+	- a pattern of bits = whatever letter we want to map. So 65 bits = A
+	- ASCI = 
+	- a byte is just 8 bits, a sequense of 8, 0's and 1's together
+
+	A = 65
+	B = 66
+	C = 67 
+	D = 68
+
+
+	Abstraction - used in comp sci takes low level implementation and adding another level on it to solve problems. 
+	- take low level detail and simplifying it. 
+
+
+	ASCI  = 8 bits which = 255 variations, which is why a keyboard
+	UNICODE = allows to use soo much bits which is qhy emojis is possible instead of just a normal keyboard
+	RGB = represent a pixel we will use 3 bytes, one is red, green, blue. you combine to get different colors - 0 - 255 rgb optioned in r,g,b
+
+	now we go into video
+	Video is just built up on FPS, they are just really fast images.
+
+
+	INPUT -> [] - > OUTPUT
+
+	whats inside [] = algorithms
+
+	y axis is time to solve , x is size of problem
+
+	first algo going through each page to find name in phone book is a line close to straight up
+	second algo is half as many steps
+	third algo which goes half on phone book then starts to half until reach is log 
+
+	programming is leveraging this intuition is to solve problems with that fast intution. 
+
+	psuedocode is use any spoken language so a computer/robot or person can understand what they say.

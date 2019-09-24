@@ -1,0 +1,10 @@
+- Advanatges of redis
+    - very felixible 
+    - no schemas & Column Names
+    - Very fast
+    - Rich Datatype support
+    - Cachin and disk persistence
+    - Redis can be used with so msny languages
+
+
+From this point we install redis and use a test project to learn more.

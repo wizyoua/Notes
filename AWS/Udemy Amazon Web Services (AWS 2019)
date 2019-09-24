@@ -1,0 +1,31 @@
+Udemy Amazon Web Services (AWS 2019) 
+Section 1 
+
+2. Intro to aws 
+	- data centers distributed worldwide
+	- on demand delivery of it resources
+	- shared and dedicated resources
+
+		- they choose geo regions to optimise latency, minimize costs and regulatory issues
+		- availability zone, connected to each other so aws can stay up in case on area goes down.
+
+	- Edge locations are in most places around world
+	- AWS management console
+	- SDK and CLI Access
+
+
+3. Intro to Storage Services
+	- Cloud Computing Models: 
+		- Infrastructure as a Service (Iaas) - VPC, EC2, EBS
+		- Platform as a Service (Paas) - RDS, EMR, ElasticSearch
+		- Software as a service (saas) - Web Based email, office 365, salesforce.com
+	- Serverless Computing : build and run apps without provisioning yourself. 
+
+
+	Amazon Storage Servives
+		- Simple Storage Service (s3) bucket and upload objects to that bucket
+		- Glacier : long term archive service. 
+		- Elastic Block Store: its like attaching a hard drive to your computer at home
+		- Elastic FIle System: network 
+		- Storage Gateway: hybrid storage between cloud and on premises. 
+		- Snowball: Migrate data from on premise to aws cloud.
