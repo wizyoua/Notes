@@ -1,0 +1,25 @@
+Elastisearch - tutorials point
+
+
+Basic Concepts:
+	- Elasticsearch is a real-time distributed and open source full-text search and analytics engine.
+	- elastisearch is scalable up to petabytes of structured and unstructured data
+	- elastisearch uses denormalization to improve search performance.
+
+	Key concepts:
+		- node: refers to single running instance of elastisearch. single physical and virtual server accommodates multiple nodes depending on ram, storage and power. 
+		
+		- cluster: is a collection of one or more nodes.
+		
+		- index: it is a collection of different types of documents and their properties. 
+		
+		- document: collection of fields in a specific manner defined in 
+		json format. 
+		
+		- shard: indexes are horizontally subdivided in shards which means each shard contains all the properties of document but contains less number of json object than index. horizontal separation makes shard an independent node which be stored in any node. 
+		- Replicas: elastisearch allows user to create replica of their indexes and shards. 
+
+	disadvantages 
+		- elastisearch does not have multi-language support in terms of handling request and response data(ONLY IN JSON)
+
+		

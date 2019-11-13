@@ -1,0 +1,13 @@
+Elastisearch basic concepts - youtube - code university online
+
+- in a typical db we store data in a table, 1 row is 1 record of info but in elasticsearch we store in JSON
+
+- Documents can be broken down by storing common document types. So say we want to store all blogposts, then all those blogposts go to a docuement, then if we want to store all comments, we'll store those together in a document. an Index wraps all this together so all of these document types will be in one index. index is like a database while type is a table. 
+
+- Document resides in an index, an index is divided into different shards. these shards are important because data is easily searchable. these shards can be hosted in one machine or multiple machine, a ndoe is where the shards are hosted, all the shards are typically in a cluster. Shards also have replicas with them in the cluster which is used just in case one shard is not available, these replicas will allow to be searchable and bring response back in case something is wrong with shard.
+
+-  clustering and node. simple clustering makes it very easy to scale out data/application, in a one node/machine is where our shards are hosted. if we have another node say 10 shards that were all in one node will auto disribute to the other node, so each node will have 5 and 5. and this goes on and on. 
+
+- just by having all these nodes in 1 cluster, you can acess them by the same name, you don't have to look for a record in all the shards.
+
+- 

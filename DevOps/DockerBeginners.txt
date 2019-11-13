@@ -1,0 +1,29 @@
+Docker Tutorial for Beginners - A Full DevOps Course on How to Run Applications in Containers - YOUTUBE
+
+
+- Docker vs Virtual Machines
+	- Docker is built on same hardware, with same OS, using Docker to then create container with Libraries and Dependencies and Application
+	- VM's use Hardware with HyperVisor which then in each VM need an OS, with Libraries and Dependencies thus increasing cost for VM's
+
+	- With really big applications companies will use both VM's and Docker Containers and they both can help each other
+
+- How is it done?
+	- Docker hub you can find images or OS, Databases and tools, you can then bring up the application really fast
+
+	- Docker can run multiple instances as well and would use load balancer to handle that.
+
+	- Docker Image is a template - which create 1 or more container
+	- Docker Container - is the instance of stuff you need 
+	- Docker file- is used to create image to create application, this helps everybody run the same app everywhere. 
+
+
+- Docker has Community and Enterprise Edition
+	- Spoke more about what os you can use it and different non important things
+
+
+- How to install Docker
+	- just find out if your OS is supported
+	- You have to Uninstall old versions of docker before hand
+	- visit repo and install package
+	- easier is to install docker using convenience script
+	- 

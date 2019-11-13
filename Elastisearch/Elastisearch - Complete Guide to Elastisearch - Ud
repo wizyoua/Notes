@@ -1,0 +1,25 @@
+Elastisearch - Complete Guide to Elastisearch - Udemy
+
+Intro to elastisearch
+
+	- data is stored as documents 
+	- a document contains fields which is like rows in relational db's
+	- we query elastisearch with rest api's
+	- written is java
+	- 
+
+Overview of the elastic stack
+
+	- Kibana is analytics and visual platform, an elastisearch dashboard, pie charts line charts, can show traffic in real time. Kibana is a web platform for elastisearch. 
+
+	- logstash - data processing pipeline, data that is recieved are events are processed then sent of. 3 parts, inputs filters and outputs. we can pass csv,xml, and json into logstash. revicevs events from one or more inputs then sends then to stashes.
+
+	- x-pack - adds additional features to kibana and elsatsiearch. it provides security, alerting, reporting, machine learning. graph
+
+	- elastisearch sql - queries are written in query dsl, flexible but verbose. elastisearch translates the sql internally, the translate api return the corresponding query dsl. helper tool for people. also this is under x-pack
+
+	- Beats - lightweight agents you install on servers. can collect cpu and memory uses. file beat and metric beat are most popular.
+
+	lets visual everything above and the elastic stack.
+
+	Beats and logstash send data into elastisearch, which then elastisearch searches analyzes and stores data, then kibana gets from kibana to visualize. 
