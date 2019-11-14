@@ -22,4 +22,65 @@ Overview of the elastic stack
 
 	lets visual everything above and the elastic stack.
 
-	Beats and logstash send data into elastisearch, which then elastisearch searches analyzes and stores data, then kibana gets from kibana to visualize. 
+	Beats and logstash send data into elastisearch, which then elastisearch searches analyzes and stores data, then kibana gets from kibana to visualize. x-pack ass features to the entire stack.
+
+Common architectures 
+
+
+Understanding the basic architecture 
+
+	- A node refers to instance of elasticsearch. you can run alot of nodes on one machine. 
+
+	- In production run one node on one machine just in case. 
+
+	- Each node belongs to cluster, a cluster contains related nodes that contains all your data.
+
+	- the reason to separate into clusters is to separate logically across a big project.
+
+	- when node starts up it joins cluster or create a cluster on its own. 
+
+	- document is json object is stored with meta data elastsearch uses to store in node. but data in json is rthe initial document.
+
+	- every document in elastsearch is stored in index which are like a collection/ table which contains related documents
+
+Sharding and Scalability 
+
+	- sharding is a way to divide indices into smaller piece
+
+	- each piece is refferes to as shard
+	
+	- sharding is done at index level
+	
+	- main purpose is to horizontally scale the data
+
+	- a shard is placed on any node 
+
+	- a shard may store up to 2 billion documents
+
+	- increase number of shard with the Split API
+
+	- Reduce the number of shards with the Shrink API
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
