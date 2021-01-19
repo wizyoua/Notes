@@ -1,0 +1,1 @@
+- A function's Big-O notation is determined by how it responds to different inputs. How much slower is it if we give it a list of 1000 things to work on instead of a list of 1 thing?
