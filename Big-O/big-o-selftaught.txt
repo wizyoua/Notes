@@ -1,1 +1,37 @@
-- A function's Big-O notation is determined by how it responds to different inputs. How much slower is it if we give it a list of 1000 things to work on instead of a list of 1 thing?
+https://justin.abrah.ms/computer-science/big-o-notation-explained.html
+
+- A function's Big-O notation is determined by how it responds to different inputs. 
+How much slower is it if we give it a list of 1000 things to work on instead of a list 
+of 1 thing?
+
+
+def item_in_list(to_check, the_list):
+    for item in the_list:
+        if to_check == item:
+          return True
+    return False
+
+- The "complexity" of this function is O(n)
+- O(n) is read "Order of N" because the O function is also known as the Order function.
+- "Orders of magnitude" is YET ANOTHER mathematical term which basically tells the difference between classes of numbers.
+- This is true, but Big-O is all about the approximate worst-case performance of doing something. The worst case for the code above is that the thing we're searching for isn't in the list at all. (Note: The math term for this is "upper bound", which means its talking about the mathematic limit of awfulness).
+- Constant time is considered the best case scenario for a function.
+
+https://justin.abrah.ms/computer-science/how-to-calculate-big-o.html
+
+How to calculate Big-O
+
+def count_ones(a_list):
+      total = 0
+      for element in a_list:
+          if element == 1:
+              total += 1
+      return total
+
+The above code is a classic example of an O(n) function. This is because we have to loop over every element that we get in order to complete our calculation. We can trace this by following along the code and counting. We're doing a few calculations here.
+
+We're setting total to zero.
+We loop through a_list.
+We check if element is equal to 1.
+We increment total by one a few times.
+
