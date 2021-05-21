@@ -1,0 +1,95 @@
+FreeCodeCamp - Data Structures - Computer Science Course for Beginners - https://www.youtube.com/watch?v=zg9ih6SVACc&ab_channel=freeCodeCamp.org
+
+What is Big O notation: 
+    - A way to basically score a data Structure based on 4 criteria
+    - the most common functions you might want from a data Structure
+     1. Accessing elements
+     2. searching for an element
+     3. Inserting an element
+     4. Deleting an element
+
+    - A time complexity equation works by inserting the size of the data-set as an integer N, and returning the number of operations
+    that need to be conducted by the computer before the function can finish.
+
+    - we always use worst case scenario when judging these data Structure
+
+    - its called bigO notation because the syntax for the Time complexity equation includes a bigO and then a set of parentheses
+        - the parentheses houses the function
+
+    - We measure efficiency in # of operations performed because measuring by how long the function takes to run would be silly
+        - Accessing
+        - searching
+        - inserting
+        - Deleting
+        - modeled by equation which takes in size of data-set and returns number of operations needed to be performed by the computer to complete that takes
+
+    - A data Structure efficiency isn't the end all be all for deciding on which data Structure to implement. 
+
+    6 most common time complexity equations - numbered below best to worst
+
+    1. 0(1) 
+        - no matter what the size of your data set is, the task will be completed in a single instruction.
+        - graph of 0(1) remains constant at 1 - no matter the volume of data, the computer will complete task in single instruction
+
+    2. 0(log n)
+        - Still provides fast completion time.
+        - gets more efficient as the size of the data set increases.
+        -ex. Binary Search
+
+    3. 0(n) 
+        - the last of the decent equations
+        - 
+
+    4. 0(n log n)
+        - the first which is relatively bad in terms of efficient.
+        - slope increases as volume of data increases
+
+    5. O(n^2)
+        - very bad in efficiency
+    
+    6. O(2^n)
+        - exponential in Structure
+
+    Data Structures
+
+    1. Array
+        - most common data structure
+        - fundamentally a list of similar values
+        - can be used to store anything
+        - store values of the same type
+        - every item in the list of data is referred to as an element
+
+        - there are also examples of parallel arrays
+            - contain the same number of elements
+            - have corresponding value in the same position
+
+        - the arrays type
+        - what type of info is stored or will be stored in the arrays
+        - the size is a set integer that is fixed upon creation of the array
+        - there are 2 ways to create an array in most languages
+            - populate first
+            - populate later   
+
+        - to get info that is stored within the array, we use a numerical index. an integer which corresponds to an element within the array
+        - an array within an array is known as 2 dimensional array
+
+        - Array as a Data Structure
+            - Accessing array: O(1) - 
+            - Searching array: O(n) - because most of time we are working with unsorted lists.
+            - Inserting array: O(n) - because adding element into array requires you to shift every element thats after the index you are inserting to the right one space
+            - Deleting array: O(n) - because removing element from array will shit everything to the left one space.
+    
+    2. ArrayList
+        - the arrayList can be thought of as a growing array
+        - why not always use arraylist?
+            - 
+        - arraylist is backed by array in memory
+        - in python or js a array and arrayList are basically merged together, the example while learning this shows it in Java and C#
+        - arrayList is an evolved array
+        - arraylist belongs to class so it has pre built functions
+        - type of functionality varies based on language
+        \\
+
+
+
+    

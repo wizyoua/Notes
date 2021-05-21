@@ -1,0 +1,6 @@
+Facebook prep
+
+- https://vimeo.com/357608978 - Mock Interview
+ - Learn Data Structures: Hash Maps, Hash Set, Hash Table, Dictionary, linked lists, stacks, queues, trees, heaps, tries and graphs
+ - Learn Algos: Quicksort, merge sort, binary search, depth-first search, breadth-first search
+ - Study time and space complexity
