@@ -238,8 +238,70 @@ What is Big O notation:
             - can use it to make Stacks, Queue, etc. - really important in comp sci
             - Spotify queue
             - image viewing software
+        
+        - One big drawback, we can only point forward. it is fixed by using dubly linked list
     
-    6. 
+    6. Doubly-linkedlist
+        - Sequential access data structure
+        - able to traverse both forwards and backwards using pointers
+        
+        Visualization:
 
+        Previous Pointer: Null
+        Data : '1'
+        Next Pointer: 2
 
+        Previous Pointer: 1
+        Data : '2'
+        Next Pointer: 3
+
+        Previous Pointer: 2
+        Data : '3'
+        Next Pointer: null
+
+        - Adding to the Head of a doubly linkedlist
+            - set the new Nodes next to point towards the current head of the list
+            - Take the new node that we want to insert, and set it's previous to null
+            - Set the current head's previous to point towards this new node
+
+        - Removing from the Head of a doubly linkedlist
+            - Set the head Nodes next to point towards a null value
+            - Set the second Node's previous to also point towards a null value
+
+        - Adding to the middle of list
+            - Set the new Node's previous to point towards the Node previous to the position you want to insert at
+            -  Set the new Node's next to point towards the Node after the position you want to insert at
+            -  set the next and previous on the Node's before and after the one you're inserting to point towards the new node. 
+
+        - Removing from the middle of the list
+            - Set the Node before the one we want to remove next to point towards the Node after the one we want to remove
+            - Set the Node after the one we want to remove previous to point towards the Node before the one we want to remove
+            - Set both pointers of the Node we want to remove to point towards a null value
+
+        - Adding to the tail of the list
+            - Set the next pointer of the current tail to point towards the new Node we want to become the tail
+            - Set the previous of the new Node that we're adding to be pointing towards the current tail of the list
+            - Make the new Node's next point towards a Null value
+
+        - removing from the tail of the list
+            - Set the tail Node's previous to point towards null
+            - Set the second to last Node's next to also point towards null
+        
+        Time Complexity:
+
+        Accessing : O(n)
+
+        Searching : O(n)
+
+        Inserting : O(n) if middle
+                    O(1) if head or tail
+        
+        Deleting : O(n) if middle
+                    O(1) if head or tail
+    
+        Real world Uses
+            - the back and forth functionality of a doubly linked list lends itself to be implemented in a lot of Stack-like functionality
+            - browser caches going back forth in pages
+    
+    7. Dictionaries
     
