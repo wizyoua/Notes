@@ -113,7 +113,7 @@ What is Big O notation:
     - may only be obtained through those elements
     
     3. The Stack 
-     - a Sequential access data structure in which we add elements and remove elements according to the LIFO Principle
+        - a Sequential access data structure in which we add elements and remove elements according to the LIFO Principle
         - Last In First Out
         - like grabbing a book 3 books below from the top, we can only access by removing the top 2 books
         - Common Stack methods
@@ -129,10 +129,76 @@ What is Big O notation:
 
         - Contain method
             - used for searching through the Stack
+        
+        Time Complexity:
+
+        Accessing : O(n)
+
+        Searching : O(n)
+
+        Inserting : O(1) since data only flows from single point, its pretty fast to access the immediate item same for deleting
+
+        Deleting : O(1)
+
+        - Stacks are used everywhere, both in code and real-world situations
+
+        HEY!! a great example is recursion, since it is the process of function repeadetly calling themselves
+        that means every time it runs, it keeps stacking the method runs, but then once it reaches base case, it 
+        will pop the calls of. 
+
+        real world situations are like undo/redo or backpage in browser. 
+
+    4. The Queue
+        - a Sequential access data structure which follows the FIFO methodology
+            - FIrst in First Out
+        - The location we add and remove elements in the Queue
+            - add in the backed: tail
+            - remove from the front: head
+        
+        Queue methods:
+            - Enqueue
+                - Add an element to the tail of the Queue
+            
+            - Dequeue 
+                - Removes an element from the head of queue
+            
+            - Peek
+                - returns the object thats at the forefront of the queue
+            
+            - Contains
+                - returns wether or not the queue contains an object
+
+        Time complexity: 
+            Accessing : O(n)
+            Searching : O(n)
+            Inserting : O(n)
+            Deleting : O(n)    
+
+        Uses: 
+            - used very often in programming for a variety of functions
+
+    5. The Linkedlist
+        - Sequential access linear data structure in  which every element is a seperate object called a Node which has 2 parts
+            - The data
+            - the reference(or pointer) which points to the next Node in the list
+        
+        Visualizartion
 
 
+        Look how the starting node has data, and is null is no other node is added, but then if one is added the node 1 pointer points to 2
+        and the newest node 2 has its data but then the pointer is null, and so on.
+        
+        (head node - arbitrary)
+        Data:1
+        Pointer: 2
 
+        (Tail Node)
+        Data:2
+        Pointer:null
+        
+        - every node has information and a pointer
 
+        test
        
 
 
