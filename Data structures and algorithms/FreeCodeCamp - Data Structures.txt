@@ -198,13 +198,48 @@ What is Big O notation:
         
         - every node has information and a pointer
 
-        test
-       
+        How to add and remove from a linked list, not as simple as stack or queue.
 
+        - Data can flow in and out from any point
+            - Adding to the head of Linkedlist
+            Make the new Node pointer point to the current Head of the Linkedlist
 
+            - Removing from the Head of a Linkedlist
+                - Set the Head Nodes pointer to null value, it will remove it. 
+                - old head node regains its position
 
+            - Adding a Node to the middle of a Linkedlist
+                - Make the pointer of the new Node point to the Node after the location we want to insert at
+                - Set the Node before the location we want to insert at to point towards the new Node
 
+            - Removing a Node from the middle of the Linkedlist
+                - Make the pointer of the Node previous to the one we're removing, to now point to the Node after the one we're removing.
 
+            - Adding to the tail of a Linkedlist
+                - Make the current tail point towards the new Node you want to add.
+            
+            - Removing from the Tail of a Linkedlist
+                - Set the previous tail to point towards a null value instead of the current tail
+
+        Time Complexity for Linked ListL:
+
+        Accessing : O(n) - we can't get any element we want instantaneously
+
+        Searching : O(n) - check a node and if not we want, we use the pointer to check next one, or null
+
+        Inserting : O(1) - when inserting to head or tail 
+                    O(n) - when inserting in middle of the list
+
+        Deleting  : O(1) - when inserting to head or tail 
+                    O(n) - when inserting in middle of the list
+
+        Real world applications:
+            - linkedlist can be used in the backing of other data Structures
+            - can use it to make Stacks, Queue, etc. - really important in comp sci
+            - Spotify queue
+            - image viewing software
+    
+    6. 
 
 
     
