@@ -73,7 +73,7 @@ What is Big O notation:
         - to get info that is stored within the array, we use a numerical index. an integer which corresponds to an element within the array
         - an array within an array is known as 2 dimensional array
 
-        - Array as a Data Structure
+        - Array as a Data Structure Big O reference: 
             - Accessing array: O(1) - 
             - Searching array: O(n) - because most of time we are working with unsorted lists.
             - Inserting array: O(n) - because adding element into array requires you to shift every element thats after the index you are inserting to the right one space
@@ -88,7 +88,56 @@ What is Big O notation:
         - arrayList is an evolved array
         - arraylist belongs to class so it has pre built functions
         - type of functionality varies based on language
-        \\
+        - 6 common methods of ArrayList:
+            - Add method
+            - Remove method
+            - Get method
+            - Set method
+            - Clear method
+            - toArray method
+        - Accessing : O(1)
+        - Searching : O(n)
+        - Inserting : O(n)
+        - Deleting : O(n)
+
+        Why not always use arrayList since it's more efficient:
+            - arrayLists can only store objects
+
+        Summary from this is not really applicable because in JS Pythong and PHP an array is basically an ArrayList 
+    
+    Random Access vs Sequential Data Structures
+    - is a Sequential Access Data Structures
+    - Do not provide O(1) Accessing
+    - Can only be accessed in a particular order
+    - Each element is dependent on the others
+    - may only be obtained through those elements
+    
+    3. The Stack 
+     - a Sequential access data structure in which we add elements and remove elements according to the LIFO Principle
+        - Last In First Out
+        - like grabbing a book 3 books below from the top, we can only access by removing the top 2 books
+        - Common Stack methods
+        
+        - Push method 
+            - pushes an object onto the top of the stack
+            
+        - Pop method
+            - remove an element from the top of the stack
+
+        - Peek method
+            - Allows you to get the value at the top of the list without removing it
+
+        - Contain method
+            - used for searching through the Stack
+
+
+
+
+       
+
+
+
+
 
 
 
