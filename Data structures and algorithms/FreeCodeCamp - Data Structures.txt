@@ -304,4 +304,18 @@ What is Big O notation:
             - browser caches going back forth in pages
     
     7. Dictionaries
-    
+        - One of the most abstract data Structures 
+            - both are called Maps and Associative array
+            - an abstract data structure which stores data in the form of key/value pairs
+            - We index Dictionaries using these keys instead of a numerical index
+            - they keys in a key value pair can be any primitive data type you can think of
+            - every key has to be unique
+            - each key can only have one pair
+        - 2 important restrictions
+            - any key can only appear once 
+            - each key can only have one value
+            
+
+    8. 
+        
+            
