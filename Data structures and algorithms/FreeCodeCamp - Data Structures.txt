@@ -314,8 +314,174 @@ What is Big O notation:
         - 2 important restrictions
             - any key can only appear once 
             - each key can only have one value
-            
 
-    8. 
+    8. Hash Table - mini lesson
+        - Hash tables are fundamentally a way to store this information in such a way that 
+        we're able to cut down the amount of nil values while also allowing for the information 
+        to be stores in a way that is easily accessible
         
+        - Hash function will take all the keys for a given dictionary and strategically map them to certain index locations in an 
+        array so that they can eventually be retrieved easily. 
+        
+        - the goal of a good hashing function is to take in a key and reliably place it somewhere in the table so that in can be accessed
+        by the computer
+
+        Time Complexity: its a bit funky since dictionary is built on hash table
+            - When it comes to Dictionaries, we measure time complexity
+        - Accessing : 0(1)
+        - Searching : 0(1)
+        - Inserting : O(1)
+        - Deleting  : 0(1)
+
+        - the option for non-numerical indexes
+        - the flexibility when it comes to making keys
+        - they speed which comes with the hash table implementation
+
+
+    9.  Trees 
+        - store data hierarchically as opposed to linearly
+        - an abstract data structure which contains a series of linked nodes connected togetehr to form a hierarchical representation
+        - like a linkedlist where each node has the option of pointing towards multiple nodes
+        - Vertice - a certain node in a Trees
+        - Edge - A connection between Nodes
+        - Root Node - topmost node of a Trees
+        - Child Node - a certain node which has an edge connecting it to another Node one level above itself
+        - Parent Node - Any node which has 1 or more child Nodes
+        - Leaf Node - A node in a tree which does not have any child Nodes
+
+        - Height - Number of edges on thew longest path down towards a leaf
+        - Depth - Number of edges required to get from that particular node to the root Node
+
+        - Regular trees are great for storing hierarchical data, but their power can really be heightened when you start messing around with how the data is actually stored within them
+
+        - Binary search tree is a simple variation on the stanbdard tree which has three restrictions to help organize the data
+            1. A node can have at most 2 children
+            2. for parent Node, the child to the left has a value less than or equal to itself, the the right child has a value greater than or equal to itself
+            3. No 2 nodes can contain the same value
+
+        - The biggest advantage of Binary Search trees is that we're able to search through them in Logarithmic Time
+            - better bang for your buck the more data we have
+            - Makes them popular for storing large quantities of data that need to be easily searchable
+            
+        - Uses for Trees
+            - hierarchical Data
+        
+    9. Tries - Sprecial restriction tree
+            - Trie tree like data structure whose nodes store letters of an alphabet in the form of characters
+            - We can carefully construct this tree of characters in such a way which allows us to quickly retrieve words in the form of Strings by traversing down
+            a path of the trie in a certain way
+            - Flagging : marking the end of a word by having it also point towards a Flagging
+
+            Uses for Tries
+                - auto complete type text, also educated guesses when typing stuff out
+        
+    10. Heaps
+        - A special tree where all parent Nodes compoare to their children Node's in some specific way by being more or less extreme
+            - either greater than or less than
+            - Determines where the data is stored
+            - Usually dependent on the parent Node's value
+
+        Min-Heap
+            - the value at the Root Node of the Tree must be the minimum amongst all of its children
+            - This fact must be the same recursively for all parent Node's contained within the Heap
+
+        Max-Heap
+            - The value at the Root Node of the tree must be the maximum amongst all of its children
+            - This fact must be the same recursively for all parent Node's contained within the Heap
+
+        Building Heaps example:
+
+        
+        0 : 70
+        1 : 4
+        2 : 90
+        3 : 45
+        4 : 23
+        5 : 76
+        6 : 100
+
+        Step 1 : recursively go up tree and swap Nodes if necessary. Either greater than or less than the node above it.
+        
+            70 -> 4 : No swaps necessary
+            70  -> 4 : left most
+                -> 90 : right most
+
+            since 90 is great than 70
+
+             90  -> 4 : left most
+                -> 70 : right most
+
+             90  -> 4 -> 45 : left most
+                -> 70 : right most
+
+                But 45 is greater than 4 and to keep max-heap property we swap the 4 with 45 
+                also compare 45 with node above it so in this case 90, but 90 is greater so it stays.
+             90 -> 45 -> 4 : left most
+                -> 70 : right most
+
+                And so on
+
+        Deleting from Heaps
+        1. Remove the root node from our heap
+        2. Replace it with the Node furthest to the right
+        3. "Heapify" the Heap by comparing parent Node's to their children ans swapping if necessary
+
+
+        Heaps are most commnanly used in the implementation of Heapsort
+            - Heapsort is a sorting algo which takes in a list of elements, builds them into a min or max heap, then removes the root Node
+            continously to make a sorted list.
+
+    11. Graph
+        - A nonlinear DS consisting of Nodes and edges
+            - finite set of Nodes
+            - Nodes are connected by the edges
+
+        - multiple starting point/node
+        
+        Visualization:
+
+        Vertices: - represents the node in the graph
+        {1,2,3,4,5,6}
+        
+        ordered pairs describes relationships between nodes.
+        {(6,4), (4,5),(4,3),(3,2),(5,2),(2,1), (5,1)}
+
+        Relationships that occur between 2 nodes:
+
+        Undirected graph:
+            - a graph in which the direction you traverse the NOdes ISN'T important
+
+        Directed graph:
+            - a graph in which the direction you traverse the Nodes IS important
+
+        Cyclic graph:
+            - one which contains a path from atleast one Node back to itself
+
+        Acyclic graph:
+            - one which contains no path from any one Node which leads back in on itself
+
+        Weighted Graphs:
+            - Associating a numerical value with each edge
+            - each weight represents some property of the information you're trying to convey   
+
+
+        3 most popular:
+
+        1. Undirected Cyclical Heap with weighted edges can be used through Dijkstra's shortest path algo
+
+        - compiles a list of the shortest possible paths from that source vertex to all other Nodes within the Graph. 
+
+
+
+        2. Unweighted Cyclical Graphs (Undirected and directed) are used in the follower system of a majority of social media websites
+            - FB, Snapchat, Insta, Twitter
+
+        
+        
+        
+
+
+
+        
+
             
