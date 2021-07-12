@@ -47,3 +47,17 @@ Data Structures Algoexpert
     - log(n) is a great complexity compared to O(n) since the more data, the n only increases just a little Bit
     instead of increasing a lot linearly
 
+6. Arrays: 
+    - There are 2 types of arrays
+    - Static arrays: like in java/c++ you have to specify the array size so your OS can find the correct allocation in memory for that array.
+        common operations for Arrays:
+            - Accessing: 
+                - Time Complexity: O(1) Space Complexity: O(1)
+                - read a value at given index: array[2], doing a lookup by direct index is constant time O(1)
+            - Set: 
+                - Time O(1) Space O(1)
+                - array[2] = 5 - overwriting value at index
+            - Creating array:
+                - Time O(N) Space O(N)
+                - OS goes into memory and finds slots to store fixed array
+    - Dynamic arrays: 
