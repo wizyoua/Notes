@@ -1,0 +1,39 @@
+- What is is a sorting algorithm
+    - A function used to rearrange a given array or list of elements
+    according to a comparison operator on the elements.
+    - Data
+        - collection of info stored ina similar location such ass array
+        - will always be in the form of
+
+    - 2 states data can be
+        1. sorted: data is sorted by some order
+        2. unsorted: data is not in any particular order
+
+
+- Why do we need to sort lists:
+    - having a sorted list allows you to gain a lot more from the data that you would otherwise
+
+    - Unsorted data: linear search method
+    - Sorted data: Binary search (much more efficient)
+
+1. Comparison sorts:
+    - sort a set of data by continually comparing the elements near each other in the list, and swapping if necessary.
+        1. selection sort
+        2. odd-even sort
+        3. bubble sort
+        4. cocktail-shaker sort
+        5. quicksort
+        6. Bitonic sort
+        7. Heap sort
+        8. Cycle sort
+
+2. Insertion Sorts:
+    - go through list of elements and slowly build the sorted list one element at a time.
+        1. Insertion sort
+        2. Shell sort
+
+3. Merge sort: recursive sorting algo
+4. Bucket sort: counting sort
+5. Comb sort: exchange sort
+
+

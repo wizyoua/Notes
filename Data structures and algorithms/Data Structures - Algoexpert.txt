@@ -1,0 +1,49 @@
+Data Structures Algoexpert
+
+1. What are Data Structures:
+    - manipulate data involves structuring data and managing data
+    - is a collection of data values, relationships among them, the functions that can be applied to the data.
+
+
+2. Complexity Analysis:
+    - better undertstanding DS with it, it is the bedrock of coding interview problems
+    - Coding problems can have multiple solutions, we try to figure out the best complexity Analysis
+    - solutions are all different, some solutions are better than other.
+    - Time complexity: (high level overview) measure of how fast and algo runs
+    - Space complexity:  measure of how much memory/space an algo uses up
+    - different DS will have different Time and Space Complexity
+
+3. Memory:
+    - memory analogy: a canvas where we have a litte slots like a table with squares that are numbered, pretend each number is a memory slots
+    - 1 Memory slot can hold 8 bits = 1 Byte
+    - 
+    - Bit: short for binary digit, a bit is a fundamental unit of information in Comp Sci that represents a state with one of two values, typically 0 and 1
+    - Byte: 
+4. Big O Notation:
+    - Time Complexity : the measure of an algo speed as the size of the input increases.
+    - It's impossible to describe the time complexity in milliseconds that is why we measure in a different way 
+    - We see why we test time complexity with the size of the input, because some algos can run fast as you increase size but others will obviously take forever
+    - O(1) constant:  means that as size of input increases, time stays constant
+    - O(n) : size of input(n) increases, the speed of the algo increase linearly
+    - O(n^2) : 
+
+    - Big O notation you should read it as asymptotic measure of our algo
+    - accessing a value to a direct memory slot would take constant time
+    - in Order:
+        1. O(1)
+        2. O(log(n))
+        3. O(N)
+        4. O(N log(n))
+        5. O(n^2)
+        6. O(2^n)
+        7. O(N!)
+
+    - Big O notation refers to time or space complexity in the worst case scenario
+
+
+5. Logarithm: 
+    - mathematical concept widely used in comp sci and that's defined by the following equation:
+    logb(x) = y if and only if b^y = x 
+    - log(n) is a great complexity compared to O(n) since the more data, the n only increases just a little Bit
+    instead of increasing a lot linearly
+
