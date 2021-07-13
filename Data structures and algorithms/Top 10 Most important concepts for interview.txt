@@ -1,0 +1,18 @@
+Top 10 Most important concepts for coding interviews
+1. Logarithm 
+2. Graph Traversal (Depth First search Breadth first search)
+3. Binary Search (way better than linear)
+4. Sliding Window Technique (manipulate 2 pointers, left pointer right pointer moving simultaniously)
+5. Recursion
+6. Inverting a Binary tree, reversing a linked list
+7. Suffix Trees (advanced DS)
+8. Heaps 
+9. Dynamic programming
+10. Sorting Algorithms - quick sort and merge sort
+
+
+4 Common Mistakes make in coding interviews
+- Over-communicating
+- Listing out a bunch of DS, algo, without explaining why they could solve it
+- Not buying algo/expert jumping out to the coding without any thought about how  they are going to code
+- Not confirming with the interviewer what the problem statement is.

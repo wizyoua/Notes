@@ -54,10 +54,49 @@ Data Structures Algoexpert
             - Accessing: 
                 - Time Complexity: O(1) Space Complexity: O(1)
                 - read a value at given index: array[2], doing a lookup by direct index is constant time O(1)
-            - Set: 
+            - Set/Overriding: 
                 - Time O(1) Space O(1)
                 - array[2] = 5 - overwriting value at index
             - Creating array:
                 - Time O(N) Space O(N)
                 - OS goes into memory and finds slots to store fixed array
-    - Dynamic arrays: 
+            - Traversing Array:
+                - Time O(N) Space O(1)
+                - JS built in array methods like map, filter are all O(N)
+            - Copy Array:
+                - Time(N) Space O(N)
+                - very important because when solving solutions, like .slice() and for example in for loop, so you are copying array in for loop. 
+            - Inserting Value in Static Array:
+                - Time O(N) Space O(1) - because space your find new memory slots and free up old memory slots
+                - very slow operation since static means we assigned space but now it needs to find a new space in memory since you are inserting into array
+                - under the hood you copy the array
+
+    - Dynamic arrays: is an array that can change in size. How it works under the hood, in JS and Python dynamic arrays are standard, but in C++ or Java they are vectors or array lists
+        - allows you to have faster insertions at the end of the array.
+        - will allocate double the array you need, once you exhaust allocated extra space, it will copy itself and double the amount of free space you need.
+        - Time: O(1) :why? because every time we double the memory, 
+        - Space: O(1) : should we specify the worst case? O(n) if you insert in middle of array because you are shifting every element by 1
+
+7. Linked Lists:
+    - Time get: O(i) where i is the index 
+    - Space: O(1)
+    - setting: O(i) , O(1)
+    - we don't really set things in linked lists, you dont think of nodes at a given index.
+    - initializing linked list : 
+        - Time: O(N)
+        - Space: O(N)
+    - Copying: 
+        - Time: O(N)
+        - Space: O(N)
+    - Traverse: 
+        - Time: O(N)
+        - Space: O(1)
+    - Insertion: 
+        - O(1) if you have head/tail 
+        - O(N) if you don't have tail
+
+    - Doubly linked list is same just every node has pointer to previous node
+    - you can make linked list circular as well
+    - 
+
+8. Hash Tables
