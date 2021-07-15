@@ -131,5 +131,14 @@ Data Structures Algoexpert
     - a stack is a dynamic array under the hood
     - 
 10. Strings 
+    - a string is typically stored in memory as an array of integers. its done by encoding standt like ASCII say A => 65, b => 66 then you just store into memory.
+    - Traversing through string - Time:O(N) Space:O(1)
+    - copy Time:O(N) Space: O(N)
+    - get Time:O(1) Space: O(1) 
+    - in some languages you can't alter strings, you have to copy string so you apply complexity to it.
+    - in Javascript strings are immutable. so if you are adding or any mutation it is always O(N)
+
+11. Graphs
     - 
+
 
