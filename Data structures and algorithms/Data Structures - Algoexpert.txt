@@ -100,3 +100,36 @@ Data Structures Algoexpert
     - 
 
 8. Hash Tables
+    - a DS that provides fsat insertion, deletion, and lookup of key/value pairs
+    - in JS this is an object, in python this is a dictionary
+    - Time complexity: on average
+        - Insertion: O(1)
+        - Delete : O(1)
+        - Search: O(1)
+        BUT!!
+        there are worst cases when TC can be O(N) in worst case
+        - how do you differentiate?
+            - well hash tables implementation minimize the number of collisions so we stay constant time
+            - Only case O(N) for hash table. interview specify you need to have constant time
+    - under the hood a has table uses a dynamic array of linked lists to efficiently store key/value pairs
+    - under the hood, the hash function transforms your key into an index which will fit into the underlying array
+    - in order to handle underlying array is too small, you can implement hash table to resize. this is mostly complicated
+    - initializing : O(N)
+    - storing : O(N)
+    
+9. Stacks and Queues
+    - Stack : an array-like data structure whose elements follow the LIFO Principle
+        - Pushing onto stack : O(1)
+        - popping from stack : O(1)
+        - peeking at element at top of stack : O(1)
+        - Searching in a stack: O(N);
+
+    - Queues: an array like DS whose elements follow the FIFO Principle
+    
+    - Both DS support
+        - Insertion: O(1)
+    - a stack is a dynamic array under the hood
+    - 
+10. Strings 
+    - 
+
