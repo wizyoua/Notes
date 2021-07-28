@@ -139,6 +139,43 @@ Data Structures Algoexpert
     - in Javascript strings are immutable. so if you are adding or any mutation it is always O(N)
 
 11. Graphs
-    - 
+    - a collection of nodes that may or may not be connected to one another
+    - directed graph have edges, but undirected graph don't have a point
+    - connectivity, direction and cycles are very important in graphs.
+    - Space Complexity : O(V+E) Time complexity:
+    - Depth first search DFS and Breadth First Search BFS are used with graphs. 
+    - DFS
+        - you are traversing deeper first
+        - if you start at node 1, you go to all of its children deep first so left to right
 
+    - BFS
+        - you go wide first, you start with children of node 1 but first hit it's first levels before diving into childrens edges/children
+    
+12. Trees
+    - Most prominent Data Structure
+    - a Tree is a type of graph
+    - refering to graph structure that is rooted, so there is a top node, then every node has child node,
 
+    10
+    /\
+   2  -31
+   /\  /\
+  51 7 0 8
+
+  - Each node in a tree can only have one parent
+  - Most Common type of trees
+    - Binary tree: every node has at least 2 child nodes
+    - k-ary trees/turnary tree: can have multiple children under root node
+    - Binary Search Tree: 
+    - Heaps: min/max heaps - special type of binary trees where they satisfy min or max property 
+    - Storing a tree : O(N)
+    - Traverse a tree: O(N) 
+    - Balanced binary tree: O(log(n)) because you are eliminating half of the nodes in the tree
+    - Red Black tree, AVL trees are optimized to be balanced. they maintain that O(log(n)) complexity
+
+- Vocab
+    - branch
+    - leaf 
+    - level in tree: levels
+    - Complete Tree: if every level in tree is filled except final level, and filled from left to right
+    - Perfect Tree: all of leaf nodes have same Depth, Depth = how many levels a tree has
