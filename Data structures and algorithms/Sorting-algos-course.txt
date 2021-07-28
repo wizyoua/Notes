@@ -137,7 +137,7 @@ bblSort(arr);
         - variation of bubble sort which traverses a list of elements both forwards and backwards as opposed to just forwards and swaps values as needed.
 
     Time Complexity: O(n) best, O(n^2) average and worst
-    Space Complexity: O(n)
+    Space Complexity: O(1)
 
     Code: 
     function cocktailSort(arr) {
@@ -191,3 +191,12 @@ bblSort(arr);
 
         return arr;
     }
+
+
+    - Odd-even sort
+        - variation of bubble-sort which sorts a list through 2 phases, an odd phase and an even phase
+            - during the Odd Phase we perform a bubble sort on odd-indexed elements
+            - during the  Even Phase we perform a bubble sort on even-indexed elements.
+        Time Complexity: O(n) best O(n^2) average and worst
+        Space Complexity: O(1)
+        
