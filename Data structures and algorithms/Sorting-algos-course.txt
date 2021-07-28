@@ -1,3 +1,5 @@
+NullPointer Exception Youtube series: https://www.youtube.com/watch?v=i4hoyD4hUcg
+
 - What is is a sorting algorithm
     - A function used to rearrange a given array or list of elements
     according to a comparison operator on the elements.
@@ -36,4 +38,51 @@
 4. Bucket sort: counting sort
 5. Comb sort: exchange sort
 
+
+
+- Selection Sort:
+    - a simple, in place, comparison-based, unstable, sorting algorithm which slowly builds an unsorted list into a sorted list by 
+    repeatedly searching for the smallest value, and placing it in it's correct location.
+
+    - in-place:
+        - an algorithm in which we sort the list without any extraneous memory.
+    - unstable algorithm : an algo in which the order amongst duplicate elements is not preserved
+    - stable algo: order is kept amongst duplicates. 
+    
+    - how to structure:
+        1 issue 3 new variables: 
+            1. Counter:
+            2. TRaversing Index
+            3. Minimum Index
+
+        2 Set Counter equal to 0, Minimum Index equal to counter, and Traversing index equal to 1 plus the counter
+        3 Search the list from the counter through the end of the data using our Traversing Index, and compare every element we pass over to the value stored at the minimum index.
+            3a if the value is less than the value stores at the minimum index, we re set minimum index to whatever our traversing index is
+        4 After traversing the whole list, we swap the values counting at the Counter and the minimum index
+        5 Increase the counter by 1, set the minimum index equal to the Counter, and set the Traversingindex equal to 1 plus the counter
+        6 repeat steps 3-5 until you have sorted list
+
+    Time Complexity: O(n^2)
+    Space Complexity: O(1)
+
+    function selectionSort(inputArr) { 
+    let n = inputArr.length;
+        
+    for(let i = 0; i < n; i++) {
+        // Finding the smallest number in the subarray
+        let min = i;
+        for(let j = i+1; j < n; j++){
+            if(inputArr[j] < inputArr[min]) {
+                min=j; 
+            }
+         }
+         if (min != i) {
+             // Swapping the elements
+             let tmp = inputArr[i]; 
+             inputArr[i] = inputArr[min];
+             inputArr[min] = tmp;      
+        }
+    }
+    return inputArr;
+}
 
