@@ -1,0 +1,69 @@
+Facebook E-event Technical recruiter information
+
+1. Welcome
+    - Pre Screen
+    - Technical Screen - 45 min 
+    - onsite 4-5 coding, behavioral, system design 
+
+2. Overview of Facebook Interview Structure
+    - Breaking down coding interview 
+        - 45 min, 2 coding question, no code running can't test console.log
+        - Coderpad
+
+        Content:
+        - Questions from CS fundamentals
+        - They don't ask puzzle Questions
+        
+        Focus Area:
+        Problem solving
+        communication
+        it's easier to improve a solution. 
+
+        - explain your approach to the interviewer before you start writing your code
+        - ask clarifying question to make sure you understand Questions
+        - ask yourself what's the easiest way to solve the Problem
+        - ask about edge cases
+        - listen to interviewer
+
+        Preparing for interview
+            - Brush up on general software engineering skills, large scale systems, and core cs concepts, algos and data Structures, recursions, time and space complexity
+            - leet code medium/hard
+            - set time lime 20 min per question
+        
+        Break down the behavioral interview
+            - behavioral Questions will still ask a 15 min coding Questions
+            - behavioral : motivation, growth, empathy, excitement
+            - why do you want to join facebook. - build own story
+        
+        Design interview: no coding and no perfect answer
+            - focus on UI and API
+            -explain workflow
+            - check assumptions with interviewer
+            - sample subproblems, api design
+            - build a distributed system
+            - identify components and explain
+            - sample subproblems
+            - pros/cons of decisions recognized that during design
+            - Call off tradeoffs and bottlenecks maybe there is a different approach
+
+            Record yourself practising
+
+
+
+
+3. Mock Coding Interview
+
+
+4. Q/A
+
+Normally 2 questions in first interview
+time distribution - everybody solves problem differently so they will guide us to overcome optimal solution
+
+Design Interview tips
+- reach out to recruiter for system design and Prep
+    - if you get to onsite stage you recruiter will give you more resources
+    - onsite interview prep bag and even has example questions
+- generic questions problem solving and debugging skills
+
+- try to name variables because its a good signal
+

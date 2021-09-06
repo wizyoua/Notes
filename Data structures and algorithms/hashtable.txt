@@ -1,0 +1,14 @@
+Hashtable Javascript - https://www.educative.io/blog/data-strucutres-hash-table-javascript
+
+class HashTable {
+ constructor() {
+   this.values = {};
+   this.length =  0;
+   this.size =  0;
+ }
+}
+
+//Hashing Function
+calculateHash(key) {
+ return key.toString().length % this.size;
+}

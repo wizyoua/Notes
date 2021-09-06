@@ -1,0 +1,161 @@
+JS Data Structures: Getting Started - https://www.youtube.com/watch?v=41GSinwoMYA
+
+- Different Tasks require different data Structures
+    - Ordered List of Data, duplicates allowed : use Array
+    - Unordered List of Data, No duplicates wanted : use Set
+    - Key-value pairs of Unordered Data : use Object
+    - Key-value pairs of Ordered Data, Iterable data : use Map
+
+
+- Arrays 
+    -  [1,2,6,4]
+    - Insertion order is kept (memorized in js)
+    - Element access via Index
+    - Iterable (you can use for/for of loop)
+    - Size adjusts dynamically (some other programming languages you have to define how long an array should be)
+    - Duplicate values are allowed
+
+    Downsides
+    - Deletion and finding can require extra work
+
+- Sets
+    - Insertion order is not stored/memorized
+    - Element access and extraction via method
+    - iterable(you can use for/for of)
+    - Size adjusts dynamically
+    - Duplicate values are not allowed
+    - Deletion and finding elements is fast
+
+- Arrays vs Sets
+    use Arrays for:
+    - You can always use arrays
+    - Must use if order matters and/or duplicates are wanted
+
+    use Sets for:
+    - you do not care about duplicates/want unique values and order does not matters
+    - if you often go through an array to see if value exists, just use set because it's faster lookup to see if a value is present
+    - simplify data access i.e. finding, deletion compares to arrays
+
+- Objects
+    - Unordered key-value pairs of data
+    - elements access via key(property name)
+    - not iterable(only with for-in)
+    - keys are unique, values are not
+    - keys have to be strings,numbers,or symbols
+    - Can store data but also can contain functions so they can have more functionality
+
+- Maps
+    - ordered key-value pairs of data
+    - element access via key (same as object)
+    - they are Iterable
+    - keys are unique, values are not (same as object)
+    - keys can be anything
+    - pure data storage, optimized for data access. 
+
+
+- Objects vs Maps
+    use Objects:
+        - versatile construct and data storage in JS
+        - must use if you want to add extra functionality
+
+    use Maps:
+        - simplify data access
+        - focused on data storage and access
+
+
+Weakset & Weakmap
+    - Variations of Set and Map
+    - Values and keys are only "weakly referenced"
+    - Garbage collection can delete values and keys if not used anywhere else in the app
+    - in alot of scenerios this won't matter but these do play a role in really optimized systems
+
+Custom Data Structure: "Linked List"
+    - every element in linked list, not only knows it's value but also has a pointer to next element
+    - every element knwos about the next element
+    - Insertion at start and end of list is very efficient, more than an array
+    Advantages:
+        - The main reason it is good is to handle memory management. this was important with limited memory in the past
+        - nowadays, javascript has dynamic arrays and memory isn't really a primary issue in JS apps
+        - Linked lists can be useful if you do a lot of insertions at the beginning of lists, linked lists are faster that arrays at this
+    
+    Time Complexity for Linked lists:
+        - Accessing: O(n)
+        - Insertion at end with tail: O(1) without: O(n)
+        - Insertion at beginning: O(1)
+        - Insertion at middle: Search time + O(1)
+        - Searching O(n);
+
+    Time Complexity for Arrays:
+        - Accessing: O(1)
+        - Insertion at end: O(1)
+        - Insertion at end: O(n)
+        - Insertion at middle: O(n)
+        - Searching O(n)
+
+
+Lists & Tables
+    
+    Lists
+        - collection of values
+        - example: arrays, sets, linkedLists
+        - are great for storing values that are retrieved by position(via index or search) also great for loops
+    
+    Tables
+        - collection of key-value pairs
+        - example: object, maps
+        - great for storing values that are retrieved by key, not focused on loops
+
+    Custom List Structures
+
+        Stack - Last In, First Out
+            - push: new Items are always pushed to the top of the stack/end of array is compared to array
+            - pop: items are always removed from the top of the stack
+            - JS does not come with a stack, we have to build one
+
+            Time Complexity for Stacks:
+                - Accessing : O(1) limited to top element
+                - Insertion at End: O(1)
+                - Insertion at beginning: O(n)
+                - Insertion in middle: O(n) have to remove all items to middle section in order to access that middle node
+                - Searching : O(n)
+            - Reasons for using stack vs array: restrict an array to just maybe push and pop, it's not a performance optimization but instead a use case optimization. Sometimes you want less options for an array.
+        
+        Queue - First In, First Out
+            - Simplified array
+            - you can enqueue, to add to start of list, an dequeue to remove to end of list
+            - for a queue you work on different ends, you never work on same end. 
+
+            Time Complexity for Queues:
+                - Accessing: O(1) limited to first element
+                - Insertion at end: O(n) we need to go through entire queue and empty it
+                - Insertion at beginning: O(1)
+                - Insertion in middle: O(n)
+                - Searching: O(n)
+
+    
+    Custom Table Structures
+
+        Hash Table/Normal Object
+            - the existing js "object" is implemented as a hash table
+            - if you want to retrieve something with a key use objects instead of arrays
+
+            Time Complexity for Hash Tables
+                - Accessing: O(1) but O(n) with hash collisions 
+                - Insertion: O(1) but O(n) with hash collisions 
+                - Searching: O(1) but O(n) with hash collisions
+
+            
+            Time Complexity for Objects, which is the same as hash table under the hood and already very efficient but this is referring to actual {} data structure
+                - Accessing: O(1) but they are smart enough to deal with hash collisions
+                - Insertion: O(1) same reason as above
+                - Searching: O(1) 
+            
+        Hash Tables vs Objects when to use
+            - JS objects {} are hash tables already, we really don't have to build our own
+            - in other programming languages you may have to build it, good to know how they work to high level overview chat about it
+        
+        Using Objects vs Arrays and when to use
+            - managing key-value pairs leads to redundant code for some use cases, if you just need a list use arrays, ect.
+            - looping is easier for arrays/lists
+            - with objects you can only use for-in loop
+            

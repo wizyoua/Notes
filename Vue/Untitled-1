@@ -1,0 +1,66 @@
+JavaScript Code Challenges : https://www.linkedin.com/learning/javascript-code-challenges/available-books
+
+- Available books:
+    use classes
+
+    1. title,  author, isbn, numCopies
+    getAvailability() if 0 = out of stock
+                    else low stock if < 10
+                    else if "in stock"
+    sell(numSold) - subtract from total stock
+                    if no arg default sell to 1
+
+    restock(numCopies) - add it to total num
+                        - if no args default to 5
+
+//define this into a class
+
+class Book {
+    constructor(title, author, ISBN, numCopies){
+        this.title = title;
+        this.author = author;
+        this.ISBN = ISBN;
+        this.numCopies = numCopies;
+    }
+    
+
+    getAvailability () {
+        if(this.numCopies == 0) {
+            return 'Out of stock'
+        }else if(this.numCopies < 10){
+            return 'low stock';
+        }
+        
+        return 'in stock';    
+    }
+}
+    const availableBooks = {
+        title: 'title',
+        author: 'test',
+        isbn: '1234'
+        numCopies: 5
+    }
+
+
+    const sell = (numSold) {
+        let book = new availableBooks();
+
+        if(numSold == 0) {
+            return book.numCopies;  
+        }else if(!numSold) {
+            return book.numCopies - 1;
+        }else {
+            //we could check if numsold is greater than available, handle this edge case
+            return  book.numCopies - numSold;
+        }
+    }
+
+    const restock = (numCopies) {
+        let book = new availableBooks();
+
+        if(!numCopies) {
+            return book.numCopies + 5;
+        }else {
+            return book.numCopies + numCopies;
+        }
+    }

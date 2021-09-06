@@ -1,0 +1,45 @@
+BST - Algoexpert https://www.algoexpert.io/questions/BST%20Construction
+    - Binary Search Tree:
+        - nodes value must be greater than  all node values to its left and less than all its nodes on right
+        
+    3 methods in our BST class must support. These 3  methods are optimal
+    - Insertion : insert new node  
+    - Searching : find BST carries a node
+    - Deletion(hardest to learn because of edge cases): delete a specific node from BST
+    
+    Important Insertion Logic:
+    - remove half of BST every node you traverse
+    - Beauty of BST, only explore half and half of BST and sub BST within it
+    
+    Searching Logic: 
+    - call head on BST
+    - compare value at head with value passed in, if it's greater or less than current BST value you can elimnate like half the tree!! very powerful
+
+    Deletion Logic: 
+    - edge cases: 
+        1. if you never find it, you are good
+        2. if value is a leaf its easy because you can just erase single arm and thats it
+        3. if deleting node with child node that only has leaf you can just bring that left child node update
+        4. Hard cases: remove node that has 2 children nodes: 
+            - you grab smallest value of right sub tree in that node
+            - you replace say a head node with smallest value of the right subtree, see it can come to this position because it was to the right of head node but less than all the other right nodes :) !!!
+
+    Space Time Complexity
+    Recusively:
+    Average: 
+        - Time:  O(log(N)) for all 3 Insertion, Searching, Deletion 
+        - Space: Recursively: O(log(N)) why? because you are taking up frames on callstack
+    Worst: 
+        - Time: O(N)
+        - Space: O(N)
+
+    Iteration (sometimes using iteration is better because you won't be using frames on callstack): 
+    Average: 
+        - Time:  O(log(N)) for all 3 Insertion, Searching, Deletion 
+        - Space: Recursively: O(1) why? because you are taking up frames on callstack
+    Worst: 
+        - Time: O(N)
+        - Space: O(1)
+
+
+    

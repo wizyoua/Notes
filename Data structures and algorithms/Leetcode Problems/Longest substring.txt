@@ -1,0 +1,81 @@
+Longest substring without repeating characters
+
+/**
+ * @param {string} s
+ * @return {number}
+ */
+
+//BRUTE FORCE SOLUTION: Time O(n^3) Space: O(n)
+// const isUnique = (s) => {
+//     const set = new Set();
+//     for(let i = 0; i< s.length; i++) {
+//         if(set.has(s[i])){
+//             return false;
+//         }
+//         set.add(s[i])
+//     }
+//     return true;
+// }
+// var lengthOfLongestSubstring = function(s) {
+//     //brute force: 
+//     /*
+//     begin = 0
+//     end = 0
+//     substring = "a"
+//     */
+//     let max = 0;
+//     for(let begin = 0; begin < s.length; begin++) {
+//         for(let end = begin; end < s.length; end++) {
+//             const substring = s.substring(begin, end +1);
+            
+//             if(isUnique(substring)) {
+//                 max = Math.max(max, substring.length);
+//                 console.log(max);
+//             }
+//             console.log(substring);
+//         }
+//     }
+    
+//     return max;
+    
+// };
+
+
+//Hashmap Time O(n) Space O(1)
+// var lengthOfLongestSubstring = function(s) {
+//     let max = 0;
+//     let begin = 0;
+//     let map = {};
+    
+//     for(let end = 0; end < s.length; end++) {
+//         if(map[s[end]] !== undefined && map[s[end]] >= begin) {
+//             begin = map[s[end]] + 1
+//         }
+        
+//         map[s[end]] = end;
+//         max = Math.max(max, end - begin + 1);
+//         console.log(map);
+//     }
+// };
+
+//Set Solution Time: O(n) Space O(1)
+
+var lengthOfLongestSubstring = function(s) {
+    let max = 0;
+    let begin = 0;
+    let set = new Set();
+    
+    for(let end = 0; end < s.length; end++) {
+
+        while(set.has(s[end])) {
+            set.delete(s[begin])
+            begin = begin + 1;
+        }
+        set.add(s[end]);
+        //console.log(s[end], ":", set);
+        max = Math.max(max, end - begin + 1);
+        console.log(s.substring(begin, end +1 ), set);
+    }
+    
+    return max;
+};
