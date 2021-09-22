@@ -1,4 +1,5 @@
 JS Data Structures: Getting Started - https://www.youtube.com/watch?v=41GSinwoMYA
+Premium Course: https://pro.academind.com/
 
 - Different Tasks require different data Structures
     - Ordered List of Data, duplicates allowed : use Array
@@ -158,4 +159,59 @@ Lists & Tables
             - managing key-value pairs leads to redundant code for some use cases, if you just need a list use arrays, ect.
             - looping is easier for arrays/lists
             - with objects you can only use for-in loop
-            
+
+Trees
+
+    Time Complexity
+        - Accessing: O(n) 
+        - Insertion: O(n) 
+        - Removing:  O(n)
+
+    Why would we use trees vs arrays?
+        - high level, if you have data that has tree like structure, you can use it
+        - but we'll dig in deeper:
+
+    Breadth First Search vs Depth First Search
+        - There are 2 ways of searching for traversing a tree
+        
+        BFS
+            - evaluate all siblings first, before you dig in deeper in the tree
+
+        DFS
+            - you go down an entire path in a tree before moving on to next path
+
+        Which one is better?
+            - there is no better or worse approach
+            - Time Complexity for both: O(n)
+            - depends on situation if you wanna check deepest leafs
+            - one example could be file system notice how on computer you have folders, well files are pretty much that last items for DFS is good for that
+            - if a tree has a lot of children nodes, you wanna search BFS because the value will most likely be there
+
+    
+    Binary Search Tree
+        - Each node can only have 2 child nodes
+        - A tree for Sorted Data
+        - left child node is always smaller than parent node
+        - right child is bigger than parent node
+        - BST are good if you can store data in a certain sorted way.
+        Time Complexity:
+        Accessing: O(n);
+        Insertion: O(n);
+        Removal: O(n);
+
+    AVL Trees:
+        - If worst case on BST which would be linear branch, we would balance the tree and it would then be AVL Tree
+        - basically a BST with an algorithm that would auto balance on its own so we don't hit worst case
+        
+        Balancing AVL trees
+            - Left Rotation: it is used when tree is heavy on the right
+            - Right Rotation: it is unbalances with too much on the left, rotate the tree to the right
+            - Left-Right Rotation: see code to see implementation
+            - Right -Left Rotation: see code to see implementation
+
+
+    Tries: 
+        - has a root node but the root node is always empty, can have more than 2 children.
+        - children = 26 nodes. 26 comes from amount of letters in alphabet.
+        - you can store key/value pairs in a tree stucture. this allows you to store value of "age" in a tree style
+        
