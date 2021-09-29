@@ -1,0 +1,9 @@
+Premium Course: https://pro.academind.com/
+
+Algorithms
+    - An algorithm is a sequence of steps to solve a clearly defined problem
+    - What is the "best possible  solution?"
+        - depends on circumstances but often it would be best performance
+
+    - Measuring Performance:
+        - 
