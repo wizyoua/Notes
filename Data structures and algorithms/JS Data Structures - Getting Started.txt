@@ -251,4 +251,17 @@ Trees
         - no hierarchy in Graphs
         - Directed graphs: edges between nodes are unidirectional 
         - Undirected Graphs: edges between nodes are bidirectional
-        
+        - Representing graphs in code:
+            - Adjacency Matrix
+            - Adjacency List
+        - Adjacency Matrix vs List Time & SpaceComplexity
+            - Adjacency Matrix
+                - Insert : O(n)
+                - Accessing : O(1)
+                - Find adjacent nodes: O(n)
+                Space: O(n^2)
+            - Adjacency List
+                - Insert : O(1)
+                - Accessing: O(n) or O(1) depends on implementation
+                - Find adjacent nodes: O(1)
+                Space: O(n+e)
