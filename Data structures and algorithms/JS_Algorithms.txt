@@ -6,4 +6,12 @@ Algorithms
         - depends on circumstances but often it would be best performance
 
     - Measuring Performance:
-        - 
+        - Time Complexity/Big O of an algorithm
+
+    - Big O Notation:
+        - O(1)
+        - O(log n)
+        - O(n)
+        - O(n^2)
+        - O(n^3)
+
