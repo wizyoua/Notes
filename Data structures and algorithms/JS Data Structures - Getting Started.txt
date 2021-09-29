@@ -244,4 +244,11 @@ Trees
             Process: O(log n)
 
         - Heaps shine when you need biggest/smallet value in top of tree(root) easy access. Heaps allow you to access O(1)
+
+
+    Graphs(complex trees):
+        - real life ex: Social Network Contacts
+        - no hierarchy in Graphs
+        - Directed graphs: edges between nodes are unidirectional 
+        - Undirected Graphs: edges between nodes are bidirectional
         
