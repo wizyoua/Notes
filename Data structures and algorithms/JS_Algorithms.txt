@@ -13,5 +13,9 @@ Algorithms
         - O(log n)
         - O(n)
         - O(n^2)
-        - O(n^3)
+        - O(2^n)
+
+    - Asymptotic Analysis
+        1. Define the function (count the number of expression executions)
+        2. 
 
