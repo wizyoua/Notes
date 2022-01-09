@@ -1,0 +1,2 @@
+Start with priority queue. People think it is the same but it isn't 
+priority queue is a abstrast data type
