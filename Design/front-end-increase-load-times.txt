@@ -1,0 +1,37 @@
+https://medium.com/geekculture/12-front-end-performance-patterns-you-need-to-know-def550620464
+
+12 Front-end performance patterns to increase load times
+
+1. SSR with SWR
+    - Client-side rendering
+    - Server-side rendering
+    - Static-site rendering
+    - Pro's to using Static site rendering is becuause you get the bare bones html, then your js can load in your data to an 
+      authenticated user. Also SWR means Stale while revalidating pattern so that the skeleton of the website is served and updated with data from cache(stale) then fetch request are
+      sent and UI updates are made. This equates to a better user experience overall 
+
+
+    2. CSR vs SSR vs SSG
+        - Client side rendering puts the entire work load on the browser, rendering entire page with js
+        - Server side executes data fetches and creates a fully rendered page to send to browser
+        - SSR provides faster rendering especially for users with slow connections
+        - SSG is much faster than both above. It does all of the data fetching and HTML generation at build times
+
+
+    3. Static Assets: 
+        - compress images and videos before uploading to Server
+        - Use cloud-provided image processing solutions like AWS Serverless Image Handler because given only one image
+          it can give you a variety of image sizes depending on what the user may request 
+
+
+    4. Prefetching:
+        - Link prefetching is like adding link to your pages where the browser knows what the action is and where we need to navigate to
+
+    5. Lazy Loading:
+        - We've done this before, think about how fast our page loads with a limit of data, then as you scroll start making calls to get more data
+
+    6. Caching:
+        - 2 of the main methods to do this are:
+            - reusing data the app has already looked up
+            - eleminate requests from the client for data the app already processes. 
+            - Most of an application is done on a dedicated cache server like redis
