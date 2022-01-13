@@ -2,4 +2,28 @@ AlgoExpert System Design Fundamentals
 
 
 3. Client Server Model: 
-    
+
+        Lets look at an example
+        
+        Client: browser 
+            - DNS: 
+                - IP
+
+        
+        Server: AlgoExpert backend
+
+        Client: A machine or process that requests data or service from a server
+
+        Node: a single machine can be both the client and a server at the same times
+
+        IP address: an address given to each machine connected the public internet. IPV4 address consists of four numbers seperated by dots.  where all 4 values are from 0 - 255
+
+        In order for multiple programs to listen for a new network connection without colliding, they pick a port:
+            here are some predefined example ports:
+                22: Secure Shell
+                53: DNS lookup
+                80: http
+                443: HTTPS 
+
+
+4. Network protocols: 
