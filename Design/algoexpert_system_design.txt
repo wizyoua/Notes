@@ -37,4 +37,9 @@ AlgoExpert System Design Fundamentals
         - send IP packets in an ordered way
         - allows you to send arbitrarily large pieces of data
 
-    
+    HTTP: 
+        - Hypertext Transfer Protocol
+        - Built on top of TCP
+        - introduces higher level of abstraction on top of TCP and IP
+        - basically a way of communicating in a request and response paradigm
+        - HTTP is a request/response protocol that is much more applicable in sys design questions.
