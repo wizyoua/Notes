@@ -27,3 +27,14 @@ AlgoExpert System Design Fundamentals
 
 
 4. Network protocols: 
+    IP: Internet Protocol address
+        - IP packet: data sent from one machine to another
+        - IP address: a unique address given to each machine connected to the public internet
+        - IP packets: are made up of bytes
+
+    TCP: Transmission Control Protocol
+        - built on top of the IP
+        - send IP packets in an ordered way
+        - allows you to send arbitrarily large pieces of data
+
+    
