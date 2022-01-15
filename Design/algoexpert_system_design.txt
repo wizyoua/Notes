@@ -43,3 +43,6 @@ AlgoExpert System Design Fundamentals
         - introduces higher level of abstraction on top of TCP and IP
         - basically a way of communicating in a request and response paradigm
         - HTTP is a request/response protocol that is much more applicable in sys design questions.
+
+5. Storage
+    
