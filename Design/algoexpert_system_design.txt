@@ -45,4 +45,14 @@ AlgoExpert System Design Fundamentals
         - HTTP is a request/response protocol that is much more applicable in sys design questions.
 
 5. Storage
-    
+
+        - Database 
+            - write data
+            - read dat
+            - just a server
+            
+            - You can write data to: 
+                - disk: to a physical hard drive
+                - memory: data is stored in memory pros because it is faster to access but if it goes down, it will be lost
+                 
+
