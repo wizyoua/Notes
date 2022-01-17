@@ -54,5 +54,37 @@ AlgoExpert System Design Fundamentals
             - You can write data to: 
                 - disk: to a physical hard drive
                 - memory: data is stored in memory pros because it is faster to access but if it goes down, it will be lost
-                 
 
+
+6. Latency and Throughput 
+    - 2 most important measure of the performance of a System
+        - Latency: how long it takes to send a packet
+        - Throughput: how much data can be sent in a given amount of time
+
+    Latency:
+        - if you are reading 1MB sequentially of data in 1 second from memory, that takes 250 microseconds
+        - if you are reading 1MB sequentially of data in 1 second from SSD, that takes 1000 microseconds
+        - if you are sending 1MB sequentially of data in 1GB/second network, that takes 10k microseconds
+        - if you are sending 1MB sequentially of data in HDD, that takes 20k microseconds
+        - if you are sending a packet (smaller than 1MB ) sequentially from Cali to Neth, to Cali, that takes 150k microseconds
+
+    Throughput:
+        - if you are reading 1MB sequentially of data in 1 second from memory, that takes 250 microseconds-
+    
+    - examples:
+        - video games: those systems can have fast connection or slow(lag) because of how far a server is
+    - in  sys design, we need to understand the tradeoff
+
+
+    - How to handle throughput: 
+        (naive)
+        - you can pay your server provider to "increase" throughput
+        
+        (better)
+        - have multiple servers handling the request
+
+    - you can't make assumpstions on latency & throughput based on the other, they are not necessary correlated 
+
+    
+6. Availability 
+    - when dealing with availability, we are dealing with high percentages
