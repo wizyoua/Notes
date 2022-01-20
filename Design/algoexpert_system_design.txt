@@ -88,3 +88,23 @@ AlgoExpert System Design Fundamentals
     
 6. Availability 
     - when dealing with availability, we are dealing with high percentages
+    - in the industry, we use 9's to use availability. so like if we had 99.99% availability, we would say 4 9's 
+    - 5 9's is the gold standard of availability
+
+    Service providers have a SLA 
+    - SLA: Service Level Agreement
+    - customers agree to their SLA when using their service, as you can see in like namecheap they guarentee 99.99% availability
+    - SLO: Service Level Objective which is components of SLA.
+
+    During system design interviews:
+        - what part of the system requires high availability and what can use less availability
+
+    How do we improve the availability of our system:
+        - system doesn't have single points of failure (solve with redundancy)
+        - have load-balancers to distribute traffic
+        
+
+7. Caching
+    - Caching is used to reduce redundancy in our system.
+
+    
