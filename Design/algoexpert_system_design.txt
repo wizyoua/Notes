@@ -106,5 +106,14 @@ AlgoExpert System Design Fundamentals
 
 7. Caching
     - Caching is used to reduce redundancy in our system.
+    - caching is helpful when you have computational long  running tasks that take a long time to complete
+    - you are able to client side or server side cache the data in order to speed up access to data
+    - if you don't need frequent access to data, you can cache it.
 
-    
+
+    - you can actually call your db to update cache to server side cache then you won't have to hit db when client hits server
+
+    - Writeback cache:
+        - 
+
+
