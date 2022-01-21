@@ -86,7 +86,7 @@ AlgoExpert System Design Fundamentals
     - you can't make assumpstions on latency & throughput based on the other, they are not necessary correlated 
 
     
-6. Availability 
+7. Availability 
     - when dealing with availability, we are dealing with high percentages
     - in the industry, we use 9's to use availability. so like if we had 99.99% availability, we would say 4 9's 
     - 5 9's is the gold standard of availability
@@ -104,7 +104,7 @@ AlgoExpert System Design Fundamentals
         - have load-balancers to distribute traffic
         
 
-7. Caching
+8. Caching
     - Caching is used to reduce redundancy in our system.
     - caching is helpful when you have computational long  running tasks that take a long time to complete
     - you are able to client side or server side cache the data in order to speed up access to data
@@ -114,6 +114,22 @@ AlgoExpert System Design Fundamentals
     - you can actually call your db to update cache to server side cache then you won't have to hit db when client hits server
 
     - Writeback cache:
-        - 
+        - Whenever a  use makes a request the cache is updated, but then later asynchronously, the cache is written back to the database.
+        - Con: if you lose data in cache then database might not get updated
 
+    - Caches can become stale if not updated properly
+        - A solution could be move your cache out of server, then server hits memory like redis then you have a source of truth for cache 
 
+    - Popular policy 
+        - LRU Cache: least recently used is likely to be least cared about
+        - Least frequently used is likely to get rid of first
+
+9. Proxies
+    - Forward Proxy is on a client side:
+        - Client sends request to server, instead of going directly to server it goes to forward proxy which then requests forward to server
+        - server will give response to proxy, then proxy will give response to client
+    - Reverse Proxy (basically opposite of forward proxy) Client thinks it is interacting with the server.
+        - Server sends request to client, instead of going directly to client it goes to reverse proxy which then requests to client
+        - client will give response to proxy, then proxy will give response to server
+
+    VPN's are basically forward proxies
