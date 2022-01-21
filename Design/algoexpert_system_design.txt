@@ -133,3 +133,38 @@ AlgoExpert System Design Fundamentals
         - client will give response to proxy, then proxy will give response to server
 
     VPN's are basically forward proxies
+
+    - Reverse Proxies are really useful: 
+        - you can filter our request you want to ignore
+        - you can cache certain things on reverse proxy
+        - you can use it as a load balancer, which is a server which effectively distributes traffic to multiple servers.
+
+
+10. Load Balancing
+    - our single server is limited
+    - the more requests sent to server, we can become overloaded. 
+    - load balancing is a technique to distribute traffic to multiple servers
+    - Vertical Scale: Increase power of server
+    - Horizontal Scale: Increase number of servers
+
+    - A load balancer is a server between cliets and servers
+    - This increases throughput and latency
+    - How does a load balancer know to distribute traffic:
+        - people configuring the load balancers: 
+
+            1. pure random redirect
+            2. round robin - goes through all your servers top to bottom, the again just like a queue of servers again and again
+            3. Weighted round robin - might put more weight on certain servers
+            4. IP based which could cache request to specific server
+    - in interviews you want to select different server selection strategies
+
+
+11. Hashing
+    - can store client request via:
+        - Modulus hashing  client # % amount of servers = server # this client will belong to
+            - Cons: what abut is a server dies or need to add more servers. well this will break. 
+        - How to solve:  
+        - Consistent Hashing:
+            - 
+        - Rendezvous Hashing: 
+
