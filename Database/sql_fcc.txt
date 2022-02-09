@@ -1,0 +1,7 @@
+https://www.youtube.com/watch?v=HXV3zeQKqGY&ab_channel=freeCodeCamp.org
+
+What is a DB?
+    - Any collection of related data.
+    - Databases can be stored in different ways
+    
+ 
