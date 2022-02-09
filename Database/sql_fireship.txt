@@ -1,0 +1,12 @@
+https://www.youtube.com/watch?v=Cz3WcZLRaWc&ab_channel=Fireship
+
+SQL
+- normalized data structure because every entity is normalized into it's smallest normal form. 
+- Index: lookup table for specified columns
+
+
+4 types of Joins: Reading data from 2 different tables.
+- INNER JOIN:
+- LEFT JOIN:
+- RIGHT JOIN:
+- Outer Join:
