@@ -1,0 +1,31 @@
+https://pro.academind.com/courses/1366761/lectures/31667469
+
+Javascript Refresher
+
+Variables:
+
+    Let - use let if variable is going to be reassigned
+    Const - use const if variable is not going to be reassigned
+
+
+Arrow Functions:
+    normal function 
+    function myFunc(){...}
+
+    arrow:
+    const myFunc = () => {...}
+
+
+Exports & Imports (modules):
+
+    person.js
+    const person = {
+        name: "max"
+    }
+
+    export default person
+
+    "default" means that in the import file we can name the variable whatever we want because no matter what we defaulted to export the import will bring that in. 
+
+    app.js
+    import person from './person.js'
