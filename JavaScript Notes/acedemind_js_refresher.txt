@@ -26,6 +26,118 @@ Exports & Imports (modules):
     export default person
 
     "default" means that in the import file we can name the variable whatever we want because no matter what we defaulted to export the import will bring that in. 
+    "named" export is not by putting default just the name of the const value and we have to use exact name in the other file.
+
+
+    utility.js
+    export const clean = () => {...}
+    export const baseData - 10;
 
     app.js
-    import person from './person.js'
+    import person from './person.js' || import whateverNameWeWant from './person.js'
+
+    Named Exports:
+    import {baseData} from './utility.js'
+    import {clean} from './utility.js' ||   import {baseData, clean} from './utility.js'
+
+
+
+Understanding Classes
+    - 
+    DS:
+    class Person {
+        name:"g",
+        call :  () => {...}
+    }
+    const myPerson = new Person();
+        myPerson.call();
+
+    //inheritance
+    class Person extends Master
+
+
+    class Human {
+        constructor(){
+            this.gender = 'male';
+        }
+
+        printGender(){
+            console.log(this.gender);
+        }
+    }
+
+    class Person extends Human {
+        constructor(){
+            //need to add super here to allow access from child class to parent class
+            super();
+            this.name = 'Max';
+        }
+
+        printMyName(){
+            console.log(this.name);
+        }
+    }
+
+    const person = new Person();
+    person.printMyName();
+    person.printGender();
+
+
+Classes, Properties & Methods:
+
+    es6:
+    constructor () {
+        this.myProperty = ' value';
+    }
+
+    es7 (skips need to add constructor)):
+    myProperty = 'value';
+
+    es6:
+    myMethod(){...}
+
+    es7:
+    myMethod = () => {...}
+
+Spread & Rest Operators:
+    Spread: Used to split up array elements or object Properties
+    const newArr = [...oldArray, 1, 2];
+
+    Rest: Used to merge a list of function args into an array. ...args can be 1 or more args and will be put into an array
+
+    function sortArgs(...args){
+        return args.sort();
+    }
+
+
+
+Destructuring: 
+allows you to extract arr elements or object props and store them in variables.
+
+const arr = [1, 2, 3];
+
+[a, b] = arr;
+
+console.log(a); //1
+console.log(b); //2
+
+
+Refreshing Array Functions
+const numbers = [1, 2, 3];
+
+//using this would apply function logic to each element in the array
+const doubleNumArray = numbers.map(num => num * 2);
+
+
+IMPORTANT!!!
+JS Array Functions
+
+map(): creates a new array populated with the results of calling a provided function on every element in the calling array.
+find(): returns the value of the first element in the array that satisfies the provided testing function.
+findIndex(): returns the index of the first element in the array that satisfies the provided testing function.
+filter(): creates a new array with all elements that pass the test implemented by the provided function.
+reduce(): applies a function against an accumulator and each element in the array (from left to right) to reduce it to a single value.
+concat(): creates a new array by concatenating other arrays.
+slice():  creates a new array by copying a section of an existing array.
+splice(): changes the contents of an array by removing or replacing existing elements and/or adding new elements.
+
