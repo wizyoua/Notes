@@ -1,0 +1,80 @@
+https://www.interviewbit.com/sql-interview-questions?utm_campaign=none_scaler_academy_midfunnel_email_remarketing_india_all&utm_medium=email&utm_source=midfunnel
+
+- What is a DB?
+    a db is organized collection of data stored ans retrieved locally or remotely
+
+- DBMS?
+    - Database Management System is responsible for CRUD Management of DB
+
+- RDBMS vs DBMS?
+    Relational Database Management System : stores data in the form of a collection of tables and relations can be defined between common fields. Most modern systems are MySQL, PostgreSQL, SQLite, Microsoft SQL Server, Oracle, and Amazon Redshift
+
+- What is SQL
+    - Structured Query Language and is the standard for RDBMS. useful because of Relational ease
+
+- SQL vs MySQL
+    - SQL is a standard language for RDBMS
+    - MySQL is a relartional database management system that is used to manage SQL DB's
+
+- Tables and Fields?
+    - tables is an organized collection of data stored in the form of rows and columns just like excel. The columns are organized in vertical rows and they are called fields
+
+- What are constraints in SQL?
+    - are used to specify the rules that must be followed when inserting or updating data in a table. You  can do it on the creation or after with ALTER TABLE
+        - NOT NULL 
+        - Check 
+        - DEFAULT 
+        - UNIQUE
+        - INDEX
+        - Primary Key
+        - Foreign Key
+
+- What is a primary key?
+    - a primary key is a unique identifier for each row in a table and a table can only have one primary key but can apply it to multiple fields. It must contain unique data and has an implicit NOT NULL constraint built in.
+
+- What is a unique contraint?
+    - a unique constraint is a constraint that ensures that each row in a table has a unique value for a field. Basically the same as primary key
+
+- What is a foreign key?
+    - a foreign key is a reference to another table. It is used to link two tables together. It is used to link a field in one table to a field in another table.
+
+- what is a join?
+    - a join is a type of SQL query that joins two or more tables together. It is used to combine the data from two or more tables into a single result set.
+
+    - Inner join : retrieves records that have a matching value in both tables involved in the join. widely used
+    syntax: 
+    SELECT * FROM table_a JOIN table_b
+    SELECT * FROM table_a INNER JOIN table_b on a.a = b.b
+
+    - Left Join: retrieves all the records/rows from the lft and the matched records from the right table
+    syntax:
+    SELECT * FROM table_a A LEFT JOIN table_b B ON A.column_a = B.column_b
+
+    - Right Join: retrieves all the records/rows from the right and the matched records from the left table
+    syntax:
+    SELECT * FROM table_a A RIGHT JOIN table_b B ON A.column_a = B.column_b
+
+    - Full OUTER JOIN: retrieves all the records/rows from both the left and right tables
+    syntax:
+    SELECT * FROM table_a A OUTER JOIN table_b B ON A.column_a = B.column_b
+
+- What is a self-join?
+    - a self-join is a join that is performed on the same table. It is used to retrieve records that have a matching value in the same table.
+    syntax
+    SELECT A.emp_id AS "EMP_ID", A.emp_name AS "Employee", B.emp_id AS "Sup_id", B.emp_name AS "Supervisor" FROM employee A, employee B WHERE A.emp_id = B.emp_id
+
+- What is a cross Join?
+    - a cross join is a join that is performed on two or more tables. It is used to retrieve records that have a matching value in two or more tables.
+    syntax
+    SELECT stu.name, sub.subject FROM students AS stu CROSS JOIN subjects AS sub;
+
+    ex:
+
+    Write a SQL statement to CROSS JOIN 'table_1' with 'table_2' and fetch 'col_1' from table_1 & 'col_2' from table_2 respectively. Do not use alias:
+    SELECT table_1.col_1, table_2.col_2 FROM table_1 CROSS JOIN table_2;
+
+    Write a SQL statement to perform SELF JOIN for 'Table_X' with alias 'Table_1' and 'Table_2', on columns 'Col_1' and 'Col_2' respectively.
+    SELECT * FROM Table_x AS Table_1, TABLE_X AS Table_2 WHERE Table_1.COL_1 = Table_2.Col_2;
+
+- What is an index? explain its different types
+    - a index is a data structure that is used to speed up the retrieval of data from a table.
