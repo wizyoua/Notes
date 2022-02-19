@@ -1,0 +1,16 @@
+Hubspot interview questions https://www.glassdoor.com/Interview/HubSpot-Interview-Questions-E227605.htm
+
+Tell me about a time you worked on a team?
+
+
+how to use rest parameters in ES6
+function(...args) {
+  console.log(args);
+}
+
+
+Merge 2 sorted arrays and cut to a certain length:
+arr1 = [1,2,3,4,5,6]
+arr2 = [7,8,9,10,11,12]
+
+
