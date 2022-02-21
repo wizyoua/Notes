@@ -5,4 +5,89 @@ https://www.youtube.com/watch?v=FNh2JCiFXIg&list=PLSfH3ojgWsQr9bPuWl7kYHYy5kqhzM
     - let & const is scope-safe, you will not be able to access the var outside of the scope. Var will  get hoisted to the top of the scope.
 
 2.  The "This"  keyword
-        - "this" is a keyword that refers to the object that is executing the current function.
+    - "this" is a keyword that refers to then object that is executing the current function.
+    - "this" can be handy when updating the properties of an object.
+    - if we are calling the "this" keyword inside of a function, it will refer to the object that called the function.
+    - if we are calling the "this" keyword outside of a function, it will refer to the global object.
+
+
+4. Arrow functions vs normal functions
+    - arrow functions can omit the return statement and curly braces
+    const multiply = (x,y) => x * y;
+
+    - when function only has 1 arg then the parenthesis can be omitted
+    const multiply = x => x * 2;
+
+    - the this keyword in a arrow function is bound to the parents context
+    const user = {
+        name: 'John',
+        cities: ['New York', 'San Francisco'],
+        printPlacesLived() {
+            return this.cities.map((city) => this.name + ' has lived in ' + city);
+        }
+    };
+
+
+5. Closure and Higher Order functions:
+    - a function can retunn another is function. which is a higher order function 
+
+    const main = document.querySelector('main');
+
+    //factory function - higher order function that returns a function 
+
+
+    // closure - function that was defined in another function.
+     
+
+    function heading(color){
+        const closure = function(text){
+            const heading = document.createElement('h1');
+            heading.setAttribute('style', 'color: ' + color);
+            heading.textContent = text;
+            return heading;
+        }
+        return closure;
+    }
+
+    //create a red heading
+    const createRedHeading = heading('red');
+
+    //use red heading and add text
+    const head1 = createRedHeading('Hello World');
+
+
+    - difference between above factory and normal function that would accept the text and color to just return the same thing?
+      - not much difference except when a function has a ton of arguments, we can break down a complex function into multiple steps.
+
+
+
+6. What is a Callback?
+    - a function that is passed into another function as an argument. 
+    - why do we need it? it allows user alot of flexibility in the code.
+
+    window.addEventListener('click', function(){
+        console.log('Clicked');
+    });
+
+    function shopping(budget, afterShopCallback){
+        const spent = 100;
+
+        budget = budget - spend;
+
+        afterShopCallback(budget);
+
+        return budget;
+    }
+
+    shopping(1000, function(budget){
+        //this would output the balance after spending in our callback function above
+        console.log(budget);
+        console.log('watch movie');
+    });
+
+
+    - callback hell - in JS there are callbacks within callbacks, it turns out to be hell to work with. The solution to callback hell is promise.
+
+
+
+7. What are Promises? 
