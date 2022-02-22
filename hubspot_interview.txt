@@ -3,14 +3,59 @@ Hubspot interview questions https://www.glassdoor.com/Interview/HubSpot-Intervie
 Tell me about a time you worked on a team?
 
 
-how to use rest parameters in ES6
-function(...args) {
-  console.log(args);
-}
 
 
 Merge 2 sorted arrays and cut to a certain length:
 arr1 = [1,2,3,4,5,6]
 arr2 = [7,8,9,10,11,12]
+
+
+
+JS: 
+
+prototypes: allows us to add properties or methods to any object (Number, Boolean, String, Date)
+
+    function book(title, author){
+        this.title = title;
+        this.author = author;
+    }
+
+
+    let myBook = new book('The Hobbit', 'JRR Tolkien');
+
+    //Object.prototype.(property || method)
+    book.prototype.price = null;
+    myBook.price = 100;
+
+    document.write("Book title is: " + myBook.title + "<br>");
+    document.write("Book author is: " + myBook.author + "<br>");
+    document.write("Book price is: " + myBook.price + "<br>");
+
+    output:
+    Book title is : The Hobbit
+    Book author is : JRR Tolkien
+    Book price is : 100
+
+
+
+Prototypical inheritance: 
+
+call():
+apply():
+bind():
+
+function Admin(...args){
+    //this will run the User function class we have defined above. Notice the rest operator, we are getting unknown number of arguments and converting them to an array.
+    User.apply(this, args);
+    this.role = 'superadmin';
+}
+
+const admin = new Admin('shaun@ninjas.com', 'shaun');
+
+
+how to use rest parameters in ES6
+function(...args) {
+  console.log(args);
+}
 
 
