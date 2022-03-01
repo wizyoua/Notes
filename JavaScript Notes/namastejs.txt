@@ -18,4 +18,24 @@ Call stack maintains the order of execution context:
 
 3. Hoisting in JS
     - Functions are hoisted but not variables
+    - functions and variables are stored in memory before execution so logging a variable before it is assigned will be undefined instead of error not found.
     
+
+4. Functions: Understand execution context and call stack with the code below:
+
+    var x = 1;
+    a();
+    b();
+    console.log(x);
+
+    function a(){
+        var x = 10;
+        console.log(x);
+    }
+
+    function b(){
+        var x = 100;
+        console.log(x);
+    }
+
+
