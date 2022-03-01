@@ -50,6 +50,9 @@ function Admin(...args){
     this.role = 'superadmin';
 }
 
+//Admin has it's own prototype but the apply above did not bring in the User prototype. So we have to assign the new Admin prototype to the User prototype so it can inherit it.
+Admin.prototype = Object.create(User.prototype); // create a new object with the User.prototype object then this new entire object is assigned to Admin.prototype. :)  
+
 const admin = new Admin('shaun@ninjas.com', 'shaun');
 
 
@@ -59,3 +62,27 @@ function(...args) {
 }
 
 
+
+
+
+prototypical inheritance
+
+let arr = [1,2,3,4,5,6];
+
+arr.length 
+
+function user(){
+    this.name : 'shaun';
+    this.age : 30;
+    this.comp : function(){
+        console.log(this.name + ' is ' + this.age + ' years old.');
+    }
+}
+
+function superAdmin(){
+    this.role :'superadmin';
+}
+
+
+const superAdmin = new superAdmin();
+superAdmin.

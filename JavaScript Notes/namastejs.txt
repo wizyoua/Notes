@@ -1,0 +1,21 @@
+https://www.youtube.com/watch?v=ZvbzSrg0afE&list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP&index=2&ab_channel=AkshaySaini
+
+1. JS in the backend : Javascript is a synchrounous single-threaded language
+
+(variable
+enviroment)
+Memory       |        Code 
+key:value    |        thread of execution
+fn: {}
+
+
+2. What happens when you run js Code
+
+drawiofile.
+Call stack manages execution content in JS. EC has memory and code execution. Thats it
+Call stack maintains the order of execution context:
+
+
+3. Hoisting in JS
+    - Functions are hoisted but not variables
+    
