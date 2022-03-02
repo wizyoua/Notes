@@ -39,3 +39,35 @@ Call stack maintains the order of execution context:
     }
 
 
+5. Shortest JS program:
+
+    - an empty file because JS engine is still doing things behind the scenes.
+    - JS creates a window even with a empty js file. 
+        - window is a global object which is created along with the global execution context.
+        - you can access any of the methods and vars anywhere in our js enviroment since it is global. 
+
+    this  === window object
+
+    - global space is just any variable or function  that is not inside a function.
+
+
+
+7. Scope Chain
+
+    function  a(){
+        var b = 10;
+        c();
+        function c(){
+            //c function is lexcically sitting inside a function
+            console.log(b) // there is no b in c function memory so it goes to lexical enviroment of a. A has b so it will reference that b. 
+        }
+    }
+
+    a();
+    console.log(b) // error
+
+    - whenever a execution context is created, a lexical environment is created. 
+
+    - lexical environment is a collection of variables and functions that are scoped to a particular block of code.
+    - lexical memory reference to parent environment which is just memory space but also to parent's parent. 
+    - scope chain is a collection of lexical environments.
