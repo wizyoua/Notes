@@ -71,3 +71,27 @@ Call stack maintains the order of execution context:
     - lexical environment is a collection of variables and functions that are scoped to a particular block of code.
     - lexical memory reference to parent environment which is just memory space but also to parent's parent. 
     - scope chain is a collection of lexical environments.
+
+
+8. Let & const, temperal deadzones
+
+    - let & const are hoisted very differently than var. let & const are stored in temporal deadzone
+     
+    console.log(b); // undefined (because of hoisting)
+    console.log(a); // ERROR: (because of hoisting)
+
+    let a = 10;
+    var b = 100;
+
+    JS has allocated memory to both a & b but the let a was allocated to a different memory space from global. You cannot access let & const memory until you have assigned a value to them.
+    - temporal deadzone is a concept that JS engine uses to prevent access to variables that are not yet assigned. so its the time of when let was scanned and memory was allocated but until the point it gets assigned a value.
+    - let & const are more strict than var. there will be no code execution until the syntax error is fixed. 
+    - let vs const
+        - cannot overide const 
+        - syntax error for const is when a value is not assigned to const, but let allows us to just initialize 
+        - let&const and cannot create duplicate variables
+
+
+9. Block - Scope 
+
+
