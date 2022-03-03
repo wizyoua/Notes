@@ -92,6 +92,38 @@ Call stack maintains the order of execution context:
         - let&const and cannot create duplicate variables
 
 
-9. Block - Scope 
+9. Block & Shadow- Scope 
+- compound statement
+- a block is used to combine multiple statements into a group. but why? so that we can use multiple statements where JS only expects 1 statement
+
+{
+    var a = 10;
+    console.log(a);
+}
+
+//expects a single statement but it is a block of things to do. 
+if (true) {
+    var a = 10; // in global scope
+    let b = 5; //in block object scope
+    const c = 100; //in block object scope
+};
+
+- in the scope let & const are hoisted in a seperate memory space for this block. 
+- var is stored in global scope vs let & const are in block scope 
+- Shadowing in  js is when we have a variable with the same name in the same scope. 
+- illegal shadowing: cannot declae a let or const outside of block then use var inside the block. because let already reserved the key. 
+
+var a = 100;
+
+{
+    var a = 10;
+    console.log(a);
+}
+console.log(a);
+
+//output would be 10 for both logs on var
+- for let and const we have different values for block scope and global scope.
 
 
+
+10. Closures:
