@@ -1,0 +1,21 @@
+Angular vs React vs Vue
+
+- React is a UI Library, Angular is a fully fledged front-end framework and Vue is a progressing framework.
+
+React:
+    - React doesn't enforce a specific project structure.
+Angular:
+
+Vue: 
+
+Vue 2:
+Vue 3:
+    - using Vite js which has tools such as instant server start, out of box support for typescript, and a lot of other tools.
+    - vuex & penia for state management
+
+Major differences: 
+    - creating app: 
+        - Global configuration make issues during unit tests because test cases can affect each other.
+        - vue3 makes it difficult to share a copy of config to multiple apps
+
+        - vue 2 you only implement 1 single root node in the the template but vue3 allows you to have multiple root nodes.

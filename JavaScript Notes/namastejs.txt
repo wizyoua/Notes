@@ -127,3 +127,142 @@ console.log(a);
 
 
 10. Closures:
+
+    function x(){
+        var a = 7;
+        function y(){
+            console.log(a); // inside y function scope it binds the variables of x = closure. 
+        }
+        return y;
+    }
+    x();
+
+    - closure is a function bundled with its lexical enviroment. 
+    - In other words, a closure gives you access to an outer function's scope from an inner function
+    - when a function is returned and assigned to var, if we later call var that was = to function, just like above let z = x(); then the scope of x is still there. 
+    - so what is returned? the function + it's lexical scope
+
+    - function along with it's lexical enviroment bundled together is called closure.
+
+    - Uses of closures:
+        Module Design Pattern
+        Currying
+        Functions like once
+        memoize
+        maintaing state in async world
+        setTimeouts
+        Iterators
+        
+
+11. Set Timeout + Closures
+    - 
+    - with var the console will print namaste js first,  then it will print i but i will be 6 on all of the settimeouts because it is refering to the i
+    - with let, a new copy of i in each iteration is new and not the same referece that var was 
+    - let is blocked scope unlike var so in each iteration the i would be a new i in memory
+    function x(){ 
+        //switch var with let below and the above makes sense
+        for(var i = 1; i <= 5; i++){
+            setTimeout(function(){
+                console.log(i);
+            }, i * 1000);
+        }
+
+        console.log('namaste js');
+    }
+
+    //solve the above without using let only using var in for loop
+    - this will work with var because  everytime  we call close with i param it will be a new i.
+     function x(){ 
+        for(var i = 1; i <= 5; i++){
+           function close(i){
+            setTimeout(function(){
+                console.log(i);
+            }, i * 1000);
+            }
+            close(i);
+        }
+        console.log('namaste js');
+    }
+
+    x();
+
+
+12. Good  example of closure to give interviewer
+
+
+13. What is an anonymous function?
+    - a function without a name.
+
+    What is a first class function?
+    - a function that can be passed as an argument to another function.
+
+
+
+    //function statement aka function declaration
+    function a(){
+        console.log('a called');
+    }
+    a();
+
+    //function expression - in many programming lanugages you cannot do function expression like in js. The major difference between this and function statement is that function expression is not hoisted. 
+    var b = function(){
+        console.log('b called');
+    }
+    b();
+
+    //function declaration: same thing as function statement
+
+    //anonymous function
+    - function without a name. results in syntax error. the error even happens on initialization(the JS reading file phase) even before any code is ran. 
+    - why do we use these: when functions are used as  values basically a function expression.
+    function(){
+
+    }
+    //named function expression
+    - function expression with a name. what is the gotcha? the xyz is not a global function it is still assigned to c.
+    var c = function xyz(){
+        console.log('c called');
+    }
+    //difference between parameteres & arguments
+    - parameters are the variables that are passed into the function. arguments are the values that are passed into the function.
+    function x(params){
+        console.log(params);
+    }
+    x('arguments');
+
+    // first class functions
+    - functions can be passed as arguments to other functions.
+    - we can also return a anonymous function from another function. 
+
+    // arrow functions
+    - arrow functions are a shorter way to write function expressions.
+
+
+14. Callback functions? 
+
+
+    // what is a callback function
+        - due to callbacks we can do alot of async things
+        - JS does not wait for callbacks to expire before moving on to the next line of code.
+
+        setTimeout(function(){
+            console.log('timer');
+        }, 1000);
+
+        function x(y){
+            console.log('x');
+        }
+        x(function y(){
+            console.log('y')
+        });
+
+        y is the callback function?
+        - this y function is called later in the code
+
+    // js is a synchronous and single-threaded language so it is important to understand that callback
+    functions allow us to basically my js asynchronous.
+
+    - Garbage collection & removeEventListener
+        - garbage collection is a process that JS engine uses to remove unused memory.
+        - event listeners are heavy, so we need to remove them when we are done with them.
+
