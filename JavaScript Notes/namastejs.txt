@@ -269,3 +269,53 @@ console.log(a);
 
 15. Event loop - IMPORTANT!!
 
+
+    web API's such as:
+        - fetch
+        - setTimeout
+        - console
+        - location 
+
+    are not js but the  browser gives us access to those in the callstack
+    Window. basically wraps everything from browser for us to be able to access.
+
+
+
+    - so in last chapter the callback code, after 5 seconds the function will be put back into callstack here is the event loop:
+    1. the timeout callback function is put into "callback queue"
+    2. the event loop will run the callback queue and will put the functions of callback queue and put it into the callstack
+
+
+    Why do we need a callback queue? 
+        - because we need to run the code in the order that we want it to run. 
+
+
+    important ex:
+
+    console.log('start');
+
+    setTimeout(function cb(){
+        console.log(' cb timeout');
+    }, 5000);
+
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(function cbF(){
+        console.log('cbF fetch');
+    });
+
+    console.log('end');
+
+    Output:
+
+    - microtask queue: same thing as callback queue but it has higher priority. So fetch callbacks functions are put into this queue instead of setTimeout for ex
+    - once the callstack is  empty even from global execution, then the microtask queue will be run, then the callback queue will be run. 
+
+    Microtask queue:
+    - Promises and mutation observers are put into this queue.
+    Callback Queue: 
+    - all other callback functions are put into this queue.
+
+    Starvation of callback queue is when microtask queues keep adding functions to itself thus delaying callback queue being run.
+
+
+16.
