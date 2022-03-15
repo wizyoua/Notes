@@ -318,4 +318,37 @@ console.log(a);
     Starvation of callback queue is when microtask queues keep adding functions to itself thus delaying callback queue being run.
 
 
-16.
+16.JS engine
+    - Javascript Runtime enviroment
+
+        1. JS engine
+        2. API
+        3. Event loop
+        4. Callback queue
+
+    - JS engine is the heart of the JS runtime enviroment.
+
+    JS Engine Architecture:
+        - first JS engine developed in the world? SpiderMonkey 
+
+    3 steps in JS engine:
+
+    1. Parsing State:
+    JS basically extracts syntax and creates an entire tree.    
+        - AST
+
+    2. Compilation State: 
+        - JIT compilation is the process of using interpreter and compiler.
+            - Interpreter: takes code and starts executing code line by line
+            - Compiler: code is compiled and a new code is formed which is the optimized version of this code I.E. machine code. 
+
+        JS can be either interpreted or compiled because it depends on the JS engine
+            - JS is interpreted by default but today compiled code is the most popular.
+
+    3. Execution:
+        1. Memory Heap: this is where all the memory is stored. In sync with call stack and garbage collector.
+        2. Call Stack : this is the call stack inside the runtime, inside the engine. Basically this is the high level picture how JS is executed behind the scenes.
+        3. Garbage collector: tries to free up space whenever possible. Uses an algo, Mark & sweep algorithm which clears up memory.
+
+    
+
