@@ -266,3 +266,6 @@ console.log(a);
         - garbage collection is a process that JS engine uses to remove unused memory.
         - event listeners are heavy, so we need to remove them when we are done with them.
 
+
+15. Event loop - IMPORTANT!!
+
