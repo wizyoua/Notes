@@ -335,7 +335,7 @@ console.log(a);
 
     1. Parsing State:
     JS basically extracts syntax and creates an entire tree.    
-        - AST
+        - AST: Abstract Syntax Tree.
 
     2. Compilation State: 
         - JIT compilation is the process of using interpreter and compiler.
@@ -351,4 +351,93 @@ console.log(a);
         3. Garbage collector: tries to free up space whenever possible. Uses an algo, Mark & sweep algorithm which clears up memory.
 
     
+
+17. Trust issue with setTimeouts
+    - basically if we have any other functions running, then our callback functions stuck in callstack queue will be there until our "main thread" main callstack is empty, 
+    then our event loop will check for Microtasks, then callback queue. Finally the code will be executed. This scenario doesn't really happen since JS runs insanely fast
+    but it is important to know how it all works. 
+
+
+18. Higher Order Functions
+    - functions that take other functions as arguments or return a function.
+    function x(){
+        console.log('namaste');
+    }
+
+    function  y(x){
+        x();
+    }
+
+
+    polyfill?
+
+    // this will add calculate prop to all arrays
+    Array.prototype.calculate = function(callback){
+        var total = 0;
+        for(var i = 0; i < this.length; i++){
+            total += callback(this[i]);
+        }
+        return total;
+     }
+
+19.  Map, filter, reduce?
+    - all 3 are higher order functions
+
+    const arr = [5,1,3,2,6];
+
+    // map : used when we want to tranform the entire array. Example below is doubling each element of the array
+    const output = arr.map(function(num){
+        return num * 2;
+    });
+
+    ||Or
+
+    const output = arr.map(double);
+
+    function double(x){
+        return x * 2;
+    }
+
+
+    //filter: is used to filter the values inside the array. Example below filters our even numbers
+    const output = arr.filter(function(num){
+        return num % 2 === 0;
+    });
+
+
+    //reduce: is used to reduce the array to a single value. Example below sums all the elements of the array
+    //acc represents the accumulator, so its basically like sum = sum + arr[i] in a traditional for loop. Like a var thats holding the accumulation
+    //curr represents the current element
+    const output = arr.reduce(function(acc, curr) {
+        //acc is either passed in from previous iteration or 0 if its the first iteration. Notice the second argument in reduce function below.
+        acc = acc + curr;
+
+        //since we are returning here, notice how since we run this function against each el of an array, so on first iteration we do logic, then return the acc,  which then is passed into the next iteration on next el
+        return acc;
+    }, 0)
+
+
+    const users = [
+        {age: 26, firstName: 'John', lastName: 'Doe'},
+        {age: 57, firstName: 'John', lastName: 'Doe'},
+        {age: 70, firstName: 'John', lastName: 'Doe'},
+        {age: 26, firstName: 'John', lastName: 'Doe'},
+        {age: 12, firstName: 'John', lastName: 'Doe'},
+    ];
+    
+    //map:
+    const output = users.map( x => {
+            return x.first + ' ' + x.last;
+    })
+
+    //reduce: lets find count of age numbers 
+    const output = users.reduce(function(acc, curr){
+        if(acc[curr.age]){
+            acc[curr.age]++;
+        }else {
+            acc[curr.age] = 1;
+        }
+        
+        return acc;
+    },{});
 
