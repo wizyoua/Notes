@@ -437,7 +437,91 @@ console.log(a);
         }else {
             acc[curr.age] = 1;
         }
-        
+
         return acc;
     },{});
 
+    //filter: find firstname of all people with age less than 30
+    const output = users.filter(function(x){
+        return x.age < 30;
+    });
+    or less syntax with chaining
+    const output = users.filter(x => x.age < 30).map( (x) => return x.firstName);
+    
+    or using reduce
+    const output= users.reduce(function(acc,curr) {
+        if(curr.age < 30 ){
+            acc.push(curr.firstName);
+        }
+
+        return acc;
+    }, []);
+
+
+
+
+
+
+    implement a validate function that accepts a username and returns true if:
+        - username is at least 4 characters long
+        - username contains only letters, numbers, and optional underscore
+        - username must start with  letter and not end with an underscore
+
+        function validate(username){
+            if(username.length < 4){
+                return false;
+            }
+
+            if(username.match(/^[a-zA-Z][a-zA-Z0-9_]*$/)){
+                return true;
+            }
+
+            return false;
+        }
+
+    implement a validate function that accepts a username and returns true if:
+        - username contains only letters, numbers, and optionally one underscore
+
+    regex username must start with a letter and must not end with an underscore:
+        - ^[a-zA-Z][a-zA-Z0-9_]*$
+
+
+
+
+
+
+
+20. Call, apply,  bind
+    - all 3 can be used to assign an object to the this keyword.
+    - call: takes in an object and seperate arguments.
+    - apply: takes in an object and an array of arguments.
+    - bind: takes in an object and returns a function.
+
+    //call is used for 
+    let name = {
+        firstName: "test",
+        lastName: "test",
+        printFullName(): function(home, state) {
+            console.log(this.firstName + ' ' + this.lastName);
+        }
+    }
+
+
+    name.printFullName();
+
+    let name2 = {
+        firstName: "test2",
+        lastName: "test2",
+
+    }
+
+    name.printFullName.call(name2);
+
+    //call vs apply vs bind
+
+    bind: is used  to bind a function to an object and then process it BUT what we get in return is function that is waiting to be called.  
+        let printMyName = name.printFullName.bind(name2, 'chandler', 'az');
+        console.log(printMyName); returns a function
+
+    which then we can invoke using:
+        printMyName();

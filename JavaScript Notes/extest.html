@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Comments</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div>
+      <form>
+        <input type="text" id="comment" />
+        
+        <input type="button" id="postComment" value="Post" @click="postComment"/>
+      </form>
+      <ul id="commentList"  >
+          <!-- template with inner li  -->
+          <template v-for="comment in commentList">
+            <li>{{ comment }}</li>
+          </template>
+      </ul>
+    </div>
+  </div>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data : {
+        commentList: []
+      },
+      methods: {
+        postComment: function(){
+          let comment = document.getElementById('comment').value;
+          if (comment) {
+            this.commentList.push(comment);
+            document.getElementById('comment').value = '';
+          }
+        }
+        
+      }
+    });
+        
+    // Example case
+    vm.commentList = ["comment!"];
+
+    let commentInput = document.getElementById("comment");
+    let button = document.getElementById("postComment");
+    commentInput.value = "test";
+    commentInput.dispatchEvent(new Event('input', { bubbles: true }));
+
+    button.click();
+    setTimeout(() => console.log(document.getElementById("commentList").innerHTML));
+  </script>
+</body>
+</html>
