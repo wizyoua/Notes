@@ -131,13 +131,36 @@ const doubleNumArray = numbers.map(num => num * 2);
 
 IMPORTANT!!!
 JS Array Functions
-
+let arr = [1, 2, 3];
 map(): creates a new array populated with the results of calling a provided function on every element in the calling array.
+arr.map(num => num * 2);
+output: [2, 4, 6]
+
 find(): returns the value of the first element in the array that satisfies the provided testing function.
+arr.find(num => num > 1);
+output: 2
+
 findIndex(): returns the index of the first element in the array that satisfies the provided testing function.
+arr.findIndex(num => num > 1);
+output: 1
+
 filter(): creates a new array with all elements that pass the test implemented by the provided function.
+arr.filter(num => num > 1);
+output: [2, 3]
+
 reduce(): applies a function against an accumulator and each element in the array (from left to right) to reduce it to a single value.
+arr.reduce((acc, num) => acc + num);
+output: 6
+
 concat(): creates a new array by concatenating other arrays.
+arr.concat([4, 5, 6]);
+output: [1, 2, 3, 4, 5, 6]
+
 slice():  creates a new array by copying a section of an existing array.
+arr.slice(1, 3);
+output: [2, 3]
+
 splice(): changes the contents of an array by removing or replacing existing elements and/or adding new elements.
+arr.splice(1, 2);
+output: [1, 3]
 

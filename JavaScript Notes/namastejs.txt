@@ -242,6 +242,7 @@ console.log(a);
 
 
     // what is a callback function
+        - a function that is passed into another function as an argument.
         - due to callbacks we can do alot of async things
         - JS does not wait for callbacks to expire before moving on to the next line of code.
 

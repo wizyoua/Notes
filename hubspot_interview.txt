@@ -11,6 +11,7 @@ arr2 = [7,8,9,10,11,12]
 
 
 
+
 JS: 
 
 prototypes: allows us to add properties or methods to any object (Number, Boolean, String, Date)
@@ -40,9 +41,61 @@ prototypes: allows us to add properties or methods to any object (Number, Boolea
 
 Prototypical inheritance: 
 
+
+
+
+    - all 3 of these are used to pass in whatever object/this to a function but call is invoked immediately and also will take in unlimited arguments
+    by being comma seperated. But apply takes in 2 arguments and the second is an array of arguments.
+    - another important aspect of all 3 is you can use objects as arguments to other object methods but the initial this is stored.
+
+
 call():
 apply():
 bind():
+bind will return a new function that will be bound to  the this value of the original function but it will not be invoked immediately.
+It is invoked later whenever we call the function or the variable that was assigned to that function
+
+
+This in JS
+- this refers to the object on which we call our function 
+- the  value of this keyword is basically whatever is attached before the . 
+- so below we see example of displayAge() being called but nothing is attached before invoking function so the this refers to window object.
+- in obj1 below the obj1.displayAge() this will refer to obj1 
+
+let obj1 ={
+    displayAge:  function(){
+        console.log(23, this);
+    }
+}
+obj1.displayAge();
+
+function displayAge(){
+    console.log(23, this);
+}
+
+displayAge();
+
+function displayName(){
+    console.log(this);
+}
+
+let obj1 = {
+    name: "sim",
+    displayName: displayName
+}
+let obj2 = {
+    name: "gianni",
+    displayName: displayName
+}
+
+//the value of "this" is obj1
+obj1.displayName();
+
+
+//this is es6 functions
+- the difference between a normal function and arrow function as well is "this" in normal function  if nothing  was attached before invoking it
+will result in the "this" referring to the window object whereas the arrow function doesnt matter how it's called, the this will refer to 
+where its defined. so if it is in a object, it will refer to that object.
 
 function Admin(...args){
     //this will run the User function class we have defined above. Notice the rest operator, we are getting unknown number of arguments and converting them to an array.
@@ -86,3 +139,151 @@ function superAdmin(){
 
 const superAdmin = new superAdmin();
 superAdmin.
+
+
+
+
+
+
+https://www.youtube.com/watch?v=7d9H34ZVRPg&list=PL4cUxeGkcC9i5yvDkJgt60vNVWffpblB7&index=2&ab_channel=TheNetNinja
+
+2.  Object Literals
+    - encapsulation means to encapsulate data and methods in a single object. 
+    let userOne  =  {
+        email: 'ninja@nin.com',
+        name: 'shaun',
+        login(){
+            console.log(this.email, ' logged in');
+        },
+        logout(){
+            console.log(this.email, ' logged out');
+        }
+    }
+
+    console.log(userOne.name);
+
+
+3.  Updating properties
+    - we can update properties of an object by using dot notation or bracket notation.
+    
+    userOne.name = 'updated';
+    userOne['email'] = 'updated@gmail.com';
+
+    //add a new prop but this is not suggested because it is not a good practice. always add it into object at the start of object construction
+    userOne.age = 30;
+
+
+
+4. Classes
+    - classes are a new way to create objects.
+
+    class User{
+        constructor(email, name){
+            this.email = email;
+            this.name = name;
+            this.score = 0;
+        }
+
+        login(){
+            console.log(this.email, ' logged in');
+            return this;
+        }
+
+        logout(){
+            console.log(this.email, ' logged out');
+            return this;
+        }
+
+        updateScore(){
+            this.score++;
+            console.log(this.email, ' score is now: ', this.score);
+            return this;
+        }
+    }
+
+    class Admin extends User{
+
+        deleteUser(user){
+            users = user.filter(el => {
+                return el.email !== user.email;
+            });
+        }
+    }
+
+    
+    const userOne  = new User('ryu@ninjas.com', 'ryu');
+    const userTwo  = new User('yanni@ninjas.com', 'yanni');
+    const admin = new Admin('gi@gmail.com', 'gi');
+
+    var users = [userOne, userTwo];
+
+    admin.deleteUser(userTwo);
+
+    The following happens when new User() is used:
+    - the 'new' keyword
+    - creates a new empty object {}
+    - sets the value of 'this' to be the new empty object
+
+
+    
+
+
+7. method chaining
+    - we can chain methods together.
+
+8. class inheritance
+
+
+9. Constructor function under the hood.
+    function User(email, name){
+        this.email = email;
+        this.name = name;
+        this.online = false;
+
+        /* we removed this because we should define methods in the prototype instead of the constructor function.
+        * just leaving here for ex purposes
+         this.login = function(){
+            console.log(this.email, ' logged in');
+        }
+        */
+       
+    }
+
+    User.prototype.login = function(){
+        this.online = true;
+        console.log(this.email, ' logged in');
+    }
+
+    User.prototype.logout = function(){
+        this.online = false;
+        console.log(this.email, ' logged out');
+    }
+
+    //create a admin class that  inherits the User
+    function Admin(...args){
+        User.apply(this, args);
+        this.role = 'superadmin';
+    }
+
+    //what is the protoype: the prototype is the __proto__ object that is attached to the constructor function.
+    // why would we attach our methods to proto instead of directly into our constructor function?
+    // because methods stored in proto are defined once, then the user object will point to User protoype and not stored into each user object.
+
+    //inherit User prototype methods
+    Admin.prototype = Object.create(User.prototype);
+
+    //adding additional method to Admin only
+    Admin.prototype.deleteUser = function(user){
+        users = users.filter(el =>{
+            return el.email != user.email;
+        });
+    }
+
+    let userOne  = new User('ryu@ninjas.com', 'ryu');
+    let userTwo  = new User('yanni@ninjas.com', 'yanni');
+    let admin  = new Admin('admin@ninjas.com', 'admin');
+
+    console.log(userOne);
+    userTwo.login();
+
+10. prototype

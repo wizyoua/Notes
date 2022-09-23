@@ -1,0 +1,102 @@
+https://www.interviewbit.com/react-interview-questions/#react-mcq-questions
+
+1. what is React?
+   - React is a library for building user interfaces. 
+   - supports server-side rendering.
+   - used virtual DOM instead of real DOM.
+   - component based architecture. They are indepedent and reusable.
+
+   Limitations: 
+   - React is not a full blown framework. It is a library.
+   - makes use of inline templating
+
+4. What is useState?
+    - useState is a built-in hook that is used to update the state of a component.
+    - it should be used when the DOM has something that is dynamically manipulating/controlling.
+
+    - What is a lambda function?
+    - A lambda expression are abstractions which enable a function to be passed around like data
+
+    - what is a tuple?
+    - A tuple is a collection of values.
+    
+
+    - use state first parameter is the state variable.
+    - use state second parameter is the function that updates the state variable.
+
+5. what are keys in react?
+    - special string attribut that needs to be included when using lists of elements
+    - keys help identify which element is being updated.
+
+6. What is JSX?
+    - JSX is a syntax extension to JavaScript.
+    - it allow us to write HTML like syntax in JavaScript.
+
+7. What are the differences between functional and class based components
+    - first what are hooks? 
+    - hooks are functions that let you hook into  React state and lifecycle features from function components
+
+    - Effect Hook?
+        - useEffect is a hook that lets you perform side effects from a function component. It serves the same purpose as componentDidMount and componentDidUpdate 
+        but it is just unified into a single API
+
+    - functional components  were called stateless component and were behind class components on a feature basis. But after the introduction of Hooks, 
+        functional components became the default.
+
+    - function component example:
+        const MyComponent = () => {
+            //example of react hook
+            const [count, setCount] = useState(0);
+            return (
+                <div>
+                    <p>You clicked {count} times</p>
+                    <button onClick={() => setCount(count + 1)}>
+                        Click me
+                    </button>
+                </div>
+            );
+        }
+
+    - we cannot use react hooks inside class components
+
+
+8. What is virtual DOM? how dos react use it to render the UI
+    - virtual DOM is a concept where a virtual represenation of the real DOM is kept inside memory and is synced with the real DOM by a library such as ReactDOM
+
+9. What are the differences between controlled and uncontrolled components
+    - controlled components are is when the value of input elements are controlled by React using event-based callbacks. 
+    - uncontrolled component is handled by the DOM itself so that turns it into a traditional method of form submission.
+
+10. What are props in react?
+    - they are in the inputs to a component of react. They can be single-valued or objects 
+    - functionality includes:
+        - passing data to a component
+        - using this.props.reactProp inside render method
+        - triggering state changes
+
+11. 
+
+
+
+
+13. prop drilling?
+    - props that are passed into deeply nested components but the downfall is that the middle components have access to them
+
+14. 
+
+
+
+20. what is strict mode?
+    - identifying components with unsafe lifecycle methods
+    - warning about the usage of legacy string API
+    - warning about usage of findDOMNode
+
+
+
+27. React lifecycle:
+    - Initialization: sets up default props and initial state
+    - mounting: puts elemnts into the browser DOM. Componentwillmount and componentDidMount
+    - Updating: updates the component state and re-renders the UI
+        - componentWillUpdate and componentDidUpdate
+    - Unmounting: removes the component from the browser DOM
+        - componentWillUnmount

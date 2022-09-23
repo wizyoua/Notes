@@ -1,0 +1,20 @@
+https://www.interviewbit.com/react-interview-questions/#react-mcq-questions
+
+1. what is React?
+   - React is a library for building user interfaces. 
+   - supports server-side rendering.
+   - used virtual DOM instead of real DOM.
+   - component based architecture. They are indepedent and reusable.
+
+   Limitations: 
+   - React is not a full blown framework. It is a library.
+   - makes use of inline templating
+
+4. What is useState?
+    - useState is a built-in hook that is used to update the state of a component.
+    - it should be used when the DOM has something that is dynamically manipulating/controlling.
+
+    - What is a lambda function?
+    - A lambda function is a function that is anonymous.
+    - what is a tuple?
+    

@@ -1,7 +1,10 @@
-const arr1 = [1, 3, 4, 5, 6, 8];
-const arr2 = [4, 6, 8, 9, 11];
+const arr1 = [1, 3, 5, 7, 9];
+const arr2 = [5,5,3, 10, 11, 12, 13];
 
 const mergeSortedArrays = (arr1, arr2) => {
+    //check if both arrays are empty
+    if (arr1.length === 0 && arr2.length === 0) return [];
+    
     const res = [];
     let i = 0;
     let j = 0;
