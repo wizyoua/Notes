@@ -1,0 +1,2 @@
+Trees data structures: are similar to linked lists but they can link to a variety of other nodes instead of just one. They are used to 
+represent hierarchical data structures such as file systems, XML documents, and HTML documents.
