@@ -32,7 +32,7 @@ class Queue {
         //if there are no nodes in queue
         if (this.length === 0) return undefined;
         let temp = this.first;
-        //this there is 1 node in queue
+        //there is 1 node in queue
         if (this.length === 1) {
             this.first = null;
             this.last = null;

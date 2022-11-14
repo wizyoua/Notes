@@ -1,0 +1,17 @@
+Traditional programming 
+- rules + data = answers
+
+Machine learning:
+- Answers + data = rules
+
+
+Phases of machine learning:
+- Training Phases
+    - this is where we create a model that can predict the output
+
+- Inferencing Phases
+    - this is where we use the model to predict the output
+
+- Convulutions are used to extract features from the input data
+
+- Compression is achieved through pooling: 
