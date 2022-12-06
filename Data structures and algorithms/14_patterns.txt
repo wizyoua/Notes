@@ -1,0 +1,144 @@
+https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed
+
+14 patterns that apply to leetcode questions
+
+1. Sliding window:
+    - the whole poin of sliding window is to performan operation in 
+    in specific window within an array or linked list
+    - some cases are that the window remains constant or it may change in size
+    - How to indentify if a problem is SW:
+        - problem input is linear data 
+        - asked to find longes/shortest substring, subarray, or value
+    Common problems include:
+        - Maximum sub array of size K
+        - Longest substring with K distinct characters
+        - String anagrams
+
+2. Two pointer:
+    - pattern where 2 points iterate through the data structure in tandem until one or both pointers hit a condition
+    - useful for reducing search time from O(N^2) to O(N) since its the basis say for binary search
+    - How to identify if a problem is TP:
+        - problems with sorted arrays/linked lists and need to find a set of elements 
+        - set of elements in the array are pairs, triplets or even subarrays
+    Common problems include:
+        - Squaring a sorted array
+        - Triplets that sum to zero
+        - Comparing strings that contain backspaces
+3. Fast and slow pointers:
+    - similar to TP but instead of 2 pointers, there are 2 pointers with different speeds
+    - useful for cyclic linked lists and finding the middle of the linked list.
+    - otherwise known as hare and tortoise algorithm
+    - How to identify if a problem is FSP:
+       - problem will deal with a loop in a linked list or array
+       - when we need to know the position of a certain element 
+    -When should we not use fast and slow approach:
+        - singly linked list where we can't move backwards
+    Common problems include:
+        - Linked List Cycle
+        - Palindrome LinkedList
+        - Cycle in a Circular Array
+
+4. Merge Intervals: 
+    - efficient way to deal with overlapping intervals
+    - How to identify if a problem is MI:
+        - asked to produce a list with only mutually exclusive intervals
+        - if we hear " overlapping intervals" or "intervals" in general
+    Common problems include:
+        - Interval Intersection
+        - Maximum CPU Load
+5. Cyclic Sort: 
+    - interesting approach with problems involving arrays containing numbers in a given range
+    - iterates through an array one number at a time and if the curret num is not at the correct index, swap it with the number at its correct index
+    - How to identify if a problem is CS:
+        - problems involving sorted array with numbers givne in a range
+        - problem asks to find the missing/duplicate/smallest num in  a sorted or rotated array
+    Common problems include:
+        - Find the Missing number
+        - find the smallest missing positive numbers
+        
+6. In-place reversal of a linked list:
+    - useful for reversing a linked list
+    - pretty much lockstep pointers go through each node and reverse the pointers
+    - How to identify if a problem is IRL:
+        - problem asks to reverse a linked list without extra memory
+    - Common problems include:
+        - Reverse a linked list
+        - Reverse a sub-list
+        - Reverse every K-element sub-list
+
+7. Tree Breadth First Search:
+    - useful for traversing a tree level by level
+    - How to identify if a problem is BFS:
+        - problem asks to traverse a tree level by level
+    - Common problems include:
+        - Binary Tree Level Order Traversal
+        - Zigzag Traversal
+
+8. Tree Depth First Search:
+    - useful for traversing a tree in a deep manner from left to right 
+    - How to identify if a problem is DFS:
+        - problem asks to traverse a tree in a deep manner
+        - start at root of tree, but when node is not a leaf you need to do three things
+            - process curennt node now (preorder)
+            - between processing two chilren (inorder)
+            - or aftr processing both children (postorder)
+    - Common problems include:
+        - All Paths for a Sum
+        - Sum of Path Numbers
+9. Two Heaps:
+    - use pattern that uses two heaps. Min-heap finds the smallest element
+    and max-heap finds the largest element
+    - pattern works by storing the first half in a max heap, then store second half in a min heap
+    - How to identify if a problem is TH:
+        - problem asks to find the median of a number stream
+        - problem asks to find the median of a sorted array
+10. Subsets 
+    - permutations and/or combinations of any given set of elements
+    - the pattern goes like this:
+        - start with an empty set
+        - add each element one by one to the existing subsets to create new subsets
+    - How to identify if a problem are subsets problems:
+        - problem where we need to find the combinations or permutations of a given set 
+    - Common problems include:
+        - Subsets
+        - Subsets with duplicates
+        - Permutations
+        - String Permutations by changing case
+
+11. Modified Binary Search
+    - start with 2 pointers: mid = (l + r)/2
+    - in order to avoid integer overflow: mid = l + (r - l) / 2
+    - How to identify:
+        - problem gives you a sorted array, linked list or matrix
+    - common problems incude:
+        - Order-agnostic Binary Search
+12. Top K elements
+    - How to identify:
+        - any problem that asks the top/smallest/ frequest k among a given set 
+        -best data structure to keep track of 'K' is a heap, insert it into a min/max heap
+    - Insert k elements into a heap then iterate through the remaining numbers
+    if you find a number bigger/small then the root then insert it into heap
+
+    - there is no need for a sorting algo because the heap will keep track of the elements for us
+
+    Common problems include: 
+    - Top 'K' numbers
+    - Top 'K' Frequent Numbers
+13 K-way Merge
+    - K way merge helps us solve problems that involve a set of sorted arrays
+    - Pattern looks like this:
+        1. insert the first el of ech array in a min-heap
+        2. After this, take our the smallest (top) element from the heap and add it to the mergedlist 
+        3. after removing the smallest el from the heap, insert the next el of the same list into the heap
+        4. repeat 2-3 to populate the merged list in sorted order
+
+    - Common problems include: 
+        - Merge K sorted lists
+        - K pairs with the largest sums 
+
+    
+14. Topological sort: 
+
+    Common problems include:
+        - Task Scheduling
+        - Minumum height of a tree

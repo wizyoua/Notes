@@ -1,0 +1,136 @@
+https://www.youtube.com/watch?v=Zb4dPi7CANU
+
+1. Why do people say JS is dynamic language?
+- data types of variables can change during the runtime
+
+2. How does js determine data types?
+- js engine uses a concept called "type inference" to determine data types
+
+3. how to determine data type in js?
+- typeof operator 
+let x = 100;
+consol.log(typeOf(x)) // number
+
+5. what are the dirrerent data types in js?
+- primitive:
+    - string var str = 'test'
+    - number var x = 100;
+    - boolean var isSet = true;
+    - undefined var un = undefined;
+    - null = var nu = null
+    - big int // var big =100;
+    - symbol // var sym = Symbol(); // unique and immutable
+
+- objects
+    - object // var obj = new Object();
+    
+6. what is undefined in js?
+    - is a datatype where variable has been declared but hasn't been assigned a value
+
+7/ what is null?
+    - datatype that indicates intentional absence of value
+8 null vs undefined?
+    - undefined hs been created but have not assigned a value, null indicates abscence o data
+
+9. what is hoisting? 
+    - variables and functions are moved to the top of the executation context before the code is executed
+10. are js initialization hoiasted? 
+    - no, only declaration is hoisted
+
+11. explain global variables?
+    - variables declared outside of a function are global variables
+
+12. what is the issues with global variables?
+    - they are accessible from anywhere in the code, which can cause issues with naming conflicts
+
+13. what happens when you declare variable without var keyword
+    - it becomes a global variable
+
+14. what is the use strict keyword
+    - is a directive if the variables using the var keyword are not declared, it will throw an error
+
+16-17. how can we handle global variables?
+        how can we avoid Global variables?
+
+        - we can't not use them but we can ignore, we can handle it 2 ways
+        - 1. create a global object
+        - 2. create a closure and IIFE
+
+18. what is a closure?
+    - functions inside a function have access to the variables of the outer function. stateful functions
+
+    function closureFun(){
+        var x = 100;
+        function increment(){
+            x++
+        }
+        return {
+            increment
+        }
+    }
+
+    var ref = closureFun();
+    ref.increment();// this becomes stateful and remembers the value of x
+    ref.increment();
+
+19. why do we need closures?
+    - create self contained function that can be used anywhere, we will have a self contained state and avoid global variables
+    - it helps us expose only what we want 
+
+
+
+20. what is IIFE?
+    - immediately invoked function expression
+    - it is a function that is executed as soon as it is defined
+    - it is used to avoid global variables
+
+    (function(){
+        var x = 100;
+        console.log(x);
+    })();
+
+21. what is the use of iife 
+    - what is the name collision in global scope
+    - iife vs normal function
+
+    - name collision happens when the same name in the global context
+
+
+22. what are design patterns and what are the most used?
+    - design patterns aretime tested solutions
+    - module design pattern is the most used because is creates self contained components and provides
+    encapsulation and abstraction so it only exposes what we want
+
+27. what are the various ways of creaint js objects?
+    - literal: var obj = {};
+    - object.create : var obj = Object.create(null);
+    - constructor: function Person(name, age){this.name = name; this.age = age;}
+        var per1 = new Person('pat', 30);
+
+
+    - class 
+    class Patient{
+        this.name = name;
+    }
+    var pat1 = new Patient();
+
+28. what is inheritance, prototype and prototype chaining?
+    - inheritance uses inheritance or prototypical inheritance. inheritance is done using prototype object
+
+
+31. what is the let keyword? 
+    - create immediate block level local scope. 
+
+32. are let variables hoisted? 
+    - no, they are not hoisted, on initializing they are in a temporal dead zone
+
+33. what is the temporal dead zone?
+    - when a variable is declared with let or const but not initialized, it is in a temporal dead zone
+
+34. var vs let? 
+- ON initialization let variables are in a temporal dead zone, var variables are not with undefined.
+- they both can be hoisted.
+- var keyword is function scoped, whereas let is block scoped
+
+35. tricky question around concatenation 
+    - 
