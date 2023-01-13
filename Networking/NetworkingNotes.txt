@@ -1,0 +1,66 @@
+Problem solving for devs: 
+1. context ( undertand the problem) - issue - why do i care? ( why is this important to solve)
+
+2. research and refine the problem:
+    - starting point search ( google, stackoverflow, github, etc)
+    - research ( read docs, read blogs, read books, read code, etc)
+    - break down big problems into smaller problems
+3. psuedocode ( write out the steps to solve the problem)
+4. Test Driven Development ( write tests for the problem)
+5. implement the solution
+6. reflect on the solution ( what went well, what could be improved, what did i learn)
+
+
+
+5 r's of help desk: 
+1. reboot
+2. reinstall
+3. replug/resetting
+4. reimage
+5. replace
+
+How to troubleshoot any issue: 
+
+5 step framework: (keep, adding, valuable, brave, goals)
+1. K - Know your basics(incredibly basic knowledge)
+2. A - Ask questions
+3. V - visualize the problem
+4. B - Break it to replicate it
+5. G - google the issue
+
+1st problem
+- user getting "site cannot be reached" while accessing your website
+
+1. what is the user doing? (he's trying to access the website)
+2. he's getting it all he time or just sometimes? - what kind of error are you getting? are there other areas? (he is getting Err_connection_refused) - is this happening on all browsers? (all broswer) - just for him or all co workers?(everyone) - Interna or access? (internal)
+3. url: https://portal.com/home
+    lets visualize the problem
+    user -> computer -> url goes to load balancer ->load balancer routes to web server node - > nodes pass request to app server -> app server has db app in the end 
+
+    - try to remove app server layer and see if it works
+    - check to see if we can eve hit our web server
+    - try https://ipaddress:8080
+
+
+Networking Basics 2023
+- LAN
+    - IP: an address that is assigned to a device on a network
+    - switch : helps to connect multiple devices to the network
+    - Router: network device that forwards data packets between networks. Routers perform the traffic directing functions on the Internet.
+    - subnet: subnet defined your local area network range
+        lets say a user with laptop and cell phone
+         ip fo both are 192.168.10.20 and 192.168.1.2  well the subnet would be 255.255.0.0
+    - Network Gateway: is the ip address of the router
+
+after these local LAN concepts we move to the bigger picture of router and how it works
+
+- Router
+    - NAT: Network Address Translation : is a method of remapping one IP address space into another by modifying network address information in the IP header of packets while they are in transit across a traffic routing device.
+    - Firewall: a system designed to prevent unauthorized access to or from a private network. So lets say an external ip wanted to speak directly to my laptop ip. Well the firewall would block that request. What are the options we have:
+        - configure a dmz of port forwarding
+    
+    - WAN : Wide Area Network
+    - DMZ:  is a subnetwork that contains and exposes a device to an untrusted network such as the internet. 
+    - Port Forwarding: you dont create a dmz but you forward a port to a specific ip address. So lets say you have a web server on your local network and you want to expose it to the internet. You would forward port 80 to the ip address of your web server. So when a request comes in on port 80 it will be forwarded to your web server.
+
+    
