@@ -1,0 +1,9 @@
+Software Design Tutorial #1 - Tech with Tim
+
+Student:
+    - International : boolean
+    - isPartTime : boolean
+
+Professor
+Course
+Enroll
