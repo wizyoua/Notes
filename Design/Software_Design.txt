@@ -1,9 +1,41 @@
 Software Design Tutorial #1 - Tech with Tim
+1. Make classes and methods from requirements
+2. make associations (one to many, many to many, etc)
+3. draw out system
+4. I have the drawing saved in one note 
+
+
+address
+    - country: string
+    - city: string
+    - state: string
+    - street: string
+    - zipCode: string
+
+Person
+    - firstName: string
+    - lastName: string
+    - phoneNumber: string
+    - dateOfBirth: date
+
 
 Student:
     - International : boolean
-    - isPartTime : boolean
+    - isPartTime() : boolean
+    - isOnProbation() : boolean
 
 Professor
+    - Salaries: Float
+    
 Course
+    - name : string
+    - code : string
+    - minStudents: integer
+    - maxStudents: integer
+    - isCancelled() : boolean
+    - start: Date
+    - end: Date
+
 Enroll
+    - date: date
+    - grade: Float
