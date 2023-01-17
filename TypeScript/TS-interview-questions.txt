@@ -1,0 +1,35 @@
+Typescript Interview Questions - https://www.interviewbit.com/typescript-interview-questions/
+1. What are the primitive types in TypeScript?
+  - Boolean
+  - string
+  - number 
+
+2. Explain how the arrays wor in Typescript? 
+- Arrays are generic types in TypeScript. They are defined as a generic type with the name Array. The syntax for defining an array is as follows: 
+let values: number[] = [1, 2, 3];
+
+3. what is any type?
+- if we don't know what the type will be of a given value we can give a variable the any type. This is useful when we are working with existing JavaScript code that we don't have type information for.
+
+4. What is void? 
+- void is a type that is used to indicate that a function does not return a value. exmaple: 
+function printMessage(message: string): void {
+  console.log(message);
+}
+
+5. what is a unknown type?
+-  is a type safe counterpart of any type. We can assign anything to a variable of type unknown, but we can’t assign a variable of type unknown to a variable of any other type without first checking to see what the type of the unknown is. We can narrow it down like this:
+let foo: unknown = "me";
+let bar: string = foo as string;
+
+6. what are the different keywords to declare variables in TypeScript?
+- var: declares a function-scoped or globally-scoped variable, optionally initializing it to a value.
+- let: declares a block-scoped, local variable, optionally initializing it to a value.
+- const: declares a block-scoped, read-only named constant.
+
+7. make a function the type annotation:
+function greet(name: string): string{
+    return `Hello, ${name}`;
+}
+
+8. How to create objects in TypeScript? 
