@@ -1,0 +1,82 @@
+AWS Cloud practitioner Essentials
+
+
+Module 1: Introduction to AWS
+    1. intro
+    - aws offers compute storage, network security, blockchain
+    - basic computer models are client-server model.
+    - ec2 is a virtual server in the cloud
+    - you only pay for what you use (key val: pay for what you need)
+
+    2. Cloud computing:
+        - on demand delivery of it resources over internet with pay as you go prices.
+        Cloud compuing models:
+            - Infrastruture as a service
+            - Platform as a service
+            - Software as a service
+
+Module 2: Computing in the cloud 
+    1. intro
+        - aws built data centers, racked the servers, ect... 
+        - when you spin up ec2 you are virtualizing a server and sharing underlying hardware. hypervisor is the software that does this.
+        - you control networking and storage
+        - Compute as a service is basically what aws and all other cloud providers are
+    
+    2. ec2 instance type
+        - each instance type is grouped under a instance family
+        - general purpose provide balanced resources
+        - compute optimized provide high performance processors
+        - memory optimized provide high memory
+        - accelerated computing provide high performance for graphics intensive workloads
+        - storage optimized provide high, sequential read and write performance
+    
+    3. ec2 pricing
+        - on demand: pay for what you use
+        - savings plan -> reserved: pay for what you use, but for a year or 3 years
+        - spot: pay for what you use, but you can be interrupted. basically you are getting discounted because the instances are extra but then aws can reclaim it with a 2 min warning 
+        - dedicated hosts: pay for what you use, but you have a physical server
+    
+    4. scaling ec2
+        - scalability and elasticity. 
+        - you cant scale up or down on on premise servers, hence why aws 
+        helps you scale up and down different instances.
+        - ec2 auto scale ha 2 options
+        - dynamic scaling responds to changing demand
+        - predictive scale based on forecasted demand
+        - scale up adds more power
+        - scale out adds more servers
+
+    5. Directing traffic with elastic load balancing
+        - elastic load balancing is a service that distributes incoming traffic across multiple targets
+        - basically if more traffic comes in, the ELB will also scale as well as our instances in order to handle the traffic
+    
+    6. Messaging & Queuing 
+        - there is a queue in between the requests and instances.
+        - Tightly coupled systems are bad because if one fails, the whole system fails
+        - loosely coupled systems are preffered since it won't affect the rest of the system
+
+        Example:
+        Sys1 -> messageQueue -> Sys2 
+
+        - Amazon SQS or SNS are used for messaging and queuing
+            - SQS : send and store messages between software components (data contained in message is called payload)
+            - SNS: does same thing as SQS but also can send messages to subscribers
+
+        - Monolithic vs Microservices
+            - monolithic: all services are in one application
+            - microservices: each service is in its own application
+    
+    7. Additional compute services
+        - Serverless: you dont have to manage servers, you just write code and it runs
+            - AWS Lambda: you can run code without provisioning or managing servers.
+                - lambda function is where you upload your code, the trigger checks any changes and then runs the code
+        - AWS container services: (container orchastration service, basically docker)
+            - container: a package for our code, that run on top of ec2 instances.
+            - container orchestration: allows you to manage containers, but the tools were made since it's still diffucult to handle it at scale.
+            - ECS: allows you to run docker containers on aws
+            - EKS: allows you to run kubernetes on aws
+            - Fargate (serverless): allows you to run containers without having to manage servers or clusters
+
+
+Module 3: Global Infrastructure and reliability
+    
