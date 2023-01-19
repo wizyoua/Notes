@@ -189,6 +189,65 @@ Module 5 : Storage and databases
         - redshift is a data warehouse service that is fully managed and can scale to petabytes of data
             - can run queries on hexabytes of data
     
-    7. Amazon DB migration service
+    7. Amazon DB migration service (DMS)
         - migrate data between source and target databases
         - source remains fully operational
+        - homogeneous migration: same type of database
+        - heterogeneous migration: different types of data between source and target. This converts source schema to target schema
+            - development and test database migrations
+            - database consolidation 
+            - database replication
+
+    8. Additional database services
+        - DocumentDB(mongo compatibility)
+        - Neptune(graph database): social media
+        - Amazon Managed Blockchain: blockchain service and decentralized components
+        - Amazon Quantum Ledger Database: ledger database for financial transactions where records are immutable
+        - Caching layers: ElastiCache, Redis, Memcached
+        - Dynamodb -> DAX (DynamoDB Accelerator): in memory cache for dynamodb
+        
+Module 6: Security
+    1. Shared Responsibility module
+        - Both parties customer and aws are responsible for security
+        - customer: security of data, applications, and infrastructure
+        - aws: responsible for security of the cloud
+            aws: physical, network, hypervisor
+            customer: OS, application, data
+    
+    2. User permissions and access
+        - account root user (master user, turn on MFA)
+        - AWS Identity and Access Management (IAM)
+            - IAM users: users that you create and manage(can reate json policy for user)
+            - IAM groups: collection of users(attach policy to group and all users in group get that policy)
+            - IAM roles: associated permissions, allow/deny , grant access to resources, users, apps, and other services. Role takes over any pre-existing permissions
+            - IAM policies: document that defines permissions
+
+    3. AWS Organizations
+        - AWS Organizations: allows you to manage multiple AWS accounts
+        - SCP: service control policy, allows you to set permissions for accounts in your organization, restrict services, resuorces and even api access.
+
+    4. Compliance
+        - GDPR: General Data Protection Regulation
+        - HIPAA: Health Insurance Portability and Accountability Act
+        - a user owns their own data, you can make sure your data is not somewhere or another region where it shouldn't be
+        - AWS Artifact: allows you to see what services you are using and what region you are using them in. These are compliance reports done by third parties.
+    
+    5. Denial of service attacks (DDos)
+        - attack that overwhelms a service with traffic
+        - UDP flood: low level attacks
+        - HTTP level attacks: attack the application layer
+        - Slow Loris: attack where attacker pretends to have slow connection and keeps connection open in order to slow down other requests. (ELB prevents this)
+
+        - AWS Shield: 
+            - AWS WAF: web application firewall, protects against common web exploits
+            - shield standard: included for all aws members
+            - shield advanced: additional protection for DDoS attacks
+    
+    6. Additional Security Services
+        - Encryption: securing a message and only authorized keys can access it.
+        - DynamoDB table is auto encrypted
+        - Amazon Inspector: automated security assessment service on your infrastructure
+        - Amazon guard duty: threat detection service that monitors for malicious activity and unauthorized behavior
+
+Module 7: Monitoring and analytics
+    1. Introduction
