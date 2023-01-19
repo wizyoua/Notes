@@ -148,5 +148,30 @@ Module 4: networking
 Module 5 : Storage and databases
     
     1. Instance stores and Amazon Elastic Block store
-        
+        - ec2 instance stores: temporary storage that is attached to the life cycle of the instance. If the instance fails, the data is lost.
+        - EBS: create virtual hard drives (ebs volumes) that can be attached to ec2 instances. EBS volumes are persistent and independent of the life cycle of the instance. If the instance fails, the data is still there.
+            - ebs takes snapshots of the data and stores it.
 
+    2. Amazon Simple Storage service
+        - S3: object based storage, allows you to upload files and access them from anywhere. Unlimited amount of data stored and retrieved. usually called buckets. Max storage is 5TB per object.
+        - can create multiple bucket, and set permissions for each bucket
+        - S3 standard: 99.99% availability, 99.999999999% durability, 11 9's
+        - s3 static website hosting: allows you to host a static website on s3
+        - s3 standard-infrequent access: for long term storage but not needed
+        - s3 glacier: archive data that needs to be stored for a long time.
+        - lifecycle policies allow you to move data from one storage class to another based on time or access
+
+        - comparing EBS vs s3
+            - EBS 16 TIB max size, survive termincation of ec2 instance, SSD by default
+            - S3, unlimited storage, write once read many, objects up to 5 TB each, regionally distributed, web enabled 
+            - object storage : any file as discrete object, if there is change to object you must reupload the entire file
+            - block storage: storage that is attached to a single instance, updates are applied to changes to those certain blocks
+
+    3. Amazon Elastic File System
+        - Amazon EFS: multiple instances can access data at the same time
+        - EBS volumes are availability zone level resource, need to be in the same zone to attach ec2 instances.
+        - EFS can have multiple instance read/write same time, true Linux file system, Regional resource, auto scales.
+    
+    4. Amazon RDS
+        -  RDS: managed relational database service, allows you to create and manage databases in the cloud.
+        - amazon aurora: a relational database service that is can be mysql or postgres 1/10th the cost of RDS, data replication, point-in time recovery
