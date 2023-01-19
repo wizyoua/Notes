@@ -175,3 +175,20 @@ Module 5 : Storage and databases
     4. Amazon RDS
         -  RDS: managed relational database service, allows you to create and manage databases in the cloud.
         - amazon aurora: a relational database service that is can be mysql or postgres 1/10th the cost of RDS, data replication, point-in time recovery
+    5. Dynamo DB
+        - serverless DB where we don't need to manage the intances.
+        - only create a table and add data
+        NoSQL DB : not relational, flexible schema
+        can't run complex queries only on keys. The queries tend to be simpler and faster but less complex
+        (on prime 2 day event they had over 4 trillion requests about 45 million per second)
+
+    6. Amazon Redshift
+        - large amounts of data can overwhelm relational db's 
+        - data warehouses are designed for big data. like historical analytics instead of operational data
+        - if you are looking at historical data then warehouse would be the way to go (at a heavy scale)
+        - redshift is a data warehouse service that is fully managed and can scale to petabytes of data
+            - can run queries on hexabytes of data
+    
+    7. Amazon DB migration service
+        - migrate data between source and target databases
+        - source remains fully operational
