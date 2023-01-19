@@ -79,4 +79,74 @@ Module 2: Computing in the cloud
 
 
 Module 3: Global Infrastructure and reliability
+    - we need high availability and fault tolerance
+    - aws has a ton of data centers using fiber to connect them
+    - Regions: each region is isolated from each other and can only be moved by yourself  
+        - compliance: check your requirmens for your data
+        - proximity: latency is important, speed of light is the law of the universe. (latency is the time it takes for a packet to travel from one point to another)
+        - feature availability: some features are only available in certain regions
+        - pricing : some locations are cheaper than others
+
+    2. Edge locations: 
+        - using CDN to place a cache of data closer to the user
+        - AWS cloudfront: a content delivery network (CDN) that delivers data, videos, applications, and APIs to users with low latency and high transfer speeds
+        - they use edge locations and are separate from regions. You can push data from region to edge locations
+        - AWS route 53: a DNS service that routes users to the closest edge location
+
+        - what if you wanted to push data inside your own data center, uses AWS outpost
+
+    3. How to provision AWS resources: https://aws.amazon.com/about-aws/global-infrastructure/regions_az/
+        - in AWS everything is an API (application programming interface)
+        - you can use the aws console, cli, or sdk to provision resources
+        - aws sdk we can use programming languages to provision resources
+
+        - how to interact with aws
+            - aws console: web based interface
+            - aws cli: command line interface
+            - aws sdk: software development kit
+            - aws elasticbeanstalk : allows you to provision and manage instances
+            - aws cloudformation: Infrastructure as code tool, basically using json/yaml to provision resources
+
+
+Module 4: networking
+    - VPC: virtual private cloud, allows you to create a virtual network in the cloud
+    - subnet: ranges of ip addresses in a VPC
+        - public subnet: subnet that has a route to the internet gateway
+        - private subnet: subnet that does not have a route to the internet gateway
     
+    1. Connectivity to AWS
+        - VPC: allows you to create a virtual network in the cloud
+         - subnet and networking rules allow resources to be public or private
+
+         - Internet gateway: allows communication between your VPC and the internet
+         - private gateway : virtual private gateway allows us to create a secure connection between our VPC and our on premise data center
+         - problem with VPG is it still uses te regular internet connection
+         - AWS Direct Connect: allows you to create a dedicated network connection between your data center and AWS. low latency high security.
+    
+    2. subnets and network access control list 
+        - Network hardening: 
+        - Network ACL: allows you to control traffic in and out of your subnets, check the packets and allow or deny them, based on who sent them and how it's trying to communicate
+        - Security Groups: allows you to control traffic in and out of your instances. AWS auto sets them to block any traffic.
+            - website accepts https traffic from , but not OS or admin requests
+        - security group vs network acl is that security group is stateful and network acl is stateless. 
+            - stateful: if you allow traffic in, you automatically allow traffic out
+            - stateless: you have to allow traffic in and out
+        
+        Flow of a packet:
+            packet -> security group -> network acl -> subnet 2 -> network acl - > security group -> packet
+            packet-> security group -> network acl -> subnet 1 -> network acl -> security group -> packet
+    
+    3. Global Networking
+        - Route 53: a DNS service(domain name system) that routes users to the closest edge location. We can also direct to different routing
+            - latency based routing
+            - weighted routing
+            - geolocation routing
+            - failover routing
+
+        - AWS Cloudfront: can serve websites to users based on their geo location. 
+
+Module 5 : Storage and databases
+    
+    1. Instance stores and Amazon Elastic Block store
+        
+
