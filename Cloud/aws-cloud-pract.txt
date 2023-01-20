@@ -251,3 +251,62 @@ Module 6: Security
 
 Module 7: Monitoring and analytics
     1. Introduction
+        - set up monitoring in the cloud to keep track of aws resources.
+    2. AWS Cloudwatch
+        - allows us to monitor infra. and applications
+        - cloudwatch alarm, set threshold for metric and CW will trigger alert and perform and action. Even integrated with smallest
+        - CW dashboard: lists out metrics and shows everything pretty much
+        - reduce MTTR and improve 
+        - insights to optimize applications and operations solutions
+
+    3. AWS Cloudtrail
+        - every action is programmatic
+        - logs all api calls(across entire aws)
+        - would use to check history of any sort of requests
+    
+    4. AWS trusted advisor:
+        5 pillars are:
+        1. cost optimization
+        2. performance
+        3. security
+        4. fault tolerance
+        5. service limits
+
+        - checks for best practices
+        - checks for security, performance, fault tolerance, cost optimization
+        - can be automated to run on a schedule
+
+Module 8: Pricing and Support
+    1. going over plan and budget for application
+
+    2. AWS Free Tier: 
+        - Credit Limit free tier:
+            1. always free
+            2. 12 months free
+            3. Trials
+
+    3. Pricing Concepts: 
+        - go over free tiers
+    
+    4. Billing Dashboard
+        - Billing dash will show you all the charges for the month, current and forecasted amounts
+    
+    5. Consolidated Billing 
+        - a singular company can have multiple aws accounts, using organizations. You can consolidate billing for all accounts under one account.
+    
+    6. AWS Budgets
+        - can get notifications before yuo go over budget
+    
+    7. AWS cost explorer
+        - console based service visually see how we are spending our money
+    
+    8. AWS support Plans
+        - basic: 24/7 access to support center, community forums, and documentation, whitepapers, aws trusted advisor
+        - developer: basic + email customer support 
+        - business: developer + direct phone access, infrastructure event management
+        - enterprise: business + TAM(technical account manager)
+
+    9. AWS Marketplace
+        - 3rd party software and services
+        - can be used to purchase software and services
+        - can be used to sell software and services
