@@ -310,3 +310,55 @@ Module 8: Pricing and Support
         - 3rd party software and services
         - can be used to purchase software and services
         - can be used to sell software and services
+
+Module 9 Migration and innovation
+    1. Cloud adoption framework
+        - 6 areas of cloud adoption areas:
+            1. business
+            2. people
+            3. governance
+            4. Platform
+            5. Security
+            6. operations
+    
+    2.Migration Strategies
+        1. Rehosting: lift and shift, move to cloud with minimal changes
+        2. Re-platforming: make cloud optimizations to application
+        3. Retire: decommission applications and store 
+        4. Retain: apps about to be deprecated but set a time to decommission and only migrate what makes sense in business
+        5. Repurchasing: when a contract or db vendor we can use aws to replace it
+        6. refactoring: rewrite application to take advantage of cloud services
+
+    3. AWS snow family
+        - AWS snowcone: 8tb of data and edge computing (ship drive to user, transfer then send back the put in s3)
+        - AWS snowball edge: 80 TB of data capture streams iot devices, 100tb of data
+        - AWS snowmobile: 100 petabytes of data, ship a truck to you, transfer data, then ship back
+        
+    4. Innovation with AWS 
+        - ml and ai Sagemaker: pre-trained models, machine learning, deep learning, computer vision, natural language processing
+        - Augmented AI: use machine learning to automate tasks
+        - Amazon Lex: interactive chatbox
+        - Textract: extract text from documents and us ML learning
+        - Deepracer: reinforcement learning
+        - Ground Station: satellite communication
+
+Module 10: Cloud Journey
+    1. use each service as building blocks for our architecture
+    
+    2. Well architected framework
+        1. operation excellence: operational best practices, automation, monitoring, and logging
+        2. security: protect data, applications, and infrastructure
+        3. reliability: design and implement systems to be resilient to failure
+        4. performance efficiency: design and implement systems to optimize cost and performance
+        5. cost optimization: design and implement systems to be cost effective
+
+        - well architected tool: helps you review your architecture and see if it is well architected
+
+    3. Benefits of the AWS cloud
+        6 main Benefits
+            1. pay as you go
+            2. benefits of scales
+            3. stop guessing capacity, scale up or down
+            4. increase speed and agility 
+            5. stop spending money running and maintaining data centers
+            6. go global in minutes (cloud formation) expand to a second area in the world

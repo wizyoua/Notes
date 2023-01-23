@@ -1,0 +1,30 @@
+https://www.youtube.com/watch?v=m8Icp_Cid5o
+
+1. Large Scale distributed systems: intensive applications that require a lot of resources and data.
+2. distributed systems: applications are distributed all over the world. This is fault tolerance( if one server goes down, the other one can take over).
+
+Design Patterns: 
+    - practices used by engineers to build large scale systems.
+    - publisher-subscriber model
+
+Live Streaming application: 
+    1. define requirements from the user. You need to pull the most important aspects of the application.
+    2. reduce features to data definitions
+    
+    Product requirement doc -> features/abstract concepts -> data definitions -> objects -> data base
+    Engineering requiments: none of services fail, extensibility(how easy is it to change solution), we need to write highly decoupled code, 
+    Testing: real world we have have testing in place, run through request wit common, edge cases and stress test. 
+
+requirements: 
+    1. Streaming videos
+    2. processing videos
+    3. broadcasting videos
+    4. failproof
+    5. advertisement
+    6. Reactions
+    7. Disclaimers
+    8 degradation of video quality
+    9 multiple device support
+
+
+    

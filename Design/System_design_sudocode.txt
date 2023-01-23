@@ -1,0 +1,46 @@
+2. Components of a system
+    - logical entities
+        - data (databases)
+        - programs (applications) logical entity that gives access to these systems
+            - programs and db's talk through communication protocols like: 
+                - TCP (Transmission Control Protocol)
+                - HTTP( Hypertext Transfer Protocol)
+                - IP (Internet Protocol)
+
+            - presentation layers are like websites and apps (this is optional depending on the system)
+        - users(CRUD operations to DB's) they use applications
+
+    - Tangible entities:
+        - text
+        - db's 
+        - api's 
+        - backend languages like java, go , python
+        - caching: Redis
+        - cloud platforms like AWS, GCP, Azure
+
+3. Client Server architecture
+    - client: 
+        - thick vs thin client: 
+            - thick client: has a lot of logic, has a lot of code, has a lot of data on the front-end (gaming, video editing, ric gui)
+            - thin client: has majority of processing on the backend (e commerce, streaming)
+    - client request for data from server, server responds with data
+
+    2 tier : logic or data sit on client or server (light weight for small business)
+
+    3 tier: data is heavy so client hits application and that application hits a data application. (bigger apps like management, bigger e commerce)
+
+    n Tier(gmail, facebook)
+
+4. Proxies 
+    - Proxy: (on behalf), 
+    - Forward proxy:
+        machine that sits between client and server. Client sends req to proxy, then proxy to server. (client never speaks with server)
+        - useful for disguising identity, traffic is controlled and monitored, blocking access to certain sites.
+        - 
+    - Reverse Proxy:
+        - sits on the server side, takes in request from clients and forwards it to the server. (client never speaks with server)
+        - traffic control, load balancing, caching response from server , mitigate ddos attacks
+
+    - if reverse proxy fails it becomes a bottleneck, a forward proxy is using them to access the internet even if your country blocks certain sites.
+
+5. Data, Data storage and data flow
