@@ -44,3 +44,66 @@
     - if reverse proxy fails it becomes a bottleneck, a forward proxy is using them to access the internet even if your country blocks certain sites.
 
 5. Data, Data storage and data flow
+    - data is the core of sys design
+    
+    Layers of Data:
+        - Business layer: video, image, text
+        - application layer: json, xml, csv
+        - database layer: tables, rows, index, lists, Trees
+        - Network layer, data is broken down into packets and sent over the network
+        - Hardware layer: is just bits and bytes(0 and 1)
+    
+    Data Stores:
+        - databases
+        - queues 
+        - caching
+        - indexing
+
+    Data flows:
+        - Api's 
+        - messages 
+        - events
+
+    Data Generation
+        - user
+        - Internal
+        - insights
+
+    Data Factors
+        - type of data
+        - volume
+        - consumption/retrievals
+        - security
+
+    Types of system:
+        - authorization: user login, user permissions, identity
+        - streaming: netflix, prime video
+        - transactional: e commerce, banking
+        - heavy compute: AI, gaming, machine learning
+
+6. Databases types:
+    - types of db
+        - relational : schema and ACID( atomicity : (transaction happens completely or not al all), consistency, isolation, durability)
+            - relational db's are good for structured data but not for unstructured data which means you don't know how your table will evolve
+            - scaling: vertical scaling is easy with relational. increase storage of machine, it's harder to perform horizontal scaling
+        - non relational: noSQL db's 
+            - schema is not fixed
+            - key value store like hashmap 
+            - it's imortant for caching because of key value store
+        - document db's 
+            - no fixed schema
+            - collections(tables) and documents(rows) are the main components
+            - highly scalable
+            - sharding
+            - dynamic data flexibility
+            - special query operations
+        - column db's 
+            - no support for ACID transactions
+            - support heavy writes, but not heavy reads
+            - distributed db's 
+            - cassandra, hbase, bigtable
+        - search db's
+            - advanced indexes for of like the search algorithms
+    - pros cons
+    - use cases
+    - examples

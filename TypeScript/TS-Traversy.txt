@@ -1,0 +1,34 @@
+
+- typescript is a super set.
+- using static types is optional but is the recommended way to use typescript. This is because
+js is a dynamic language and typescript is a superset of js. So you can use typescript as a
+framework for js development. 
+- can be used with react and angular, also node js
+- supports classes arrow functions
+- main reason is to add static types to your js
+Static languages:
+    - java
+    - c++
+    - Rust
+    - go
+    dynamic: 
+        - js
+        - python 
+        - ruby 
+
+Pros:
+    - more robust
+    - less bugs
+    - predictable
+    - readable
+    - popular
+Cons:
+    - More code to write
+    - more to learn
+    - requires compilation (browsers don't read TS files needs to be compiled to js)
+    - not true static typing 
+
+- .ts files are compiled to .js files
+- .tsx files are compiled to .jsx files
+- TSC (typescript compiler) is used to compile ts files to js files
+- tsconfig.json is used to configure the compiler

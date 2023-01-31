@@ -1,0 +1,22 @@
+https://www.udemy.com/course/javascript-marathon-interview-questions-series/learn/lecture/19742598?start=0#overview
+
+1. Laguage Fundamentals
+    - difference between null and undefined
+        - undefined: before any value is assigned to a variable the variable contains undefined, it is also a data type
+        - null: means nothing, both undefined andnull mean nothingness but they both are different data types, so undefined == null is true 
+          but undefined === null is false
+
+        - you can assign a variable to undefined
+    
+    - function scope vs block scope
+        - es5 has function scope because of hoisting and es6 has block scope
+            - var keyword is hoisted but let and const are hoisted to their block
+        - es6 has block scope
+            - let and const are hoisted to their block
+
+    - Automatic semicolon insertion
+        - javascript automatically inserts semicolons at the end of a line if it is missing.
+
+    - Rest vs Spread
+        - rest: used to pass an indefinite number of arguments to a function
+        - spread: used to split up array elements or object properties
