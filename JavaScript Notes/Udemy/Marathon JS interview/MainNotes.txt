@@ -19,4 +19,50 @@ https://www.udemy.com/course/javascript-marathon-interview-questions-series/lear
 
     - Rest vs Spread
         - rest: used to pass an indefinite number of arguments to a function
+        - should always be in the last parameter of a function
+
+        // non arrow function can also just log arguments which is an object that contains all the arguments passed to the function
+        function sum(...args){
+            console.log(args);
+        }
+        sum(1,2,3)
+
+
         - spread: used to split up array elements or object properties
+        let arr1 = [1,2,3];
+        let arr2 = [...arr1,4,5,6];
+    
+    -infinity vs -infinity as output
+        -infinity: highest value possible in javascript (Positive Infinity)
+        - -infinity: lowest value possible in javascript (Negative Infinity)
+
+        console.log(Number.POSITIVE_INFINITY); // Infinity
+        - value is larger than 64 bit format, in that case it is infinity or -infinity
+
+        console.log(9e4) // 90000 e4 adds 4 zeros to the end of the number
+
+        Number.MAX_VALUE // 1.7976931348623157e+308
+        -Number.MIN_VALUE // 5e-324
+
+        console.log(1/0); // Infinity why? because 1/0 is 1 divided by 0 which is infinity
+
+    - NaN
+        - global property representing Not-A-Number value
+        - isNan() // checks if value is number or not
+        - always use isNan() instead of === NaN because NaN is not equal to itself
+
+        - isFinite() // checks if value is finite or not
+            - console.log(isFinite(Infinity)); // false
+            - console.log(isFinite(5*4)) // true
+        - if we expect certain values from a function but can also be NaN then we can use isFinite() to check if the value is finite or not
+
+    - Arrow functions
+        - "this" does not work in arrow functions. a this is not the function scope but the global scope. why? arrow function doesn't behave like a class.
+        - arguments object does not work in arrow functions
+            function test(){
+                console.log(arguments);
+            } // will work
+            let test = () => {
+                console.log(arguments);
+            } // will not work
+        - we cannot use new keyword with arrow functions
