@@ -64,5 +64,192 @@ https://www.udemy.com/course/javascript-marathon-interview-questions-series/lear
             } // will work
             let test = () => {
                 console.log(arguments);
-            } // will not work
+            } // will not work, but the rest operator will work, which will put the args into an array
+
         - we cannot use new keyword with arrow functions
+
+
+        Major point is that traditional functions act like classes but arrow functions do not. 
+        also there is Class in es6 which is a new way of creating objects
+
+    - How does a closure work
+        - a closure is a function that has access to the parent scope even after the parent function has closed
+
+        function outer(){
+            let a = 10;
+            function inner(){
+                console.log(a);
+            }
+            return inner;
+        }
+
+        let innerFunc = outer(); //the inner function is returned and assigned to innerFunc
+        innerFunc(); // 10 - now we can call the inner function even after the outer function has closed
+
+        es6:
+        const outer = () => {
+            let a = 10;
+            return () => {
+                console.log('inner called with parent scope a = ' + a);
+            }
+        }
+
+        const cl = outer();
+        cl();
+
+        [[enviroment]] is where the closure variables are stored
+
+        - when we use a closrue we are making private members globally
+        - main advantafe of closures is that we can create private members and can keep track of the state of the function
+
+    - How can sum(5)(6) return 11
+        - function currying
+        - function currying is a technique of evaluating function with multiple arguments, into sequence of functions with single argument
+
+        const sum = function(a){
+            return function(b){
+                return a + b;
+            }
+        }
+        const cl = sum(5); // the 5 is passed to a, now cl has reference to the inner function
+        const ans = cl(6); // the 6 is passed to b, now ans has the value of 11
+
+        sum(5)(6) // 11 - this is the same as above, but we are calling the function directly. The first parent function is called, stored in lexical enviroment 
+        and then the inner function is called. basically like parent and child function chaining
+
+        es6 version with arrow functions:
+        const sum = a => b => a + b;
+        const newAns = sum(5)(6) // 11
+        
+        -when we see 2 arrows in a row, we know that it is a curried function, they are the inner functions
+        -what is the practical use of this?
+
+        const priceCalc = (price) =>{
+            return (dper)=>{
+                return price * dper;
+            }
+        }
+        
+        const newPrice = priceCalc(100); // we are calling the function partially
+        console.log(newPrice(0.1)); // 10% off
+
+        - the principle is we can partially call a function and have a constant val state, then work on that 
+        data after
+        - helps avoid unwanted repition of code
+
+    - Iterables and iterators 
+        let arr = [1,2,3];
+        let iter = arr[Symbol.iterator](); // this is the iterator
+        console.log(iter.next()); // {value: 1, done: false} - done is false because there are more values to iterate through, this is awesome because in a way, we can solve unique problems with this.
+
+        - look how we can iterate through an object with a for of loop
+        const obj {
+            start: 10,
+            end: 15,
+            [Symbol.iterator](){
+                return {
+                    next(){
+                        if(obj.start <= obj.end){
+                            return {value:obj.start++, done:false}
+                        }else {
+                            return {done:true}
+                        }
+                    }
+                }
+            }
+        }
+
+        for(let i of obj) {
+            console.log(i);
+        }
+
+        - limitation is only possible when iterator or iterable are the same object
+        - also cannot another for of loop at the same time because the iterator is already being used
+
+        - purpose of iterator: make a data structure iterable which is not 
+        - use case: custom data structure used by other developers, we are in a way creating a pointer to iterate through the data structure that you provided.
+
+    - Generators
+        - help you pause and resume a function
+        - generators are functions that can return multiple values in phases
+
+        const getFunction = function* (){
+            console.log('hello')
+            yield "can return any value as well"; // function will pause, the return will be hello + {value: "can return any value as well", done: false}
+            console.log('world');
+            yield; // function will pause
+            console.log('end');
+        }
+
+        const genObj = getFunction(); // we get a generator object
+        console.log(genObj) // Object [Generator] {}
+        genObj.next(); // hello
+
+        - we can use generators to create iterators
+        const obj = [...getFunction()]; // we can use spread operator to get the values from the generator
+        for(let o of gObj){
+            console.log(o);
+        }
+
+        -generators work well with iterators
+        - yield will always be the return value of the generator function, can't use outside of generator function
+        - return & throw methods are also available in generators
+        - they are used in async processes
+
+    
+    - Memory Management and Garbage Collection
+        - JS is a high level language automatically managing Memory
+        - garbage collection considers references and tries to release the memory if location is not reachable
+        - Mark and sweep algo starts from the root object and checks for the references linked
+        - older browsers have a problem with memory leaks, but newer browsers don't. circular references are the main cause of memory leaks
+
+    - Error handling in javascript
+        - no error at compile but at run use a a try catch block
+        try {
+            // code
+        } catch (error) {
+            // code
+        }
+
+        //there is a finally block as well that executes after the code
+        // wether there is an error or not, but for the most part in newer TS versions we don't need it
+        finally {
+            // code
+        }
+        - throw a custom error
+        throw new Error('error message');
+
+Section 2: 
+    Explain Array & traversal in array
+        - array stores data in a linear fashion
+        - starts at 0 index
+        - has arr.length or arr.length - 1 for the last index
+
+    es6 we have:
+    - for in (not recommended for array iteration)
+        - for in is used to iterate over the properties of an object
+        - if we use it with array it will return the index of the array
+    
+    - for of
+        - for of is used to iterate over the values of an iterable object like an array
+        - if we use it with an array it will return the value of the array
+    
+    - forEach
+        - arr.forEach((el, idx) => {
+            console.log(el);
+            console.log(idx);
+        })
+    
+    Adding and removing elements from array
+        - push - add to the end of the array
+            : arr.push(4);
+        - pop - remove from the end of the array
+            : arr.pop(); // returns the value that was removed from end end of the array
+        - shift - remove from the beginning of the array
+            : arr.shift(); // returns the value that was removed from the beginning of the array
+        - unshift - add to the beginning of the array
+            : arr.unshift(0); // adds 0 to the beginning of the array
+        - splice - add or remove from any position in the array
+            : (start, deleteCount, valueAdded or Replaced)
+        - slice - copy a portion of the array
+            : (start, end)
