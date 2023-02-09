@@ -253,3 +253,67 @@ Section 2:
             : (start, deleteCount, valueAdded or Replaced)
         - slice - copy a portion of the array
             : (start, end)
+
+    Performing Search in array
+        testArr = [1,2,3,2,1];
+        - indexOf - returns the index of the first occurence of the value
+            : arr.indexOf(2); // returns 1
+        - lastIndexOf - returns the index of the last occurence of the value
+            : arr.lastIndexOf(2); // returns 3
+        - includes - returns true or false if the value is in the array
+
+        testArr = [1000, 2000, 3000, 4000, 5000];
+        - find - returns the first value that satisfies the condition
+            : arr.find((el) => el > 3000); // returns 4000
+            : arr.find((el, idx) => idx > 2); // returns 4000
+            : arr.find((el, idx, arr) => el > )
+        - findIndex - returns the index of the first value that satisfies the condition
+            : arr.findIndex((el) => el > 3000); // returns 3
+
+         if no index is found, findIndex & find returns -1
+
+        - filter - returns an array of all the values that satisfies the condition
+            : arr.filter((el) => el > 3000); // returns [4000, 5000]
+
+    What is the use of Map() method, is a must know 
+        testArr = [1,2,3,4,5];
+        arr.map((el, idx, arr) => console.log(el, idx)) // logs 1 0, 2 1, 3 2, 4 3, 5 4
+        arr.map((el) => {
+            el * el; // returns a new array with the values squared
+        }) // returns [1,4,9,16,25] this returns a NEW array doesn't mutate the original array
+    
+    Flattening an array, using reduce method 
+        - reduce() method executes a reducer function on each el, keeping track of the accumulator at eac elements
+        iteration, then returns the accumulator. So it ended up giving us a single value from an array of values
+
+        const arr = [1,2,3,4,5];
+        const res = arr.reduce((acc, el) => {
+            return acc + el;
+        }, 0) // 15 this is the sum of all the elements in the array
+        - notice the second parameter is the initial value of the accumulator, if we don't provide it, the first element of the array will be the initial value of the accumulator
+
+        - to flatten a 2 dimensional array, we can use reduce method
+        const arr = [[1,2,3], [4,5,6], [7,8,9]];
+        const res = arr.reduce((acc, el) => {
+            return acc.concat(el); // concat is appending the elements of the array to the accumulator
+        }, []) // [1,2,3,4,5,6,7,8,9]
+
+        - get sum of key fields in an array of objects
+        const arr = [
+            {name: 'john', age: 20},
+            {name: 'jane', age: 30},
+            {name: 'joe', age: 40}
+        ]
+
+        let totalSumAge = arr.reduce((acc, curr) => {
+            return acc + curr.age
+        }, 0)
+
+        - reduce loops from left to right, reduceRight starts from right to left
+
+    
+    How can we sort an array
+    - sort() but there is a better way using compare function
+    - arr.sort((a,b) => a - b) // ascending order
+    - arr.sort((a,b) => b - a) // descending order
+    - if there is no compare function sort() will convert the elements to strings and sort them alphabetically
