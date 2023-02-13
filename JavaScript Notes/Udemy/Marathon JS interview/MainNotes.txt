@@ -1,6 +1,6 @@
 https://www.udemy.com/course/javascript-marathon-interview-questions-series/learn/lecture/19742598?start=0#overview
 
-1. Laguage Fundamentals
+1. Language Fundamentals
     - difference between null and undefined
         - undefined: before any value is assigned to a variable the variable contains undefined, it is also a data type
         - null: means nothing, both undefined andnull mean nothingness but they both are different data types, so undefined == null is true 
@@ -317,3 +317,18 @@ Section 2:
     - arr.sort((a,b) => a - b) // ascending order
     - arr.sort((a,b) => b - a) // descending order
     - if there is no compare function sort() will convert the elements to strings and sort them alphabetically
+
+    Array Destructuring: 
+    - const arr = [1,2,3,4,5];
+    - const [a,b] = arr; // a = 1, b = 2
+    flip values: [a,b] = [b,a] // a = 2, b = 1
+
+    put variables in square brackets on left side of the assignment operator that means Destructuring
+    -destructing is about extracting values from arrays or objects and assigning them to variables
+
+
+Section 3: strings  
+    1. String Basics
+        - "" or '' or `` (template literals)
+        - "have single quotes ' inside double quotes"
+        - 
