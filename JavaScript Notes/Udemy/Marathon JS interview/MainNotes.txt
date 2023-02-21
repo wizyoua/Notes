@@ -331,4 +331,89 @@ Section 3: strings
     1. String Basics
         - "" or '' or `` (template literals)
         - "have single quotes ' inside double quotes"
-        - 
+        - ' I \'m a single quote inside a single quote' - not a good practice
+        - \u - allows us to use unicode characters. lets show a copy sign in the console
+            "\u00A9" = ©
+            "\u{1F60D}" = 😍 - use curly brackets when using more than 4 digits
+        - \n - new line
+
+    2. es6 template literals
+        - `` - allows us to variables inside the string
+        const name = 'john';
+        console.log(`Hello ${name}`); // Hello john
+        - `` - allows us to use multiline strings
+        `hello this is line 1
+        this is line 2 and so on`
+    
+    3. length property and search methods of strings
+        - built in primitive types when compiled have access to object methods
+        - search() can use regex but it does not have a starting index parameter
+          unlike indexOf() and lastIndexOf() that have that optional parameter but they cannot
+          use regex
+        - length property - returns the length of the string
+        - indexOf - returns the index of the first occurence of the value
+        - lastIndexOf - returns the index of the last occurence of the value
+        - includes - returns true or false if the value is in the string
+        - startsWith - returns true or false if the string starts with the value
+        - endsWith - returns true or false if the string ends with the value
+
+    4. Extraction methods
+       - String extraction methods:
+            1.slice(startIdx, optionalIdx) - shallow copy of the string, you can use minus indexes
+            and it will start from the end of the string like if it wraps around
+            2.substring(startIdx, endIdx) - cannot take negative indexes, but it is pretty much same as slice 
+            3.substr(startIdx, charsToTake) - takes the number of characters to take 
+            4. charAt(idx) - returns the character at the index, if no idx is provided it will return the first character
+            5. charCodeAt(idx) - returns the unicode value of the character at the index
+    
+    5. Case Conversion & replace method
+        - str.toUpperCase() - converts the string to uppercase
+        - str.toLowerCase() - converts the string to lowercase
+        - str.replace('a', 'b') - replaces the first occurence of the value with the second value
+
+Section 4: Date & time
+    1. Date & time Basics
+        - new Date() - creates a new date object
+        - new Date(year, month, day, hours, minutes, seconds, milliseconds) - creates a new date object
+        - parameters are 0 based for the month, so january is 0, february is 1, etc
+        ISO 8601 - YYYY-MM-DDTHH:mm:ss.sssZ
+
+    2. Date Methods:
+        Get:
+        - getFullYear() - returns the year
+        - getMonth() - returns the month (0 based) 0 - 11
+        - getDate() - returns the day of the month 1 - 31
+        - getDay() - returns the day of the week 0 - 6
+
+        Set:
+        -setFullYear(year, [month], [day]) - sets the year
+        -setMonth(month, [day] ) - sets the month
+        - setDate(day) - sets the day of the month
+
+        date.parse() - parses a date string and returns the number of milliseconds
+        - parse will help us not only convert a date string to a date object but also to a timestamp and also do any equations with dates
+
+        UTC methods are the same as the above methods but they return UTC time. What is UTC time?
+        - UTC time is the time that is used by the world, it is the same time everywhere in the world
+        
+        find dat before 50 days from now
+        const date = new Date();
+        date.setDate(date.getDate() - 50);
+        console.log(date); // 2020-12-02T23:00:00.000Z
+
+        Date has autocorrect, so if you set the day to 40, it will automatically set it to the next month
+
+    3. Time Methods:
+        - getHours() - returns the hour 0 - 23
+        - getMinutes() - returns the minutes 0 - 59
+        - getSeconds() - returns the seconds 0 - 59
+        - getMilliseconds() - returns the milliseconds 0 - 999
+        - getTime() - returns the timestamp in milliseconds
+
+        - setHours(hour, [min], [sec], [ms]) - sets the hour
+        - setMinutes(min, [sec], [ms]) - sets the minutes
+        - setSeconds(sec, [ms]) - sets the seconds
+        - setMilliseconds(ms) - sets the milliseconds
+        - setTime(ms) - sets the timestamp in milliseconds
+
+        - Date.now() - returns the timestamp in milliseconds
