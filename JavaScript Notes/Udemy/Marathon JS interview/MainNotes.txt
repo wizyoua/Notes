@@ -648,7 +648,8 @@ Object Oriented javascript
         obj.model = 'SUV' // getter treats it as a property and setter treats it as a method
         the console will log setter executes
 
-    8. Map() 
+Map(), Set() weakMap() weakSet()
+    1. Map() 
 
         let prod = new Map();
         prod.set('camp', 'camping');
@@ -673,7 +674,83 @@ Object Oriented javascript
             console.log(e) // returns both key and value
         }
 
-        //using destructuring
+        - using destructuring
         for(let [key, value] of product.entries()){
             console.log(key, value) // returns both key and value
         }
+
+
+        let newbobj = {
+            name: 'john',
+            age: 30
+        }
+
+        console.log(Object.entries(newbobj)) // returns an array of arrays
+
+        let prodArr = new Map(Object.entries(newbobj));
+        console.log(prodArr) // returns a map
+
+        - convert map into simple object
+        let obj = Object.fromEntries(prodArr);
+
+        - map.has() checks if the key exists
+        console.log(prod.has('camp')) // true
+
+        - map.delete() deletes the key and value
+        prod.delete('camp') // removes key
+
+        - map.clear() removes all keys and values
+
+        - use forEach to iterate through map but it has to finish the full iteration and cannot be stopped
+        prod.forEach((value, key) => {
+            console.log(value, key)
+        })
+
+        Map can have value to value mapping which doesn't happen in object literals
+        Map has size property map.size()
+        Map is iterable
+        Map has methods like set(), get(), has(), delete(), clear(), forEach(), entries(), keys(), values()
+
+
+    2. Set() - basically the same as map but can't have duplicate values, there is no key values just values
+        let names = new Set();
+        names.add('gianni')
+        names.add('joe')
+        names.add('joe') // will not add joe again because it already exists         
+
+        set can iterate with for of
+        for(let n of names){
+            console.log(n);
+        }
+
+        and with forEach
+
+        names.forEach((v) => {
+            consol.log(v);
+        });
+
+        to delete and clear its the same as map
+        names.delete('gianni')
+        names.clear() // removes all values
+
+    Map vs Set: is that Map has key:value pairs and Set has only values
+
+    3. WeakMap() 
+        - weakmap holds references weakly, so if GC happens it will remove the reference from memory
+        - Map and Set hold the keys in a strong reference so if GC happens it will not remove the reference from memory
+
+        - key in the weakmap are only objects
+        - keys are weak 
+        - because of weakkeys we can't iterate through weakmap or weakSet
+
+
+        Garbage collection - when the browser is not using a variable anymore it will remove it from memory
+
+        let newprod = new WeakMap();
+        let obj = {
+
+        }
+        newprod.set(obj, 'iphone');
+        console.log(newprod.get(obj)) // iphone
+
+        what are the uses? to make sure there are no memory leaks
