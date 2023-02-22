@@ -34,7 +34,7 @@ https://www.udemy.com/course/javascript-marathon-interview-questions-series/lear
     
     -infinity vs -infinity as output
         -infinity: highest value possible in javascript (Positive Infinity)
-        - -infinity: lowest value possible in javascript (Negative Infinity)
+        - infinity: lowest value possible in javascript (Negative Infinity)
 
         console.log(Number.POSITIVE_INFINITY); // Infinity
         - value is larger than 64 bit format, in that case it is infinity or -infinity
@@ -417,3 +417,263 @@ Section 4: Date & time
         - setTime(ms) - sets the timestamp in milliseconds
 
         - Date.now() - returns the timestamp in milliseconds
+
+        3600 seconds in an hour
+        60 minutes in an hour
+        1000 milliseconds in a second
+
+
+Object Oriented javascript
+    1. What is object literal:
+        - key value pair data structure
+        let obj = {
+            name: 'john',
+            age: 30
+        }
+
+        - add var to the object
+        obj.address = '123 main st';
+
+        - add function to object
+        obj.greet = function(){
+            console.log('hello');
+        }
+
+        
+        obj can become a container for variables and functions then we pass it to a function.
+        json is a string representation of an object literal
+        change obj to json: JSON.stringify(obj)
+        change json to obj: JSON.parse(json)
+
+        dyanmic key:
+        let key = 'name';
+        obj[key] = 'john';
+
+        let tv = 'tv'
+        let obj = {
+            [tv]: 'samsung'
+        }
+
+        how can we add read only properties to an object?
+        - Object.defineProperty(obj, 'name', {
+            value: 'john',
+            writable: false
+        })
+
+        object shorthand:
+        let name = 'john';
+        let age = 30;
+        let obj = {
+            name,
+            age
+        }
+
+        create clone of an object:
+        let obj = {
+            name: 'john',
+            age: 30
+        }
+        let obj2 = Object.assign({}, obj);
+        obj2.name = 'jane';
+        console.log(obj2) // {name: 'jane', age: 30}
+
+    2. What is This object:
+        - this contains the current context
+        - can have various values depending on where it is used
+        
+
+        console.log(this) // window object
+
+        arrow function console.log(this) // window object
+        const obj = {
+            greet: () => {
+                console.log(this) // window object
+            }
+        }
+
+        normal function console.log(this) // undefined
+        const obj = {
+            greet: function(){
+                console.log(this) // obj
+            }
+        }
+
+    3. what is the purpose of call(), apply(), bind()
+        function test(a ,b){
+           
+            console.log(this) // i want to assign the reference of this to obj
+            console.log(a, b) // b is undefined
+        }
+
+        let obj ={
+            a:5
+        }
+
+        call() first parameter is this, changes value of this.
+        test.call(obj, 5, 6) // i want to assign the reference of this to obj; we dont need to pass obj as a parameter to test()
+
+        function test(a, b, c){
+            console.log(this) // i want to assign the reference of this to obj
+           console.log(b, c) 
+        }
+
+        apply() can pass only 2 parameters, first parameter is this, second parameter is an array
+        test.apply(obj, [5,6])
+
+        bind() changes the this refernce and it returns a new function so that we can call it later
+    
+        const fe = test.bind(obj, 5, 6);
+        fe() // 5, 6
+
+        the purpose of all three is to change the value of this but just differ in parameters or execution
+
+    4. classes
+        class House{
+            constructor(address, bedrooms, bathrooms){
+                this.address = address;
+                this.bedrooms = bedrooms;
+                this.bathrooms = bathrooms;
+            }
+
+            getData(){
+                console.log(this.address, this.bedrooms, this.bathrooms)
+            }
+
+            
+        }
+
+        let house1 = new House('address', 3, 2);
+
+        create a static method
+        class Static {
+            static appVersion = '1.0.0'
+
+            static test(){
+                console.log('test')
+                this.test2() // we can call other static methods directly
+            }
+
+            static test2(){
+                console.log('test2')
+            }
+        }
+
+        Static.test() // we dont need to create an instance of the class to call the static method
+        Static.appVersion // we dont need to create an instance of the class to call the static property
+
+        using class is just syntatic sugar for constructor functions
+
+        //this is es5 syntax
+        function house(windows){
+            console.log('house')
+            this.windows = windows;
+        }
+
+        let obj1 = new house(5);
+        let obj1 = new house(10);
+
+    5. Inheritance/subclassing, extending building class
+        - inheritance in es6uses "extends" keyword 
+        - we can use "super" keyword to call the parent constructor
+
+        class Building {
+            constructor(){
+                this.land = 'land'
+            }
+
+            parentMethod(){
+                console.log('parent method')
+            }
+        }
+
+        class store extends Building {
+            constructor(){
+                super() // call the parent constructor and access parent props in child classess
+                this.windows = 5;
+            }
+
+            childMethod(){
+                super.parentMethod() // call the parent method
+            }
+        }
+
+        - we can override the parent method in the child class if they are named the same we use super.methodName() to call the parent method
+        - inheritance 
+        - what is the super keyword used for? it's used to call the parent constructor and access parent props in child classess
+        - how do we override the parent method in the child class if they are named the same we use super.methodName() to call the parent method
+
+        - we can extend any class in javascript
+
+    6. Destructuring Object Literals 
+        - breaking data structure into data pieces or variables
+
+        let obj = {
+            name: 'john',
+            age: 30
+        }
+
+        function hello({name, age}){
+            console.log(name, age)
+        }
+
+        hello(obj) // john 30
+
+        another way to destructure
+        let obj1 = {
+            test: 'one',
+            test2: 'two'
+        }
+
+        let {test, test2} = obj1;
+    
+    7. Getters and Setters
+        - getter are used to get the value of a property
+        - setter are used to set the value of a property
+
+        class Vehicle{
+
+            #_model = '';
+            
+            get model(){
+                return this.#_model;
+            }
+
+            set Model(v){
+                if(v.length < 3) this.#_model = 'default';
+                else this.#_model = v;
+            }
+        }
+
+        const obj = new Vehicle();
+        obj.model = 'SUV' // getter treats it as a property and setter treats it as a method
+        the console will log setter executes
+
+    8. Map() 
+
+        let prod = new Map();
+        prod.set('camp', 'camping');
+        prod.set('hike', 'hiking');
+
+        Set();
+        let prod1 = new Set();
+        prod1.set('iphone' , 'iphone');
+
+
+        we can also iterate through map using values(), keys(), entries()
+
+        for(let v of product.values()){
+            console.log(v) // return values
+        }
+
+        for(let k of product.keys()){
+            console.log(k) // returns keys
+        }
+
+        for(let e of product.entries()){
+            console.log(e) // returns both key and value
+        }
+
+        //using destructuring
+        for(let [key, value] of product.entries()){
+            console.log(key, value) // returns both key and value
+        }
