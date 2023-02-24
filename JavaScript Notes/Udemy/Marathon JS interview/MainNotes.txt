@@ -754,3 +754,11 @@ Map(), Set() weakMap() weakSet()
         console.log(newprod.get(obj)) // iphone
 
         what are the uses? to make sure there are no memory leaks
+
+
+DOM & writable
+    1. Understanding DOM
+        - elements can be accessed in the DOM using document object
+            - Window -> Document but they are 2 different objects
+            - DOM is an interface accessible by programming languages. It is independent of the language and is a tree like structure
+            - DOM API allows us to access the DOM
