@@ -762,3 +762,39 @@ DOM & writable
             - Window -> Document but they are 2 different objects
             - DOM is an interface accessible by programming languages. It is independent of the language and is a tree like structure
             - DOM API allows us to access the DOM
+    
+    2. Difference between Window and Document Object
+        - Window is the global object in the browser, document is child object to window
+        
+        - setInterval() and setTimeout() are methods of window object but document is an object of window
+        - document object has its own methods and properties as well like document.getElementById()
+        - window also has innerHeight and innerWidth properties
+        - BOM : browser object model and window object gives us access to the BOM. this can include screen, location, navigator, frames, history , XMLHttpRequest, etc
+
+    3. How to handler timer based events:
+        - these 2 methods are used to handle timer based events and are global methods
+        - setTimeout() - executes a function once after a certain time (function, time)
+        - setInterval() - executes a function repeatedly after a certain time (function, time)
+        - clearInterval() - stops the execution of a function (function) we need to give the function running the setInterval and set it to a variable because we need to pass that variable to clearInterval()
+    
+    4. Event Bubbling and Event Capturing
+        - event bubbling is when an event is triggered on a child element and it bubbles up to the parent element
+        Dom Event Architecture:
+            1. windows
+            2. document
+            3. html
+            4. body
+            5. div
+            6. button
+
+        - if we want to stop the event from bubbling up we can use event.stopPropagation(); 
+        - also event.stopImmediatePropagation() which will stop the event from bubbling up and also stop the event from executing on the same element
+
+        Event Capturing - when an event is triggered on a parent element and it bubbles down to the child element
+        - we can use event capturing by passing true as the 3rd argument in addEventListener() method
+
+    5 Event Delegation
+        - in this example we are using a table and we want to add a click event to each td element
+        event.target - returns the element that triggered the event
+        event.target.tagName - returns the tag name of the element that triggered the event
+        event.target.innerHTML - returns the innerHTML of the element that triggered the event
