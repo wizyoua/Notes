@@ -1,0 +1,19 @@
+1. Intro and setup
+    - what is v8 engine? c++ engine made by google to compile js code and spits out machine code
+    - node can read & write files, make network requests, connect to db, ect.
+
+    - Node server will get request and generate the response.
+
+3. Clients ad Servers:
+    - what are IP addresses? unique identifier for each device connected to the internet
+    - when we publish a sit or app we need to know the IP address of the server so that the client can connect to it.
+    - what is a domain name? human readable name for an IP address
+
+    - Get request: client sends a request to the server and the server sends back a response
+    - Post request: Client sends data to the server and the server sends back a response
+
+    HTTP: hypertext transfer protocol - set of instructions for how to send and receive data over the web
+
+    Localhost: is a special domain name that always points to your own computer (127.0.0.1)
+
+    Port: is a number that identifies a specific process or application that is running on a computer. (80 is the default port for http)

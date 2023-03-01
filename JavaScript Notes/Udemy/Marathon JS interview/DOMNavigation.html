@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1">
+        <h1>First Div</h1>
+        <ul>
+            <li>First</li>
+            <li>Second</li>
+        </ul>
+    </div>
+    <div id="div2">
+        <h1>Second Div</h1>
+        <input type="text"> <br />
+        <button onClick="btnClick()">Click Me!</button>
+    </div>
+
+    <script>
+        function btnClick() {
+            console.log(document.documentElement); // refers to top level element in the DOM
+            console.log(document.head); // refers to head element in the DOM
+            console.log(document.body.childNodes); // refers to all child nodes of the body element
+            console.log(document.body.childNodes.length);
+            console.log(document.body.children); // refers to all child elements of the body element without text nodes which are just empty spaces and line breaks
+
+            // loop through all child nodes of the body element
+            // for (let i = 0; i < document.body.childNodes.length; i++) {
+            //     console.log(document.body.childNodes[i]);
+            // }
+
+            const div1 = document.getElementById("div1");
+            //console.log(div1.firstChild); // refers to first child node of the div1 element
+            //console.log(div1.firstElementChild); // refers to first child element of the div1 element
+
+            //console.log(div1.lastChild); // refers to last child node of the div1 element
+            //console.log(div1.lastElementChild); // refers to last child element of the div1 element
+            //nodeName refers to the name of the node
+            //nodeType refers to the type of the node
+
+            console.log(div1.firstElementChild.nodeName); // refers to first child node of the div1 element
+
+            //find next sibling of the div1 element
+            console.log(div1.nextElementSibling); // refers to next sibling element of the div1 element
+            console.log(div1.nextSibling); // refers to next sibling node of the div1 element
+
+            //access parent Node or parentElement
+            console.log(div1.parentNode); // refers to parent node of the div1 element
+            console.log(div1.parentElement); // refers to parent element of the div1 element
+        }
+    </script>
+</body>
+
+</html>
