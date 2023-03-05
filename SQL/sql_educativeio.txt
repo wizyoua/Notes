@@ -66,8 +66,40 @@
     IS NULL: used to test for NULL values. SELECT * FROM table_name WHERE column_name IS NULL;
 
     More Like: 
-        - Like works only with string data types
+        - Like works only with string data Types
+        - can match 0 or more characters after the pattern so "Joe%" will match "Joe", "Joe Smith", "Joe Smith Jr", "Joe Smith Sr", etc
+        SELECT * FROM table_name WHERE column_name LIKE "%" //selects all rows because it matches 0 or more characters
+    "_enn%" will match Jennifer because the underscore matches the first character and the rest of the pattern matches the rest of the string
+        SHOW DATABASES LIKE "M%" //shows all databases that start with M
 
+    /** COMBINING CONDITIONS **/
+
+    AND: used to combine multiple conditions. SELECT * FROM table_name WHERE column_name1 = value1 AND column_name2 = value2;
+    OR: used to combine multiple where if one condition is met. SELECT * FROM table_name WHERE column_name1 = value1 OR column_name2 = value2;
+        - We can combine both the AND and OR operators in a single query: SELECT * FROM table_name WHERE column_name1 = value1 AND (column_name2 = value2 OR column_name3 = value3);
+    Think about the SQL structure like this:
+    SELECT * | column_1, column_2 
+
+    NOT: used to reverse the result of a condition. SELECT * FROM table_name WHERE NOT column_name = value; //selects all rows where the column_name is not equal to value
+    XOR: if one of the conditions is satisfied but not both then it returns true. SELECT * FROM table_name WHERE column_name1 = value1 XOR column_name2 = value2; //selects all rows where column_name1 is equal to value1 or column_name2 is equal to value2 but not both
+
+    /** ORDERING RESULTS **/
+    - we can order the results of a query by using the ORDER BY clause at the end of the query
+    - the default order is ascending, to order by descending we use the DESC keyword
+
+    ORDER_BY: SELECT * FROM table_name ORDER BY column_name1, column_name2; //orders the results by column_name1 and then by column_name2
+    SELECT * FROM Actors ORDER BY FirstName DESC; //orders the results by FirstName in descending order
+    SELECT * FROM Actors ORDER BY NetWorthInMillions, FirstName; //orders the results by NetWorthInMillions and then by FirstName to avoid ties
+    SELECT * FROM Actors ORDER BY NetWorthInMillions DESC, FirstName ASC; //orders the results by NetWorthInMillions in descending order and then by FirstName in ascending order, remember that the first order by happens then the second order by happens
+
+    ASCII Comparison to order strings:
+    SELECT * FROM Actors ORDER BY BINARY FirstName;
+
+
+
+
+    FROM table_name
+    WHERE logical_operator happens AND another logical operator happens
 
 SQL DATA Types:
     Numeric: INT, BIGINT, TINYINT, DECIMAL
