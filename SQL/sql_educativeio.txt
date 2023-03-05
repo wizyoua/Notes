@@ -1,0 +1,99 @@
+1. Relational vs non-relational databases
+    - structured data: pre-defined organizations property and is easily searchable. You set its schema/type for the fields and tables. SQL is structured
+    - unstructured data: no pre-defined schema. You can't search it. NoSQL is unstructured
+    - semi-structured data: JSON/XML is semi-structured. basically data that have some structured data and uns data combined. Like images with metadata
+2. MySQl history
+    - mysql consists of 3 layers:
+        1. Application/client layer: responsible for the client connections, authorization auth and security 
+        2. Server layer: responsible for the query parsing, query optimization, query execution, and query results
+        3. Storage engine layer: responsible for the data storage and retrieval
+3. Commands:
+    /** databases **/
+    SHOW DATABASES; //shows all databases
+    USE database_name; //selects a database
+    SHOW CREATE DATABASE mysql; //shows the create statement for the database
+    
+    /** tables **/
+    SHOW TABLES;
+    DESCRIBE table_name; //shows the table structure
+    SHOW CREATE TABLE table_name; //shows the create statement for the table
+    SHOW COLUMNS FROM table_name; //shows the columns of the table
+
+
+    /** CREATE DATABASE **/
+    CREATE DATABASE database_name; //creates a database
+    CREATE DATABASE IF NOT EXISTS database_name; //creates a database if it doesn't exist
+    DROP DATABASE database_name; //deletes a database
+
+    /** CREATE TABLE **/
+    CREATE TABLE table_name (
+        column_name1 data_type restriction,
+        column_name2 data_type,
+        column_name3 data_type,
+        ...
+    );
+
+    column structure: columnName columnType [NOT NULL | NULL] [DEFAULT columnValue]
+    DESC table_name; //shows the table structure same as DESCRIBE table_name;
+
+    /** Prevent duplicate entries **/
+    - in a relational db we can uniquely identify a row by its primary key
+    - primary key: a column or a combination of columns that uniquely identifies a row in a table
+    - AUTO_INCREMENT: a column that automatically increments by 1 for each new row inserted into the table
+    - auto increment can only be used by one column in a table, can't have default vals, must be indexed, isn't portable to other db's and is reset when we drop table
+
+    /** INSERT DATA **/
+    INSERT INTO table_name(column_name1, column_name2, column_name3, ...) VALUES (value1, value2, value3, ...);
+    - we can insert multiple records at once by separating the values with a comma
+    - DEFAULT for timestamp is CURRENT_TIMESTAMP so it will automatically insert the current timestamp
+
+    Alternative syntax:
+    INSERT INTO table_name VALUES(value1, value2, value3, ...); the column names are implied by the order of the values 
+
+    
+    /** QUERYING DATA **/
+    SELECT * FROM table_name; //selects all columns from the table
+    SELECT column_name1, column_name2 FROM table_name; //selects specific columns from the table
+    SELECT FirstName from Actors WHERE FirstName = 'John' //selects all rows where the FirstName column is John 
+    SELECT FirstName from Actors WHERE neworth > 2000 //selects all rows where the neworth column is greater than 2000
+
+    Commonaly used operators:
+    =, <, >, <=, >=, !=, <>, LIKE, IN, BETWEEN, IS NULL, IS NOT NULL
+    <>: not equal to query looks like : SELECT * FROM table_name WHERE column_name <> value;
+    Like: used to search for a pattern in a column. % is a wildcard character that matches zero or more characters. _ is a wildcard character that matches exactly one character. SELECT * FROM table_name WHERE column_name LIKE 'pattern';
+    IN: used to specify multiple values in a WHERE clause. SELECT * FROM table_name WHERE column_name IN (value1, value2, value3, ...);
+    BETWEEN: used to select values within a given range. SELECT * FROM table_name WHERE column_name BETWEEN value1 AND value2;
+    IS NULL: used to test for NULL values. SELECT * FROM table_name WHERE column_name IS NULL;
+
+    More Like: 
+        - Like works only with string data types
+
+
+SQL DATA Types:
+    Numeric: INT, BIGINT, TINYINT, DECIMAL
+    DATE and TIME: DATE, DATETIME, TIMESTAMP, TIME, YEAR
+    STRING: VARCHAR, CHAR, ENUM, SET, BLOB
+    JSON: json
+    SPATIAL DATA: location size and shape of objects on earth. POINT, LINESTRING, POLYGON, GEOMETRY, GEOMETRYCOLLECTION, MULTILINESTRING, MULTIPOINT, MULTIPOLYGON
+
+COMMON DATA TYPES:
+    varchar: variable length string. up to 65,535 characters, varchar(20) means 20 characters
+    char: fixed length string. up to 255 characters, char(20) means 20 characters including spaces and is implying that the string is 20 characters long always.
+
+Temporary Tables:
+CREATE TEMPORARY TABLE table_name (
+    column_name1 data_type,
+    column_name2 data_type,
+    column_name3 data_type,
+    ...
+);
+
+- can be used to work with data in a temporary manner, also complex queries can be written in a temporary table and then used in a query
+- only lasts for the duration of the session 
+
+Collation and Character Set:
+- collation: a set of rules for comparing characters in a character set
+- character set defines what characters MySQL can store
+
+SHOW CHARACTER SET; //shows all character sets
+SHOW COLLATION; //shows all collations

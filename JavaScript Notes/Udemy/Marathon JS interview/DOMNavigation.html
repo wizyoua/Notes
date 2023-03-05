@@ -21,6 +21,19 @@
         <input type="text"> <br />
         <button onClick="btnClick()">Click Me!</button>
     </div>
+    <div id="div3">
+        <h1 id="changeH1">Content when page loaded</h1>
+        <button onclick="changeContent()">Change Content</button>
+    </div>
+    <div id="div4">
+        <p>FIrst</p>
+        <p>Second</p>
+        <p>third</p>
+        <h3>h31</h3>
+        <h3>h32</h3>
+
+        <button onClick="div4Click()">Change content</button>
+    </div>
 
     <script>
         function btnClick() {
@@ -53,6 +66,17 @@
             //access parent Node or parentElement
             console.log(div1.parentNode); // refers to parent node of the div1 element
             console.log(div1.parentElement); // refers to parent element of the div1 element
+        }
+
+        function changeContent() {
+            const changedElement = document.getElementById("changeH1");
+            changedElement.innerHTML = "<h1>Content changed</h1>"; // grabs specific element and changes its content
+            //div3.innerHTML = "<h1>Content changed</h1>";
+        }
+
+        function div4Click() {
+            const elements = document.getElementsByTagName("p");
+            console.log(elements);
         }
     </script>
 </body>

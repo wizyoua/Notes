@@ -804,3 +804,9 @@ DOM & writable
     6. Navigation through DOM
 
         - DOM will e the entry point to the document
+        - getElementById we usually use this to get an element by its id. If there are child elements under the element, it will show the child elements
+            document.getElementById is for the entire document
+            element.getElementById won't work 
+        - getElementsByTagName - returns a collection of elements with the given tag name
+        - getElementsByClassName - returns a collection of elements with the given class name
+        - getElementsByName - returns a collection of elements with the given name attribute
