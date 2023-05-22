@@ -1,0 +1,25 @@
+https://www.youtube.com/watch?v=i7twT3x5yv8
+
+Steps to approach system design problems in interviews:
+1. Understand the problem and establish design scope : 5 min
+    - what are the requirements
+    - who are the users
+    - what are the constraints
+    - propose top features to build
+    - non functional requirements: Security, Consistency, Availability, Scalability, Performance, etc
+
+2. propose high level design and get buy-in: 20 min
+    - start with a top down approach and API
+    - follow REST params
+    - don't make apis that aren't part of functional requirements
+
+    High level design diagram:
+    - Load balancer -> web services -> DB -> Cache 
+    - it's good at this stage to design at a high level then keep track of areas to optimize
+    - Data model and Schema
+3. Design deep dive: 15 min
+    - ask questions about the design and answer any optmizations.
+    - articulate the tradeoffs
+
+4. Wrap up and Q&A: 5 min
+    - spend some minutes summarizing the design and answering questions

@@ -810,3 +810,55 @@ DOM & writable
         - getElementsByTagName - returns a collection of elements with the given tag name
         - getElementsByClassName - returns a collection of elements with the given class name
         - getElementsByName - returns a collection of elements with the given name attribute
+
+    7. getElementsBy<id, tags, class & name>()
+        - getElementById: returns a single element with the given id
+            - id:  id="myId"
+            - tags: <div id="myId"></div>
+            - class: <div class="myId"></div>
+            - name: <div name="myId"></div>
+
+        - getElementById is applied to document whereas the rest are applied to elements
+    
+    8. querySelector & querySelectorAll
+        - querySelector: returns the first element that matches the given CSS selector
+            const el = document.querySelector('.class');
+
+        - querySelectorAll: returns a list of all elements that match the given CSS selector
+        both are used to select elements using CSS selectors
+
+    getElementBy has better Performance than querySelector
+
+    9. Event Basics
+        4 ways to write an event
+            - inline
+            - attribute
+            - addEventListener
+            - on<event> property
+
+        inline: <button onclick="alert('hello')">Click Me</button>
+        
+        attribute: <button id="btn">Click Me</button>
+            const btn = document.getElementById('btn');
+            btn.onclick = function() {
+                alert('hello');
+            }
+
+        bindingEventLater:
+            const btn = document.getElementById('btn');
+            btn.addEventListener('click', function() {
+                alert('add event listener');
+            }, true/false) 
+        
+        Event Object is a parent off all events
+
+    10. MouseEvent 
+        click rightCLick doubleClick: these are all mouse events
+        <div id="myDiv" onCLick="eHandler('Click')" onContextMenu="eHandler('Right Click')" onDblClick="eHandler('Double Click')"></div>
+        onContextManu=return false will prevent the right click menu from showing up
+
+
+       e.ctrlKey - returns true if the ctrl key was pressed when the event was triggered
+       e.metaKey - returns true if the meta key was pressed when the event was triggered. meta key is command on mac
+
+       

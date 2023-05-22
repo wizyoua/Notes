@@ -93,7 +93,55 @@
     SELECT * FROM Actors ORDER BY NetWorthInMillions DESC, FirstName ASC; //orders the results by NetWorthInMillions in descending order and then by FirstName in ascending order, remember that the first order by happens then the second order by happens
 
     ASCII Comparison to order strings:
-    SELECT * FROM Actors ORDER BY BINARY FirstName;
+    SELECT * FROM Actors ORDER BY BINARY FirstName; //
+    SELECT * FROM Actors ORDER BY CAST(NetWorthInMillions AS CHAR); //orders the results by NetWorthInMillions as a string
+
+
+    /** LIMITING RESULTS **/
+    - we can limit the number of results returned by using the LIMIT clause at the end of the query
+    LIMIT: SELECT * FROM table_name LIMIT number; //returns the first number of rows
+
+    SELECT FirstName, SecondName from Actors ORDER BY NetWorthInMillions DESC LIMIT 3; //returns the top 3 actors by NetWorthInMillions in descending order
+    SELECT FirstName, SecondName from Actors ORDER BY NetWorthInMillions DESC LIMIT 4 OFFSET 3; // returns the next 4 actors after the first 3 by NetWorthInMillions in descending order
+    SELECT FirstName, SecondName from Actors ORDER BY NetWorthInMillions DESC LIMIT 3,4; //returns the next 4 actors after the first 3 by NetWorthInMillions in descending order. same thing as offset but the values are switched
+
+    /** DELETING DATA **/
+
+    DELETE FROM Actors WHERE FirstName="priyanka"; //deletes all rows where the FirstName is priyanka
+    DELETE FROM Actors WHERE Gender="Male"; // deletes all rows where the Gender = Male
+    DELETE FROM Actors ORDER BY NetWorthInMillions DESC LIMIT 3; //deletes the top 3 actors by NetWorthInMillions in descending order
+    DELETE FROM Actors; //deletes all rows from the table but not the table itself
+
+
+    /** TRUNCATE TABLE **/
+    - TRUNCATE TABLE is faster than DELETE FROM because it does not log each row that is deleted. Use this when we know we just want to delete all the rows from a table and not the table itself, it's 
+    also used to reconstruct the table faster.
+    TRUNCATE table_name; //deletes all rows from the table but not the table itself
+
+    /** UPDATING DATA **/
+    - we can update data in a table using the UPDATE statement. We can also use it to change te value of a column for a row or multiple rows
+    UPDATE Actors SET NetWorthInMillions=1; //updates all rows in the NetWorthInMillions column to 1
+    UPDATE Actors SET NetWorthInMillions=5 ORDER BY FirstName LIMIT 3; //updates the top 3 actors by FirstName to have a NetWorthInMillions of 5
+    UPDATE Actors SET NetWorthInMillions=50, MaritalStatus="Single"; //updates all rows in the NetWorthInMillions column to 50 and the MaritalStatus column to Single
+
+    /** INDEXES AND PRIMARY KEYS **/
+    - indexes are used to speed up searches in a table. They are created using the CREATE INDEX statement
+    - there are Clustered and Non-Clustered indexes
+    - The data structure the db use is called a B tree
+    - A clustered index doesn’t imply that the data rows are contiguously stored on the hard disk
+    SHOW ENGINES; //shows the different storage engines available
+    - on clustered index the leaf nodes dont hold data but rather a pointer to the data stored elsewhere\
+    - a table like this is called a heap pile of data, which is unordered pile of data
+
+
+    Struture: 
+    UPDATE table_name
+    SET col1 = val
+    WHERE <condition>
+    ORDER BY 5
+    LIMIT 5;
+
+
 
 
 
@@ -129,3 +177,36 @@ Collation and Character Set:
 
 SHOW CHARACTER SET; //shows all character sets
 SHOW COLLATION; //shows all collations
+
+
+JOINS
+    /** TYPES OF JOINS **/
+    - Cross Join: returns the cartesian product of the tables. Pick first row of table_a and join it with every row of table_b, then pick the second row of table_a and join it with every row of table_b
+    - Inner Join: join predicate determines if a row from table_a should be joined with a row from table_b
+    - Left Join: returns all rows from table_a and the matching rows from table_b. All rows from table_a are returned even if there is no match in table_b, but 
+    table_b rows are joined only if there is a match in table_a
+    - Right Join: returns all rows from table_b and the matching rows from table_a. All rows from table_b are returned even if there is no match in table_a, but
+    table_a rows are joined only if there is a match in table_b
+    - Full Outer Join: returns rows from both tables, rows that eval to true are only included once, and rows that didn't match have null inserted
+    - Self join: a table is joined with itself
+
+    /** Self inner join **/
+    SELECT * FROM table_a INNER JOIN table_a ON table_a.column_name = table_a.column_name; //joins table_a with itself on the column_name column
+    SELECT * FROM Actors a INNER JOIN Actors b USING(FirstName); //same thing as above but using the USING keyword
+    SELECT * FROM Actors a INNER JOIN Actors b USING(NetWorthInMillions); 
+
+    /** Inner Join **/
+    SELECT FirstName, SecondName, AssetType, URL
+    FROM Actors 
+    INNER JOIN DigitalAssets  
+    ON Actors.Id = DigitalAssets.ActorID; //joins the Actors table with the DigitalAssets table on the Id column of Actors and the ActorID column of DigitalAssets
+
+    SELECT FirstName, SecondName, AssetType, URL 
+    FROM Actors 
+    INNER JOIN DigitalAssets 
+    USING(Id); // same thing as above but using the USING keyword, using is ok to use since both columns have the same name
+
+    - we don't even need to use inner join:
+    SELECT FirstName, SecondName, AssetType, URL 
+    FROM Actors, DigitalAssets 
+    WHERE ActorId=Id; //comma separated tables where the ActorId column of Digital Assets is equal to the Id column of Actors
