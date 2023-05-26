@@ -862,3 +862,31 @@ DOM & writable
        e.metaKey - returns true if the meta key was pressed when the event was triggered. meta key is command on mac
 
        
+    11. client x & y vs page x & y
+        - client refers to window area vs page scrolled area
+        - clientxy vs creen xy, screen refers to entire screen and client refers to window area
+
+    12. Keyboard events
+        - keydown 
+        - keyup
+        - keypress
+
+        these all happen when a key is pressed, you can use e.key to get the key that was pressed or use functions to do something when a key is pressed
+
+        this unlocks the ability to try combinations of keys and then execute code. 
+        event.code returns the key code of the key that was pressed like shift left is shiftLeft
+
+    13. Input element events:
+
+        - onFocus: when the element is focused
+        - onBlur: when the element is unfocused
+        - onChange: when the value of the element is changed
+        - onchange is heavily used in dropdown lists: <select onchange="eHandler(this.value)">
+        - oninput is like a live change event, it will fire everytime the value changes
+
+    14. input oncut, oncopy, onpaste
+        - oncut: when the user cuts text
+        - oncopy: when the user copies text
+        - onpaste: when the user pastes text
+
+        mainly used to stop or enable copy and paste behavior
