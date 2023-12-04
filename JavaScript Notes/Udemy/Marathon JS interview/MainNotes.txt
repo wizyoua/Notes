@@ -890,3 +890,18 @@ DOM & writable
         - onpaste: when the user pastes text
 
         mainly used to stop or enable copy and paste behavior
+
+Web Components:
+    1. Intro:
+        - component based architecture is a way of building applications where we break down the application into smaller components. 
+        - less dev time as design is dived into smaller segments and pretty much most modern frameworks practices as well.
+
+        basically create a new class and extend form HTMLElement base class, then we can use the custom element in the html.
+
+    3. problem without shadow DOM
+        - 
+
+    4. html template, template.content.cloneNode(true) - creates a deep copy of the template
+        - template tag is used to create a template that can be reused
+        - template.content returns the content of the template
+        - template.content.cloneNode(true) creates a deep copy of the template

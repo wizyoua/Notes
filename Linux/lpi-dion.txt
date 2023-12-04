@@ -1,0 +1,783 @@
+https://www.linkedin.com/learning/cert-prep-lpi-linux-essentials-010-160/introduction-to-linux?autoSkip=true&resume=false&u=79828372
+
+# Introduction to Linux
+- Linux is an open-source operating system
+- Ubuntu, Debian, Fedora, Red Hat, CentOS, SUSE, and Arch Linux are some of the most popular distributions of Linux
+- CLI (Command Line Interface) is the primary way to interact with Linux
+- Why study linux?
+    - Linux is the most popular operating system in the world
+
+# Open Source
+    - Open source software is software that is freely available to use, modify, and distribute
+    - Apache web server is open source,
+    - wordpress is open source
+    - full access to all of the code to make programs run
+    - source code is released under a license agreements where users are free to use, modify, and distribute the code in certain areas
+
+    Software Licenses:
+    - GNU General Public License (GPL)
+    - Apache License: 
+    - MIT License: allows you to do anything with the code as long as you include the original license and copyright
+    - 
+
+# Linux Distributions
+- linux kernal 
+- supporting software and library
+- config files
+
+Kernal: low level computer programing which functions as the bridge between the user and computers resource (memoery management, I/O, process scheduling, etc)
+
+Xwindow system (GUI) is a foundations gui OS system
+Different dist have different scripts and utilties to launch programs(unique preferences) 
+
+# Release Schedule
+- dist life cycle that specifis when rthere are new versions being released
+- Alpha, Beta, Stable
+- Projects are abandoned all the time, so you want to make sure you are using a dist that is still being maintained
+- catchy names are used for versions of dist version. 
+- you can use a dist past end of life but there may be security issues later on
+- STS (short term support) and LTS (long term support) are the two types of support LTS is preferred
+
+# Comparing Distros:
+Ubuntu: unity desktop environment, GUI, easy to use, LTS
+OpenSUSE: KDE desktop environment, GUI, easy to use, STS
+Debian: Flat GNOME desktop environment, GUI, easy to use, LTS
+
+# Embedded systems
+- a controller with a dedicated function that is part of a larger mechanical or electical system
+- ardriuno or rasberry pi are DIY kit but linux based.
+- andriod linux based OS system aquired by google 
+- andriod is also open source so tv and other devices use it
+
+# Hardware Requirements
+- HCL: Hardware Compatibility List (list of hardware that is compatible with a particular OS)
+- Distros have min and recommended requirements
+- increase over time as hardware improves
+
+# OS Differences
+- Windows: most home users, 90% of desktops, need to buy a license
+- Linux: less than 2% of desktops, but 90% of servers in interprise environments
+- Mac: less malware just because it's built on ubuntu
+- linux can run from cli only unlike windows or mac
+- windows and mac are GUI's, DOS is the CLI for windows but faded away
+
+# Open Source
+- Software released that is available to use, modify, and distribute, inspection and enhancement 
+- GNU/GPL   GNU General Public License
+- scholars mention that open source is a better way to develop software for security affordablity and reliability
+- open source initiative (OSI) is a non profit that promotes open source software
+
+# Open source cost?
+- hacking culture, free software movement, and open source movement
+- compiled and text based released. Users would have to modify software themselves in order to run
+- new hardware and software demand 
+- Source code is becoming proprietary in order to install on our system
+- free license is starting on the rise again
+- crowdunding is a way to fund open source projects
+-
+
+# Desktop and server apps
+- libre office is a free office suite
+- libre calc is a spreadsheet program
+- libre office impress is a presentation program
+- vlc is a media player
+- GNU image manipulation program (GIMP) is a photo editor like photoshop
+- kdenlive is a video editor
+- audacity is an audio editor
+- firefox is a web browser usually installed by default in ubuntu
+- 
+Network AdminL
+- wireshark: network protocol analyzer
+- gParted: disk partitioning tool
+- timeshift: system restore utility, like time machine in mac computer
+- atom: text editor
+- putty ssh client
+- 
+
+# Languages and tools in linux
+- JavaScript: 
+- python
+- php:
+- java: (compiled language)
+- css: 
+- c++: (compiled language)
+- go: (compiled language) but more modern
+- C: low level language
+- c#: development environment in order to develop
+- Ruby: interpreted language or scripting language
+
+# linux CLI
+- Bash: Bourne Again Shell
+- ksh: Korn Shell
+- zsh: Z Shell
+- tcsh: 
+- terminal emulator is a program that allows you to interact with the shell
+
+- linux comes with multiple terminal emulators: they give you access to shell session
+    - gnome terminal
+    - konsole
+    -  xterm
+    - rxvt
+    - kvt
+    - nxterm
+    - eterm
+
+ . deb is a debian package manager
+ . rpm is a red hat package manager
+ . tgz universal linux format
+
+ Package Managers:
+    - APT: Advanced Package Tool
+    - YUM: Yellowdog Updater Modified
+    - Pacman
+
+    Different distros use different package managers and can install different packages
+    most users will not have to worry since distros come with a GUI package manager
+
+# Command line
+- CLI is the primary way to interact with linux
+- default shell in most linux distros is bash
+- most distros allow users to install GUI terminal programs kde, gnome, xfce, etc
+- KDE - Console
+control + alt + t = terminal
+terminals also have tabs
+root is administrative user
+
+CLI syntax
+1. computer waits for user input
+2. user types command
+3. computer executes command
+
+linux displays a prompt user enters command using keyboard
+command is a sequence of chars in a line and execute using enter 
+commands must follow proper syntax in order for shell to understand
+first word in command line is actual command name then params
+params start with a dash -switches -c -d or -abc
+long options start with two dashes --long-option and cannot be combined
+command -> options -> arguments
+incorrect syntax will result in an error message
+
+# variables
+    - shell script: file containing a series of commands that are executed sequentially
+    - use name or label to refer to a value
+    - variables are areas of memory that are used to store information and reffered to by a name
+    $age = 30 // example of variable
+    - variables must start with letter, name must not have spaces, no punctuation
+    - shell session on start printenv to see all variables already initialized
+
+# quoting
+    - shell meta characters: characters that have special meaning to the shell
+    - shell doesn't pass any meta characters to the command so " " is a blank but in reality it is a meta character
+    - $, *, ; > ? & | 
+    - quoting is a way to tell the shell to ignore the special meaning of meta characters
+    - quoting is done with "" or ''
+    - \ turn off special meaning of meta characters, treat as literal character
+    - example: echo "hello world" // prints hello world and didn't treat the space as a meta character
+     echo Hello\; World // prints Hello; World backslash treated semi colon as literal character
+     echo "I have \$1200" // prints I have $1200 instead of treating $ as a meta character
+
+# shell proper command usage
+    - pwd: print working directory
+    - ls: list files in directory
+    - cd: change directory
+    - touch: creates a file
+    - ls -la : list all files including hidden files, displays their permissions, owner, group, size, and date modified
+    - OLDPWD is a variable that stores the previous directory
+    - echo Hello; ls semicolon is a meta character so it will execute the command after the semicolon
+
+# Man and info pages
+    - Man pages are set of pages explaining every command 
+    - man ls
+    - man -k ls
+    - /search term
+    - alot of commands have 2 version longhand and shorthand
+    - ls -a: all files including hidden files
+    - ls --all: all files including hidden files same as above
+    - info ls
+
+
+# Directories and Files
+    - intro to linux file system
+        - users have their own home directory which contains their files
+        - all lonux files are organized in a hierarchical structure tree like structure, root it /
+        / is like c: drive in windows
+        - /bin: contains binary files, executable files
+        - linux uses slash / to separate directories
+        - linux doesn't use drive letters like windows
+
+    - file system key features
+        - mountain and unmountain drives
+        - partitions and devices are not visible in tree unless mounted 
+        - normal user can't access part ors devices unless mounted
+        - KDE/Gnome will automatically mount devices and notify user
+        - linux case sensitive
+        - linux is a multie user system, every file has an owner and group
+        - root is the super user, can access any file
+        -3 main permissions: write permissions, read, execute
+        - shell or file manager can change access permissions
+        - FHS Filesystem Hierarchy Standard: standard for organizing files in linux and used by most distros
+        - FHS static files: files that don't change, /bin, /boot, /dev, /etc, /lib, /sbin, /usr, /var
+        - variable files: files that change, /home, /media, /mnt, /opt, /root, /srv, /tmp users automated scripts or servers
+
+    - navigating through linux system
+        cd: change directory
+        ls: list files in directory
+        ls -la: list all files including hidden files
+        cd /home/user/documents
+        pwd: print working directory
+        single / is the top of the file system
+        absolute path: path that starts at the top of the file system
+            /home/user/file1.txt
+            ~/file1.txt: home directory
+        relative reference: path that starts at the current directory
+            linux has 2 special hidden directories . and ..
+            . is the current directory
+            .. is the parent directory
+
+    - file creation and management
+        Gui's use save and save as to create files and folders but in the backend it is using the command line
+        touch: creates a file touch newfile.txt
+        mkdir: creates a directory
+        cp: copy files cp source /destination
+        mv: move files mv source /destination
+        rm: remove files rm file1.txt
+
+    - Creating Links
+        Hard links: duplicate directory entry where both entires point to the same file
+            - both tie into file data structure
+            ln original.txt copy.txt
+        symbolic links: file refers to other file by name
+            - ln -s original linkname
+            creates a softlink, not available in windows, Desktop shortcut is the closest
+        
+    - wildcards and case sensitivity
+        - wildcard: special character that represents one or more other characters
+            ? matches any single character b??l = ball, bell, bill, bull
+            * matches any char or set of chars b*l = bowl bl bbll
+            [] chars are enclosed inside square bracket b[ao][lw]l bowl
+
+    - rm -r folder recursive delete option, only use when we know what is in the folders
+    - touch - create a file
+    - mkdir - to make a directory 
+    - cp -r/-a copy all contents
+    - mv - can move everything
+    - ln -s create a symbolic link to a directory
+    -  
+#Searching and Extracting Data from Files and Archiving
+- CLI Pipes:
+    - pipe: takes output from one command and uses it as input for another command
+    cat sample | less
+                | pg
+                | more
+
+    - pipes allow for quick execution of commands to performing complex tasks, can be chained together
+    - grep is a command that searches for a pattern in a file and is most commonly used with pipes
+    grep | 
+
+- I/O redirection:
+    - Xargs : enables a user to generate CLI options from files and other outputs
+    - > create a new file containing stdr output
+    - >> appends stdr output to an existing file
+    - 2> creates a new file containing stdr error
+    - 2>> appends stdr error to an existing file
+    - &> creates a new file containing both stdr output and stdr error
+    - < takes input from a file instead of keyboard
+    - << takes input from a string instead of keyboard
+    - <> read from file and take it out
+    - standard error: error messages that are displayed when a command fails
+    - 
+
+- Basic Regular Expressions
+    J-A-S-O-N
+    Basic:
+        - HWaddr: hardware address
+        - linux3: linux3
+        []: match character in bracket to whatever search term we want
+        b[aeiou]g: bag, beg
+        a[2-4]z: range expression a2z, a3z, a4z
+        [^]: match any character not in the bracket
+        a.z: matches any character between a and z
+        ^ : matches the beginning of a line
+        $ : matches the end of a line
+        filename.txt but we have to escape the . with \. because . is a meta character
+        filename\.txt
+
+        
+
+Which of the following options is used with tar to specify the filename of the tar archive?
+    -f
+    What does the redirection operator do?
+
+
+Types of compression standards
+- GZIP .gz gunzip
+- BZIP2 .bz2 bunzip2
+- XZ .xz unxz
+
+- .tgz tar with gzip
+- .tbz .tbz2
+- .txz XZ compression
+
+- Data search and extraction
+
+- Regular Expressions:
+    - grep -E '^[A-L]' this would search for all lines that start with A-L
+    - grep -E '^[M-Z]' this would search for all lines that start with M-Z
+
+Scripting Basics:
+    - Text files and text editors:
+
+        - text files: 
+            Human language files:
+            Programming language files:
+            Formatted text files:
+            Program and system configuration files:
+            Program Log Files:
+
+
+        - text editors:
+            - nano: simple text editor, clone of pico with extra features, lightweight dist
+            - vi: more advanced text editor default
+            - emacs: more advanced text editor , big editor and gui version
+            - pico: simple text editor like emacs and lightweight dist
+    always save as you go
+        
+
+Scripting basics:
+    - variables:
+        - variables are areas of memory that are used to store information and referred to by a name
+        - variables must start with a letter, name must not have spaces, no punctuation
+        - shell session on start printenv to see all variables already initialized
+        - $age = 30 // example of variable
+    - conditional 
+        if [-s file]
+        if [string1==string2] 
+        if [string1!=string2]
+        && and
+        || or
+
+
+        if [conditional]
+        then 
+            commands
+        else 
+            other-commands
+
+        fi
+
+        can nest several if statements but it is not recommended
+
+        case is a more efficient way to do if statements
+
+        case word in
+            pattern1)
+                commands
+                ;;
+            pattern2)
+                commands
+                ;;
+            *)
+                commands
+                ;;
+        esac
+
+    - loops and functions:
+        for d in `ls *.wav`; // execute for every item in that directory
+        do aplay $d
+
+        done
+
+        Seq: generates a sequence of numbers from first arg to last one
+        seq 1 10: generate 10 lines of numbers from 1 to 10
+        seq 10 : 1 arg is the ending number
+
+        seq 1 2 10 : start at 1 and increment by 2 until 10
+
+        while [condition]
+            do commands
+
+        done
+
+        until [condition]
+            do commands
+
+        done
+
+        function: 
+        myfn(){
+            my commands
+        }
+
+    - exit value
+        $? is the exit value of the last command
+        exit: exits the shell or script
+        numeric value between 0 and 255
+        $termcause = 0
+
+        exit $termcause : will exit the script with the exit value of 0 or any overwritten value
+
+Packages and Process Data
+    - Package Management principles:
+        - linux packages:
+         1. each package is a single file
+         2. packages rely on other programs to the work of installing software
+         3. package contains dependency info
+         4. packages contain version info
+         5. packages contain architecture info
+         6. binary packages are built from source packages
+            packages contain names and version numbers & locations of all installed files
+    - Package management systems
+        - rpm:
+            always use native package on your system
+        - debian: rpm cannot be installed on debian distros
+
+        - software repository
+        - text mode or GUI to interact 
+        1. command is issued to install
+        2. software locates dependencies
+        3. yes: user issues final approval and software is installed
+        4. software downloads deps
+        5. software is finally installed
+
+        Upgrades almost work in the same way
+        many dists will check package repositories for updates and notify user
+        
+    - using rpm and deb package managers
+        ubuntu : debian based distro
+        centOS (yum), Fedora(dnf), Red Hat: rpm based distro
+        
+        dnf check-update
+        sudo dnf upgrade - super user alot of programs will alow you to use sudo to upgrade as super user
+
+        return will ask you to confirm the upgrade: is this ok [y/N]: y
+
+        dnf search virtualbox: search for virtualbox
+        dnf info virtualbox-guest-additions: info about virtualbox
+        sudo dnf install virtualbox-guest-additions: install virtualbox (dependicies will be installed as well as root access)
+        dnf search google: search for google and install google chrome
+        sudo dnf install: chrome-remote-desktop-77.0.3865.90-1.x86_64
+
+        erase:
+        sudo dnf erase google-chrome-stable-77.0.3865.90-1.x86_64 sudo will also remove dependencies with package manager
+
+        ubuntu: .deb
+        sudo apt update
+        sudo apt upgrade
+        sudo apt autoremove // remove dependencies
+        apt search virtualbox: search for virtualbox
+        apt show virtualbox: show info about virtualbox
+        sudo apt install virtualbox: install virtualbox
+        sudo apt remove virtualbox: remove virtualbox & dependencies
+
+        process hierarchy 
+        - process: program that is running on a computer
+            children - program launched by init
+            parent : program that launches other programs
+            each process has a unique process id (PID)
+            each PID begins with 1
+            PPID: parent process id
+
+        identifying running processes:
+        - ps / top 
+        - ps aux: shows all processes running on the system
+        ps aux | grep searchterm: search for a process
+
+        ps provides info at a single point in time, top provides info in real time
+        top: interactive version of ps that shows processes in real time and highest cpu usage
+        load average: average number of processes waiting to run
+        runnaway processes: processes that are using too much cpu time
+        hung processes: processes that are not responding
+        using top we can locate process and kill them with PID
+
+
+        Measuring memory usage:
+        top -> m : sort by memory usage after top loaded
+        a program with a memory leak consumes more memory over time
+        short term solution: kill the process and memory is freed
+        long term solution: fix the program because memory leak will happen again
+        mem: reveals total RAM stats, but use buffer/cache to see how much RAM is being used
+        swap: disk space thats set aside as complimentary to memory 
+        - what can happen is a program can use up all of the RAM and then use the swap space which is slower than RAM becuase
+        it is hard disk space which is obviously slower than RAM
+
+
+        Log Files:
+        - log files: files that contain info about system events
+        linux stores logs in /var/log
+        boot.log: contains info about boot process
+        cups/ : contains info about printing
+        gdm: contains info about gnome display manager
+        messages or syslog: contains info about system messages
+        Secure: contains info about security related events
+        Xorg.0.log: contains info about xorg server
+        log files are frequently rotated to save space
+        some programs create special logs syslog or syslogd which is a daemon that logs system events
+        Klog/klogd: kernel log daemon
+        system messaging: technique where programs send messages to syslogd
+
+        Kernal Ring Buffer:
+        - log files for the kernal itself
+        dmesg: command that displays the kernal ring buffer
+        dmesg > /var/log/dmesg: save the kernal ring buffer to a file
+
+
+Networking Basics:
+    - Network Features:
+        - DNS: Domain Name System helps translate domain names to IP addresses
+        - DHCP: Dynamic Host Config protocol allows computers to automatically obtain IP addresses. server assigns IP addresses to computer DHCP does it automatically
+        - ethernet: cat5 cable or over the air wifi
+        - host names: name of a computer on a network to easily identify it
+        - internet: global network of networks TCP/IP protocol
+        - IP address: unique address for a computer on a network
+          old days IPv4 8.8.8.8 IPv6 newer address, 16 byte addresses
+        - Netmask: distinguish between network and machine portion of an IP address
+        - Router: 2 or more networks together
+        - gateway : ip address of the router
+        - homes and small business switch router modem all together
+        - TCP/IP: Transmission Control Protocol/Internet Protocol (backbone of the internet)
+        - Wifi : wireless network
+        - to create a network we assign a computer an ip address and a netmask. 4 things:
+            1. IP address
+            2. Netmask (windows is subnet mask)
+            3. Gateway (router)
+            4. DNS server (IP address)
+
+    - Network Configuration setup:
+        - automatic config is handles via Dhcp
+        - easiest way of establishing wifi connection is to use a GUI
+        iwlist & iwconfig: command line tools to configure wifi
+        - ifconfig: program that will bring up or shut down connection to a network
+        - route: adjust computer routing cable. how it should send traffic and packets 
+        - /etc/resolv.conf: file that contains DNS server info
+        - DHCP client , dhclient, dhcpcd 
+        - distribution specific network scripts
+    
+    - Network testing:
+        - route command to see if we can reach the gateway
+        - ping: send a packet to a computer and wait for a response
+        - traceroute: shows the path a packet takes to reach a computer. this shows how a packet gets to a computer
+        - DNS can cause issues with network connectivity as bad as a network cable being cut
+        - if dns doesn't work, network is basically useless
+        - netstat: shows network connections
+
+    - Network protection:
+        - unistall unneeded software
+        - enable a firewall
+        - 
+
+        - turn off unneeded services
+        - remove a server if it is not needed
+        - enable a firewall that will police traffic 
+        - keep software up to date
+
+    - connecting to a network:
+        - ip address show: shows ip address
+        - ip link show: layer 2 switching and about network
+        - ip address show: 
+        how do we a manual ip assigned to eth connection:
+        sudo ip addr add 192.168.1.10/24 dev enp0s3
+
+User Accounts and Groups:
+    - understand user accounts:
+        - groups:
+        - root: super user with full access to the system
+        - user accounts allow for tracking of whos using system resources
+        - account features: /etc/passwd, contains record defining user account
+        - firstnamelastname, firstname_lastname
+          password are stored as x in /etc/passwd as a shadow file
+          UID, human readable account id begins with 0. 1000 or above
+          GID group id, users can belong to groups. Enable users to certain access/prevent access. 
+          command field , users full name
+          home directory, where users files are stored
+          default shell: choose which cell on linux system
+    - Account Security, shadow file:
+        - passwords have been moved into shadow file
+        - salted hash is a password that is encrypted with a random string of characters, looks like gibberish
+        - username: on each line of /etc/shadow file
+        - password: encrypted password * denotes that 
+        - last password changed
+        - Days until a change is allowed
+        - Days before a change is required 45, 60, 90 days
+        - days of warning before password expires
+        - days between expiration and deactivation
+        - account expiration date, expressed as a whole #
+        - special flag 
+    - Groups:
+        - collection of accounts defined in /etc/group file
+        - password, can have value or empty 
+        - GID, group id number
+        - User List, users that belong to the group
+        - users can be identified as in a group by GID for user(only one group )
+        - newgrp: command that allows a user to switch to a different group
+    - using account tools:
+        - whoami: shows current user
+        - id: shows current user and group
+        - who: username|temrinal identifie| date and time logged in | ip address or hostname
+        - w: similar to who but shows more info, idle time, JCPU -> session, PCPU -> current time in process, WHAT -> command
+        -
+
+    - creating a new user in the shell
+    1. sudo adduser fnamelname
+    2. enter unix password "newpass"
+    3. Full Name: "fname lname"
+    4. Room Number: "room number"
+    5. Work Phone: "work phone"
+    6. Home Phone: "home phone"
+    7. Other: "other"
+
+    low level utilit: sudo useradd -s /bin/bash -d /home/fnam -m -G fname lname
+
+    - modifying and deleting accounts:
+    sudo passwd fname
+        - enter new Unix password
+        - retype new Unix password
+        - passwd: password updated successfully
+    sudo passwd -S fname: shows password status, also date of last password change, and password expiration date
+    P: password is valid
+    NP: no password
+    L: locked password
+    99999: password expiration date
+    7: password change warning
+    -1: password inactive
+
+    sudo chage
+
+    change name
+    id fname
+    sudo usermod -l newname oldname
+
+    id newname, shows new name
+    change groupid:
+    sudo groupmod -n newname oldname
+
+    sudo deluser --remove-home newname : delete user and home directory
+    sudo userdel -r fname: delete user and home directory
+
+    Ubuntu will keep a log of who has been created/deleted
+    tail /var/log/auth.log 
+
+    gep -E 'userdel' /var/log/auth.log: search for userdel in auth.log, can see if user was deleted 
+
+
+    - Managing groups
+    sudo useradd -m tim -p password
+    id tim: shows tim's info
+
+    sudo groupadd students
+    sudo groupadd teachers
+    sudo groupadd admin
+
+    - add user to group
+    sudo usermod -a -G admin tim: add tim to admin group
+    
+    file inside /etc/group shows who is in groupd
+    grep admin /etc/group
+
+    rename group:
+    sudo groupmod -n staff admin : rename admin to staff
+
+    - working as root
+    1. can log in a root but not the best practice plus distros won't allow
+    2. log in as user then use su to switch to root
+    3. sudo command: run a command as root. some distros rely heavily on this command
+
+Managing File Ownership and Permission
+    - Setting ownership
+        - every file has an owner or account associated becuase of UID & GID
+        - root user can change owner and file permissions at any time
+        - file owner change file to only other group users
+        - chown: change owner of a file
+        - chgrp: change group of a file
+        - if i am in both groups i can give access to both groups 
+        
+        ownership steps:
+        change foo1.txt
+        sudo chown tim foot1.txt : change owner to tim
+        sudo chown tom:Staff foo1.txt : change owner to tom and group to staff
+
+    - understanding permissions
+        ls -l : shows permissions long directory listing
+        permissiosn | links | owner | group | filesize | date | time | name
+        -rwxr-xr-x 1 tim staff 0 Sep 30 10:00 foo1.txt
+
+        1st. file type code: 
+        - regular file, 
+        - d directory, 
+        - l symbolic link,
+        - c character device: hardware device send out 1 byte at a time
+        - b block device : file corresponds to hardware device and allows read/write in blocks
+        - s socket, 
+        - p pipe: contains a link to another program
+
+        2nd piece of permission string
+        - owner permissions: what can the owner do
+        
+        3. group permissions: what can other members of the group do
+
+        4. other/world permissions: what can others do
+
+    - permissions strins and setting the unmask
+
+    1. read / write / execute
+        -(rwxr)-(xr)-(x)
+
+        0. no permissions
+        1. execute
+        2. write
+        3.write/execute
+        4.read
+        5. read/execute
+        6. read/write
+        7. read/write/execute
+
+        3 digit octal code
+        0 0 0
+        777 : read/write/execute
+        750: read/write/execute for owner, read/execute for group, no permissions for others
+        644: read/write for owner, read for group and others
+        400: read for owner, no permissions for group and others
+
+        standard : 755 read write execute for owner, read/execute for group and others
+        directories are just special files so permissions to directories also similary apply
+        * many of the permission rules do not apply to root user, root usually
+        can do anything
+        
+        how to list permissions in numbers in terminal: 
+
+        umask: command that sets the default permissions for new files and directories
+        files: 666: read/write for owner, group, and others
+        directory: 777 read/write/execute for owner, group, and others
+    - using sticky bits
+        - a direcotry can have a write permission even though files will only have read, the entire
+        folder can be deleted
+
+        with sticky bit: a user may only delete own files or files stored in a directory that the user owns
+        chown octal code: 
+        1755: sticky bit set 
+        0755: sticky bit not set
+
+        symbolic code: chmod o+t directoryname
+                        chmode o-t directoryname
+
+    - using special execute permissions:
+        suid: set user id, allows a user to run a program as the owner of the program
+        suid are set with s instead of x
+        SGID sets the group of the running program to the group of the file
+        R-S 
+        chmod how to set:
+        chmod 4755 : SUID bit but not SGID bit
+        chmod 2755: SGID bit but not SUID bit
+        chmod 6755: both SUID and SGID bit set
+
+    - hiding files and directories:
+        - linux uses a . to hide files and directories
+        - .files are not displayed by default and are usaully set to be hidden and not clutter everything
+        - ls -a
+          - . is the current directory
+          - .. is the parent directory
+        - ls -d : seatch for directories
+    
+    setting permissions:
+
+    r = 4 w = 2 x = 1 if we add them up we can get the permissions
+    

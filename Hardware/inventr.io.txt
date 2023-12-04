@@ -1,0 +1,11 @@
+Circuits: allow us to pass through electrical currents. 
+    - channeling devices are connected end to end
+    - we not only need a complete circuit, but also low medium and high pressure. 
+    - voltage/potential provided by battery or power supply have greater resistance to flow or less depending on resistance.
+        volt -> pushing amps but restricted by OHM resistance.
+        current = voltage / resistance
+
+        our hero board gives us 5v ans say we use 220 ohm resistor. that turns out = 0.023 amperes. That is the proper amount to light up a led.
+        led convert electrical energy into light, unlike tradition bulbs which convert electrical energy into heat and light.
+
+        Led: higher prong is positive, lower is negative. positive connects to high voltage, negative to low voltage.
