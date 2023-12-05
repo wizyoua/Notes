@@ -1,0 +1,63 @@
+https://www.youtube.com/watch?v=meAGfhD3_ww&list=PL78ppT-_wOmvlYSfyiLvkrsZTdQJ7A24L&index=2&ab_channel=ShawnPowers
+
+Shaun Powers Linux:
+
+1. Where does linux live?
+    PC's: desktop, server, laptop
+    Embedded devices: phones, cars, refrigerators, etc.
+    Cloud: underneath instances, services mostly run on linux
+
+    Linux Kernal: 
+        - Debian Based: Ubuntu, Ubuntu Variants, when you install a package it will be a .deb file
+        - Red Hat Based: Fedora, CentOS, RHEL, when you install a package it will be a .rpm file
+        - Archlinux, slackware, suse, andriod are all built on top of the linux kernal
+        - raspbian, runs on raspberry pi and is arm based, compiled for arm processors
+        - chrome os, are just OS that is not much more than a browser, but it is built on top of linux
+
+    
+
+2. What applications work in linux
+    - Software Boutique: a software store for linux, contains programs alternatives to windows/Commercial programs
+    - Apache, NGINX, MariaDB, can all run on linux machines.
+    - installed apache using APT, which is a package manager for debian based linux distros
+    - redhat uses rpm, they use yum to install packages
+    
+
+4. Open Source:
+    - FSF: Free Software Foundation
+        - original, GNU General Public License (GPL)
+    - OSI: Open Source Initiative
+        - more business friendly,
+        - allows more licenses
+
+    Permissive: MIT, Apache, BSD very lax licenses
+    Copyleft: GPL, AGPL, LGPL, more restrictive licenses
+
+    Non-software:
+        - photos, music, videos -> creative commons -> attribution, non commercial, no modifying
+    
+    - There are a variety of licenses and you can get free software but if the content is paid or infra is huge then there's really no
+      way to get around paying for it in some way shape or form
+
+5. Doing things with linux
+    - almost all servers, or cloud computers use linux
+    - passwd: change password
+
+6. master simple cli tools
+    - ls -a: list all files including hidden files
+    - ls -l: list all files in long format
+    - ls -R: list all files recursively
+    - rm filename: remove file
+    - touch filename: create file
+    - rm -rf foldername: remove folders with files in them
+    - rm dir
+    - cp file1 file2: copy file1 to file2
+    - mv file1 file2: renames file1 to file2
+    - mv file1 dir1: moves file1 to dir1
+    - cp -R dir1 dir2: copy dir1 to dir2, recursively copies everything
+
+    globbing: wildcards
+
+7. You need to know the linux CLI
+    - when you open terminal, Bash is the default shell, born again shell
+    
