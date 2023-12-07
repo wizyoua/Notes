@@ -102,3 +102,136 @@ Shaun Powers Linux:
         - zip -r archive.zip dir1: creates archive.zip from dir1
 
     *windows may not be able to  xz compression unless they have 7zip installed (personally i have faced this issue)
+
+10. Linux Pipes and Redirects
+    - STD IN : standard input
+    - STD OUT : standard output
+    - STDERR : standard error
+
+    stderr usually pipes to the terminal window but can be redirected to a file.
+
+    echo "hello" > output.txt: creates output.txt and writes hello to it instead of the terminal
+    echo "hello" 2> output.txt: 
+    echo "hello" 2>&1: redirects stderr to stdout
+    echo "hello" >> output.txt: appends hello to output.txt | log files are usually appended to since it will add it to the end of the file
+
+    | redirects output of one command to another command
+
+    cat output.txt: shows contents of output.txt
+    cat output.txt | less : shows contents of output.txt in less
+    cat ouptut.txt | less : shows empty file because file doesn't exist so less doesn't have anything to show
+    cat output.txt 2>&1 | less : shows contents of output.txt in less
+
+    cat ouptut.txt > output.txt 2>&1 : puts error in output.txt
+
+11 Rules at text manipulation : Bonus basic regex
+    - head -n 5 output.txt: shows first 5 lines of output.txt ( Default is 10)
+    - tail -n 5 output.txt: shows last 5 lines of output.txt (Default is 10)ta
+    - sort output.txt: sorts output.txt
+
+    string commands together: ls; ls; can string commands together with ; but if one command fails, the rest will still run
+
+    tail -n +2 output.xt | sort : skips first line of output.txt and sorts the rest, our output goes into the sort command
+
+    - cut -d, -f 2 output.txt: cuts output.txt by delimiter , and shows field 2
+    - grep "hello" output.txt: searches for hello in output.txt
+        basic regex: grep"ap[pe]" output.txt: searches for apple or ape in output.txt
+            [] : anything in the bracket is a match
+            [^] : anything not in the bracket is a match
+            ".l" : anything that ends with l because . is a wildcard
+
+            grep "ap*l" output.txt: anything that starts with ap and ends with l but can have 0 or more of the character to the left of the *
+
+            linux objective extended
+            - grep -E "el?o" ? question mark means 0 or 1 of the character to the left of the ? so 0 or 1 l
+
+            wc --help
+
+            grep "lo" output.txt | wc -l: counts number of lines with lo in it. output of grep goes into input of wc
+
+
+12. How to write simple shell scripts
+    - basically writing a script of the same exact commands you would run in the terminal
+    bash: born again shell, is a shell and communicates to linux kernel
+
+    vi: text editor
+    nano: text editor as well
+
+    # comment, is not interpreted by the shell, but unless it's on on the first line
+    #!/bin/bash: tells the shell what to use to interpret the script, in this case bash
+      - any commands can be written in the script
+    echo "hello world"
+    HELLO="hello world variable"
+    $1: first argument passed to the script ./test.sh Yanni 
+    ./test.sh "arg1" "arg2" | $1 = arg1, $2 = arg2
+
+    assings x to 1, and so on
+    for X in 1 2 3 4 5
+    do
+        echo "hello $X"
+    done
+
+    *objective : exit status of 0 means success, anything else is failure
+    $? : exit status of last command, 0 is success, anything else is failure
+    ls filedoesn'texist.txt 
+    echo $?: shows exit status of last command (2)
+    
+
+13. Picking the best OS for linux pros:
+    - Microsoft:
+        - expensive
+        - lifecycle not standard, easy to migrate, becoming more linux-like, best for gaming
+    - Apple:
+        - unix based, free but only on apple hardware, regular releases
+        - terminal 
+    - Linux:
+        - Kernal regularly updated, distros handle differently (some are rolling release, some are not)
+        - rolling release (debian)
+        - long term support (ubuntu LTS, red hat) LTS stands for long term support
+
+    - CentOS: free, enterprise linux, red hat based, long term support, stable, not rolling release
+    redhat had to release their source code because of the GPL license, so CentOS is based off of redhat without the support and paid requirements
+    - rocky linux: exactly like redhat, but free, long term support, stable, not rolling release, same guy that started CentOS
+
+    - linux servers vs linux desktops
+        - linux servers: no GUI, stable version of OS
+        - linux desktops: has GUI, rolling releases
+
+14. identifying hardware in a linux system
+    - ls nvm*  in /dev: shows nvme drives
+    - different devices have different entries in /dev
+    - nvme is a newer type of drive, faster than SSD like m.2
+    - pcie is a type of connection, nvme is a type of drive, pcie is installed on motherboard, linux would identify it and we can interact with it
+    pcie is a type of connection and can be different sizes
+    - linux already has all the drivers to detect hardware, so we don't need to install drivers
+
+
+15. The linux file system is crazy
+    - free : shows free space on disk optional -h for human readable
+    - ps aux: shows all processes running on the system, and user running them
+    - ps aux | grep 'process name': shows all processes running on the system, and user running them, and searches for process name
+    - top: shows everything running and also memory free
+    
+    virtual filesystem: 
+
+    - /dev: device nodes, user space access to hardware. linux interacts with things like files so devices nodes are pointers to hardware
+    - /proc: running process info, more kernel info, virtual filesystem, not on disk, but in memory, so it's not persistent (over there years other things were crammed
+    into /proc and got super full, so they created /sys)
+    - /sys: should be other kernal stuff
+
+    - /bin -> needed for system rescue
+    - /usr/bin :most programs
+    - /sbin: system binaries system config tools
+    - /usr/share/bin: system binaries programs for other apps like apache
+
+    /boot : where kernel files live
+    /etc : config files
+    /var/log : log files
+    /usr/local/bin
+    /user/local/etc
+
+    journalctl: shows logs from binary files. syslog will show the same thing but in text files
+
+16. linux, networking & internet
+
+    - 
