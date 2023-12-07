@@ -60,4 +60,45 @@ Shaun Powers Linux:
 
 7. You need to know the linux CLI
     - when you open terminal, Bash is the default shell, born again shell
-    
+    - type ls : tells you about specific command in system
+    - which ls: where command comes from
+    - created a file and ran the file, but Path was not set, so it could not find the file, usually Path is set to run files anywhere. it's basically a variable
+    - env : shows all environment variables, can also see Path variable and where all commands are references to check
+    - bash terminal, can create variables, echo them but if we close the terminal, the variables are gone. 
+    - export: makes variable available to all child processes, but not parent processes
+    - bash terminal : 'file name' bash shows file because file has a space in it, so we need to escape the space
+    - history: shows all commands you've run, history -c: clears history
+
+
+8. Need linux help, just ask linux
+    - man pages: manual pages built in an informative 
+    - info : less common, newer than man
+    - less: for viewing files, up/down arrow & search
+    - -h : help commands after commands example: ls -h | --help 
+
+    /usr/share/doc : contains 
+
+9. Tar: tape record: used to record to a tape
+    - tar -c -f archive.tar file1 file2: create archive.tar from file1 and file2
+    - tar -c -f arhive.tar dir1: create archive.tar from dir1 and contents within dir1
+    - du -h --summarize dir1: shows size of dir1
+
+    - how to use compression with tar
+        -gzip : gzip -k archive.tar: compresses archive.tar into archive.tar.gz | gunzip archive.tar.gz: uncompresses archive.tar.gz into archive.tar | gzip -d
+        -bzip2: bzip2 -k archive.tar: compresses archive.tar into archive.tar.bz2 | bzip2 -d archive.tar.bz2: uncompresses archive.tar.bz2 into archive.tar | bunzip2
+        -xz: xz -k archive.tar: compresses archive.tar into archive.tar.xz | xz -d archive.tar.xz: uncompresses archive.tar.xz into archive.tar | unxz archive.tar.xz
+
+        or with tar can use -z to use gzip, -j to use bzip2, -J to use xz
+
+        archive.tar.gz: most common, gzip
+        archive.tgz: same as above
+
+        tar -cJf archive.tar.xz dir1: creates archive.tar.xz from dir1
+
+        *always remember to use f in last position when using tar
+
+
+    zip/unzip
+        - zip -r archive.zip dir1: creates archive.zip from dir1
+
+    *windows may not be able to  xz compression unless they have 7zip installed (personally i have faced this issue)
