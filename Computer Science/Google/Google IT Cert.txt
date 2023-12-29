@@ -1,0 +1,60 @@
+ASCII
+UTF-8: allows us to represent all characters in Unicode
+Unicode: allows us to represent all characters in all languages
+
+color: 0-255 RGB each char is a shade of the color
+
+
+Binary:
+0-1 on(1) or off(0)
+
+loom: holes thread would either go through or not go through just like 0/1 or on/off
+
+translating 0-1, comp can calculate sequences of 0-1s and translate them into other things
+now, instead of holes we use electricity to pass through voltage and represent on/off 
+
+Logic Gates: more complex tasks based on transistors.
+6 common logic gates:
+Not: 1 input and 1 output, flips the input
+AND: 2 inputs and 1 output, output is 1 if both inputs are 1, otherwise 0
+OR: 2 inputs and 1 output, output is 1 if either input is 1, otherwise 0, 1 or both inputs are 1
+XOR: 2 inputs and 1 output, output is 1 if exactly 1 input is 1, otherwise 0, off if both inputs are 1
+NAND: 2 inputs and 1 output, output is 0 if both inputs are 1, otherwise 1
+XNOR: 2 inputs and 1 output, output is 0 if exactly 1 input is 1, if both inputs are 1
+
+How to count in binary:
+- base 10: 0 - 9 
+
+represent h in binary
+h = 104 ascii to decimal table
+128 64 32 16 8 4 2 1
+0   1  1   0 1 0 0 0
+
+64+32+8 = 104
+
+
+Intro to computer hardware:
+- ports are connection points for hardware
+- Ram: random access memory, stores data and instructions for the CPU to use temporarily
+- harddrive: holds data and instructions for long term storage
+- Motherboard: everything in place that allows everything to communicate,
+- PSU: power supply unit, converts power from wall to power that computer can use
+- all of these
+
+Programs: cpu and memory:
+- computers speak in machine language, binary. 
+- if we want to communicate with machines we need to speak in machine language, they have built in translators
+- Programs: are instructions that we give to the computer to execute
+- program stores instructions in ram, small instructions at a time
+- EDB: The EDB is a row of wires that interconnect the parts of our computer, kind of like the veins in our body. 
+- The MCC sends data grabbed from the RAM and sends it to the CPU through the EDB.
+- inside cpu registers are used to store data and instructions. 
+register a and register b, adding a and b, store result in register c
+- memory controller chip: MCC bridge between cap and cpu, 
+- address bus: cpu to mcc: tells mcc which memory address to read from
+- cpu also has cache, small amount of data that is constantly used, faster than ram
+- l1 cache, l2 cache, l3 cache
+- cpu has internal clock, connected to clock wire, wire sends voltage to cpu that allows it to do things
+- clock cycle: 3.4ghz, max clock cycles per second, 3.4 billion clock cycles per second
+- overclocking: increasing clock speed, can cause overheating
+- overclocked commonly used in lower end cpus

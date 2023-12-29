@@ -234,4 +234,101 @@ Shaun Powers Linux:
 
 16. linux, networking & internet
 
-    - 
+    - routers jobs are to route packets to devices inside home, and router only needs one IP address for the internet to access
+    - ipv4 = 4 sets of numbers = o - 255 4.3 billion addresses but not enough
+    - ipv6 = 8 places with 4 digit hex nums 0000 - ffff, 340 undecillion addresses, can represent 0000 with ::, so 2001:0db8:0000:0000:0000:ff00:0042:8329 can be written as 2001:0db8::ff00:0042:8329
+    - there are grains of sand on planet earth, and there are more ipv6 addresses than grains of sand on earth 10 sextillion
+
+    old way:
+        - ifconfig
+        -route 
+        - netstat
+    new way:
+    - ip addr show
+    - ip route showcat /et  
+    - ss
+    ip a: shows ip address
+
+    host google.com: shows ip address of google.com
+    ping 8.8.8.8 default server to test
+    ping google.com
+
+17. linux powers
+    - regular user: /home/username, normal users uid/gid start with 500/1000
+    - system users: programs run as system user, apache,etc home dir can be anything
+    - root user: super user uid/gid 0, home dir is /root, bad practice to login as root
+
+    su: become another user, by default root
+    - needs root password
+
+    sudo do thing as different user, by default root
+    sudo only needs users password, su needs root password
+    ubuntu doesn't have root password, so you can't su to root, but you can sudo to root, centos has root password so you can su to root
+
+    sudo visudo: edit sudoers file, only way to edit sudoers file, can't edit with vi or nano
+
+    UID: user id used in persmissions attached to files
+    GID: Group ID, useful for sharing files and directories
+
+    ls -n: shows uid and gid instead of username and group name
+
+    root:x:0:0:root:/root:/bin/bash uid:gid:username:groupname:home dir:shell
+    passwords used to be stored for x, but now they are stored in /etc/shadow
+
+    passwords for group are stored in /etc/gshadow
+    id root: shows uid and gid of root
+    who: shows who is logged in
+    w: shows who is logged in and what they are doing
+
+    sudo su - : switch to root user
+
+18. creating linux users is too easy
+    sudo useradd -d /home/username -m -G sudo,adm username : creates user with home directory, and adds user to sudo and adm groups
+    sudo groupadd coolgroup: creates group
+    sudo usermod -h | head -n 25: shows help for usermod
+    sudo usermod -G coolgroup username: adds user to coolgroup
+
+    cd /etc/skel: skeleton directory, when you create a user, it copies everything from skel to the new users home directory
+
+19 Permissions and ownership
+    - __rwxrwxrwx: 10 characters, first character is file type, next 9 are permissions
+        first 3: user
+        second 3: group
+        third 3: other
+        first_ is type: - is file, d is directory, l is link
+        read = 4, write = 2, execute = 1
+        3: read and write, 5: read and execute, 7: read, write, execute
+        6: read 
+        x: execute for files means run, for directories means enter can cd into it
+        0: no permissions ---
+
+        chmod : changes permissions
+
+        chmod ugo+x file: adds execute permissions to user, group, and other
+        chmod ug-x file: removes execute permissions from user and group
+        chown : change group of the file
+
+        octal permissions: 4: read, 2: write, 1: execute
+        faster way to change permissions instead of using ugo
+
+20. sticky bits of linux
+    - symbolic link: ln -s /path/to/file /path/to/link
+    - sticky bit: only the owner of the file can delete it, even if other users have write permissions
+    l_________: sticky bit l means symbolic link
+    - symbolic link doesn't to take up space, it's just a pointer to the file, bash turns red when sym link links to nothing
+    chmod 0777 file: sets permissions to 777 and remove sticky bit
+    chmod 1777 file: sets permissions to 777 and adds sticky bit, so only owner can delete file
+
+    doesn't make sense to have sticky bit on file, but it makes sense to have it on directory, doesn't have any effect on file only directory
+
+21. Certs:
+    lpi essentials: easy intro to linux
+    lpic-1: more advanced linux
+    lpic-2: even more advanced linux
+    lpic-3: super advanced linux
+
+    lpi essential and maybe lpic1 are enough for most jobs
+    lpi certified sysadmin: 375 1 exam but it's very hands on, exam frustrating
+    compTIA 
+    oracle linux cert: very distro specific
+    redhat: widely known redhat uses yum for package manager, ubuntu uses apt
