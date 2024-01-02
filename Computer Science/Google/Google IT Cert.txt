@@ -58,3 +58,125 @@ register a and register b, adding a and b, store result in register c
 - clock cycle: 3.4ghz, max clock cycles per second, 3.4 billion clock cycles per second
 - overclocking: increasing clock speed, can cause overheating
 - overclocked commonly used in lower end cpus
+
+Components:
+ - cpu: brain of computer, performs calculations and instructions
+   different cpu's have different architectures, different ways of doing things
+ - LGA: land grid array
+ - PGA: pin grid array, pins come out of cpu itself, needs a heatsink
+ motherboard and cpu must be compatible
+ - 32bit vs 64bit: 32bit can only use 4gb of ram, 64bit can use more
+
+ RAM
+    - random access memory, all ram is volatile, loses data when power is lost
+    - DRAM: dynamic random access memory, semiconductor memory, stores data in capacitors
+    - we buy ram with speed and storage
+    - SDRAM: 
+    - DDR: double data rate, 2x faster than sdram   
+    - DDR4: faster than ddr3, 2 or 1
+    - motherboard needs to be compatible with ram  
+    
+Motherboard:
+    - motherboard is the backbone of the computer, routes power from psu 
+    - Northbridge: connects cpu to ram, gpu, and pci express
+    - Southbridge: connects slower components like harddrive, usb, audio, ethernet
+    - expansion slots, increase functionality of computer
+    - pci express: peripheral component interconnect express, used for graphics cards, wifi cards, etc
+    - form factor os motherboard: ATX, micro ATX, mini ITX
+
+Power Supply
+    - DC: direct current, power from wall is AC, alternating current
+    - PSU converts AC to DC
+    - use proper voltage for your psu 
+    - wattage, amount of volts and amps that can be supplied
+    - 500w can supply most computers
+    - 80 plus rating, efficiency rating, bronze, silver, gold, platinum, titanium
+    - americas use 110v, rest of world uses 220v
+
+Mobile Devices
+    - mobile devices are small, portable, and have a battery basically a mini computer
+    - mobile is very integrated, sometimes you cant replace parts and a sodders
+    SOC: system on a chip, cpu, gpu, ram, wifi, bluetooth, etc
+    SOC use less battery powers
+    
+Batteries and charging systems:
+    - batteries are made of cells, cells are made of electrodes, electrodes are made of chemicals
+    - wireless charging: inductive charging, uses electromagnetic field to transfer energy
+    - charge cycle: 0-100% is one charge cycle, eod of life takes longer to charge or loses charge faster
+    - devices use portable power supply
+    - mismatch chargers can cause damage to devices
+    
+
+Bios:
+ - helps os communicate with hardware and start up
+ - motherboard stores bios in ROM, read only memory
+ - UEFI: unified extensible firmware interface, newer than bios, faster, more secure, more features
+ - beep codes: if computer doesnt start up, it will beep a code to tell you what is wrong
+ - POST: power on self test, checks hardware to make sure everything is working
+ - CMOS chip stores bios settings, battery keeps it powered
+
+ Build computer:
+ - stand offs: keep motherboard off of case, prevents short circuit
+ - cpu aligns with pointer, add heeatsink, screw heatsink in, install molex connector,
+   install ram in DIMM slots, ssd, connect psu to ssd, fans, 
+
+
+MODULE 3: OS
+    - Components of an OS:, whole packl
+        - user space, everything outside the kernal, kernal is the core of the os which talks directly to hardware
+        - kernal files are stored in the kernal space just like in a office, there is a system
+        - we organize files and folders
+        - process management: order or programins, cpu scheduling, memory management, ect.
+        - memory management, virtual memory, paging, swapping, ect.
+        - IO management: input output, keyboard, mouse, monitor, ect.
+
+    - file and file system:
+        - kernal handles file storage
+        file data, metadata and file system
+        - file system: wipe file systema and establish new file system
+        windows: NTFS, encryption, faster access speeds
+        linux: ext4(standard), different FS don't play well together
+        we write data to disk in blocks, it can be broken down to many pieces and stored in different places
+        block storage
+        - file extension: .txt, .jpg, .png, .exe, .mp3, ect.
+
+        Refs: resiliant file system, windows only, faster, more secure, more reliable but not ready youtube
+
+    - Virtual memory: 
+    program -> pages -> virtual memory -> physical memory -> cpu
+    - why don't we just use ram? we don't use all features of app at once so why waste memory on it
+    - allocated space:
+    
+
+    - Input / output: management
+        - devices that perform input and output like keyboard, mouse, monitor, ect.
+        - kernal handles IO, loads drivers, speak to Hardware
+        - slow machine: hardware resource deficiency 
+        - too much input or output can block other data
+        - 
+
+
+    - User Space:
+        - Shell/GUI
+        - cli shell: command line interface, text based, commands are typed in
+        - GUI is a visual way to interact with computer
+        -bash : born again shell, default shell for linux
+        - shell : vital using a shell and learning your way around
+
+    Logs: 
+        - logs are files that contain information about events that have happened on a computer
+
+
+    Boot Process:
+        - BIOS/UEFI : low level software that starts up the computer and makes sure everything is good
+        - POST: power on self test, checks hardware to make sure everything is working
+
+    Boot methods
+        - internal partitions: create different portions of various OS's if wanted
+        - external tools can be used to boot the computer, usb, cd, dvd, ect.
+        - enter BIOS f2/f12/DEL key, change boot order, save and exit
+        - mac: option key on startup to choose boot device
+
+    Mobile OS:
+        - general purpose mobile devices, phones, tablets, ect. 
+        - optimized to use little power, small, and portable
