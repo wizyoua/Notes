@@ -905,3 +905,64 @@ Web Components:
         - template tag is used to create a template that can be reused
         - template.content returns the content of the template
         - template.content.cloneNode(true) creates a deep copy of the template
+
+
+asynchronous JS:
+
+// a process that takes some time to execute is an async process
+
+let data;
+function fetchData(cb){
+    //fake async process with setTimeout
+    setTimeout(() =>{
+        let data={
+            name: 'john',
+            age: 30
+        }   
+        cb(data);
+    }, 2000) // instead of settimeout here is where we can make our fetch
+}
+
+
+console.log('starts here')
+fetchData((data) =>{
+    console.log(data);
+    console.log('ends here')
+});
+//displayData(); // undefined, why? because the async process is not finished yet and we tried to log data before async call was finish
+
+call back function is a function that is passed as a parameter to another function, it's justified for async process but 
+
+
+example:
+function cSqr(n, cb){
+    setTimeout(() => {
+        cb(n*n);
+    }, 2000);
+}
+cSqr(2, (res) => {
+    console.log(res);
+})
+
+promises and async await are better than callbacks now especially to avoid callback hell, i.e. pyramid of doom
+
+
+what is a promise?
+- when there are multi level jobs, promise object is invested to save us from callback hell. better way to write callback processes. refactor callback functions to promises
+    Basic Syntax:
+    let promise = new Promise((res, rej) =>{
+        //statements
+        resolve();
+    })
+
+    console.log(promise) // Promise {<pending>} - pending state, beginning of video for future reference.
+    //multiple async processes
+    Promise -> resolve -> then()
+    Promise -> reject -> then()
+
+    by default a function is not thenable, but we can make it thenable by returning a promise. 
+    every then() should return a promise if we want to chain them
+
+    finally() - used to execute code after the promise is settled
+    what is chaining the promise? it's when we use then() to chain multiple promises together
+    what is the status of promise by default? pending
