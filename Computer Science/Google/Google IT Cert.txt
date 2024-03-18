@@ -180,3 +180,466 @@ MODULE 3: OS
     Mobile OS:
         - general purpose mobile devices, phones, tablets, ect. 
         - optimized to use little power, small, and portable
+
+
+COURSE 2:
+ Module 1:
+    Intro to Networking:
+    
+    
+    TCP:IP Five Layer Model
+        - Physical Layer: physical devices that interconnect computers, connectors and specs about signals
+        - Data Link Layer: first protocols, defining common way of interpreting signals, ethernet, wifi, ect.
+        - Network: Internet Layer, through routers, IP addresses, routing protocols
+        - Transport: sorts out which clients and programs get the data. TCP: Transmission Control Protocol, data is reliably delivered, UDP: User Datagram Protocol, data is not reliably delivered
+        - Application Layer: tons of protocols and application specific protocols, HTTP, FTP, SMTP, ect.
+
+    OSI: Seven Layer Model:
+        - physical layer
+        - data link layer
+        - network
+        - transport
+        - session: manages sessions between computers, TCP/IP does this in transport layer
+        - presentation: data is presented in a way that the application can understand
+        - application: protocols that applications use to communicate
+    
+    Cables: data sent over, copper and fiber 
+        cables send voltage, interpreted as 1 or 0
+        cat6: category 6, 10gbps, 100m
+        cat 5: 100mbps, 100m
+
+        fiber: contains optical fiber, hair thin strands of glass, light is sent through the fiber. pulses of light for 1/0
+    
+    Hub: 
+        - hub is a repeater, takes signal and repeats it to all other ports
+        - hub is a layer 1 device, it doesnt know anything about the data
+        - hub is not used anymore, it is slow and inefficient
+        - collision domain: when two devices send data at the same time, the data is corrupted becuase of electrical nothingness
+
+    Switch:
+        - connect many devices, switch is a layer 2 device, it knows about mac addresses
+        - can determine which data is intended for which device
+    hubs ad switch used for local area network, LAN
+
+    Router: 
+    - forward data to independent devices
+    - internal table of ip addresses to know where to send data
+    - layer 3 device, knows about ip addresses
+
+    Core ISP routers deal with a ton of complexity and traffic Border Gateway Protocol, optimal path
+
+    Servers and Clients:
+        - Node: any device connected to a network
+        Server: provide data to something requesting data
+        Client: requests data from server
+
+
+    The physical layer:
+        - lowest level, 1 and 0s are sent over the wire the physical layer, standard copper netwwork cable. 
+        - modulation: varying the voltage of the signal to represent 1s and 0s or line coding
+        - twisted pair cable: pairs of copper wire twisted together
+        - 
+    
+    Data link layer:
+        - CSMA/CD: carrier sense multiple access with collision detection, check when a device is free to transmit data
+        - if there's no data on network segment, node can send data. if there is data, wait until it is free. random interval time to wait
+        - Mac address: 48 bit address, hexadecimal hexa employ a-f to represent more numbers
+        - Octet is 8 bits, 2 octets per byte
+        how many octects in a mac address? 6 octets, 48 bits
+        total number mac address 2^48
+
+    Unicast: one to one communication
+    Broadcast: one to all communication
+    Multicast: one to many communication
+
+    Ethernet framework:
+    - pramble: 8 bytes, 10101010, tells receiving device that data is coming
+    - SFD 1 byte, preamble is over
+    - destination mac address: 6 bytes
+    - source mac address: 6 bytes
+    - ether type field: 2 bytes, tells what protocol is being used / Vlan header, virtual lan, multiple networks on one physical network, 
+    - data payload: 46-1500 bytes contains OSI layer 3 data
+    - FCS: frame check sequence, 4 bytes, error checking (cyclical redundancy check) data integrity. poly division to check for errors in data 
+
+    Module 2:
+        - Network Layer: IP addresses, routing, ect.
+        - IP address: 32 bit address, 4 octets, 8 bits per octet
+        
+        IP address classes:
+        single octet: 2^8 = 256
+        dottet decimal notation: 0-255.0-255.0-255.0-255
+        ip address are distributed by IANA, internet assigned numbers authority
+        IBM owns 9.0.0.1 the 9 network. 
+        laptop has same mac addesss but different ip address on different networks
+
+        dynamic host configuration protocol: DHCP, automatically assign ip addresses to devices on network
+        static ip address: are reserved for servers and other devices that need to be accessed by ip address
+
+
+    IP datagram
+    header & payload
+    ipv4: 20 bytes
+        version, header length, service type, total length
+        identification(16 bit, messages), flags (used to indicate if data can be fragmented/has been), fragment offset(makes sure correct order)
+        time to live (how long it can be forwarded), protocol(8 bit field, transport layer protocol TCP/UDP), header checksum(checksum), 
+        source ip address: 32 bit
+        destination ip address: 32 bit
+        options: 0-40 bytes, padding: 0-3 bytes can be added to make sure header is 32 bit aligned
+        data datagram is the payload in the ethernet frame
+    ipv6: 40 bytes
+
+    ip address split into 2 parts: network and host
+    9. : network
+    0 .0.0 : host
+
+    class a ip address: 0 - 127 first octet is network
+    class b ip address: 128- 191 first 2 octets are network
+    class c ip address: 192 - 223 first 3 octets are network
+    class d ip address: 224 - 239 multicast
+    class e ip address: 240 - 255 reserved for future use
+    CIDR: classless inter domain routing replaces classful ip addressing
+
+    each octect 0 - 255
+
+    ARP: address resolution protocol
+    protocol to discover hardware address of a node with a certain ip address
+    trasmitting node needs a mac address to send data to a node on the same network
+
+    ARP table: contains ip address and mac address of nodes on the same network, expire after short time
+
+    Subnetting: dividing a network into smaller networks
+    Cidr: more flexibility than normal subnetting
+
+    address classes: 
+    class a : 16 million hosts
+    subnet : have their own gateway router for a single network
+
+
+    Subnet mask:
+    ip address: network, subnet, host 32 bit that is accurately sent.
+    subnet mask: 32 bit mask 4 octets in decimal.
+    IP address:
+    9 .100 .100 .100
+    9: 00001001
+    100: 01100100
+    100: 01100100
+    100: 01100100
+    subnet mask:
+    all the 111's will tell us which to use and all 0's to ignore
+    single 8 bit octet: 256: 0 - 255
+    ip and subnet mask 9.100.100.100/27 27 bits are network bits for subnet mask : 255.255.255.254
+
+    Basic Binary math:
+    8 bit 2^8 = 256
+    4 bit 2^4 = 16
+    16 bit 2^16 = 65536
+
+    10^2 = 100 0 - 99
+    10^ 3 = 1000 0 - 999
+
+    2 of the most important operators are or and and operators
+    X or Y = Z 
+    X AND Y = Z 
+
+    subnet mask uses AND opertator to determine if ip address is on the same network
+
+    traditional subnetting:
+    8 bit : class A
+    16 bit : class B
+    24 bit : class C
+
+    demarcation point: where the ISP network ends and the customer network begins
+    CIDR network and subnet id are combined into one.
+    CIDR abandoned classful ip addressing entirely.
+    CIDR stands fo
+    Question 4
+
+
+Basic Routing Concepts:
+    - routing: process of moving data from one network to another
+    - routing tables: 
+    1. recieve data packet:
+    2. check destination ip address
+    3. check routing table for destination ip address
+    4. if destination ip address is on the same network, send data to destination
+
+    Routing Table:
+    - we can still build our own router with 2 network interfaces and routing table
+    - 4 columsn:
+    1. destination network: ip address of destination network
+    2. nexthop : ip address of next router to send data to
+    3. total hops: number of routers to get to destination network
+    
+    Interior Gateway Protocols:
+    - link state routing protocols: routers share routing table information with each other
+    - distance vector routing protocols: routers share routing table information with each other
+    autoonomous system: group of routers under the same administrative control
+
+    exterior gateway protocols:
+    - routers share routing table information with routers in other autonomous systems
+    list is known as a vector: distance vector routing protocols
+    link state protocol: best path to destination network
+
+    routers use exterior gateway protocols to share routing table information with routers in other autonomous systems
+    internet is a collection of autonomous systems, 
+    IANA: internet assigned numbers authority, distributes ip addresses to regional internet registries
+    also responsible ASN: autonomous system numbers 32 bit numbers
+    ASN's can also represent entire autonomous systems
+
+    BGP: border gateway protocol, exterior gateway protocol, used to share routing table information between autonomous systems and is the main system used on the internet
+
+    Non-routable address space:
+    - 32 bit = around 4 billion ip addresses
+    ipv4 standard is running out of ip addresses, not enough for each human
+    RFC: request for comments: 
+        - non routable address space: ip addresses that are not routed on the internet
+        3 ranges are 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16
+
+
+    The transport layer:
+        - port: 16bit number used to direct data to specific services running on a networked computer
+        - addition of ports to address allow multiple services to run on the same computer so basically 
+        a small business can run a web server and a mail server on the same computer. everything.
+
+        Dissection of TCP segment:
+        - ip data gram encapsulates tcp segment
+        - ip data gram payload is the tcp segment
+
+        TCP: 
+            header and data 
+
+            header: source port, destination field
+            tcp splits data into segments, sequence number keeps track of the order of the segments
+            acknowledgement number: number of the next segment that the sender is expecting to recieve
+            data offset field: 4 bit number how long the tcp header is
+            reserved: 6 bit field, reserved for future use, 
+            flags: 6 bit field, 6 flags, 1 bit each,
+            tcp window: range of sequence numbers before the sender expects an acknowledgement
+            checksum: 16 bit field, checksum of the tcp segment
+            urgent pointer field: point out urgent data in the tcp segment
+            options: rarely used but used for flow control and security
+            padding: 0 - 3 bytes to make sure the header is 32 bit aligned
+            payload: data being sent
+
+        TCP control flags and the three way handshake:
+        6 flags below:
+            - URG: val of 1 indicates urgent pointer field 
+            - ACK: val of 1 indicates acknowledgement number field
+            - PSH: val of 1 indicates push function which tells the reciever to push data to the application
+            - RST: val of 1 indicates reset function which resets the connection
+            - SYN: val of 1 indicates synchronize function which is used to establish a connection and examine sequence number field
+            - FIN: val of 1 indicates finish function which is used to terminate a connection
+            
+        handshake: 2 devices ensure they can communicate with each other
+        3 way handshake: 3 packets are exchanged between 2 devices:
+            - SYN: sender sends a segment with the SYN flag set to 1 and a random sequence number
+            - SYN/ACK: reciever sends a segment with the SYN and ACK flags set to 1, acknowledgement number is set to the senders sequence number + 1, and a random sequence number
+            - ACK: sender sends a segment with the ACK flag set to 1, acknowledgement number is set to the recievers sequence number + 1
+
+        once the handshake is complete, the sender and reciever can send data to each other
+
+        full duplex: both devices can send and recieve data at the same time
+        once ready to close: 4 way handshake:
+            - FIN: sender sends a segment with the FIN flag set to 1
+            - ACK: reciever sends a segment with the ACK flag set to 1
+            - FIN: reciever sends a segment with the FIN flag set to 1
+            - ACK: sender sends a segment with the ACK flag set to 1
+
+        socket: instantiate of a port on a computer
+        instantiation: the actual implementation of something defined somewhere
+
+
+        Listen:  a tcp socket is in the listen state when it is waiting for a connection
+        SYN-SENT: a tcp socket is in the SYN-SENT state when it has sent a SYN segment and is waiting for a SYN/ACK segment (client only)
+        SYN-RECEIVED: a tcp socket is in the SYN-RECEIVED state when it has sent a SYN/ACK segment and is waiting for an ACK segment (server only)
+        ESTABLISHED: a tcp socket is in the ESTABLISHED state when the 3 way handshake is complete and data can be sent( both client and server)
+        FIN-WAIT: a tcp socket is in the FIN-WAIT state when it has sent a FIN segment and is waiting for an ACK segment (client only)
+        CLOSE-WAIT: a tcp socket is in the CLOSE-WAIT state when it has recieved a FIN segment and is waiting for the application to close the socket (server only)
+        Closed: connection has been closed (both client and server)
+
+        socket names can vary of OS. they extend outside of TCP and UDP.
+
+        Connection oriented protocol: established a connection and ensures all data has been transmitted(TCP)
+        connectionless protocol: does not establish a connection and does not ensure all data has been transmitted(UDP)
+
+        Firewall:
+        - primary way to stop traffic from entering a network, they can operate at the network layer, transport layer, and application layer
+        - there are mostly used at transportation layer
+          - 
+
+        
+        Which TCP flag is used to make the listening program respond immediately?
+        - URG
+
+        Application Layer:
+        - TCP section has a payload field, this is where the application data is stored
+        - can be the website data, streaming data, document to printer, ect...
+        - Data link layer: ethernet frame but application has a ton
+        - TCP/UDP for transport layer
+        - Application layer protocols are still standardized. 
+        - most popular web server, apache, nginx, IIS (can speak to any server no matter the browser)
+        - HTTP: hypertext transfer protocol, application layer protocol used to transfer data between a web server and a web client
+
+
+        The application and the OSI model:
+        Open systems interconnection model: 7 layers
+        often usd in academic settings
+        1. physical layer: physical medium used to transfer data
+        2. data link layer: ethernet frame
+        3. network layer: ip datagram
+        4. transport layer: tcp segment
+        5. session layer: facilitates communication between applications
+        6. presentation layer: formats data for the application (encryption)
+        7. 
+
+        TCP/IP is 5 layer while OSI is 7 layer
+
+        All the layers working in unison:
+
+
+    DNS:
+    5 types of DNS:
+        - caching and recursive DNS:
+            - caching: stores DNS records for a period of time
+            - recursive: queries other DNS servers on behalf of the client
+            - TTL: dns can be cached for a period of time set by owner of the domain
+        13 root servers:
+            - 13 root servers are the top of the DNS hierarchy, authorities for lookups
+            - anycast: multiple servers with the same ip address
+            - tld servers: top level domain servers, authoritative for top level domains
+            .com is the TLD, for each TLD there is a TLD server/s 
+
+
+        DNS & UDP:
+        - UDP is used for DNS queries:
+        - UDP is connectionless, no setup or teardown
+        - a DNS query is a single packet UDP datagram
+        - the same functionality that TCP provides at the network layer, DNS provides at the application layer
+        - DNS server only cares about lookups, not the data being sent
+
+        Resource Record Type:
+        - basic ones:
+        - A record: used to map a hostname to an ipv4 address
+        - DNS round robin: multiple A records for the same hostname
+        - Quad A record: used to map a hostname to an ipv6 address
+        - Cname record: used to map a hostname to another hostname (canonical name)
+        - MX record: used to map a hostname to a mail server (mail exchange)
+        
+
+        Anotomy of a DNS name:
+        www: subdomain
+        google: domain
+        .com: top level domain
+        ICANN: internet corporation for assigned names and numbers
+        - ICANN is responsible for managing the DNS root zone (IANA sister organization)
+        - FQDN: fully qualified domain name, hostname + domain + TLD
+        - subdomains are free
+        - registrar is responsible for registering domains, registered with ICANN 
+        - DNS can support up to 127 levels of subdomains
+        - DNS zones: allow for the delegation of subdomains 
+        - zone files: contain DNS records for a domain 
+        SOA : start of authority record, contains information about the zone
+        NS: other name servers for the zone
+        Reverse lookup zone files: map ip addresses to hostnames
+        PTR: pointer record, maps an ip address to a hostname
+        
+        DHCP:
+        - dynamic host configuration protocol
+        - application layer protocol used to assign ip addresses to hosts
+        - DHCP server: server that assigns ip addresses to hosts, ran set a range of ip addresses
+        - solves a problem with static ip addresses
+        - dynamic allocation: range of ip for client devices, range of ip is assigned to the DHCP server
+        - automatic allocation: range of ip for for assignment, ip is assigned to the client device
+        - fixed allocation: ip address is assigned to a specific device, ip address is assigned to the mac address of the device
+
+        DHCP:
+        - helps configure the network itself even though it is an application layer protocol
+        - dhcp discovery: udp port 67, client sends a broadcast message to the network, client is looking for a DHCP server
+        - DHCP offer: udp port 68, server responds to the client with an offer, the offer contains an ip address, subnet mask, lease time, and ip address of the DHCP server
+        
+        Nat: network address translation
+        - takes 1 ip address and translates it to another
+        - security safegaurds and limit ipv4 space 
+        - NAT rewrites the source ip address of a packet to the ip address of the NAT device
+        - IP masquerading: NAT is used to hide the ip addresses of the internal network
+
+        - one to many NAT: multiple internal ip addresses are translated to a single external ip address
+        - Port Preservation: the source port of the packet is preserved
+        - still possible 2 computers on the same network to have the same source port but router will know which one to send it to
+        - port forwarding: destination ports delivered to a specific node
+        - destination ports will be different, do traffic can be sent to one IP but then forwarded to variety of ports
+
+
+        Virtual Private Network:
+        - technology that allows for secure communication over an untrusted network
+        - common use: employees working from home to connect to the office network
+        - VPN tunnel: encrypted connection between 2 devices
+        - payload is encrypted, VPN payload removes layers, re-encrypts, and sends to the other side
+        - VPN's where one of the first use cases for 2 factor authentication
+        - vpn use encrypted tunnels to act like its connected to a network that it is not.
+
+        Proxy Service:
+        - proxy sit between a client and a server
+        - gateway routers can act as a proxy
+        - web proxy would retrieve data from web server and cache(old days)
+        - web proxy can be used to filter web traffic, block certain websites, set rules
+        - reverse proxy: sits in front of a web server, can be used to load balance web traffic
+        - decryption proxy: decrypts encrypted traffic before it reaches the web server
+        -
+
+        Broadband: connections that are always on and are not dial up
+        T carrier technologies: multiple phone calls can be sent over a single wire
+        - one smaryphone photo is 2MB
+        2 MB = 16 million bits
+        16 million bits at 14.4 kilobits/sec = 1165 seconds or 19 minutes
+
+        T1: 1.544 Mbps carry up to 24 phone calls twisted pair copper
+        T3: 44.736 Mbps carry up to 672 phone calls
+        cable/broadband internet are most common today
+
+        DSL: digital subscriber line, faster than dial up 
+        DSLAMM: digital subscriber line access multiplexer, connects DSL customers to the internet
+        ADSL: asymmetric digital subscriber line, download speed is faster than upload speed
+        SDSL: symmetric digital subscriber line, download and upload speeds are the same
+
+        Cable broadband: 
+        - all TV broadcast were wireless
+        - coaxial cable: copper cable with a single copper core, used for cable TV (were capable of deliverying high speed data transmission)
+        - most cable operators have upgraded to fiber optic cable instead of coaxial cable to avoid slowdows
+        - Cable modem: edge of the cable network, connects to the cable network and provides an ethernet interface to the customer
+        
+        FTTB: fiber to the building, fiber optic cable is used to connect the cable operator to the building
+        FTTN: fiber to the node, fiber optic cable is used to connect the cable operator to a node
+        FTTH: fiber to the home, fiber optic cable is used to connect the cable operator to the home (each home)
+        FTTP: fiber to the premises, fiber optic cable is used to connect the cable operator to the home or building
+        ONT: optical network terminal, converts the optical signal to an electrical signal
+
+        WAN: wide area network, connects multiple LANs together
+        networks end at demarcation points, local loop (t carrier or high speed line)
+        WAN: multiple protocols at the Data Link layer
+
+        Point to Point VPN: lots of businesses dont require high speed connection since different sites/ servers cant just communicate through purchased services.
+
+        Intro to wireless networking:
+        -ICMP: internet control message protocol, used to send error messages and operational information
+        - ping: uses ICMP to test connectivity, echo request and echo reply (hey are you there)
+        - traceroute: uses ICMP to trace the path of a packet, sends a packet with a low TTL and waits for a time exceeded message
+        - transport layer: netcat: used to send data over a network, can be used to test connectivity: nc port 
+        - Test-NetConnection: powershell cmdlet used to test network connectivity on windows
+        
+        Name Resolution Tools:
+        - nslookup: used to query DNS servers, can be used to troubleshoot DNS issues, output
+        - Public DNS servers: name servers are all you need but other businesses run other dns Servers
+        - DNS as a service: cloud based DNS
+        - Registrar DNS: DNS servers provided by the domain registrar
+
+        Hosts File:
+        - file contains each line address and hostname
+        - loopback address always points to itself, bypass infra itself and traffic never leaves node
+        - every host line will always have a 127.0.0.1 / ::1 loopback address for ipv6
+
+        What is the cloud:
+        - cloud is just a concept: a network of remote servers hosted on the internet to store, manage, and process data
+        - hardware virtualization: allows for multiple virtual machines to run on a single physical machine
+        - undecellion 
+        ipv6: 8 groups of 16 bits each, 128 bits total

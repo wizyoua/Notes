@@ -1,0 +1,947 @@
+//dummy data
+let arr = [
+  {
+    id: 1,
+    name: "John",
+    age: 25,
+  },
+  {
+    id: 2,
+    name: "Jane",
+    age: 24,
+  },
+  {
+    id: 3,
+    name: "Tom",
+    age: 26,
+  },
+];
+
+//foreach is similar to map() but it doesn't return anything
+arr.forEach((item) => {
+  console.log(item.name);
+});
+
+//filter method allows us to filter out items from an array based on a condition, lets filter people 25 and older
+let olderThan25 = arr.filter((item) => item.age >= 25);
+console.log(olderThan25);
+//output: [ { id: 1, name: 'John', age: 25 }, { id: 3, name: 'Tom', age: 26 } ]
+
+//reduce method allows us to reduce an array to a single value, lets add all the ages together
+let totalAge = arr.reduce((acc, item) => acc + item.age, 0);
+console.log(totalAge);
+//output: 75
+
+
+Let and const in  declarations: hoisted but differently than var
+- temperal deadzone: time since between the variable is hoisted and the time it is initialized
+console.log(b) // undefined
+console.log(a) // ReferenceError: Cannot access 'a' before initialization, can only access after assigned value to a
+let a = 10;
+var b = 100; we can access b before initialization, the memory is allocated for b and it is undefined 
+
+
+
+data hiding and encapsulation in js:
+- data hiding with closures to keep data private inside closures
+- becuase of clousres we can create private variables and methods per each method call but to make it better use a constructor function
+
+function counter(){
+  var count = 0;
+
+  this.incrementCounter = () =>{
+    count++;
+  }
+
+  this.decrementCounter = () =>{
+    count--;
+  }
+}
+
+var counter1 = new counter(); // constructor function so have to use a new keyword, also known as factory function
+counter1.incrementCounter();
+counter1.incrementCounter();
+counter1.decrementCounter();
+
+disadvanatages of closurs:
+- memory leaks: if we have a closure that references a large object, the object will not be garbage collected until the closure is released
+
+garbage collector: program in js that runs in the background and collects objects that are no longer being used by the program
+because js is a high level language, we don't have to worry about memory management, the garbage collector takes care of it for us
+
+whats the relation between garbage collector and closures:
+- function a (){
+  var x = 0;
+  return function b(){
+    console.log(x);
+  }
+}
+
+a();
+
+because b is a closure, it has a reference to x, so x will not be garbage collected until b is released
+
+what are first class functions in js:
+- functions are first class citizens in js, meaning they can be treated like any other variable, so can be passed as an argument, returned from a function, assigned to a variable
+
+
+
+Top 12 React Interview Questions and Answers
+Hooks:
+- useState: allows us to add state to functional components
+- useEffect: allows us to add side effects to functional components
+- useContext: allows us to use context in functional components
+- useMemo: allows us to memoize values
+- useCallback: allows us to memoize functions
+- useRef: allows us to reference a DOM element or a value that persists between renders
+
+Higher Order Components:
+what: a higher order component is a function that takes a component and returns a new component
+why: to reuse code, to share common functionality between components
+when: when you have a common functionality that you want to share between components
+how: 
+
+Life Cycle methods of components:
+- class components have life cycle methods:
+  3 general  phases:
+  - mounting: when the component is being created and inserted into the DOM
+  - updating: when the component is being re-rendered as a result of changes to either props or state
+  - unmounting: when the component is being removed from the DOM
+
+  - componentDidMount: runs after the component is mounted to the DOM
+  - componentDidUpdate: runs after the component is updated
+
+State Management:
+- state/props
+- props drilling: passing props from parent to child to child to child
+- context: allows us to pass data down the component tree without having to pass props down manually at every level
+- Redux: a state management library that allows us to manage the state of our application in a predictable way
+- how does redux work: 
+  - store: holds the state of the application
+  - action: an object that describes what happened
+  - reducer: a function that takes the current state and an action and returns a new state
+  - dispatch: a function that sends an action to the store
+
+  - redux should be used when you have a complex state that needs to be shared between multiple components
+  - RTK: Redux Toolkit is a package that simplifies the way we write redux code
+  
+Custom Hooks:
+- what: a custom hook is a javascript function whose name starts with "use" and that may call other hooks
+- why: to reuse stateful logic between components
+- how: 
+  - create a function that starts with "use"
+  - inside the function, use hooks
+  - return whatever you want to expose to the component
+  - clean, maintainable, reusable code
+
+example of how we can use a custom hook where we have a mainComponent and useLocalStorage hook:
+```
+const MainComponent = () => {
+  const [name, setName] = useLocalStorage("name", "john");
+  return (
+    <div>
+      <input value={name} onChange={(e) => setName(e.target.value)} />
+    </div>
+  );
+}
+
+our custom hook in useLocalStorage.js:
+import { useState, useEffect} from "react";
+
+const useLocalStorage = (key, initialValue) => {
+  const [value, setValue] = useState(() => {
+    const jsonValue = localStorage.getItem(key);
+    if (jsonValue != null) return JSON.parse(jsonValue);
+    return initialValue;
+  });
+
+  useEffect(() => {
+    localStorage.setItem(key, JSON.stringify(value));
+  }, [key, value]);
+
+  return [value, setValue];
+}
+
+Lazy Loading:
+- code splitting: allows us to split our code into smaller bundles which can then be loaded on demand
+- chunking: the process of splitting the code into smaller pieces
+
+example of how we can use lazy loading:
+```
+import React, { Suspense, lazy } from "react";
+
+const OtherComponent = lazy(() => import("./OtherComponent"));
+
+const MyComponent = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <OtherComponent />
+    </Suspense>
+  );
+}
+```
+
+Virtual DOM:
+- what: a lightweight copy of the actual DOM
+- why: to increase the speed of the application
+- Reconsiliation algorithm: the process of updating the virtual DOM and then comparing the updated virtual DOM with a pre-update version to figure out what has changed
+- React Fiber: a reimplementation of the core algorithm of React
+- how the component renders in React:
+  - when a component's state or props change, React re-renders the component
+  - React then updates the virtual DOM
+  - React then compares the updated virtual DOM with a pre-update version to figure out what has changed
+  - React then updates the actual DOM with the results of the comparison
+- diff algorithm: the process of comparing two virtual DOM trees and figuring out what has changed between the two
+- 
+
+SSR vs CSR:
+- SSR: server side rendering, the process of rendering the initial view of the application on the server and then sending it to the client
+- CSR: client side rendering, the process of rendering the initial view of the application on the client
+why SSR:
+- NextJS: a framework that allows us to build server side rendered applications
+what are the benefits of SSR:
+- faster load times
+- better SEO
+- improved performance
+- better user experience
+what are the benefits of CSR:
+- better for single page applications
+- better for applications that require a lot of client side processing
+- better for applications that require a lot of interactivity
+
+Routing:
+RBAC: role based access control
+- what: a method of restricting access to certain parts of the application based on the roles of the users
+- why: to ensure that users only have access to the parts of the application that they are allowed to access
+React routing:
+- what: a method of navigating between different parts of the application
+- how do we manage protected routes in React:
+  - we can use a higher order component to wrap the component that we want to protect
+  - we can use a custom hook to check if the user is authenticated and then conditionally render the component
+  - we can use a context to store the user's authentication status and then conditionally render the component based on that status
+query params in routing: allows us to pass data from one route to another
+Dynamic Routing: allows us to create routes dynamically based on the data that we have
+example: 
+```
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+const App = () => {
+  return (
+    <Router>
+      <Switch>
+        <Route path="/users/:id" component={User} />
+      </Switch>
+    </Router>
+  );
+}
+
+const User = ({ match }) => {
+  return <h1>User ID: {match.params.id}</h1>;
+}
+```
+
+Testing:
+- React Testing Library: a library that allows us to test our React components
+- hack: mention testing with higher order components
+example of how we can use React Testing Library:
+```
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import App from "./App";
+
+test("renders learn react link", () => {
+  render(<App />);
+  const linkElement = screen.getByText(/learn react/i);
+  expect(linkElement).toBeInTheDocument();
+});
+
+test("clicking the button increments the counter", () => {
+  render(<App />);
+  const button = screen.getByRole("button");
+  const counter = screen.getByText("0");
+  userEvent.click(button);
+  expect(counter).toHaveTextContent("1");
+});
+```
+
+Async Tasks:
+- api calls: making requests to an external server to fetch data
+- !!promises: a way of handling asynchronous operations
+- async/await: a way of handling asynchronous operations that makes the code look synchronous
+- events: a way of handling user interactions with the application
+- setTimeout: a way of delaying the execution of a function
+  setTimeout(() => {
+    console.log("hello");
+  }, 1000);
+- setInterval: a way of repeatedly executing a function at a given interval
+  setInterval(() => {
+    console.log("hello");
+  }, 1000);
+
+Reusability: 
+modular and testable code
+why: to make our code more maintainable and easier to work with
+
+Performance:
+- what: the speed and efficiency of the application
+shimerUI: a technique that involves showing a loading animation while the content of the page is being fetched
+
+Lazy Loading: a technique that involves loading only the necessary parts of the application when they are needed
+- assets speedup: a technique that involves optimizing the assets of the application to improve the speed of the application
+- how do you optimize assets: 
+  - minify the code
+  - compress the images
+  - use a content delivery network
+  - use a service worker
+  - use a bundler
+  - use a code splitting technique
+
+  Bundlers: bundles and minifies code: 
+- performance rendering: the process of rendering the application in a way that is fast and efficient
+- how:
+
+Styling:
+- tailwind: a utility-first CSS framework
+- styleX -> facebook
+- styled-components: a library that allows us to write CSS in our JavaScript files
+- bootstrap: a front-end framework that allows us to build responsive and mobile-first websites
+- css/scss inline Styling
+
+Accessability:
+- what: the practice of making the application accessible to people with disabilities
+- why: to ensure that everyone can use the application
+- how:
+  - using semantic HTML
+  - using ARIA attributes
+
+
+
+
+
+
+
+
+Advanced React Interview Questions and Answers
+1. What is a higher oder component: way of reusing code:
+  - patterns: 
+    - component takes another component as an input and returns a new component with some additional functionality
+    - a perfect example is react router, it takes in our component and returns with history, location, match, ect
+  - start with keyword "with"
+  - example:
+    ```
+    const withData = (WrappedComponent) => {
+      class WithData extends React.Component {
+        render() {
+          return <WrappedComponent data={data} />;
+        }
+      }
+      return WithData;
+    }
+    ```
+2. Render props: 
+
+3. How to write a custom hook. share code and reuse.
+  - we use custom hook when we want to share logic between 2 functional components
+  - start with keyword "use"
+  - common pattern is returning value and setter 
+  - 2 components using same hook don't share state. it's just a way of reusing stateful logic
+
+
+4. generators: can execute function
+function *generator(){
+  yield 1;
+  yield 2;
+  yield 3;
+}
+const gen = generator();
+console.log(gen.next()); // {value: 1, done: false}
+console.log(gen.next()); // {value: 2, done: false}
+
+does not run a code but rather a generator object
+
+const person = {
+  name: "ram
+  age: 20
+}
+Object.entries : takes each key value pair and returns an array
+Object.entries(person) // [["name", "ram"], ["age", 20]]
+
+try to do this without Object.entries, use a new method to do the same thing
+const entries = (obj) => {
+  return Object.keys(obj).map(key => [key, obj[key]]);
+}
+
+//display string of html in component:
+- dangerouslySetInnerHTML: innerHtml in regular js
+- before using 
+
+const data = "<h1>hello</h1>"; // a usecase of this is sponsored ads on pages that are html strings
+
+export default function App(){
+  return <div dangerouslySetInnerHTML={{__html: data}} />
+  //this can expose users to xss attacks
+}
+
+
+Next challenge is hitting a api with todos and displaying them in a list, with a dropdown to show x amount of todos (pagination)
+import React, {useState, useEffect} from "react";
+import axios from "axios";  //fetch is a modern way of doing this
+
+export default App = () => {
+  const [todos, setTodos] = useState([]);
+  const [todosPerPage, setTodosPerPage] = useState(10);
+  const [currentPage, setCurrentPage] = useState(1);
+
+
+  //will call api once when component mounts
+  useEffect(() =>{
+    axios.get("https://jsonplaceholder.typicode.com/todos")
+    .then(res => setTodos(res.data))
+    .catch(err => console.log(err));
+  }, [])
+
+  const numOfPages = Math.ciel(todos.length / todosPerPage);
+
+  //create arr of nums from 1 to numOfPages to build pagination
+  const pages = [...Array(numOfPages).keys()].slice(1);
+
+  const indexOfLastTodo = currentPage * todosPerPage;
+  const indexOfFirstTodo = indexOfLastTodo - todosPerPage;
+  const visibleTodos = todos.slice(indexOfFirstTodo, indexOfLastTodo);
+
+
+  const prevPageHandler = () => {
+    if(currentPage === 1) return;
+    setCurrentPage(currentPage - 1);
+  }
+
+  const nextPageHandler = () => {
+    if(currentPage !== numOfPages) setCurrentPage(currentPage + 1);
+  }
+
+
+  return (
+    <>
+    <select onChange={(e) => setTodosPerPage(e.target.value) }>
+      <option value="10">10</option>
+      <option value="20">20</option>
+      <option value="30">30</option>
+    </select>
+    <div>
+      {visibleTodos.map(()=> {
+        <p key={todo.id} >{todo.title}</p>
+      })}
+      <span onClick={prevPageHandler}>prev</span>
+      <p>{pages.map(page => <span key={page} onClick={() => setCurrentPage(page)} className={`${currentPage} === page ? "active": ""`}>{page}</span>)}</p>
+      <span onClick={nextPageHandler}>next</span>
+    </div>
+    </>
+    )
+}
+
+
+styles.css 
+.active {
+  color: purple;
+}
+
+
+
+
+
+3 advanced react interview questions - pedrotech
+
+1. React Reconsiliation algorith and why it's beneficial:
+  - the process by which react updates components by props and state
+  - react keeps track of 2 different versions of DOM, the current and the previous. compares the 2 and updates the actual DOM with the results of the comparison. reduces amount of DOM manipulation and increases performance
+  - how can it become ineffiecient
+
+2. how does react handle async updates and how we can prevent race conditions:
+  - react batching groups updates that occur within same render cycle and then updates the DOM.
+  - prevents unnecessary renders and component remains responsive while component is updating.
+  - race conditions: when 2 or more async operations are trying to update the same state at the same time. can be prevented by using async/await or promises
+  - great way is using use state and useReducer hooks
+  useReducer hook: allows us to manage state in a more complex way. it takes in a reducer function and an initial state and returns the current state and a dispatch function
+
+3. how do we solve optmizations problem in react and is it good to always optmize:
+  - overly optimization can lead to complex code and make it harder to maintain.
+  - 
+
+  component lifecycle:
+  - mounting: when the component is being created and inserted into the DOM
+  - updating: when the component is being re-rendered as a result of changes to either props or state
+  - unmounting: when the component is being removed from the DOM
+
+  class vs functional components lifecycle methods:
+  - class components have lifecycle methods
+  
+
+
+  Hooks 
+  - what are react hooks, which are the most commonly used hooks and why
+  - they are functions present in react that allow us to use state and other react features without writing a class
+  - before hoosk class component lifecycles methods were used to maintain state and lifecycle methods
+  8 hooks:
+  - useState: allows us to add state to functional components
+  - useEffect: allows us to add side effects to functional components
+  - useContext: allows us to use context in functional components
+  - useReducer: allows us to manage state in a more complex way
+  - useCallback: allows us to memoize functions
+  - useMemo: allows us to memoize values
+  - useRef: allows us to reference a DOM element or a value that persists between renders
+  - useLayoutEffect: similar to useEffect but runs synchronously after all DOM mutations
+
+  what are state, stateless, stateful and state management terms
+  - state refers to the data that a component maintains and can change over time
+  - stateless: doesn't render any changes continuously 
+  - stateful: renders changes continuously
+  - state management: the process of managing the state of the application in a predictable way or by user interactions
+
+  useEffect hook: 
+  - use effect is called after component renders
+  - useEffect accepts 2 arguments, a function and an array of dependencies
+  - empty array means it only runs once after the component mounts
+
+  - useContext / useReducer
+  - what is the role of the useContext, one of the ways to provide props from parent to child without passing them through every level of the tree
+  - how? 
+
+  provider and consumer but usually we use useContext hook
+  import {createContext} from 'react';
+  const myContext = createContext();
+
+  const Parent = () => {
+    return (
+      <myContext.Provider value={"hello"}>
+        <Child />
+      </myContext.Provider>
+    )
+  }
+
+  const child = () => {
+    const value = useContext(myContext);
+    return <p>{value}</p>
+  }
+
+  what is the createContext method and provider & consumer:
+  - createContext: a method that creates a context object
+  - provider: a component that allows us to provide a value to all the components that are descendants of it
+  - consumer: a component that allows us to consume the value that is provided by the provider
+
+  - when to use useContext when we want to avoid prop drilling within deeply nested components
+  - 1 -2 levels max for prop drilling
+  - example: theme switchhing, localization, central config settings, user authentication
+
+  - Component lifecycle methods:
+    - what are component life cycle phases:
+      - component loads in react app, 3 lifecycle, mounting(component creation and instance is inserted into dom)
+      - updating (component is re-rendered as a result of changes to either props or state)
+      - unmounting (component is removed from the DOM)
+
+    - what are the lifecycle methods of a class component:
+    Mounting:
+      - componentDidMount: runs after the component is mounted to the DOM
+      - componentDidUpdate:
+    Updating:
+      - componentDidUpdate: runs after the component is updated
+    Unmounting:
+      - componentWillUnmount: runs before the component is removed from the DOM
+
+    what are constructors in class components and when to use them:
+    - a constructor is a special method that is called when a new instance of a class is created
+
+    class ConstructorExample extends Component {
+      constructor(props){
+        //what is the role of the super keyword in the constructor
+        // it is used to execute constructor of the parent class
+        //necessary to ensure that the initialization logic of parent class is executed
+        super(props);
+
+        this.state = {
+          count: 0,
+          data: null
+        }
+      }
+
+      //what is the role of componentDidMount and when to use it, data fetching, subscriptions, setting up timers
+      componentDidMount(){
+        fetch("https://api.example.com/data").then((res) => {
+          this.setState({
+            data:res.data
+          })
+        });
+       
+      }
+
+      // how can the state be maintained in a class component
+      handleInc =  () => {
+        this.setState((prevState) => {
+          count: prevState.count + 1
+        })
+      }
+      //what is the role of render? it is a required method that returns the JSX that will be rendered to the DOM
+      render(){
+        return (
+          <div>
+            <p>{this.state.count}</p>
+            <button onClick= {this.handleInc}>Inc</button>
+          </div>
+        )
+      }
+    }
+
+  Controlled vs Uncontrolled components:
+  - controlled component : whose form element like input, textarea, select, etc are controlled by state
+  - Uncontrolled component: whose form elements are not controlled by state. if theres no state element, directlt accessing value and not changing also using useRef. controlled components are standard component
+  - characteristics of controlled components:
+    - the value of the form element is controlled by the state
+    - the value of the form element is updated by the state
+  - advantages of controlled components:
+    - form elements values are handled by state so single source of truth, 
+    - facilitates predictable and synchronized updates, easier to implement features like form validation
+    - better control and maintianability compared to uncontrolled components
+
+    Code splitting and Lazy or Suspense:
+    - what is code splitting and why is it beneficial:
+      - important from performance pov, without code splitting bundled project files all sent in 1 request. with code splitting, we can split the code into smaller chunks loaded on demand basis.
+      - React.lazy()
+      - wrap component with Suspense to handle loading
+      - configure webpack to split code
+
+      const codeSplit = () => {
+        return <div>my component</div>
+      }
+      export default codeSplit;
+
+      //App.js
+      import React, {Suspense, lazy} from "react";
+
+      //lazy means it will only be loaded when it is needed, usually imports are static but with lazy it is dynamic
+      const CodeSplit = lazy(() => import("./CodeSplit"));
+
+      const App = () => {
+        return (
+          <Suspense fallback={<div>Loading...</div>}>
+            <CodeSplit />
+          </Suspense>
+        )
+      }
+
+      what is the role of Lazy and Suspense methods in react:
+        - lazy: a method that allows us to load a component dynamically, a chunk that loads on demand
+        - suspense: used to display a fallback UI while the lazy component is loading
+
+      what are pros and cons of code splitting:
+        - pros: 
+          - faster load times
+          - better performance
+          - better user experience
+          - better for single page applications
+        - cons:
+          - more complex to implement
+          - can lead to more requests
+          - tooling dependencies
+          - more runtime errors
+
+        - generally its good for large projects like e-commerce, social media, etc
+        - optimized bandwidth usage, faster load times, better user experience
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10 js interview questions:
+
+1. setTimeout vs setInterval
+- setTimeout and setInterval
+  - setTimeout : is a way of delaying the execution of a function
+  - setInterval: will execute a function repeatedly after a specified delay
+
+  setTimeout(()=>{
+    console.log('timeout called every 5 sec');
+  }, 5000)
+
+  let count = 0;
+  setInterval(()=> {
+    count++;
+    console.log(`lets increase count every 5 seconds: ${count}`)
+  }, 5000)
+
+  we have to remember to clear timeout and interval
+  clearTimeout();
+  clearInterval();
+
+
+2. What is the purpose of callback functions
+  - callbacks allow us to pass functionts into other functions. especially useful in modern day applications
+  because of functional development, libraries and apis support us passing in a function.
+  - it is commanly used in async code to handle the result of an operations
+  
+  notice here how we can mimic sending off update requests to endpoints after certain time... or 
+  have a submit functionality that will execute our callback.
+  ex:
+  function fetchData (cb){
+    setTimeout(() => {
+      cb('data fetched success');
+    }, 2000)
+  }
+
+  function handleData(data){
+    console.log(data)
+  }
+
+  fetchData(handleData);
+
+3. how can we remove duplicates form arr in js?
+  - using set and ... operator
+  let arr = [1,2,3,1,2,4];
+  let unique = [...new Set(arr)]; // notice we usually spread obj or arr but here we spread the result of passing in arr into Set
+
+  - also for algo questions remember that if we needed to create a set for comparison/help purposes we can instantly do that
+
+
+4. how can we convert a string to a number in js?
+  - parseInt() or parseFloat();
+
+  let str = '123';
+  let num = parseInt(str); // log output 123
+
+  let floatStr = '12.3'
+  console.log(parseFloat(floatStr))// ouput 12.3
+
+5. what is a closure in JS?
+  - closure in js i a function that has access to vars in outer scope(lexical env)
+  even after the outer function has returned. used to create vars and functions 
+
+  function createCount(){
+    let count = 0;
+
+    return function(){
+      count++;
+      console.log(count);
+    }
+  }
+
+  let counter = createCount();
+  counter();
+  counter();
+
+6. what is the purpose of this keyword in JS
+  - this refers to the object that is currently executing the code
+  - value depends on how the function is called
+
+7. implement a debounce function in js
+  - a debounce is used to limit the number of times a function is called
+
+
+  function db(func, delay){
+    let timeoutId;
+
+    return function(...args){
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(()=>{
+        func.apply(this, args);
+      }, delay)
+    }
+  }
+
+  function onSearchInput(event){
+    console.log(event.target.value);
+  }
+
+  let debounceOnSearch = db(onSearchInput, 500)
+  document.getElementById('search-input').addEventListener('input', debouncedOnSearchInput);
+
+
+
+8. how can we implement a promise-based version of setTimeout() in js
+
+function delay(timeout){
+  return new Promise(resolve =? {
+    setTimeout(()=>{
+      resolve();
+    }, timeout);
+  });
+}
+
+delay(1000).then(()=>{
+  console.log('delayed code executes');
+})
+
+9. implement a binary search in js:
+
+
+let arr = [1,3,4,7,9];
+
+function bs(arr, tar){
+  let l = 0;
+  let r = arr.length - 1;
+
+  while(l < r){
+    let mid = Math.floor((l +r) / 2);
+
+    if(arr[mid] === tar){
+      return mid;
+    }else if(arr[mid] < tar){
+      l = mid+ 1;
+    }else {
+      r = mid - 1;
+    }
+  }
+
+  return -1
+}
+
+console.log(bs(arr, 7))
+
+
+10. how can we implement a function that returns a random item from arr in js
+function getRandomItem(array){
+  return array[Math.floor(Math.random() * array.length)];
+}
+
+let arr = [1,3,45,56,6];
+console.log(getRandomItem(arr))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Resume Review!!!_______Resume Review!!!_______Resume Review!!!_______Resume Review!!!_______Resume Review!!!_______Resume Review!!!_______Resume Review!!!_______
+
+PlusQA:
+- docker containerization, basic CI-CD deployment integration
+- migrating rails + react app from webpacker to vite ruby
+  - started fresh vite rails project and brought over models, controllers, routes
+  - after that install vite_rails gem completely figuring out a vite.config.js file that:
+    - defined additional paths with our folder structure
+    - one entry at a time move each pack entrypoints in js 
+    - adding file extension to non js imports
+    - replace tag helpers
+  once vite was able to spin up without errors fixed more style and js imports within our core parent components after that everything loaded fine
+
+- worked on refactoring 2k line long class components down to 1-3 max level components, worked on greenfield performance component 
+- created reusable dyanmic components like tables and charts to accept properly formatted data
+- cleaned up conflicting, duplicated and bad practice logic
+
+PWA from big pixel:
+- one if the biggest challenges was figuring out how to create a controlled component (component that handles state) to not only save data to localstorage offlineDataStorage component but then firing off a request when back online
+- after creating the offline storage component which just a custom hook to handle localstorage 
+- created another custom hook that encapsulated the logic for saving and retrieving data from offline storage component
+- then we used workbox(js api library for pwa) to create a service-worker that handle and event listener which detected our request where urls included /api in the url
+- then from our form component all we had to do was use useOfflineStorage component to listen to onClick event save from user. This allowed us to display a saved message or any errors we had and the sole purpose of the service worker 
+was to detect when browser is back online and can fire off our request 
+
+- navigator.onLine property returns true/false and we could have just waited until browser was back online but were running into issues where there were multiple reports(forms) an also sometimes the data would be lost 
+
+Hubspot:
+- 
+
+
+
+
+setTimeout + closure:
+
+function x(){
+  var i = 1;
+  setTimeout(()=>{
+    console.log(i);
+  }, 1000)
+
+  //console.log('namaste'); //namaste will be printed first, then after 1 sec 1 will be printed
+
+}
+
+//why does the above happen?
+set timeout forms a closure, it has access to the outer scope of the function x, so it has access to i.
+settimeout takes the callback function stores it with a timer, the other log below is executed, once timer expires the callback function is executed
+
+function x(){
+  for(var i = 1; i <= 5; i++){
+    setTimeout(()=>{
+      console.log(i);
+    }, i * 1000);
+  }
+  console,log('namaste');
+}
+
+//namaste prints first,
+//then 6 prints 5 times after 1 sec, 2 sec, 3 sec, 4 sec, 5 sec because of closures
+its because the callback remembers the reference to i, so when the timer expires it prints the value of i at that time
+
+how to fix this? use let instead of var
+
+
+Promises: is an object that will lead to an async operation completin or failure
+
+function promiseFn(){
+  return new Promise((res, rej) =>{
+    setTimeout(()=>{
+      res('resolved');
+    }, 2000)
+  })
+}
+
+promiseFn().then((res)=>{
+  console.log(res)
+}).catch((e) => throw new Error(e))
+
+
+async/await is a syntactic sugar for promises
+
+async declares an async function, which returns a promise, we wait for a promise to be resolved
+await can only be used inside an async function
+
+async function asyncFn(){
+  try{
+    const promise = new Promise((res, rej) =>{
+      setTimeout(()=>{
+        res('resolved');
+      }, 2000)
+    })
+
+    const res = await promise;
+  }catch (err){
+console.log(err)
+  }
+}
+
+the only difference is the execution context between promise and async/await
+
+so when a promise is created, and the async operation is started, js continues to execute
+synchronously, when the promise is resolved or rejected, the callback fn is attached to the microtask queue
+
+microtask is processsed after the current task has been completed but before the next task is processed from task queue
+
+on the other hand async/await the await keywork causes the async function to pause until the promise is resolved or rejected, and the result is returned
+it does not block the event loop, it just pauses the execution of the async function
